@@ -513,3 +513,13 @@ in APPPATH\Controllers\Admin\Usuarios.php on line 73.
  4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 19:25:14 --> Arquivo inválido: Admin/Usuarios/editar.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Admin/Usuarios/editar.php')
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Admin/Usuarios/editar', [], true)
+ 3 APPPATH\Controllers\Admin\Usuarios.php(74): view('Admin/Usuarios/editar', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->editar('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')

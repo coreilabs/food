@@ -24,9 +24,14 @@
            
 <div class="col-lg-6 grid-margin stretch-card">
   <div class="card">
+  <div class="card-header bg-primary pn-0 pt-4">
+  <h2 class="card-title text-white"><?= esc($titulo) ?></h2>
+
+</div>
     <div class="card-body">
-      <h2 class="card-title"><?= esc($titulo) ?></h2>
-      <hr>
+
+
+
       <p class="card-text"> <span class="font-weight-bold">Nome: </span> <?= esc($usuario->nome)?></p>
       <p class="card-text"> <span class="font-weight-bold">Email: </span> <?= esc($usuario->email)?></p>
       <p class="card-text"> <span class="font-weight-bold">Ativo: </span> <?= ($usuario->ativo ? "Sim" : "Não" )?></p>
