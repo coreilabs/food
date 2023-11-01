@@ -1,23 +1,22 @@
 <?= $this->extend('Admin/layout/principal'); ?>
 
-<?= $this->section('titulo'); ?>
 
+<?= $this->section('titulo'); ?>
 <?= $titulo ?>
 <?= $this->endSection(); ?>
 
-<?= $this->section('estilos'); ?>
 
+
+<?= $this->section('estilos'); ?>
 <?= $this->endSection(); ?>
 
 
 
 <?= $this->section('conteudo'); ?>
-
 <?= $titulo ?>
 <?= $this->endSection(); ?>
 
 
 
 <?= $this->section('scripts'); ?>
-
 <?= $this->endSection(); ?>
