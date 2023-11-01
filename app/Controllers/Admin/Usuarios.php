@@ -54,7 +54,12 @@ public function procurar(){
 public function show($id = null){
 
     $usuario = $this->buscaUsuarioOu404($id);
-    dd($usuario);    
+    $data = [
+        'titulo' => "Detalhando o usuário $usuario->nome",
+        'usuario' => $usuario,
+    ]; 
+    
+    return view('Admin/Usuarios/show', $data);
 
 }
 

@@ -332,3 +332,184 @@ in APPPATH\Views\Admin\Usuarios\index.php on line 51.
  8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:17:44 --> syntax error, unexpected '}', expecting ';'
+in APPPATH\Controllers\Admin\Usuarios.php on line 64.
+ 1 SYSTEMPATH\Router\Router.php(514): CodeIgniter\Router\AutoRouter->getRoute('admin/usuarios/show/1', 'get')
+ 2 SYSTEMPATH\Router\Router.php(210): CodeIgniter\Router\Router->autoRoute('admin/usuarios/show/1')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('admin/usuarios/show/1')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:18:11 --> Undefined variable: usuarios
+in APPPATH\Views\Admin\Usuarios\show.php on line 48.
+ 1 APPPATH\Views\Admin\Usuarios\show.php(48): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: usuarios', 'C:\\xampp\\htdocs\\food\\app\\Views\\Admin\\Usuarios\\show.php', 48, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\Admin\\Usuarios\\show.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Admin/Usuarios/show', [], true)
+ 5 APPPATH\Controllers\Admin\Usuarios.php(62): view('Admin/Usuarios/show', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:19:09 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:19:09 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo-mini.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:19:48 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:19:48 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo-mini.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:22:13 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:22:14 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo-mini.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:23:04 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:23:04 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo-mini.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:23:33 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:23:33 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo-mini.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:24:18 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:24:18 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo-mini.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:24:28 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:24:29 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo-mini.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:28:31 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:28:31 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo-mini.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:29:18 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:29:19 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo-mini.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:29:26 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-01 17:29:26 --> Argument 1 passed to App\Controllers\Admin\Usuarios::buscaUsuarioOu404() must be of the type int or null, string given, called in C:\xampp\htdocs\food\app\Controllers\Admin\Usuarios.php on line 56
+in APPPATH\Controllers\Admin\Usuarios.php on line 73.
+ 1 APPPATH\Controllers\Admin\Usuarios.php(56): App\Controllers\Admin\Usuarios->buscaUsuarioOu404('images')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Usuarios->show('images', 'logo-mini.svg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Usuarios))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
