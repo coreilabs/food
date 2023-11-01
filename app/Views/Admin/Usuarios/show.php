@@ -31,11 +31,14 @@
       <p class="card-text"> <span class="font-weight-bold">Email: </span> <?= esc($usuario->email)?></p>
       <p class="card-text"> <span class="font-weight-bold">Ativo: </span> <?= ($usuario->ativo ? "Sim" : "Não" )?></p>
       <p class="card-text"> <span class="font-weight-bold">Perfil: </span> <?= ($usuario->is_admin ? "Administrador" : "Cliente" )?></p>
-      <p class="card-text"> <span class="font-weight-bold">Criado: </span> <?= $usuario->criado_em ?></p>
-      <p class="card-text"> <span class="font-weight-bold">Atualizado: </span> <?= $usuario->criado_em ?></p>
+      <p class="card-text"> <span class="font-weight-bold">Criado: </span> <?= $usuario->criado_em->humanize() ?></p>
+      <p class="card-text"> <span class="font-weight-bold">Atualizado: </span> <?= $usuario->criado_em->humanize() ?></p>
 
-
-
+<div class="mt-4">
+  <a href="<?= site_url("admin/usuarios/")?>" class="btn-primary btn-sm btn-icon-text btn-icon-prepend mdi mdi-keyboard-backspace"> Voltar</a>
+  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn-dark btn-sm btn-icon-text btn-icon-prepend mdi mdi-pencil"> Editar</a>
+  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn-danger btn-sm btn-icon-text btn-icon-prepend mdi mdi-delete-forever"> Excluir</a>
+</div>
 
     </div>
   </div>
