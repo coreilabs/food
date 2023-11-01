@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2023 at 09:58 PM
+-- Generation Time: Nov 02, 2023 at 12:48 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -74,7 +74,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `cpf`, `telefone`, `is_admin`, `ativo`, `password_hash`, `ativacao_hash`, `reset_hash`, `reset_expira_em`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(1, 'Marco Aurelio Silva', 'admin@gmail.com', '024.566.811-62', '62982069063', 0, 0, '', NULL, NULL, NULL, '2023-11-23 17:56:34', '1900-01-31 00:00:00', NULL),
+(1, 'Marco Aurelio Silva', 'admin@gmail.com', '024.566.811-62', '62982069063', 1, 1, '', NULL, NULL, NULL, '2023-11-23 17:56:34', '1900-01-31 00:00:00', NULL),
 (2, 'Maria Luisa', 'maria@gmail.com', '125.093.570-93', '62985349760', 0, 0, '', NULL, NULL, NULL, '2023-11-14 00:00:00', '1900-01-31 00:00:00', NULL);
 
 --
@@ -368,7 +368,7 @@ CREATE TABLE `pma__userconfig` (
 --
 
 INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2023-11-01 19:27:42', '{\"Console\\/Mode\":\"collapse\"}');
+('root', '2023-11-01 23:40:51', '{\"Console\\/Mode\":\"collapse\"}');
 
 -- --------------------------------------------------------
 
