@@ -47,5 +47,7 @@
 
 
 <?= $this->section('scripts'); ?>
+<script src="<?= site_url('admin/vendors/mask/jquery.mask.min.js')?>"></script>
+<script src="<?= site_url('admin/vendors/mask/app.js')?>"></script>
 
 <?= $this->endSection(); ?>
