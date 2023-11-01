@@ -28,7 +28,7 @@
                   <h4 class="card-title"><?= $titulo ?></h4>
 
                     <div class="ui-widget" >
-                      <input id="query" class="form-control bg-light mb-5">
+                      <input id="query" placeholder="Pesquise um Usuário" class="form-control bg-light mb-5">
                     </div>
 
                   <!-- <p class="card-description">
@@ -48,7 +48,9 @@
                         <?php foreach($usuarios as $usuario):?>
 
                             <tr>
-                                <td><?= $usuario->nome;?></td>
+                                <td><a href="<?= site_url("admin/usuarios/show/$usuario->id")?>">  <?= $usuario->nome;?></a>
+                                
+                                </td>
                                 <td><?= $usuario->email;?></td>
                                 <td><?= $usuario->cpf;?></td>
                  
