@@ -8,6 +8,12 @@
 
 
 <?= $this->section('estilos'); ?>
+
+
+
+<link rel="stylesheet" href="<?= site_url('admin/vendors/auto-complete/jquery-ui.css'); ?>">
+
+
 <?= $this->endSection(); ?>
 
 
@@ -20,6 +26,10 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title"><?= $titulo ?></h4>
+
+                    <div class="ui-widget" >
+                      <input id="query" class="form-control bg-light mb-5">
+                    </div>
                   <!-- <p class="card-description">
                     Add class <code>.table-hover</code>
                   </p> -->
@@ -63,4 +73,49 @@
 
 
 <?= $this->section('scripts'); ?>
+<script src="<?= site_url('admin/vendors/auto-complete/jquery-ui.js');?>"></script>
+<script>
+
+  $(function(){
+    $( "#query" ).autocomplete({
+      source: function(request, response){
+        $.ajax({
+          url:"<?= site_url('admin/usuarios/procurar')?>",
+          dataType:"json",
+
+
+          data: {
+            term:request.term 
+          },
+          success: function(data){
+            if(data.length < 1){
+              var data = [
+                {
+                  label: 'Usuário não encontrado',
+                  value: -1
+                }
+              ];
+            }
+            response(data); //aqui temos o valor no data
+          },
+        }); //fim ajax
+      },
+      minLength: 1,
+      select: function(event, ui){
+
+        if(ui.item.value == -1 ){
+
+          $(this).val("");
+          return false;
+
+        }else{
+          window.location.href = '<?= site_url('admin/usuarios/show/')?>' + ui.item.id;
+        }
+
+      }
+
+    }); //fim auto complete
+  });
+
+</script>
 <?= $this->endSection(); ?>
