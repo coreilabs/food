@@ -30,6 +30,7 @@
                     <div class="ui-widget" >
                       <input id="query" class="form-control bg-light mb-5">
                     </div>
+
                   <!-- <p class="card-description">
                     Add class <code>.table-hover</code>
                   </p> -->
@@ -75,47 +76,37 @@
 <?= $this->section('scripts'); ?>
 <script src="<?= site_url('admin/vendors/auto-complete/jquery-ui.js');?>"></script>
 <script>
-
-  $(function(){
-    $( "#query" ).autocomplete({
-      source: function(request, response){
-        $.ajax({
-          url:"<?= site_url('admin/usuarios/procurar')?>",
-          dataType:"json",
-
-
-          data: {
-            term:request.term 
-          },
-          success: function(data){
-            if(data.length < 1){
-              var data = [
-                {
-                  label: 'Usuário não encontrado',
-                  value: -1
+    $(function (){
+        $( "#query" ).autocomplete({
+            source: function (request, response){
+                $.ajax({
+                    url: "<?php echo site_url('admin/usuarios/procurar'); ?> ",
+                    dataType: "json",
+                    data:{
+                        term: request.term
+                    },
+                    success: function (data) {
+                        if(data.length < 1){
+                            var data = [{
+                                label: 'Usuario não encontrado',
+                                value: -1,
+                                }
+                            ];
+                        }
+                        response(data); //retorno com valor da busca
+                    }
+                }); // fim Ajax
+            },
+            minLength: 1,
+            select: function (event, ui) {
+                if(ui.item.value == -1){
+                    $(this).val("");
+                    return false;
+                }else {
+                    window.location.href = '<?php echo site_url('admin/usuarios/show/')?>' + ui.item.id;
                 }
-              ];
             }
-            response(data); //aqui temos o valor no data
-          },
-        }); //fim ajax
-      },
-      minLength: 1,
-      select: function(event, ui){
-
-        if(ui.item.value == -1 ){
-
-          $(this).val("");
-          return false;
-
-        }else{
-          window.location.href = '<?= site_url('admin/usuarios/show/')?>' + ui.item.id;
-        }
-
-      }
-
-    }); //fim auto complete
-  });
-
+        }); // fim auto-complete
+    });
 </script>
 <?= $this->endSection(); ?>

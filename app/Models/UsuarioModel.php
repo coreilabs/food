@@ -15,5 +15,17 @@ class UsuarioModel extends Model
     protected $createdField         = 'criado_em'; // Nome da coluna no banco de dados
     protected $updatedField         = 'atualizado_em'; // Nome da coluna no banco de dados
     protected $deletedField         = 'deletado_em'; // Nome da coluna no banco de dados
+
+
+    public function procurar($term){
+        if($term === null){
+            return [];
+        }
+
+        return $this->select(['id', 'nome'])
+        ->like('nome', $term)
+        ->get()
+        ->getResult();
+    }
  
 }
