@@ -19,6 +19,8 @@ class Usuarios extends BaseController
             'usuarios' => $this->usuarioModel->findAll(),
         ];
        
+        session()->remove('sucesso');
+
         return view('Admin/Usuarios/index', $data);
 
     }
