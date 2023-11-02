@@ -23,9 +23,13 @@
 <div class="row">
            
             <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
+            <div class="card">
+  <div class="card-header bg-primary pn-0 pt-4">
+  <h2 class="card-title text-white"><?= esc($titulo) ?></h2>
+
+</div>
                 <div class="card-body">
-                  <h4 class="card-title"><?= $titulo ?></h4>
+
 
                     <div class="ui-widget" >
                       <input id="query" placeholder="Pesquise um Usuário" class="form-control bg-light mb-5">

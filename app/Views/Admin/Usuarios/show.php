@@ -20,9 +20,9 @@
 
 <?= $this->section('conteudo'); ?>
 
-<div class="row">
+<div class="row justify-content-md-center">
            
-<div class="col-lg-6 grid-margin stretch-card">
+<div class="col-lg-4 grid-margin stretch-card">
   <div class="card">
   <div class="card-header bg-primary pn-0 pt-4">
   <h2 class="card-title text-white"><?= esc($titulo) ?></h2>

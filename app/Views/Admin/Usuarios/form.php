@@ -35,6 +35,29 @@
 
 
     <div class="form-group col-md-3">
+    <label for="email">Perfil de Acesso</label>
+    <select name="is_admin" id="" class="form-control">
+
+
+<?php
+
+if($usuario->id) :?>
+
+    <option value="1" <?= ($usuario->is_admin ? 'selected' : '') ?>>Admin</option>
+    <option value="0" <?= (!$usuario->is_admin ? 'selected' : '') ?>>Cliente</option>
+
+<?php else: ?>
+
+    <option value="1">Sim</option>
+    <option value="0" selected>Não</option>
+
+<?php endif;?>
+
+    </select>
+</div>
+
+
+    <div class="form-group col-md-3">
     <label for="ativo">Ativo</label>
    <select name="ativo" id="" class="form-control">
 
@@ -57,27 +80,7 @@ if($usuario->id) :?>
    </select>
 </div>
 
-<div class="form-group col-md-3">
-    <label for="email">Perfil de Acesso</label>
-    <select name="is_admin" id="" class="form-control">
 
-
-<?php
-
-if($usuario->id) :?>
-
-    <option value="1" <?= ($usuario->is_admin ? 'selected' : '') ?>>Admin</option>
-    <option value="0" <?= (!$usuario->is_admin ? 'selected' : '') ?>>Cliente</option>
-
-<?php else: ?>
-
-    <option value="1">Sim</option>
-    <option value="0" selected>Não</option>
-
-<?php endif;?>
-
-    </select>
-</div>
 
 </div>
 
