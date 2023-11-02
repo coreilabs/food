@@ -37,7 +37,7 @@
       <p class="card-text"> <span class="font-weight-bold">Ativo: </span> <?= ($usuario->ativo ? "Sim" : "Não" )?></p>
       <p class="card-text"> <span class="font-weight-bold">Perfil: </span> <?= ($usuario->is_admin ? "Administrador" : "Cliente" )?></p>
       <p class="card-text"> <span class="font-weight-bold">Criado: </span> <?= $usuario->criado_em->humanize() ?></p>
-      <p class="card-text"> <span class="font-weight-bold">Atualizado: </span> <?= $usuario->criado_em->humanize() ?></p>
+      <p class="card-text"> <span class="font-weight-bold">Atualizado: </span> <?= $usuario->atualizado_em->humanize() ?></p>
 
 <div class="mt-4">
   <a href="<?= site_url("admin/usuarios/")?>" class="btn btn-primary btn-sm btn-icon-text btn-icon-prepend mdi mdi-keyboard-backspace m-1"> Voltar</a>
