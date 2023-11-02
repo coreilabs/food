@@ -25,6 +25,18 @@ class Usuarios extends BaseController
 
     }
 
+    public function atualizar($id = null){
+        if($this->request->getMethod() === 'post'){
+            $usuario = $this->buscaUsuarioOu404($id);
+
+            $post = $this->request->getPost();
+            dd($usuario);
+
+        }else{
+            return redirect()->back();
+        }
+    }
+
     /**
      * @uso Controller usuarios no metodo procurar com autocomplete
      * @param string $term

@@ -246,7 +246,7 @@
             <?php if(session()->has('sucesso') ): ?>
 
               <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <strong>Perfeito! </strong> <?= session('sucesso')?>
+              <strong>Perfeito: </strong> <?= session('sucesso')?>
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
               </button>
@@ -257,7 +257,7 @@
               <?php if(session()->has('info') ): ?>
 
                 <div class="alert alert-info alert-dismissible fade show" role="alert">
-                <strong>Informação! </strong> <?= session('info')?>
+                <strong>Informação: </strong> <?= session('info')?>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -268,7 +268,7 @@
               <?php if(session()->has('atencao') ): ?>
 
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Atenção! </strong> <?= session('atencao')?>
+                <strong>Atenção: </strong> <?= session('atencao')?>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -276,10 +276,13 @@
 
               <?php endif; ?>
 
+
+                <!-- captura os erros de csrf - acao nao permitida-->
+
               <?php if(session()->has('error') ): ?>
 
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Erro! </strong> <?= session('error')?>
+                <strong>Erro: </strong> <?= session('error')?>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>

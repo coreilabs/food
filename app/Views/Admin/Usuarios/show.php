@@ -40,9 +40,9 @@
       <p class="card-text"> <span class="font-weight-bold">Atualizado: </span> <?= $usuario->criado_em->humanize() ?></p>
 
 <div class="mt-4">
-  <a href="<?= site_url("admin/usuarios/")?>" class="btn-primary btn-sm btn-icon-text btn-icon-prepend mdi mdi-keyboard-backspace"> Voltar</a>
-  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn-dark btn-sm btn-icon-text btn-icon-prepend mdi mdi-pencil"> Editar</a>
-  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn-danger btn-sm btn-icon-text btn-icon-prepend mdi mdi-delete-forever"> Excluir</a>
+  <a href="<?= site_url("admin/usuarios/")?>" class="btn btn-primary btn-sm btn-icon-text btn-icon-prepend mdi mdi-keyboard-backspace m-1"> Voltar</a>
+  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn btn-dark btn-sm btn-icon-text btn-icon-prepend mdi mdi-pencil m-1"> Editar</a>
+  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn btn-danger btn-sm btn-icon-text btn-icon-prepend mdi mdi-delete-forever m-1"> Excluir</a>
 </div>
 
     </div>
