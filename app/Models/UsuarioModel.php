@@ -22,21 +22,26 @@ class UsuarioModel extends Model
         'email'        => 'required|max_length[254]|min_length[4]|valid_email|is_unique[usuarios.email]',
         'cpf'        => 'required|exact_length[14]|is_unique[usuarios.cpf]',
         'password'     => 'required|max_length[255]|min_length[6]',
+        'telefone'     => 'required',
         'pass_confirmation' => 'required_with[password]|max_length[255]|matches[password]',
     ];
     protected $validationMessages = [
         'nome' => [
-            'required' => 'Esse campo é obrigatório.',
+            'required' => 'O campo NOME é obrigatório.',
+
+        ],      
+        'telefone' => [
+            'required' => 'O campo TELEFONE é obrigatório.',
 
         ],
         'email' => [
             'is_unique' => 'Desculpe. Esse email já está cadastrado.',
-            'required' => 'Esse campo é obrigatório.',
+            'required' => 'O campo EMAIL é obrigatório.',
 
         ],
         'cpf' => [
             'is_unique' => 'Desculpe. Esse CPF já está cadastrado.',
-            'required' => 'Esse campo é obrigatório.',
+            'required' => 'O campo CPF é obrigatório.',
 
         ]
     ];
