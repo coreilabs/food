@@ -95,16 +95,16 @@ Administrador
 
 
 <div class="mt-4">
-  <a href="<?= site_url("admin/usuarios/show/$usuario->id")?>" class="btn btn-primary btn-sm  btn-icon-text btn-icon-prepend mdi mdi-keyboard-backspace m-1"> Voltar</a>
+
   
 
-<button type="submit" style="    height: 33px;padding-top: 4px;" class="btn btn-dark btn-icon-text btn-sm  m-1">
+<button type="submit"  class="btn btn-dark btn-icon-text btn-sm  m-1">
     <i class="mdi mdi-content-save btn-icon-prepend"></i>
     Salvar
 </button>
 
 
-  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn btn-sm btn-danger btn-icon-text btn-icon-prepend mdi mdi-delete-forever m-1"> Excluir</a>
+
 </div>
 
 </div>

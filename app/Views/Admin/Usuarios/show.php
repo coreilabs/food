@@ -40,9 +40,21 @@
       <p class="card-text"> <span class="font-weight-bold">Atualizado: </span> <?= $usuario->atualizado_em->humanize() ?></p>
 
 <div class="mt-4">
-  <a href="<?= site_url("admin/usuarios/")?>" class="btn btn-primary btn-sm btn-icon-text btn-icon-prepend mdi mdi-keyboard-backspace m-1"> Voltar</a>
-  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn btn-dark btn-sm btn-icon-text btn-icon-prepend mdi mdi-pencil m-1"> Editar</a>
-  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn btn-danger btn-sm btn-icon-text btn-icon-prepend mdi mdi-delete-forever m-1"> Excluir</a>
+
+<a href="<?= site_url("admin/usuarios/")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
+  <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
+
+  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn btn-dark btn-sm btn-icon-text  m-1">
+  <i class="btn-icon-prepend mdi mdi-pencil"></i> Editar</a>
+
+  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn btn-sm btn-danger btn-icon-text  m-1">
+  <i class="mdi mdi-delete-forever btn-icon-prepend"></i>
+  Excluir</a>
+</div>
+
+
+
+
 </div>
 
     </div>

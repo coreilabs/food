@@ -23,7 +23,7 @@ class UsuarioModel extends Model
         'cpf'        => 'required|exact_length[14]|is_unique[usuarios.cpf]',
         'password'     => 'required|max_length[255]|min_length[6]',
         'telefone'     => 'required',
-        'pass_confirmation' => 'required_with[password]|max_length[255]|matches[password]',
+        'password_confirmation' => 'required_with[password]|max_length[255]|matches[password]',
     ];
     protected $validationMessages = [
         'nome' => [

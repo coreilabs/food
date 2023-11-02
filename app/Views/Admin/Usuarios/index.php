@@ -35,6 +35,9 @@
                       <input id="query" placeholder="Pesquise um Usuário" class="form-control bg-light mb-5">
                     </div>
 
+                    <a href="<?= site_url("admin/usuarios/criar")?>" class="btn btn-success btn-sm  btn-icon-text  m-1 float-right mb-5">
+  <i class="btn-icon-prepend mdi mdi-plus"></i> Cadastrar</a>
+
                   <!-- <p class="card-description">
                     Add class <code>.table-hover</code>
                   </p> -->
