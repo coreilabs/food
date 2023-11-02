@@ -20,7 +20,7 @@ class UsuarioModel extends Model
     protected $validationRules = [
         'nome'     => 'required|max_length[120]|alpha_numeric_space|min_length[3]',
         'email'        => 'required|max_length[254]|min_length[4]|valid_email|is_unique[usuarios.email]',
-        'cpf'        => 'required|exact_length[14]|is_unique[usuarios.cpf]',
+        'cpf'        => 'required|exact_length[14]|is_unique[usuarios.cpf]|validaCpf',
         'password'     => 'required|max_length[255]|min_length[6]',
         'telefone'     => 'required',
         'password_confirmation' => 'required_with[password]|max_length[255]|matches[password]',
@@ -37,6 +37,10 @@ class UsuarioModel extends Model
         'email' => [
             'is_unique' => 'Desculpe. Esse email já está cadastrado.',
             'required' => 'O campo EMAIL é obrigatório.',
+
+        ],
+        'password' => [
+            'required' => 'O campo SENHA é obrigatório.',
 
         ],
         'cpf' => [
