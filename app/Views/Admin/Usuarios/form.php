@@ -34,56 +34,64 @@
     </div>
 
 
-    <div class="form-group col-md-3">
-    <label for="email">Perfil de Acesso</label>
-    <select name="is_admin" id="" class="form-control">
 
-
-<?php
-
-if($usuario->id) :?>
-
-    <option value="1" <?= set_select('is_admin', '1'); ?> <?= ($usuario->is_admin ? 'selected' : '') ?> >Admin</option>
-    <option value="0" <?= set_select('is_admin', '2'); ?> <?= (!$usuario->is_admin ? 'selected' : '') ?> >Cliente</option>
-
-<?php else: ?>
-
-    <option value="1">Sim</option>
-    <option value="0" selected>Não</option>
-
-<?php endif;?>
-
-    </select>
-</div>
 
 
     <div class="form-group col-md-3">
-    <label for="ativo">Ativo</label>
-   <select name="ativo" id="" class="form-control">
 
-
-<?php
-
-if($usuario->id) :?>
-
-    <option value="1" <?= set_select('ativo', '1'); ?> <?= ($usuario->ativo ? 'selected' : '') ?> >Sim</option>
-    <option value="0" <?= set_select('ativo', '0'); ?> <?= (!$usuario->ativo ? 'selected' : '') ?>>Não</option>
-
-<?php else: ?>
-
-
-    <option value="1" <?= set_select('ativo', '1'); ?>>Sim</option>
-    <option value="0" <?= set_select('ativo', '0'); ?> selected="" >Não</option>
-
-    <?php endif;?>
-
-   </select>
 </div>
 
 
 
 </div>
 
+
+<div class="form-row">
+
+<div class="form-group col-md-3">
+
+
+
+<div class="form-check form-check-flat form-check-primary">
+             
+<label for="is_admin" class="form-check-label">
+
+<input type="hidden" value="0" name="is_admin">
+
+<input type="checkbox" class="form-check-input" id="is_admin" name="is_admin" value="1" <?php if(old('is_admin', $usuario->is_admin)) : ?> checked="" <?php endif; ?> >
+Administrador
+</label>
+
+                </div>
+
+</div>
+
+
+
+
+<div class="form-group col-md-3">
+
+
+
+    <div class="form-check form-check-flat form-check-primary">
+
+        <label for="ativo" class="form-check-label">
+
+            <input type="hidden" value="0" name="ativo">
+
+            <input type="checkbox" class="form-check-input" id="ativo" name="ativo" value="1" <?php if(old('ativo', $usuario->ativo)) : ?> checked="" <?php endif; ?> >
+            Ativo
+        </label>
+
+    </div>
+
+</div>
+
+
+
+
+
+</div>
 
 
 <div class="mt-4">
