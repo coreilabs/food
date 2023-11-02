@@ -30,6 +30,8 @@ class Usuarios extends BaseController
             $usuario = $this->buscaUsuarioOu404($id);
 
             $post = $this->request->getPost();
+           
+            $usuario->fill($post);
             dd($usuario);
 
         }else{
