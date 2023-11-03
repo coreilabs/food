@@ -20,6 +20,8 @@
 
 <?= $this->section('conteudo'); ?>
 
+
+
 <div class="row">
            
             <div class="col-lg-12 grid-margin stretch-card">
@@ -49,6 +51,8 @@
                           <th>Email</th>
                           <th>CPF</th>
                           <th>Ativo</th>
+                          <th>Situação</th>
+
                         </tr>
                       </thead>
                       <tbody>
@@ -62,7 +66,18 @@
                                 <td><?= $usuario->cpf;?></td>
                  
                                 
-                                <td><?php echo ($usuario->ativo ? '<label class="badge badge-primary">Sim</label>' : '<label class="badge badge-danger">Não</label>')?></td>
+                                <td><?php echo ($usuario->ativo && $usuario->deletado_em == null ? '<label class="badge badge-primary">Sim</label>' : '<label class="badge badge-danger">Não</label>')?></td>
+                                
+                                <td>
+                                  
+                                <?php echo ($usuario->deletado_em == null ? '<label class="badge badge-primary">Disponível</label>' : '<label class="badge badge-danger">Excluído</label>')?>
+                              
+                                <?php if($usuario->deletado_em != null ): ?>
+                                  <a href="<?= site_url("admin/usuarios/desfazerexclusao/$usuario->id")?>" class="badge badge-dark ml-2  ">
+  <i class="btn-icon-prepend mdi mdi-undo"></i> Desfazer</a>
+                                  <?php endif;?>
+
+                              </td>
                             </tr>
                             
                         <?php endforeach; ?>
