@@ -64,7 +64,7 @@
 
         if($this->usuario === null){
 
-            $this->usuario = $this->pegaUsuarioDaSecao();
+            $this->usuario = $this->pegaUsuarioDaSessao();
 
         }
 
@@ -84,10 +84,10 @@
 
 
     public function estaLogado(){
-        return $this->pegaUsuarioLogado() != null;
+        return $this->pegaUsuarioLogado() !== null;
     }
 
-    private function pegaUsuarioDaSecao(){
+    private function pegaUsuarioDaSessao(){
 
 
         if(!session()->has('usuario_id')){

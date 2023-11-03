@@ -97,7 +97,7 @@ class UsuarioModel extends Model
     }
 
     /**
-    *  @uso Classe Autenticacao
+    * @uso Classe Autenticacao
     * @param string $email
     * @return objeto $usuario
     */
