@@ -22,7 +22,7 @@
 
 <div class="row justify-content-md-center">
            
-<div class="col-lg-4 grid-margin stretch-card">
+<div class="col-lg-5 grid-margin stretch-card">
   <div class="card">
   <div class="card-header bg-primary pn-0 pt-4">
   <h2 class="card-title text-white"><?= esc($titulo) ?></h2>
@@ -47,7 +47,7 @@
   <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn btn-dark btn-sm btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-pencil"></i> Editar</a>
 
-  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn btn-sm btn-danger btn-icon-text  m-1">
+  <a href="<?= site_url("admin/usuarios/excluir/$usuario->id")?>" class="btn btn-sm btn-danger btn-icon-text  m-1">
   <i class="mdi mdi-delete-forever btn-icon-prepend"></i>
   Excluir</a>
 </div>
@@ -62,7 +62,6 @@
 </div>"
             
 
-          </div>
 
 
 <?= $this->endSection(); ?>
