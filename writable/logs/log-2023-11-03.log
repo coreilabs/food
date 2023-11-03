@@ -314,3 +314,282 @@ in APPPATH\Config\Services.php on line 27.
  7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-03 13:35:26 --> A ação que você requisitou não é permitida.
+in SYSTEMPATH\Security\Security.php on line 300.
+ 1 SYSTEMPATH\Security\Security.php(300): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(56): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(186): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('login/criar', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 13:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 13:35:39 --> CSRF token verified.
+CRITICAL - 2023-11-03 13:35:39 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(26): service('autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 13:36:09 --> CSRF token verified.
+CRITICAL - 2023-11-03 13:36:09 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(26): service('autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 13:36:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 13:41:19 --> CSRF token verified.
+CRITICAL - 2023-11-03 13:41:19 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(26): service('autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 13:42:42 --> CSRF token verified.
+CRITICAL - 2023-11-03 13:42:42 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(26): service('autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 13:42:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 13:42:48 --> CSRF token verified.
+CRITICAL - 2023-11-03 13:42:48 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(26): service('autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 14:45:33 --> CSRF token verified.
+CRITICAL - 2023-11-03 14:45:33 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(26): service('autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 14:46:37 --> CSRF token verified.
+CRITICAL - 2023-11-03 14:46:37 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(26): service('autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-03 16:03:59 --> A ação que você requisitou não é permitida.
+in SYSTEMPATH\Security\Security.php on line 300.
+ 1 SYSTEMPATH\Security\Security.php(300): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(56): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(186): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('login/criar', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-03 16:05:08 --> A ação que você requisitou não é permitida.
+in SYSTEMPATH\Security\Security.php on line 300.
+ 1 SYSTEMPATH\Security\Security.php(300): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(56): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(186): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('login/criar', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-03 16:05:18 --> A ação que você requisitou não é permitida.
+in SYSTEMPATH\Security\Security.php on line 300.
+ 1 SYSTEMPATH\Security\Security.php(300): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(56): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(186): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('login/criar', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 16:05:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:05:57 --> CSRF token verified.
+CRITICAL - 2023-11-03 16:05:57 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(26): service('autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 16:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:09:28 --> CSRF token verified.
+CRITICAL - 2023-11-03 16:09:28 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(26): service('autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 16:12:50 --> CSRF token verified.
+CRITICAL - 2023-11-03 16:12:50 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(26): service('autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 16:12:53 --> CSRF token verified.
+CRITICAL - 2023-11-03 16:12:53 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(26): service('autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 16:14:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:15:01 --> CSRF token verified.
+CRITICAL - 2023-11-03 16:15:01 --> Undefined variable: autenticacao
+in APPPATH\Controllers\Login.php on line 20.
+ 1 APPPATH\Controllers\Login.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: autenticacao', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Login.php', 20, [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 16:16:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:16:19 --> CSRF token verified.
+CRITICAL - 2023-11-03 16:16:19 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 APPPATH\Controllers\Login.php(27): Config\Services::autenticacao()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 16:18:22 --> CSRF token verified.
+CRITICAL - 2023-11-03 16:18:22 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 APPPATH\Controllers\Login.php(28): Config\Services::autenticacao()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 16:18:50 --> CSRF token verified.
+CRITICAL - 2023-11-03 16:18:50 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(27): service('Autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 16:18:59 --> CSRF token verified.
+CRITICAL - 2023-11-03 16:18:59 --> Class 'App\Libraries\Autenticacao' not found
+in APPPATH\Config\Services.php on line 27.
+ 1 SYSTEMPATH\Config\BaseService.php(199): Config\Services::autenticacao(false)
+ 2 APPPATH\Config\Services.php(25): CodeIgniter\Config\BaseService::getSharedInstance('autenticacao')
+ 3 SYSTEMPATH\Common.php(1022): Config\Services::autenticacao()
+ 4 APPPATH\Controllers\Login.php(27): service('autenticacao')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 16:20:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:20:59 --> CSRF token verified.
+CRITICAL - 2023-11-03 16:30:31 --> syntax error, unexpected '}', expecting ';'
+in APPPATH\Controllers\Login.php on line 35.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\food\\app\\Controllers\\Login.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Login')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Login')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Login')
+ 5 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Login', true)
+ 6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 16:30:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:30:48 --> CSRF token verified.
+CRITICAL - 2023-11-03 16:30:48 --> Class 'App\Libraries\App\Models\UsuarioModel' not found
+in APPPATH\Libraries\Autenticacao.php on line 21.
+ 1 APPPATH\Controllers\Login.php(29): App\Libraries\Autenticacao->login('admin@gmail.com', '123456')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Login->criar()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-03 16:31:22 --> CSRF token verified.
+INFO - 2023-11-03 16:31:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:31:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:31:48 --> CSRF token verified.
+INFO - 2023-11-03 16:31:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:31:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:32:01 --> CSRF token verified.
+INFO - 2023-11-03 16:32:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:33:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:34:01 --> CSRF token verified.
+INFO - 2023-11-03 16:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:38:16 --> CSRF token verified.
+INFO - 2023-11-03 16:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:39:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:39:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:40:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:40:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:40:07 --> CSRF token verified.
+INFO - 2023-11-03 16:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-03 16:47:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

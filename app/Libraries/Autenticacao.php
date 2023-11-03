@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Libraries;
+
 /**
  * @descricao essa biblioteca / classe cuidará da parte de autenticacao da nossa aplicacao
  * 
@@ -16,7 +18,7 @@
 
     public function login(string $email, string $password){
 
-        $usuarioModel = new App\Models\UsuarioModel();
+        $usuarioModel = new \App\Models\UsuarioModel();
 
         $usuario = $usuarioModel->buscaUsuarioPorEmail($email);
 
@@ -95,7 +97,7 @@
         }
         
         //instanciamos o model usuario
-        $usuarioModel = new App\Models\UsuarioModel();
+        $usuarioModel = new \App\Models\UsuarioModel();
         
         // recupero o usuario de acordo com a chave da sessao 'usuario_id'
         $usuario = $usuarioModel->find(session()->get('usuario_id'));
@@ -109,6 +111,15 @@
 
         }
     }
+
+    /**
+     * Credenciais validadas. Regeneramos a session_id e inserimos o 'usuario_id' na sessao
+     * @param object $usuario
+     * @importante: Antes de inserirmos os dados do usuario na sessao, devemos regenerar o id da sessao
+     * Pois quando carregamos a view login pela primeira vez, o valor da variavel 'ci_session' do debug toolbar é um
+     * quando é realizado o login o valor muda
+     * ao fazermos isso, estamos prevenindo session fixation attack
+     */
 
 
     private function logaUsuario(object $usuario){
