@@ -19,39 +19,77 @@
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+                
+            <?php if(session()->has('sucesso') ): ?>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+<strong>Perfeito: </strong> <?= session('sucesso')?>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+
+<?php endif; ?>
+
+<?php if(session()->has('info') ): ?>
+
+  <div class="alert alert-info alert-dismissible fade show" role="alert">
+  <strong>Informação: </strong> <?= session('info')?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+
+<?php endif; ?>
+
+<?php if(session()->has('atencao') ): ?>
+
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Atenção: </strong> <?= session('atencao')?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+
+<?php endif; ?>
+
+
+  <!-- captura os erros de csrf - acao nao permitida-->
+
+<?php if(session()->has('error') ): ?>
+
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Erro: </strong> <?= session('error')?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+
+<?php endif; ?>
               <div class="brand-logo">
                 <img src="<?= site_url('admin/'); ?>images/logo.svg" alt="logo">
               </div>
-              <h4>Hello! let's get started</h4>
-              <h6 class="font-weight-light">Sign in to continue.</h6>
-              <form class="pt-3">
+              <h4 class="mb-3">Olá, Seja bem vindo(a)!</h4>
+              <h6 class="font-weight-light mb-3">Realize o login.</h6>
+                <?php echo form_open('login/criar'); ?>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                  <input type="email" class="form-control form-control-lg" name="email" value="<?= old('email')?>" id="email" placeholder="Digite seu email">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Digite sua senha">
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
+                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" ">ENTRAR</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      Keep me signed in
-                    </label>
-                  </div>
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
+                  <a href="#" class="auth-link text-black">Esqueceu sua senha?</a>
                 </div>
-                <div class="mb-2">
-                  <button type="button" class="btn btn-block btn-facebook auth-form-btn">
-                    <i class="mdi mdi-facebook mr-2"></i>Connect using facebook
-                  </button>
-                </div>
+ 
                 <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register.html" class="text-primary">Create</a>
+                  Ainda não tem uma conta? <a href="<?= site_url('registrar')?>" class="text-primary">Criar Conta</a>
                 </div>
-              </form>
+                <?php echo form_close(); ?>
+
             </div>
           </div>
         </div>
