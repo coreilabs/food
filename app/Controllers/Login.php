@@ -59,7 +59,7 @@ class Login extends BaseController
 
     public function mostraMensagemLogout(){
 
-        return redirect()->to(site_url('login/novo'))->with('info', "Esperamos ver você novamente.");
+        return redirect()->to(site_url('login'))->with('info', "Esperamos ver você novamente.");
         
     }
 }
