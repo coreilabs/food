@@ -41,10 +41,25 @@ class Login extends BaseController
             return redirect()->back();
         }
     }
-
+    
+    /**
+     * Para que possamos exibir a mensagem de "sua sessao expiurou ou que voce acha melhor" 
+     * apos o logou, devemos fazere uma requisicao para um url, nesse caso a 'showLogoutMessage
+     * pois quando fazemos o logou todos os dados da sessao atual incluindo os flashdata sao destruidos
+     * ou seja as mensagens nao sao exibidas
+     * 
+     * portanto para conseguirmos exibi-las basta criarmos o metodo "mostraMensagemLogout que fara o redirect para a home
+     * e como se trata de um redirect a mensagem so sera exibida uma vez
+     */
     public function logout(){
         //vamos alterar esse método
         service('autenticacao')->logout();
-        return redirect()->to(site_url('login'));
+        return redirect()->to(site_url('login/mostraMensagemLogout'));
+    }
+
+    public function mostraMensagemLogout(){
+
+        return redirect()->to(site_url('login/novo'))->with('info', "Esperamos ver você novamente.");
+        
     }
 }
