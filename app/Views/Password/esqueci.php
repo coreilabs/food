@@ -69,25 +69,21 @@
               <div class="brand-logo">
                 <img src="<?= site_url('admin/'); ?>images/logo.svg" alt="logo">
               </div>
-              <h4 class="mb-3">Olá, Seja bem vindo(a)!</h4>
-              <h6 class="font-weight-light mb-3">Realize o login.</h6>
-                <?php echo form_open('login/criar'); ?>
+              <h4 class="mb-3">Recuperação de Senha</h4>
+              <h6 class="font-weight-light mb-3"><?= $titulo ?></h6>
+                <?php echo form_open('password/processaesqueci'); ?>
                 <div class="form-group">
                   <input type="email" class="form-control form-control-lg" name="email" value="<?= old('email')?>" id="email" placeholder="Digite seu email">
                 </div>
-                <div class="form-group">
-                  <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Digite sua senha">
-                </div>
+              
                 <div class="mt-3">
                   <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" ">ENTRAR</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center mt-3">
-                  <a href="<?= site_url('password/esqueci')?>" class="auth-link text-black">Esqueceu sua senha?</a>
+                  <a href="<?= site_url('login')?>" class="auth-link text-black">Lembrei minha senha</a>
                 </div>
  
-                <div class="text-center mt-4 font-weight-light">
-                  Ainda não tem uma conta? <a href="<?= site_url('registrar')?>" class="text-primary">Criar Conta</a>
-                </div>
+                
                 <?php echo form_close(); ?>
 
             </div>
