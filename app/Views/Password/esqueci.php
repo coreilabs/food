@@ -77,7 +77,7 @@
                 </div>
               
                 <div class="mt-3">
-                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" ">ENTRAR</button>
+                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" ">ESQUECI MINHA SENHA</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center mt-3">
                   <a href="<?= site_url('login')?>" class="auth-link text-black">Lembrei minha senha</a>

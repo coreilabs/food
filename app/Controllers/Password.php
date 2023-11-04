@@ -32,6 +32,8 @@ class Password extends BaseController
 
             }
 
+            $usuario->iniciaPasswordReset();
+
             dd($usuario);
 
 

@@ -182,3 +182,32 @@ INFO - 2023-11-04 17:33:33 --> CSRF token verified.
 INFO - 2023-11-04 17:33:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-04 17:33:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-04 17:33:42 --> CSRF token verified.
+INFO - 2023-11-04 17:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 17:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 17:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 17:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 17:59:14 --> CSRF token verified.
+INFO - 2023-11-04 18:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 18:12:17 --> CSRF token verified.
+CRITICAL - 2023-11-04 18:12:17 --> Call to undefined method App\Entities\Usuario::iniciaPasswordReset()
+in APPPATH\Controllers\Password.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Password->processaEsqueci()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Password))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-04 18:13:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 18:13:06 --> CSRF token verified.
+CRITICAL - 2023-11-04 18:13:06 --> Call to undefined function App\Entities\Token()
+in APPPATH\Entities\Usuario.php on line 25.
+ 1 APPPATH\Controllers\Password.php(35): App\Entities\Usuario->iniciaPasswordReset()
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Password->processaEsqueci()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Password))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-04 18:14:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 18:14:39 --> CSRF token verified.
+INFO - 2023-11-04 18:17:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 18:18:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 18:18:33 --> CSRF token verified.
