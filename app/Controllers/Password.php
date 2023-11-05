@@ -34,9 +34,7 @@ class Password extends BaseController
 
             $usuario->iniciaPasswordReset();
 
-            /**
-             * @atencao precisamos atualizar o modelo usuario
-             */
+           $this->usuarioModel->save($usuario);
 
 
             $this->enviaEmailRedefinicaoSenha($usuario);
