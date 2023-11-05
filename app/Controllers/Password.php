@@ -34,7 +34,14 @@ class Password extends BaseController
 
             $usuario->iniciaPasswordReset();
 
-            dd($usuario);
+            /**
+             * @atencao precisamos atualizar o modelo usuario
+             */
+
+
+            $this->enviaEmailRedefinicaoSenha($usuario);
+
+            return redirect()->to(site_url('login'))->with('sucesso', 'Email de redefinição de senha enviado para sua caixa de entrada.');
 
 
         }else{
@@ -42,4 +49,27 @@ class Password extends BaseController
             return redirect()->back();
         }
     }
+
+    private function enviaEmailRedefinicaoSenha(object $usuario){
+
+        
+        $email = service('email');
+
+        $email->setFrom('eldedodeouro@gmail.com', 'Delivery');
+        $email->setTo($usuario->email);
+
+        
+
+        
+        $email->setSubject('Redefinição de Senha');
+
+
+        $mensagem = view('Password/reset_email', ['token' => $usuario->reset_token]);
+
+
+        $email->setMessage($mensagem);
+        
+        $email->send();
+    }
+
 }
