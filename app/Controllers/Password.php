@@ -57,7 +57,18 @@ class Password extends BaseController
 
         $usuario = $this->usuarioModel->buscaUsuarioParaResetarSenha($token);
 
+        if($usuario != null){
+            
+            $data = [
+                'titulo' => 'Redefina a sua senha',
+                'token' => $token,
+            ];
+            return view('Password/reset', $data);
 
+        }else{
+
+            return redirect()->to(site_url('password/esqueci'))->with('atencao', 'Link inválido ou expirado');
+        }
 
     }
 

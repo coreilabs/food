@@ -115,7 +115,11 @@ class UsuarioModel extends Model
     $usuario = $this->where('reset_hash', $tokenHash)->first();
     if($usuario != null){
 
+        //verificamos se o token nao esta expirado de acordo com a data e hora atuais
+
         if($usuario->reset_expira_em < date('Y-m-d H:i:s')){
+
+            //usuario expirado setamos $usuario = null
             $usuario = null;
         }
 
