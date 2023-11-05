@@ -21,17 +21,7 @@
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
 
 
-               <?php if(session()->has('errors_model')) : ?>
-
-        <ul>
-          <?php foreach (session('errors_model') as $error):?>
-
-              <li class="text-danger"><?= $error ;?></li>
-
-            <?php endforeach; ?>
-        </ul>
-
-      <?php endif;?>
+              
 
                 
             <?php if(session()->has('sucesso') ): ?>
@@ -85,6 +75,21 @@
               </div>
               <h4 class="mb-3">Recuperação de Senha</h4>
               <h6 class="font-weight-light mb-3"><?= $titulo ?></h6>
+
+
+                 <?php if(session()->has('errors_model')) : ?>
+
+        <ul>
+          <?php foreach (session('errors_model') as $error):?>
+
+              <li class="text-danger"><?= $error ;?></li>
+
+            <?php endforeach; ?>
+        </ul>
+
+      <?php endif;?>
+
+
                 <?php echo form_open("password/processareset/$token"); ?>
 
   <div class="form-group ">

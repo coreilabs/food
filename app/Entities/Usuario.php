@@ -41,4 +41,10 @@ public function iniciaPasswordReset(){
     $this->reset_expira_em = date('Y-m-d H:i:s', time() + 7200); // expira em duas horas a partir da data e hora atuais
 }
 
+public function completaPasswordReset(){
+
+    $this->reset_hash = null;
+    $this->reset_expira_em = null;
+}
+
 }

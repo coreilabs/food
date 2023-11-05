@@ -72,6 +72,45 @@ class Password extends BaseController
 
     }
 
+    public function processareset($token = null){
+
+        if($token === null){
+
+            return redirect()->to(site_url('password/esqueci'))->with('atencao', 'Link inválido ou expirado.');
+
+        }
+
+        $usuario = $this->usuarioModel->buscaUsuarioParaResetarSenha($token);
+
+        if($usuario != null){
+            
+            $usuario->fill($this->request->getPost());
+
+            if($this->usuarioModel->save($usuario)){
+
+
+                //setammos as colunas 'reset_hash' e 'reset_expira_em' como null ao invocar o metodo abaixo
+                //que foi definido na entidade Usuario
+                //invalidamos o link antigo que foi enviado para o email do usuario
+                $usuario->completaPasswordReset();
+
+                //atualizamos novamente o usuario com os novos valores definidos acima
+
+                $this->usuarioModel->save($usuario);
+
+                return redirect()->to(site_url('login'))->with('sucesso', 'Nova senha casdastrada com sucesso.');
+
+            }else{
+                return redirect()->to(site_url("password/reset/$token"))->with('errors_model', $this->usuarioModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+            }
+
+        }else{
+
+            return redirect()->to(site_url('password/esqueci'))->with('atencao', 'Link inválido ou expirado');
+        }
+
+    }
+
     private function enviaEmailRedefinicaoSenha(object $usuario){
 
         
