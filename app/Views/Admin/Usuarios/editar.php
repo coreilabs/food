@@ -50,15 +50,13 @@
 
             <?= $this->include('Admin/Usuarios/form')?>
 
-            <div class="m-4">
+          
             <a href="<?= site_url("admin/usuarios/show/$usuario->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
-  <a href="<?= site_url("admin/usuarios/editar/$usuario->id")?>" class="btn btn-sm btn-danger btn-icon-text  m-1">
-  <i class="mdi mdi-delete-forever btn-icon-prepend"></i>
-  Excluir</a>
 
-</div>
+
+
 
 
 

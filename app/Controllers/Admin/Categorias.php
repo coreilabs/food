@@ -78,6 +78,38 @@ public function editar($id = null){
 }
 
 
+public function atualizar($id = null){
+    if($this->request->getMethod() === 'post'){
+        $categoria = $this->buscaCategoriaOu404($id);
+
+        if($categoria->deletado_em != null ){
+            return redirect()->back()->with('info',"A categoria $categoria->nome encontra-se excluída. Não é possível atualizá-la.");
+        }       
+
+        $categoria->fill($this->request->getPost());
+
+        if(!$categoria->hasChanged()){
+
+            return redirect()->back()->with('info', 'Nada foi alterado.');
+
+        }
+
+
+        if($this->categoriaModel->save($categoria)){
+            return redirect()->to(site_url("admin/categorias/show/$categoria->id"))
+            ->with('sucesso', "Categoria $categoria->nome atualizada com sucesso.");
+        }else{
+            return redirect()->back()->with('errors_model', $this->categoriaModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+        }
+
+
+
+    }else{
+        return redirect()->back();
+    }
+}
+
+
 
 /**
  * @param int $id
