@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2023 at 02:19 PM
+-- Generation Time: Nov 06, 2023 at 04:44 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -24,13 +24,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorias`
+-- Table structure for table `extras`
 --
 
-CREATE TABLE `categorias` (
+CREATE TABLE `extras` (
   `id` int(5) UNSIGNED NOT NULL,
   `nome` varchar(128) NOT NULL,
   `slug` varchar(128) NOT NULL,
+  `preco` decimal(10,2) NOT NULL,
+  `descricao` text NOT NULL,
   `ativo` tinyint(1) NOT NULL DEFAULT 1,
   `criado_em` datetime DEFAULT NULL,
   `atualizado_em` datetime DEFAULT NULL,
@@ -38,20 +40,20 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `categorias`
+-- Dumping data for table `extras`
 --
 
-INSERT INTO `categorias` (`id`, `nome`, `slug`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(1, 'Pizza Salgada', 'pizza-salgada', 1, '2023-11-06 10:16:53', '2023-11-06 10:16:53', NULL);
+INSERT INTO `extras` (`id`, `nome`, `slug`, `preco`, `descricao`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
+(1, 'Catupiry', 'catupiry', '5.00', 'Extra de catupiry como opcional ao produto', 1, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `categorias`
+-- Indexes for table `extras`
 --
-ALTER TABLE `categorias`
+ALTER TABLE `extras`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nome` (`nome`);
 
@@ -60,9 +62,9 @@ ALTER TABLE `categorias`
 --
 
 --
--- AUTO_INCREMENT for table `categorias`
+-- AUTO_INCREMENT for table `extras`
 --
-ALTER TABLE `categorias`
+ALTER TABLE `extras`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
