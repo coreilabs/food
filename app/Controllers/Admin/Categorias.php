@@ -46,4 +46,31 @@ class Categorias extends BaseController
         return $this->response->setJSON($retorno);
     
     }
+
+    
+public function show($id = null){
+
+    $categoria = $this->buscaCategoriaOu404($id);
+    $data = [
+        'titulo' => "Detalhando a $categoria->nome",
+        'categoria' => $categoria,
+    ]; 
+    
+    return view('Admin/Categorias/show', $data);
+
+}
+
+
+/**
+ * @param int $id
+ * @return objeto categoria
+ */
+private function buscaCategoriaOu404(int $id = null){
+    if(!$id || !$categoria = $this->categoriaModel->withDeleted(true)->where('id', $id)->first()){
+        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Não Encontramos a Categoria $id");
+    }
+    return $categoria;
+}
+
+
 }
