@@ -46,17 +46,16 @@
 
         
                    
-        <?= form_open("admin/usuarios/cadastrar")?>
+        <?= form_open("admin/categorias/cadastrar")?>
 
-            <?= $this->include('Admin/Usuarios/form')?>
+            <?= $this->include('Admin/Categorias/form')?>
 
-            <div class="m-4">
-            <a href="<?= site_url("admin/usuarios/")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
+  
+            <a href="<?= site_url("admin/categorias/")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
 
 
-</div>
 
           <?= form_close();?>
 

@@ -27,8 +27,9 @@ class CategoriaModel extends Model
     protected $validationMessages = [
         'nome' => [
             'required' => 'O campo NOME é obrigatório.',
+            'is_unique' => 'Esta categoria já está cadastrada.'
 
-        ]
+        ],
     ];
 
     protected $beforeInsert = ['criaSlug'];
