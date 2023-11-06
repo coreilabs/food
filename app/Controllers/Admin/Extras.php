@@ -64,6 +64,7 @@ class Extras extends BaseController
             $extra = new Extra($this->request->getPost());
     
      
+            if($this->extraModel->save($extra)){
                 return redirect()->to(site_url("admin/extras/show/".$this->extraModel->getInsertID()))
                 ->with('sucesso', "Extra $extra->nome cadastrado com sucesso.");
             }else{
