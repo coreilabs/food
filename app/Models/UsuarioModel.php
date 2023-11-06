@@ -73,7 +73,11 @@ class UsuarioModel extends Model
 
 
 
-
+/**
+ * @uso Controller usuarios no metodo procurar com o autocomplete
+ * @param string $term
+ * @return array usuarios
+ */
     public function procurar($term){
         if($term === null){
             return [];
@@ -81,6 +85,7 @@ class UsuarioModel extends Model
 
         return $this->select(['id', 'nome'])
         ->like('nome', $term)
+        ->withDeleted(true)
         ->get()
         ->getResult();
     }
