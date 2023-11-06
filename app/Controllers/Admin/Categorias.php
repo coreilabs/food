@@ -60,6 +60,24 @@ public function show($id = null){
 
 }
 
+public function editar($id = null){
+
+    $categoria = $this->buscaCategoriaOu404($id);
+
+    if($categoria->deletado_em != null ){
+        return redirect()->back()->with('info',"A categoria $categoria->nome encontra-se excluído. Não é possível editá-la.");
+    }
+
+    $data = [
+        'titulo' => "Editando a categoria $categoria->nome",
+        'categoria' => $categoria,
+    ]; 
+    
+    return view('Admin/Categorias/editar', $data);
+
+}
+
+
 
 /**
  * @param int $id
