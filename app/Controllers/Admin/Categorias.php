@@ -171,19 +171,19 @@ public function excluir($id = null){
 
 public function desfazerExclusao($id = null){
 
-$categoria = $this->buscaCategoriaOu404($id);
+    $categoria = $this->buscaCategoriaOu404($id);
 
-if($categoria->deletado_em == null ){
+    if($categoria->deletado_em == null ){
 
-    return redirect()->back()->with('info', 'Apenas categorias excluídas podem ser recuperadas.');
+        return redirect()->back()->with('info', 'Apenas categorias excluídas podem ser recuperadas.');
 
-}
+    }
 
-if($this->categoriaModel->desfazerExclusao($id)){
-    return redirect()->back()->with('sucesso', 'Exclusão desfeita com sucesso.');
-} else {
-    return redirect()->back()->with('errors_model', $this->categoriaModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
-}
+    if($this->categoriaModel->desfazerExclusao($id)){
+        return redirect()->back()->with('sucesso', 'Exclusão desfeita com sucesso.');
+    } else {
+        return redirect()->back()->with('errors_model', $this->categoriaModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+    }
 
 
 }

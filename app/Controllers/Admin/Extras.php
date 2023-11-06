@@ -46,6 +46,38 @@ class Extras extends BaseController
     
     }
 
+    public function criar($id = null){
+
+        $extra = new Extra();
+        $data = [
+            'titulo' => "Cadastrando Extra",
+            'extra' => $extra,
+        ]; 
+        
+        return view('Admin/Extras/criar', $data);
+
+    }
+
+    public function cadastrar(){
+        if($this->request->getMethod() === 'post'){
+
+            $extra = new Extra($this->request->getPost());
+    
+     
+                return redirect()->to(site_url("admin/extras/show/".$this->extraModel->getInsertID()))
+                ->with('sucesso', "Extra $extra->nome cadastrado com sucesso.");
+            }else{
+                return redirect()->back()->with('errors_model', $this->extraModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+            }
+    
+    
+    
+        }else{
+            return redirect()->back();
+        }
+    }
+
+
     public function show($id = null){
 
         $extra = $this->buscaExtraOu404($id);
@@ -117,4 +149,50 @@ private function buscaExtraOu404(int $id = null){
     }
     return $extra;
 }
+
+public function excluir($id = null){
+
+    $extra = $this->buscaExtraOu404($id);
+
+    if($extra->deletado_em != null ){
+        return redirect()->back()->with('info',"O extra $extra->nome já encontra-se excluído.");
+    }
+
+ 
+    if($this->request->getMethod() === 'post'){
+        $this->extraModel->delete($id);
+        return redirect()->to(site_url('admin/extras'))->with('sucesso', "Extra $extra->nome excluído com sucesso.");
+
+    }
+
+    $data = [
+        'titulo' => "Excluindo $extra->nome",
+        'extra' => $extra,
+    ]; 
+    
+    return view('Admin/Extras/excluir', $data);
+
+}
+
+
+public function desfazerExclusao($id = null){
+
+    $extra = $this->buscaExtraOu404($id);
+
+    if($extra->deletado_em == null ){
+
+        return redirect()->back()->with('info', 'Apenas extras excluídos podem ser recuperados.');
+
+    }
+
+    if($this->extraModel->desfazerExclusao($id)){
+        return redirect()->back()->with('sucesso', 'Exclusão desfeita com sucesso.');
+    } else {
+        return redirect()->back()->with('errors_model', $this->extraModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+    }
+
+
+}
+
+
 }

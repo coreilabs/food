@@ -46,10 +46,10 @@
 
         
                    
-        <?= form_open("admin/categorias/excluir/$categoria->id")?>
+        <?= form_open("admin/extras/excluir/$extra->id")?>
 
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Atenção: </strong> Tem certeza da exclusão da categoria <?= esc($categoria->nome) ?>?
+  <strong>Atenção: </strong> Tem certeza da exclusão do extra <?= esc($extra->nome) ?>?
 
 </div>
 
@@ -69,7 +69,7 @@
 
 
 
-  <a href="<?= site_url("admin/categorias/show/$categoria->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
+  <a href="<?= site_url("admin/extras/show/$extra->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
  
