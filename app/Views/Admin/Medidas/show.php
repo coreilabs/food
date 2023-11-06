@@ -32,18 +32,17 @@
 
 
 
-      <p class="card-text"> <span class="font-weight-bold">Nome: </span> <?= esc($extra->nome)?></p>
-      <p class="card-text"> <span class="font-weight-bold">Slug do Extra: </span> <?= esc($extra->slug)?></p>
-      <p class="card-text"> <span class="font-weight-bold">Ativo: </span> <?= ($extra->ativo ? "Sim" : "Não" )?></p>
+      <p class="card-text"> <span class="font-weight-bold">Nome: </span> <?= esc($medida->nome)?></p>
+       <p class="card-text"> <span class="font-weight-bold">Ativo: </span> <?= ($medida->ativo ? "Sim" : "Não" )?></p>
 
-      <p class="card-text"> <span class="font-weight-bold">Criado: </span> <?= $extra->criado_em->humanize() ?></p>
+      <p class="card-text"> <span class="font-weight-bold">Criado: </span> <?= $medida->criado_em->humanize() ?></p>
 
-      <?php if($extra->deletado_em == null ):?>
+      <?php if($medida->deletado_em == null ):?>
 
-      <p class="card-text"> <span class="font-weight-bold">Atualizado: </span> <?= $extra->atualizado_em->humanize() ?></p>
+      <p class="card-text"> <span class="font-weight-bold">Atualizado: </span> <?= $medida->atualizado_em->humanize() ?></p>
 
       <?php else: ?>
-        <p class="card-text"> <span class="font-weight-bold text-danger">Excluído: </span> <?= $extra->deletado_em->humanize() ?></p>
+        <p class="card-text"> <span class="font-weight-bold text-danger">Excluído: </span> <?= $medida->deletado_em->humanize() ?></p>
 
       <?php endif; ?>
 
@@ -52,16 +51,16 @@
 <div class="mt-4">
 
 
-<?php if($extra->deletado_em == null ):?>
+<?php if($medida->deletado_em == null ):?>
 
-  <a href="<?= site_url("admin/extras/")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
+  <a href="<?= site_url("admin/medidas/")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
-  <a href="<?= site_url("admin/extras/excluir/$extra->id")?>" class="btn btn-sm btn-danger btn-icon-text  m-1">
+  <a href="<?= site_url("admin/medidas/excluir/$medida->id")?>" class="btn btn-sm btn-danger btn-icon-text  m-1">
   <i class="mdi mdi-delete-forever btn-icon-prepend"></i>
   Excluir</a>
 
-  <a href="<?= site_url("admin/extras/editar/$extra->id")?>" class="btn btn-dark btn-sm btn-icon-text  m-1">
+  <a href="<?= site_url("admin/medidas/editar/$medida->id")?>" class="btn btn-dark btn-sm btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-pencil"></i> Editar</a>
 
 
@@ -70,10 +69,10 @@
 
   
 
-  <a href="<?= site_url("admin/extras/")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
+  <a href="<?= site_url("admin/medidas/")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
-  <a href="<?= site_url("admin/extras/desfazerexclusao/$extra->id")?>" class="btn btn-dark ml-2 btn-sm  " data-toggle="tooltip" data-placement="top" title="Desfazer exclusão">
+  <a href="<?= site_url("admin/medidas/desfazerexclusao/$medida->id")?>" class="btn btn-dark ml-2 btn-sm  " data-toggle="tooltip" data-placement="top" title="Desfazer exclusão">
   <i class="btn-icon-prepend mdi mdi-undo"></i> Desfazer</a>
 
 <?php endif; ?>
