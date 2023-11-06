@@ -10,6 +10,10 @@
         <textarea name="descricao" class="form-control" id="" cols="30" rows="3" id="descricao"><?= old('descricao', esc($extra->descricao)) ?></textarea>
        
     </div>
+    <div class="form-group col-md-6 ">
+        <label for="nome">Preço de Venda (R$)</label>
+        <input type="text" class="form-control money" name="preco" id="preco" placeholder="Preço" value="<?= old('preco', esc($extra->preco)) ?>">
+    </div>
 
   
 </div>

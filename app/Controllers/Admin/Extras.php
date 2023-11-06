@@ -95,7 +95,7 @@ class Extras extends BaseController
     
             if($this->extraModel->save($extra)){
                 return redirect()->to(site_url("admin/extras/show/$extra->id"))
-                ->with('sucesso', "Extra $extra->nome atualizada com sucesso.");
+                ->with('sucesso', "Extra $extra->nome atualizado com sucesso.");
             }else{
                 return redirect()->back()->with('errors_model', $this->extraModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
             }
