@@ -45,16 +45,89 @@ class Medidas extends BaseController
     
     }
 
+    public function criar($id = null){
+
+        $medida = new Medida();
+        $data = [
+            'titulo' => "Criando nova medida",
+            'medida' => $medida,
+        ]; 
+        
+        return view('Admin/Medidas/criar', $data);
+
+    }
+
+    public function cadastrar(){
+        if($this->request->getMethod() === 'post'){
+            $medida = new Medida($this->request->getPost());  
+    
+    
+            if($this->medidaModel->save($medida)){
+                return redirect()->to(site_url("admin/medidas/show/".$this->medidaModel->getInsertID()))
+                ->with('sucesso', "Medida $medida->nome cadastrada com sucesso.");
+            }else{
+                return redirect()->back()->with('errors_model', $this->medidaModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+            }
+    
+    
+    
+        }else{
+            return redirect()->back();
+        }
+    }
+
     public function show($id = null){
 
         $medida = $this->buscaMedidaOu404($id);
         $data = [
-            'titulo' => "Detalhando o $medida->nome",
+            'titulo' => "Detalhando a medida $medida->nome",
             'medida' => $medida,
         ]; 
         
         return view('Admin/Medidas/show', $data);
 
+    }
+    public function editar($id = null){
+
+        $medida = $this->buscaMedidaOu404($id);
+        $data = [
+            'titulo' => "Editando a medida $medida->nome",
+            'medida' => $medida,
+        ]; 
+        
+        return view('Admin/Medidas/editar', $data);
+
+    }
+
+    public function atualizar($id = null){
+        if($this->request->getMethod() === 'post'){
+            $medida = $this->buscaMedidaOu404($id);
+    
+            if($medida->deletado_em != null ){
+                return redirect()->back()->with('info',"A medida $medida->nome encontra-se excluída. Não é possível atualizá-la.");
+            }       
+    
+            $medida->fill($this->request->getPost());
+    
+            if(!$medida->hasChanged()){
+    
+                return redirect()->back()->with('info', 'Nada foi alterado.');
+    
+            }
+    
+    
+            if($this->medidaModel->save($medida)){
+                return redirect()->to(site_url("admin/medidas/show/$medida->id"))
+                ->with('sucesso', "Medida $medida->nome atualizada com sucesso.");
+            }else{
+                return redirect()->back()->with('errors_model', $this->medidaModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+            }
+    
+    
+    
+        }else{
+            return redirect()->back();
+        }
     }
 
         /**

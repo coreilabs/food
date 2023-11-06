@@ -31,7 +31,7 @@ class MedidaModel extends Model
             ],
         ];
 
-            /**
+    /**
  * @uso Controller extras no metodo procurar com o autocomplete
  * @param string $term
  * @return array medidas
@@ -48,6 +48,13 @@ class MedidaModel extends Model
     ->withDeleted(true)
     ->get()
     ->getResult();
+}
+
+public function desfazerExclusao(int $id){
+    return $this->protect(false)
+    ->where('id', $id)
+    ->set('deletado_em', null)
+    ->update();
 }
 
    

@@ -46,12 +46,12 @@
 
         
                    
-        <?= form_open("admin/extras/cadastrar")?>
+        <?= form_open("admin/medidas/cadastrar")?>
 
-            <?= $this->include('Admin/Extras/form')?>
+            <?= $this->include('Admin/Medidas/form')?>
 
   
-            <a href="<?= site_url("admin/extras/")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
+            <a href="<?= site_url("admin/medidas/")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
 
