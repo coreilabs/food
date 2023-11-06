@@ -99,7 +99,7 @@ public function editar($id = null){
     $categoria = $this->buscaCategoriaOu404($id);
 
     if($categoria->deletado_em != null ){
-        return redirect()->back()->with('info',"A categoria $categoria->nome encontra-se excluído. Não é possível editá-la.");
+        return redirect()->back()->with('info',"A categoria $categoria->nome encontra-se excluída. Não é possível editá-la.");
     }
 
     $data = [

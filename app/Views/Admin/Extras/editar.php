@@ -20,9 +20,9 @@
 
 <?= $this->section('conteudo'); ?>
 
-<div class="row">
+<div class="row justify-content-md-center">
            
-  <div class="col-lg-12 grid-margin stretch-card">
+  <div class="col-lg-6  grid-margin stretch-card">
     <div class="card">
     <div class="card-header bg-primary pn-0 pt-4">
   <h2 class="card-title text-white"><?= esc($titulo) ?></h2>
@@ -46,12 +46,12 @@
 
         
                    
-        <?= form_open("admin/categorias/atualizar/$categoria->id")?>
+        <?= form_open("admin/extras/atualizar/$extra->id")?>
 
-            <?= $this->include('Admin/Categorias/form')?>
+            <?= $this->include('Admin/Extras/form')?>
 
           
-            <a href="<?= site_url("admin/categorias/show/$categoria->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
+            <a href="<?= site_url("admin/extras/show/$extra->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
 

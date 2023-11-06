@@ -1,8 +1,14 @@
 <div class="form-row">
 
-    <div class="form-group col-md-6 ">
+    <div class="form-group col-md-12 ">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?= old('nome', esc($categoria->nome)) ?>">
+        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?= old('nome', esc($extra->nome)) ?>">
+    </div>
+
+    <div class="form-group col-md-12 ">
+        <label for="nome">Descrição</label>
+        <textarea name="descricao" class="form-control" id="" cols="30" rows="3" id="descricao"><?= old('descricao', esc($extra->descricao)) ?></textarea>
+       
     </div>
 
   
@@ -15,7 +21,7 @@
 
             <input type="hidden" value="0" name="ativo">
 
-            <input type="checkbox" class="form-check-input" id="ativo" name="ativo" value="1" <?php if(old('ativo', $categoria->ativo)) : ?> checked="" <?php endif; ?> >
+            <input type="checkbox" class="form-check-input" id="ativo" name="ativo" value="1" <?php if(old('ativo', $extra->ativo)) : ?> checked="" <?php endif; ?> >
             Ativo
         </label>
 
