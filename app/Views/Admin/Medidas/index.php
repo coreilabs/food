@@ -34,10 +34,10 @@
 
 
                     <div class="ui-widget" >
-                      <input id="query" placeholder="Pesquise por um extra de produto" class="form-control bg-light mb-5">
+                      <input id="query" placeholder="Pesquise por uma medida de produto" class="form-control bg-light mb-5">
                     </div>
 
-                    <a href="<?= site_url("admin/extras/criar")?>" class="btn btn-success btn-sm  btn-icon-text  m-1 float-right mb-5">
+                    <a href="<?= site_url("admin/medidas/criar")?>" class="btn btn-success btn-sm  btn-icon-text  m-1 float-right mb-5">
   <i class="btn-icon-prepend mdi mdi-plus"></i> Cadastrar</a>
 
                   <!-- <p class="card-description">
@@ -48,7 +48,6 @@
                       <thead>
                         <tr>
                           <th>Nome</th>
-                          <th>Preço</th>
                           <th>Data de Criação</th>
                           <th>Ativo</th>
                           <th>Situação</th>
@@ -56,23 +55,22 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach($extras as $extra):?>
+                        <?php foreach($medidas as $medida):?>
 
                             <tr>
-                                <td><a href="<?= site_url("admin/extras/show/$extra->id")?>">  <?= $extra->nome;?></a></td>
-                                <td>R$ <?= esc(number_format($extra->preco,2));?></td>
-                                <td><?= $extra->criado_em->humanize();?></td>
+                                <td><a href="<?= site_url("admin/medidas/show/$medida->id")?>">  <?= $medida->nome;?></a></td>
+                                <td><?= $medida->criado_em->humanize();?></td>
                              
                  
                                 
-                                <td><?php echo ($extra->ativo && $extra->deletado_em == null ? '<label class="badge badge-primary">Sim</label>' : '<label class="badge badge-danger">Não</label>')?></td>
+                                <td><?php echo ($medida->ativo && $medida->deletado_em == null ? '<label class="badge badge-primary">Sim</label>' : '<label class="badge badge-danger">Não</label>')?></td>
                                 
                                 <td>
                                   
-                                <?php echo ($extra->deletado_em == null ? '<label class="badge badge-primary">Disponível</label>' : '<label class="badge badge-danger">Excluído</label>')?>
+                                <?php echo ($medida->deletado_em == null ? '<label class="badge badge-primary">Disponível</label>' : '<label class="badge badge-danger">Excluído</label>')?>
                               
-                                <?php if($extra->deletado_em != null ): ?>
-                                  <a href="<?= site_url("admin/extras/desfazerexclusao/$extra->id")?>" class="badge badge-dark ml-2  ">
+                                <?php if($medida->deletado_em != null ): ?>
+                                  <a href="<?= site_url("admin/medidas/desfazerexclusao/$medida->id")?>" class="badge badge-dark ml-2  ">
   <i class="btn-icon-prepend mdi mdi-undo"></i> Desfazer</a>
                                   <?php endif;?>
 
@@ -106,7 +104,7 @@
         $( "#query" ).autocomplete({
             source: function (request, response){
                 $.ajax({
-                    url: "<?php echo site_url('admin/extras/procurar'); ?> ",
+                    url: "<?php echo site_url('admin/medidas/procurar'); ?> ",
                     dataType: "json",
                     data:{
                         term: request.term
@@ -114,7 +112,7 @@
                     success: function (data) {
                         if(data.length < 1){
                             var data = [{
-                                label: 'Extra não encontrado',
+                                label: 'Medida não encontrada',
                                 value: -1,
                                 }
                             ];
@@ -129,7 +127,7 @@
                     $(this).val("");
                     return false;
                 }else {
-                    window.location.href = '<?php echo site_url('admin/extras/show/')?>' + ui.item.id;
+                    window.location.href = '<?php echo site_url('admin/medidas/show/')?>' + ui.item.id;
                 }
             }
         }); // fim auto-complete
