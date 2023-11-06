@@ -144,6 +144,51 @@ public function atualizar($id = null){
 }
 
 
+public function excluir($id = null){
+
+    $categoria = $this->buscaCategoriaOu404($id);
+
+    if($categoria->deletado_em != null ){
+        return redirect()->back()->with('info',"A categoria $categoria->nome já encontra-se excluída.");
+    }
+
+ 
+    if($this->request->getMethod() === 'post'){
+        $this->categoriaModel->delete($id);
+        return redirect()->to(site_url('admin/categorias'))->with('sucesso', "Categoria $categoria->nome excluída com sucesso.");
+
+    }
+
+    $data = [
+        'titulo' => "Excluindo $categoria->nome",
+        'categoria' => $categoria,
+    ]; 
+    
+    return view('Admin/Categorias/excluir', $data);
+
+}
+
+
+public function desfazerExclusao($id = null){
+
+$categoria = $this->buscaCategoriaOu404($id);
+
+if($categoria->deletado_em == null ){
+
+    return redirect()->back()->with('info', 'Apenas categorias excluídas podem ser recuperadas.');
+
+}
+
+if($this->categoriaModel->desfazerExclusao($id)){
+    return redirect()->back()->with('sucesso', 'Exclusão desfeita com sucesso.');
+} else {
+    return redirect()->back()->with('errors_model', $this->categoriaModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+}
+
+
+}
+
+
 
 /**
  * @param int $id
