@@ -7,34 +7,42 @@ use CodeIgniter\Model;
 class CategoriaModel extends Model
 {
     protected $table            = 'categorias';
-    protected $primaryKey       = 'id';
-    protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $returnType       = 'App\Entities\Categoria';
+    protected $useSoftDeletes   = true;
+    protected $allowedFields    = ['nome', 'ativo', 'slug'];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    protected $createdField  = 'criado_em';
+    protected $updatedField  = 'atualizado_em';
+    protected $deletedField  = 'deletado_em';
 
     // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
 
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+    //Validações
+    protected $validationRules = [
+        'nome'     => 'required|min_length[2]|max_length[120]|is_unique[categorias.nome]',
+    ];
+    protected $validationMessages = [
+        'nome' => [
+            'required' => 'O campo NOME é obrigatório.',
+
+        ]
+    ];
+
+    protected $beforeInsert = ['criaSlug'];
+    protected $beforeUpdate = ['criaSlug'];
+
+    protected function criaSlug(array $data){
+        if (isset($data['data']['nome'])){
+            $data['data']['slug'] = mb_url_title($data['data']['nome'], '-', true);
+
+
+        }
+
+     
+        return $data;
+    }
+
 }
