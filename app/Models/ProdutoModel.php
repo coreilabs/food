@@ -12,7 +12,7 @@ class ProdutoModel extends Model
     protected $allowedFields    = ['categoria_id', 'nome', 'slug', 'ingredientes', 'ativo', 'imagem' ];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'criado_em';
     protected $updatedField  = 'atualizado_em';
@@ -34,6 +34,11 @@ class ProdutoModel extends Model
         ],
         'categoria_id' => [
             'required' => 'O campo CATEGORIA é obrigatório.',
+
+        ],
+        'ingredientes' => [
+            'required' => 'O campo INGREDIENTES é obrigatório.',
+            
 
         ],
     ];
