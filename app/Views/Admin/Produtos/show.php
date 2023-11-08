@@ -31,6 +31,16 @@
     <div class="card-body">
 
 
+    <?php if($produto->imagem):?>
+      <img class="card-img-top" src="..." alt="Card image cap">
+    <?php else: ?>
+      <img class="card-img-top" src="<?= site_url('admin/images/produto-sem-imagem.webp')?>" alt="Produto sem imagem por enquanto">
+
+      <?php endif;?>
+
+
+      <a href="<?= site_url("admin/produtos/editarimagem/$produto->id")?>" class="btn btn-outline-success btn-sm mt-3 mb-3"><i class="mdi mdi-image btn-icon-prepend"></i> Editar Imagem</a>
+
 
       <p class="card-text"> <span class="font-weight-bold">Nome: </span> <?= esc($produto->nome)?></p>
       <p class="card-text"> <span class="font-weight-bold">Categoria: </span> <?= esc($produto->categoria)?></p>
