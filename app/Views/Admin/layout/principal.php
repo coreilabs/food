@@ -195,6 +195,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="<?= site_url('admin/produtos')?>">
+              <i class="mdi mdi-ruler menu-icon"></i>
+              <span class="menu-title">Produtos</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="<?= site_url('admin/usuarios')?>">
               <i class="mdi mdi-account-search menu-icon"></i>
               <span class="menu-title">Usuarios</span>
