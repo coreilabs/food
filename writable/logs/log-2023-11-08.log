@@ -51,3 +51,15 @@ INFO - 2023-11-08 10:25:04 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-11-08 10:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-08 10:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-08 10:31:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-08 10:59:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-08 10:59:51 --> Undefined variable: categoriaModel
+in APPPATH\Controllers\Admin\Produtos.php on line 16.
+ 1 APPPATH\Controllers\Admin\Produtos.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: categoriaModel', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 16, [])
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Admin\Produtos->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-08 11:00:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-08 11:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-08 11:00:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

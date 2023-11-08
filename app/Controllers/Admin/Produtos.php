@@ -8,9 +8,12 @@ use App\Entities\Produto;
 class Produtos extends BaseController
 {
     private $produtoModel;
+    private $categoriaModel;
+
 
     public function __construct(){
         $this->produtoModel = new \App\Models\ProdutoModel();
+        $this->categoriaModel  = new \App\Models\CategoriaModel();
     }
     public function index()
     {
@@ -60,6 +63,19 @@ class Produtos extends BaseController
         ]; 
         
         return view('Admin/Produtos/show', $data);
+
+    }
+
+    public function editar($id = null){
+
+        $produto = $this->buscaProdutoOu404($id);
+        $data = [
+            'titulo' => "Editando o produto $produto->nome",
+            'produto' => $produto,
+            'categorias' => $this->categoriaModel->where('ativo', true)->findAll()
+        ]; 
+        
+        return view('Admin/Produtos/editar', $data);
 
     }
 
