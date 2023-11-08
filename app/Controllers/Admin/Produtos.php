@@ -28,4 +28,53 @@ class Produtos extends BaseController
 
 
     }
+
+    public function procurar(){
+
+        if(!$this->request->isAJAX()){
+            exit('Página não encontrada');
+    
+        }
+    
+        $produtos = $this->produtoModel->procurar($this->request->getGet('term'));
+    
+        $retorno = [];
+    
+        foreach($produtos as $produto){
+            $data['id'] = $produto->id;
+            $data['value'] = $produto->nome;
+    
+            $retorno[] = $data;
+        }
+    
+        return $this->response->setJSON($retorno);
+    
+    }
+
+    public function show($id = null){
+
+        $produto = $this->buscaProdutoOu404($id);
+        $data = [
+            'titulo' => "Detalhando o $produto->nome",
+            'produto' => $produto,
+        ]; 
+        
+        return view('Admin/Produtos/show', $data);
+
+    }
+
+        /**
+ * @param int $id
+ * @return objeto produto
+ */
+private function buscaProdutoOu404(int $id = null){
+    if(!$id || !$produto = $this->produtoModel->select('produtos.*, categorias.nome AS categoria')
+    ->join('categorias', 'categorias.id = produtos.categoria_id')
+    ->withDeleted(true)
+    ->first()){
+        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Não Encontramos o Produto $id");
+    }
+    return $produto;
+}
+
 }
