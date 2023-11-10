@@ -152,6 +152,34 @@ class Produtos extends BaseController
 
     }
 
+
+    public function upload($id = null){
+        $produto = $this->buscaProdutoOu404($id);
+        $imagem = $this->request->getFile('foto_produto');
+
+        if(!$imagem->isValid()){
+
+            $codigoErro = $imagem->getError();
+            if($codigoErro == UPLOAD_ERR_NO_FILE){
+
+                return redirect()->back()->with('atencao', 'Nenhuma imagem foi selecionada.');
+
+            }
+
+        }
+
+        $tamanhoImagem = $imagem->getSizeByUnit('mb');
+
+        if($tamanhoImagem > 3){
+            return redirect()->back()->with('atencao', 'A imagem selecionada é muito grande. Tamanho máximo permitido 3mb.');
+
+        }
+
+        dd($imagem);
+
+    }
+
+
         /**
  * @param int $id
  * @return objeto produto
