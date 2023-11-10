@@ -33,7 +33,7 @@
 
     <div class="form-group col-md-12 ">
         <label for="ingredientes">Ingredientes</label>
-        <textarea name="ingredientes" class="form-control" id="" cols="30" rows="3" id="ingredientes"><?= old('ingredientes', esc($produto->ingredientes)) ?></textarea>
+        <textarea name="ingredientes" class="form-control" cols="30" rows="3" id="ingredientes"><?= old('ingredientes', esc($produto->ingredientes)) ?></textarea>
        
     </div>
 
