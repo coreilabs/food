@@ -193,11 +193,42 @@ class Produtos extends BaseController
 
             return redirect()->back()->with('atencao', 'A imagem não pode ser menor do que 400x400 pixels.');
 
+        }
+
+        // a partir desse ponto fazemos o store da imagem
+        
+        //fazendo o store da imagem e recuperando o caminho da mesma
+        $imagemCaminho = $imagem->store('produtos');
+
+        $imagemCaminho = WRITEPATH . 'uploads/' . $imagemCaminho;
+
+
+        //fazendo o resize da mesma imagem
+        service('image')
+        ->withFile($imagemCaminho)
+        ->fit(400, 400, 'center')
+        ->save($imagemCaminho);
+
+        //recuperando a imagem antiga para exclui-la
+        $imagemAntiga = $produto->imagem;
+
+        //atribuindo a nova imagem
+        $produto->imagem = $imagem->getName();
+
+        // atualizando a imagem do produto
+        $this->produtoModel->save($produto);
+
+        //definindo o caminho da imagem antiga
+        $caminhoImagem = WRITEPATH . 'uploads/produtos/' . $imagemAntiga;
+
+        if(is_file($caminhoImagem)){
+
+            unlink($caminhoImagem);
 
         }
 
-
-        dd($imagem);
+        return redirect()->to(site_url("admin/produtos/show/$produto->id"))->with('sucesso', 'Imagem alterada com sucesso');
+        
 
     }
 
