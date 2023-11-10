@@ -90,3 +90,41 @@ in APPPATH\Controllers\Admin\Produtos.php on line 240.
  4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-10 18:26:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-10 18:26:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-10 18:26:05 --> Undefined variable: imagemCaminho
+in APPPATH\Controllers\Admin\Produtos.php on line 245.
+ 1 APPPATH\Controllers\Admin\Produtos.php(245): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: imagemCaminho', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 245, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651075_eaec12a05d1befe279d1.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-10 18:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-10 18:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-10 18:26:29 --> Undefined variable: imagemCaminho
+in APPPATH\Controllers\Admin\Produtos.php on line 245.
+ 1 APPPATH\Controllers\Admin\Produtos.php(245): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: imagemCaminho', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 245, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651075_eaec12a05d1befe279d1.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-10 18:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-10 18:26:54 --> Undefined variable: imagemCaminho
+in APPPATH\Controllers\Admin\Produtos.php on line 245.
+ 1 APPPATH\Controllers\Admin\Produtos.php(245): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: imagemCaminho', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 245, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651075_eaec12a05d1befe279d1.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-10 18:29:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-10 18:29:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-10 18:29:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-10 18:29:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-10 18:30:01 --> CSRF token verified.
+INFO - 2023-11-10 18:30:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-10 18:30:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-10 18:30:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-10 18:30:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

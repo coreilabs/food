@@ -32,7 +32,7 @@
 
     <div class="text-center">
       <?php if($produto->imagem):?>
-      <img class="card-img-top" src="..." alt="Card image cap">
+      <img class="card-img-top" src="<?= site_url("admin/produtos/imagem/$produto->imagem")?>" alt="<?= esc($produto->nome)?>">
       <?php else: ?>
       <img class="card-img-top w-50" src="<?= site_url('admin/images/produto-sem-imagem.webp')?>" alt="Produto sem imagem por enquanto">
 

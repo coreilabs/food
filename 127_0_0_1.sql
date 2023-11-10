@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2023 at 03:43 PM
+-- Generation Time: Nov 10, 2023 at 10:33 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -151,7 +151,7 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `categoria_id`, `nome`, `slug`, `ingredientes`, `ativo`, `imagem`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(1, 1, 'Pizza de chocolate com morango e MM', 'pizza-de-chocolate-com-morango-e-mm', 'Pizza de chocolate com morango', 1, '', '2023-11-08 08:56:07', '2023-11-08 08:56:07', NULL),
+(1, 1, 'Pizza de chocolate com morango e MM', 'pizza-de-chocolate-com-morango-e-mm', 'Pizza de chocolate com morango', 1, '1699651801_56327ea3fd0fd94d5577.png', '2023-11-08 08:56:07', '2023-11-10 18:30:01', NULL),
 (4, 2, 'Porção Batata com Bacon', 'porcao-batata-com-bacon', 'Batata e bacon', 1, '', '2023-11-08 11:41:58', '2023-11-08 11:41:58', NULL);
 
 -- --------------------------------------------------------
