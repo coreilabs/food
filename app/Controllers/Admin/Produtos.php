@@ -175,6 +175,28 @@ class Produtos extends BaseController
 
         }
 
+        $tipoImagem = $imagem->getMimeType();
+
+        $tipoImagemLimpo = explode('/', $tipoImagem);
+        $tiposPermitidos = ['jpeg', 'png', 'webp', 'jpg'];
+
+        if(!in_array($tipoImagemLimpo[1], $tiposPermitidos)){
+
+            return redirect()->back()->with('atencao', 'O arquivo não tem o formato permitido. Apenas: ' . implode(', ', $tiposPermitidos));
+
+
+        }
+
+        list($largura, $altura) = getimagesize($imagem->getPathName());
+
+        if($largura < "400" || $altura < "400"){
+
+            return redirect()->back()->with('atencao', 'A imagem não pode ser menor do que 400x400 pixels.');
+
+
+        }
+
+
         dd($imagem);
 
     }
