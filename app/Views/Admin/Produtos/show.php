@@ -22,7 +22,7 @@
 
 <div class="row justify-content-md-center">
            
-<div class="col-lg-5 grid-margin stretch-card">
+<div class="col-lg-6 grid-margin stretch-card">
   <div class="card">
   <div class="card-header bg-primary pn-0 pt-4">
   <h2 class="card-title text-white"><?= esc($titulo) ?></h2>
@@ -78,6 +78,9 @@
 
   <a href="<?= site_url("admin/produtos/extras/$produto->id")?>" class="btn btn-success btn-sm btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-pencil"></i> Extras</a>
+
+  <a href="<?= site_url("admin/produtos/especificacoes/$produto->id")?>" class="btn btn-outline-warning btn-sm btn-icon-text  m-1">
+  <i class="btn-icon-prepend mdi mdi-pencil"></i> Especificações</a>
 
 
 

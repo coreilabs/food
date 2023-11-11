@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2023 at 01:35 PM
+-- Generation Time: Nov 11, 2023 at 09:16 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -70,7 +70,7 @@ CREATE TABLE `extras` (
 --
 
 INSERT INTO `extras` (`id`, `nome`, `slug`, `preco`, `descricao`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(2, 'Borda de Cheddar', 'borda-de-cheddar', '5.00', 'borda de cheddar como opcional', 1, '2023-11-06 14:02:41', '2023-11-06 15:44:11', '2023-11-06 15:44:11'),
+(2, 'Borda de Cheddar', 'borda-de-cheddar', '5.00', 'borda de cheddar como opcional', 1, '2023-11-06 14:02:41', '2023-11-11 11:33:31', NULL),
 (3, 'Fritas', 'fritas', '7.00', 'batata frita', 1, '2023-11-06 14:09:39', '2023-11-06 14:09:52', NULL);
 
 -- --------------------------------------------------------
@@ -126,7 +126,8 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 (6, '2023-11-06-153915', 'App\\Database\\Migrations\\CriaTabelaExtras', 'default', 'App', 1699285400, 3),
 (7, '2023-11-06-172406', 'App\\Database\\Migrations\\CriaTabelaMedidas', 'default', 'App', 1699291555, 4),
 (8, '2023-11-08-112617', 'App\\Database\\Migrations\\CriaTabelaProdutos', 'default', 'App', 1699444100, 5),
-(9, '2023-11-11-122055', 'App\\Database\\Migrations\\CriaTabelaProdutosExtras', 'default', 'App', 1699705535, 6);
+(9, '2023-11-11-122055', 'App\\Database\\Migrations\\CriaTabelaProdutosExtras', 'default', 'App', 1699705535, 6),
+(10, '2023-11-11-183949', 'App\\Database\\Migrations\\CriaTabelaProdutosEspecificacoes', 'default', 'App', 1699728219, 7);
 
 -- --------------------------------------------------------
 
@@ -158,6 +159,27 @@ INSERT INTO `produtos` (`id`, `categoria_id`, `nome`, `slug`, `ingredientes`, `a
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `produtos_especificacoes`
+--
+
+CREATE TABLE `produtos_especificacoes` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `produto_id` int(5) UNSIGNED NOT NULL,
+  `medida_id` int(5) UNSIGNED NOT NULL,
+  `preco` decimal(10,2) NOT NULL,
+  `customizavel` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `produtos_especificacoes`
+--
+
+INSERT INTO `produtos_especificacoes` (`id`, `produto_id`, `medida_id`, `preco`, `customizavel`) VALUES
+(3, 1, 4, '50.00', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `produtos_extras`
 --
 
@@ -166,6 +188,15 @@ CREATE TABLE `produtos_extras` (
   `produto_id` int(5) UNSIGNED NOT NULL,
   `extra_id` int(5) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `produtos_extras`
+--
+
+INSERT INTO `produtos_extras` (`id`, `produto_id`, `extra_id`) VALUES
+(2, 4, 3),
+(3, 1, 3),
+(4, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -243,6 +274,14 @@ ALTER TABLE `produtos`
   ADD KEY `produtos_categoria_id_foreign` (`categoria_id`);
 
 --
+-- Indexes for table `produtos_especificacoes`
+--
+ALTER TABLE `produtos_especificacoes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `produtos_especificacoes_produto_id_foreign` (`produto_id`),
+  ADD KEY `produtos_especificacoes_medida_id_foreign` (`medida_id`);
+
+--
 -- Indexes for table `produtos_extras`
 --
 ALTER TABLE `produtos_extras`
@@ -286,7 +325,7 @@ ALTER TABLE `medidas`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `produtos`
@@ -295,10 +334,16 @@ ALTER TABLE `produtos`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `produtos_especificacoes`
+--
+ALTER TABLE `produtos_especificacoes`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `produtos_extras`
 --
 ALTER TABLE `produtos_extras`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
@@ -315,6 +360,13 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `produtos`
   ADD CONSTRAINT `produtos_categoria_id_foreign` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`);
+
+--
+-- Constraints for table `produtos_especificacoes`
+--
+ALTER TABLE `produtos_especificacoes`
+  ADD CONSTRAINT `produtos_especificacoes_medida_id_foreign` FOREIGN KEY (`medida_id`) REFERENCES `medidas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `produtos_especificacoes_produto_id_foreign` FOREIGN KEY (`produto_id`) REFERENCES `produtos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `produtos_extras`

@@ -11,6 +11,9 @@ class Produtos extends BaseController
     private $categoriaModel;
     private $extraModel;
     private $produtoExtraModel;
+    private $medidaModel;
+    private $produtoEspecificacaoModel;
+
 
 
 
@@ -20,6 +23,9 @@ class Produtos extends BaseController
         $this->categoriaModel  = new \App\Models\CategoriaModel();
         $this->extraModel = new \App\Models\ExtraModel();
         $this->produtoExtraModel = new \App\Models\ProdutoExtraModel();
+        $this->medidaModel = new \App\Models\MedidaModel();
+        $this->produtoEspecificacaoModel = new \App\Models\ProdutoEspecificacaoModel();
+
     }
     public function index()
     {
@@ -334,6 +340,24 @@ class Produtos extends BaseController
             //nao é post
             return redirect()->back();
         }
+    }
+
+    
+    public function especificacoes($id = null){
+
+        $produto = $this->buscaProdutoOu404($id);
+        $data = [
+            'titulo' => "Gerenciar as especificações do $produto->nome",
+            'produto' => $produto,
+            'medidas' => $this->medidaModel->where('ativo', true)->findAll(),
+            'produtoEspecificacoes' => $this->produtoEspecificacaoModel->buscaEspecificacoesDoProduto($produto->id, 10),
+            'pager' => $this->produtoEspecificacaoModel->pager,
+        ]; 
+
+     
+        
+        return view('Admin/Produtos/especificacoes', $data);
+
     }
 
 
