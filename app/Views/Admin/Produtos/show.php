@@ -76,6 +76,9 @@
   <a href="<?= site_url("admin/produtos/editar/$produto->id")?>" class="btn btn-dark btn-sm btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-pencil"></i> Editar</a>
 
+  <a href="<?= site_url("admin/produtos/extras/$produto->id")?>" class="btn btn-success btn-sm btn-icon-text  m-1">
+  <i class="btn-icon-prepend mdi mdi-pencil"></i> Extras</a>
+
 
 
 <?php else: ?>
