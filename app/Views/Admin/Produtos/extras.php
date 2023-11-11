@@ -86,7 +86,7 @@
 
 <div class="col-md-12">
 <hr>
-<?php if(empty($produtosExtras)) :{            } ?>
+<?php if(empty($produtoExtras)) :{            } ?>
 <p> Esse produto não possui extras até o momento.</p>
 <?php else: ?>
 
@@ -106,7 +106,7 @@
                       </thead>
                       <tbody>
 
-                      <?php foreach($produtosExtras as $extraProduto):?>
+                      <?php foreach($produtoExtras as $extraProduto):?>
                         <tr>
                           <td><?= esc($extraProduto->extra)?></td>
                           <td>R$ <?= esc(number_format($extraProduto->preco, 2));?></td>

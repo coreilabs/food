@@ -51,7 +51,7 @@
 
         <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="">Escolha o Extra do produto (opcional)</label>
+              <label for="">Escolha o Extra do produto (opcional) <a href="javascript:void" class="" data-toggle="popover" title="Medida do Produto" data-content="Exemplo: Pizza Grande, Pizza Média, Pizza Família..."> Entenda</a></label>
 
               <select name="medida_id" class="form-control js-example-basic-single" id="">
                 <option value="">Escolha...</option>
@@ -64,6 +64,24 @@
               </select>
             </div>
 
+            <div class="form-group col-md-12 ">
+        <label for="preco">Preço</label>
+        <input type="text" class="money form-control" name="preco" id="preco" placeholder="Preço" value="<?= old('preco') ?>">
+    </div>
+
+
+    <div class="form-group col-md-12">
+              <label for="">Produto Customizável <a href="javascript:void" class="" data-toggle="popover" title="Produto Meio a Meio" data-content="Exemplo: Metade Calabresa e Metade Bacon"> Entenda</a>
+              <select name="customizavel" class="form-control" id="">
+                <option value="">Escolha...</option>
+
+                  <option value="1">Sim</option>
+                  <option value="0">Não</option>
+
+
+
+              </select>
+            </div>
 
         </div>
 
@@ -86,7 +104,7 @@
 
 <div class="col-md-12">
 <hr>
-<?php if(!empty($produtoEspecificacoes)) : ?>
+<?php if(empty($produtoEspecificacoes)) : ?>
 
 
   <div class="alert alert-warning" role="alert">
@@ -163,19 +181,26 @@
 
 
 <script src="<?= site_url('admin/vendors/select2/select2.min.js')?>"></script>
+<script src="<?= site_url('admin/vendors/mask/jquery.mask.min.js')?>"></script>
+<script src="<?= site_url('admin/vendors/mask/app.js')?>"></script>
 
 
 <script>
 
+
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
   // In your Javascript (external .js resource or <script> tag)
 $(document).ready(function() {
     $('.js-example-basic-single').select2({
-      placeholder: 'Digite o nome do medida...',
+      placeholder: 'Digite o nome da medida...',
       allowClear: false,
 
       "language":{
         "noResults": function(){
-          return "Extra não encontrado. <a class='btn btn-primary btn-sm' href='<?= site_url('admin/medidas/criar')?>'>Cadastrar </a>";
+          return "Medida não encontrada. <a class='btn btn-primary btn-sm' href='<?= site_url('admin/medidas/criar')?>'>Cadastrar </a>";
         }
 
       },
