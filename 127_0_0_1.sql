@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2023 at 10:33 PM
+-- Generation Time: Nov 11, 2023 at 01:35 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -125,7 +125,8 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 (5, '2023-11-05-224632', 'App\\Database\\Migrations\\CriaTabelaCategorias', 'default', 'App', 1699276607, 2),
 (6, '2023-11-06-153915', 'App\\Database\\Migrations\\CriaTabelaExtras', 'default', 'App', 1699285400, 3),
 (7, '2023-11-06-172406', 'App\\Database\\Migrations\\CriaTabelaMedidas', 'default', 'App', 1699291555, 4),
-(8, '2023-11-08-112617', 'App\\Database\\Migrations\\CriaTabelaProdutos', 'default', 'App', 1699444100, 5);
+(8, '2023-11-08-112617', 'App\\Database\\Migrations\\CriaTabelaProdutos', 'default', 'App', 1699444100, 5),
+(9, '2023-11-11-122055', 'App\\Database\\Migrations\\CriaTabelaProdutosExtras', 'default', 'App', 1699705535, 6);
 
 -- --------------------------------------------------------
 
@@ -153,6 +154,18 @@ CREATE TABLE `produtos` (
 INSERT INTO `produtos` (`id`, `categoria_id`, `nome`, `slug`, `ingredientes`, `ativo`, `imagem`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
 (1, 1, 'Pizza de chocolate com morango e MM', 'pizza-de-chocolate-com-morango-e-mm', 'Pizza de chocolate com morango', 1, '1699651801_56327ea3fd0fd94d5577.png', '2023-11-08 08:56:07', '2023-11-10 18:30:01', NULL),
 (4, 2, 'Porção Batata com Bacon', 'porcao-batata-com-bacon', 'Batata e bacon', 1, '', '2023-11-08 11:41:58', '2023-11-08 11:41:58', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `produtos_extras`
+--
+
+CREATE TABLE `produtos_extras` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `produto_id` int(5) UNSIGNED NOT NULL,
+  `extra_id` int(5) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -230,6 +243,14 @@ ALTER TABLE `produtos`
   ADD KEY `produtos_categoria_id_foreign` (`categoria_id`);
 
 --
+-- Indexes for table `produtos_extras`
+--
+ALTER TABLE `produtos_extras`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `produtos_extras_produto_id_foreign` (`produto_id`),
+  ADD KEY `produtos_extras_extra_id_foreign` (`extra_id`);
+
+--
 -- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -265,13 +286,19 @@ ALTER TABLE `medidas`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `produtos_extras`
+--
+ALTER TABLE `produtos_extras`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
@@ -288,6 +315,13 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `produtos`
   ADD CONSTRAINT `produtos_categoria_id_foreign` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`);
+
+--
+-- Constraints for table `produtos_extras`
+--
+ALTER TABLE `produtos_extras`
+  ADD CONSTRAINT `produtos_extras_extra_id_foreign` FOREIGN KEY (`extra_id`) REFERENCES `extras` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `produtos_extras_produto_id_foreign` FOREIGN KEY (`produto_id`) REFERENCES `produtos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
