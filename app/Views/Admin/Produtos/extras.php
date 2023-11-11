@@ -54,7 +54,7 @@
               <label for="">Escolha o Extra do produto (opcional)</label>
 
               <select name="extra_id" class="form-control js-example-basic-single" id="">
-                <option>Escolha...</option>
+                <option value="">Escolha...</option>
 
                 <?php foreach ($extras as $extra) :?>
             <option value="<?= $extra->id ?>"> <?= $extra->nome ?></option>
@@ -67,7 +67,7 @@
 
         </div>
 
-
+ 
         
 <button type="submit"  class="btn btn-dark btn-icon-text btn-sm  m-1">
     <i class="mdi mdi-content-save btn-icon-prepend"></i>
@@ -81,16 +81,52 @@
 
 
 <div class="form-row mt-5">
-<hr>
+
 
 
 <div class="col-md-12">
-
+<hr>
 <?php if(empty($produtosExtras)) :{            } ?>
 <p> Esse produto não possui extras até o momento.</p>
 <?php else: ?>
 
+  <h4 class="card-title">Extras do Produto</h4>
+                  <p class="card-description">
+                  <code>Aproveite para gerenciar os extras</code>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Extra</th>
+                          <th>Preço</th>
+                          <th class="text-center">Remover</th>
+                     
+                        </tr>
+                      </thead>
+                      <tbody>
 
+                      <?php foreach($produtosExtras as $extraProduto):?>
+                        <tr>
+                          <td><?= esc($extraProduto->extra)?></td>
+                          <td>R$ <?= esc(number_format($extraProduto->preco, 2));?></td>
+                          <td class="text-center">
+                            <?= form_open("excluirextra/$extraProduto->id")?>
+                        
+                          <button type="submit" class="btn badge badge-danger"> X </button>
+                          <?= form_close();?>
+                        
+                        </td>
+                        </tr>
+                       
+                      <?php endforeach;?>
+
+                      </tbody>
+                    </table>
+                    <div class="mt-3">
+                      <?= $pager->links()?>
+                    </div>
+                  </div>
  <?php endif; ?>
 </div>
 
@@ -98,6 +134,7 @@
 
 
           <?= form_close();?>
+
 
 
     </div>
