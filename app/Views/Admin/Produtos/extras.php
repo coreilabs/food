@@ -9,7 +9,7 @@
 
 <?= $this->section('estilos'); ?>
 
-
+<link rel="stylesheet" href="<?= site_url('admin/vendors/select2/select2.min.css'); ?>">
 
 
 
@@ -53,7 +53,7 @@
             <div class="form-group col-md-12">
               <label for="">Escolha o Extra do produto (opcional)</label>
 
-              <select name="extra_id" class="form-control" id="">
+              <select name="extra_id" class="form-control js-example-basic-single" id="">
                 <option>Escolha...</option>
 
                 <?php foreach ($extras as $extra) :?>
@@ -112,7 +112,31 @@
 
 
 <?= $this->section('scripts'); ?>
-<script src="<?= site_url('admin/vendors/mask/jquery.mask.min.js')?>"></script>
-<script src="<?= site_url('admin/vendors/mask/app.js')?>"></script>
 
+
+<script src="<?= site_url('admin/vendors/select2/select2.min.js')?>"></script>
+
+
+<script>
+
+  // In your Javascript (external .js resource or <script> tag)
+$(document).ready(function() {
+    $('.js-example-basic-single').select2({
+      placeholder: 'Digite o nome do extra...',
+      allowClear: false,
+
+      "language":{
+        "noResults": function(){
+          return "Extra não encontrado. <a class='btn btn-primary btn-sm' href='<?= site_url('admin/extras/criar')?>'>Cadastrar </a>";
+        }
+
+      },
+      escapeMarkup: function (markup){
+        return markup;
+      }
+    });
+});
+
+
+</script>
 <?= $this->endSection(); ?>
