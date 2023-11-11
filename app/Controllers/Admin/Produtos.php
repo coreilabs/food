@@ -305,7 +305,7 @@ class Produtos extends BaseController
             }else{
                 //erros de validacao
 
-                return redirect()->back()->with('errors_model', $this->produtoModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+                return redirect()->back()->with('errors_model', $this->produtoExtraModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
             }
 
 
@@ -357,6 +357,48 @@ class Produtos extends BaseController
      
         
         return view('Admin/Produtos/especificacoes', $data);
+
+    }
+
+    public function cadastrarEspecificacoes($id = null){
+
+        if($this->request->getMethod() === 'post'){
+
+        $produto = $this->buscaProdutoOu404($id);
+        $especificacao = $this->request->getPost();
+        $especificacao['produto_id'] = $produto->id;
+        $especificacao['preco'] = str_replace(",", "", $especificacao['preco']);
+
+
+        $especificacaoExistente = $this->produtoEspecificacaoModel
+                                        ->where('produto_id', $produto->id)
+                                        ->where('medida_id', $especificacao['medida_id'])
+                                        ->first();
+
+
+        if($especificacaoExistente){
+
+            return redirect()->back()->with('atencao', 'Esta especificação já existe para esse produto.')->withInput();
+
+        }
+
+        if($this->produtoEspecificacaoModel->save($especificacao)){
+            return redirect()->back()->with('sucesso', 'Especificação cadastrada com sucesso.');
+        }else{
+            //erros de validacao
+
+            return redirect()->back()->with('errors_model', $this->produtoEspecificacaoModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+        }
+
+        
+        
+
+
+
+        }else{
+            return redirect()->back();
+        }
+
 
     }
 

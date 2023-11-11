@@ -51,7 +51,7 @@
 
         <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="">Escolha o Extra do produto (opcional) <a href="javascript:void" class="" data-toggle="popover" title="Medida do Produto" data-content="Exemplo: Pizza Grande, Pizza Média, Pizza Família..."> Entenda</a></label>
+              <label for="">Escolha a medida do produto <a href="javascript:void" class="" data-toggle="popover" title="Medida do Produto" data-content="Exemplo: <br>Pizza Grande<br> Pizza Média<br> Pizza Família..."> Entenda</a></label>
 
               <select name="medida_id" class="form-control js-example-basic-single" id="">
                 <option value="">Escolha...</option>
@@ -89,7 +89,7 @@
         
 <button type="submit"  class="btn btn-dark btn-icon-text btn-sm  m-1">
     <i class="mdi mdi-content-save btn-icon-prepend"></i>
-    Inserir Extra
+    Inserir Especificação
 </button>
           
             <a href="<?= site_url("admin/produtos/show/$produto->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
@@ -189,7 +189,10 @@
 
 
 $(function () {
-  $('[data-toggle="popover"]').popover()
+  $('[data-toggle="popover"]').popover({
+    placement: 'top',
+    html: true,
+  })
 })
 
   // In your Javascript (external .js resource or <script> tag)

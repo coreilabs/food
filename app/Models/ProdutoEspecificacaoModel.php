@@ -12,13 +12,22 @@ class ProdutoEspecificacaoModel extends Model
 
     protected $validationRules = [
         'medida_id'     => 'required|integer',
-        'preco' => 'required|greater_than[0]'
+        'preco' => 'required|greater_than[0]',
+        'customizavel' => 'required|integer'
 
 
     ];
     protected $validationMessages = [
         'medida_id' => [
             'required' => 'O campo MEDIDA é obrigatório.',
+
+        ],
+        'preco' => [
+            'required' => 'O campo PREÇO é obrigatório.',
+
+        ],
+        'customizavel' => [
+            'required' => 'O campo CUSTOMIZÁVEL é obrigatório.',
 
         ],
     ];
