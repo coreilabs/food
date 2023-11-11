@@ -67,7 +67,7 @@
 
         </div>
 
- 
+
         
 <button type="submit"  class="btn btn-dark btn-icon-text btn-sm  m-1">
     <i class="mdi mdi-content-save btn-icon-prepend"></i>
@@ -78,7 +78,7 @@
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
 
-
+  <?= form_close();?>
 
 <div class="form-row mt-5">
 
@@ -111,7 +111,8 @@
                           <td><?= esc($extraProduto->extra)?></td>
                           <td>R$ <?= esc(number_format($extraProduto->preco, 2));?></td>
                           <td class="text-center">
-                            <?= form_open("excluirextra/$extraProduto->id")?>
+
+                            <?= form_open("admin/produtos/excluirextra/$extraProduto->id/$extraProduto->produto_id")?>
                         
                           <button type="submit" class="btn badge badge-danger"> X </button>
                           <?= form_close();?>
@@ -133,7 +134,7 @@
 </div>
 
 
-          <?= form_close();?>
+      
 
 
 

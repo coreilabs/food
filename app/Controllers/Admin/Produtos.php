@@ -312,6 +312,30 @@ class Produtos extends BaseController
 
     }
 
+    public function excluirExtra($id_principal = null, $id = null){
+
+        if($this->request->getMethod() === "post"){
+
+            $produto = $this->buscaProdutoOu404($id);
+            $produtoExtra = $this->produtoExtraModel->where('id', $id_principal)
+                                                    ->where('produto_id', $produto->id)
+                                                    ->first();
+
+
+            if(!$produtoExtra){
+                return redirect()->back()->with('atencao', 'Não encontramos o registro principal.');
+            }   
+            
+            
+            $this->produtoExtraModel->delete($id_principal);
+            return redirect()->back()->with('sucesso', 'Extra excluído com sucesso.');
+
+        }else{
+            //nao é post
+            return redirect()->back();
+        }
+    }
+
 
         /**
  * @param int $id
