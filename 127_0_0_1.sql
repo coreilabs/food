@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2023 at 11:25 AM
+-- Generation Time: Nov 12, 2023 at 02:15 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -46,6 +46,36 @@ INSERT INTO `categorias` (`id`, `nome`, `slug`, `ativo`, `criado_em`, `atualizad
 (2, 'Porções', 'porcoes', 1, '2023-11-06 11:58:04', '2023-11-06 12:34:02', NULL),
 (3, 'Fritas', 'fritas', 1, '2023-11-06 11:58:50', '2023-11-06 12:35:02', NULL),
 (4, 'Batata', 'batata', 1, '2023-11-06 12:00:17', '2023-11-06 12:00:17', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `entregadores`
+--
+
+CREATE TABLE `entregadores` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `nome` varchar(128) NOT NULL,
+  `cpf` varchar(20) NOT NULL,
+  `cnh` varchar(20) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `telefone` varchar(20) NOT NULL,
+  `endereco` varchar(240) NOT NULL,
+  `imagem` varchar(240) DEFAULT NULL,
+  `veiculo` varchar(240) NOT NULL,
+  `placa` varchar(20) NOT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT 1,
+  `criado_em` datetime DEFAULT NULL,
+  `atualizado_em` datetime DEFAULT NULL,
+  `deletado_em` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `entregadores`
+--
+
+INSERT INTO `entregadores` (`id`, `nome`, `cpf`, `cnh`, `email`, `telefone`, `endereco`, `imagem`, `veiculo`, `placa`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
+(1, 'Pedro Luiz', '987.508.650-99', '65985320', 'pedroluiz@email.com', '(62) 99999-9999', 'Rua do trabalho N 45, Centro Cívico - Curitiba - PR', NULL, 'Titan 160 - Preta - 2018', 'KBQ-5821', 1, '2023-11-12 10:10:59', '2023-11-12 10:10:59', NULL);
 
 -- --------------------------------------------------------
 
@@ -93,7 +123,9 @@ CREATE TABLE `formas_pagamento` (
 --
 
 INSERT INTO `formas_pagamento` (`id`, `nome`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(1, 'Dinheiro', 1, '2023-11-12 07:24:25', '2023-11-12 07:24:25', NULL);
+(1, 'Dinheiro', 1, '2023-11-12 07:24:25', '2023-11-12 07:24:25', NULL),
+(2, 'Cartão de Crédito', 0, '2023-11-12 08:52:47', '2023-11-12 09:50:25', NULL),
+(3, 'Cartão de Débito', 0, '2023-11-12 09:27:36', '2023-11-12 09:27:36', NULL);
 
 -- --------------------------------------------------------
 
@@ -150,7 +182,8 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 (8, '2023-11-08-112617', 'App\\Database\\Migrations\\CriaTabelaProdutos', 'default', 'App', 1699444100, 5),
 (9, '2023-11-11-122055', 'App\\Database\\Migrations\\CriaTabelaProdutosExtras', 'default', 'App', 1699705535, 6),
 (10, '2023-11-11-183949', 'App\\Database\\Migrations\\CriaTabelaProdutosEspecificacoes', 'default', 'App', 1699728219, 7),
-(11, '2023-11-12-093533', 'App\\Database\\Migrations\\CriaTabelaFormasPagamento', 'default', 'App', 1699782057, 8);
+(11, '2023-11-12-093533', 'App\\Database\\Migrations\\CriaTabelaFormasPagamento', 'default', 'App', 1699782057, 8),
+(13, '2023-11-12-130055', 'App\\Database\\Migrations\\CriaTabelaEntregadores', 'default', 'App', 1699794650, 9);
 
 -- --------------------------------------------------------
 
@@ -270,6 +303,16 @@ ALTER TABLE `categorias`
   ADD UNIQUE KEY `nome` (`nome`);
 
 --
+-- Indexes for table `entregadores`
+--
+ALTER TABLE `entregadores`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `cpf` (`cpf`),
+  ADD UNIQUE KEY `cnh` (`cnh`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `telefone` (`telefone`);
+
+--
 -- Indexes for table `extras`
 --
 ALTER TABLE `extras`
@@ -341,6 +384,12 @@ ALTER TABLE `categorias`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `entregadores`
+--
+ALTER TABLE `entregadores`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `extras`
 --
 ALTER TABLE `extras`
@@ -350,7 +399,7 @@ ALTER TABLE `extras`
 -- AUTO_INCREMENT for table `formas_pagamento`
 --
 ALTER TABLE `formas_pagamento`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `medidas`
@@ -362,7 +411,7 @@ ALTER TABLE `medidas`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `produtos`
