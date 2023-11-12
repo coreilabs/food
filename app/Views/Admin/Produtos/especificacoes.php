@@ -143,7 +143,13 @@
                           <td > <?php echo ($especificacao->customizavel ? '<label class="badge badge-primary">Sim</label>' : '<label class="badge badge-warning">Não</label>' )?></td>
                           <td class="text-center">
 
-                          <button type="submit" class="btn badge badge-danger"> X </button>
+
+                          <a href="<?= site_url("admin/produtos/excluirespecificacao/$especificacao->id/$especificacao->produto_id")?>" class="btn btn-sm btn-danger btn-icon-text  m-1">
+
+  X </a>
+
+
+                
                         
                         </td>
                         </tr>

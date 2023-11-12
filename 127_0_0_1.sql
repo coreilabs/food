@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2023 at 09:16 PM
+-- Generation Time: Nov 12, 2023 at 01:13 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -175,7 +175,8 @@ CREATE TABLE `produtos_especificacoes` (
 --
 
 INSERT INTO `produtos_especificacoes` (`id`, `produto_id`, `medida_id`, `preco`, `customizavel`) VALUES
-(3, 1, 4, '50.00', 1);
+(3, 1, 4, '50.00', 1),
+(5, 1, 5, '35.00', 0);
 
 -- --------------------------------------------------------
 
@@ -337,7 +338,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT for table `produtos_especificacoes`
 --
 ALTER TABLE `produtos_especificacoes`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `produtos_extras`

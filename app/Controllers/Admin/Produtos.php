@@ -402,6 +402,37 @@ class Produtos extends BaseController
 
     }
 
+    public function excluirEspecificacao($especificacao_id = null, $produto_id = null){
+
+        $produto = $this->buscaProdutoOu404($produto_id);
+       
+        $especificacao = $this->produtoEspecificacaoModel
+                            ->where('id', $especificacao_id)
+                            ->where('produto_id', $produto->id)
+                            ->first();
+
+        if(!$especificacao){
+            return redirect()->back()->with('atencao', "Não encontramos a especificação.");
+        }
+
+        if($this->request->getMethod() === 'post'){
+
+            $this->produtoEspecificacaoModel->delete($especificacao->id);
+
+            return redirect()->to(site_url("admin/produtos/especificacoes/$especificacao->produto_id"))->with('sucesso', "Especificação excluída com sucesso.");
+
+
+        }
+
+        $data = [
+            'titulo' => 'Exclusao de especificacao do produto',
+            'especificacao' => $especificacao,
+        ];
+
+        return view('Admin/Produtos/excluir_especificacao', $data);
+
+    }
+
 
         /**
  * @param int $id
