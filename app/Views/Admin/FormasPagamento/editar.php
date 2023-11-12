@@ -46,12 +46,12 @@
 
         
                    
-        <?= form_open("admin/extras/atualizar/$extra->id")?>
+        <?= form_open("admin/formas/atualizar/$forma->id")?>
 
-            <?= $this->include('Admin/Extras/form')?>
+            <?= $this->include('Admin/FormasPagamento/form')?>
 
           
-            <a href="<?= site_url("admin/extras/show/$extra->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
+            <a href="<?= site_url("admin/formas/show/$forma->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
 
