@@ -201,6 +201,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="<?= site_url('admin/formas')?>">
+              <i class="mdi mdi-credit-card-multiple menu-icon"></i>
+              <span class="menu-title">Formas de Pagamento</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="<?= site_url('admin/usuarios')?>">
               <i class="mdi mdi-account-search menu-icon"></i>
               <span class="menu-title">Usuarios</span>
