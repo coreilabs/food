@@ -61,10 +61,9 @@
 
                             <tr>
 
-                            <td> <img src="" alt=""> </a>
-                                
-                                </td>
-
+                            <td class="py-1">
+                            <img src="<?= site_url('admin/')?>images/faces/face1.jpg" alt="image"/>
+                          </td>
 
                                 <td><a href="<?= site_url("admin/entregadores/show/$entregador->id")?>">  <?= $entregador->nome;?></a>
                                 
@@ -122,7 +121,7 @@
                     success: function (data) {
                         if(data.length < 1){
                             var data = [{
-                                label: 'Usuario não encontrado',
+                                label: 'Entregador não encontrado',
                                 value: -1,
                                 }
                             ];

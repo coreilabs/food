@@ -34,7 +34,7 @@
       <?php if($produto->imagem && $produto->deletado_em == null ):?>
       <img class="card-img-top" src="<?= site_url("admin/produtos/imagem/$produto->imagem")?>" alt="<?= esc($produto->nome)?>">
       <?php else: ?>
-      <img class="card-img-top w-50" src="<?= site_url('admin/images/produto-sem-imagem.webp')?>" alt="Produto sem imagem por enquanto">
+      <img class="card-img-top w-50" src="<?= site_url('admin/images/sem-imagem.webp')?>" alt="Produto sem imagem por enquanto">
 
       <?php endif;?>
     </div>
