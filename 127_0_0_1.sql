@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2023 at 01:13 AM
+-- Generation Time: Nov 12, 2023 at 11:25 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -76,6 +76,28 @@ INSERT INTO `extras` (`id`, `nome`, `slug`, `preco`, `descricao`, `ativo`, `cria
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `formas_pagamento`
+--
+
+CREATE TABLE `formas_pagamento` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `nome` varchar(128) NOT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT 1,
+  `criado_em` datetime DEFAULT NULL,
+  `atualizado_em` datetime DEFAULT NULL,
+  `deletado_em` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `formas_pagamento`
+--
+
+INSERT INTO `formas_pagamento` (`id`, `nome`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
+(1, 'Dinheiro', 1, '2023-11-12 07:24:25', '2023-11-12 07:24:25', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `medidas`
 --
 
@@ -127,7 +149,8 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 (7, '2023-11-06-172406', 'App\\Database\\Migrations\\CriaTabelaMedidas', 'default', 'App', 1699291555, 4),
 (8, '2023-11-08-112617', 'App\\Database\\Migrations\\CriaTabelaProdutos', 'default', 'App', 1699444100, 5),
 (9, '2023-11-11-122055', 'App\\Database\\Migrations\\CriaTabelaProdutosExtras', 'default', 'App', 1699705535, 6),
-(10, '2023-11-11-183949', 'App\\Database\\Migrations\\CriaTabelaProdutosEspecificacoes', 'default', 'App', 1699728219, 7);
+(10, '2023-11-11-183949', 'App\\Database\\Migrations\\CriaTabelaProdutosEspecificacoes', 'default', 'App', 1699728219, 7),
+(11, '2023-11-12-093533', 'App\\Database\\Migrations\\CriaTabelaFormasPagamento', 'default', 'App', 1699782057, 8);
 
 -- --------------------------------------------------------
 
@@ -153,7 +176,7 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `categoria_id`, `nome`, `slug`, `ingredientes`, `ativo`, `imagem`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(1, 1, 'Pizza de chocolate com morango e MM', 'pizza-de-chocolate-com-morango-e-mm', 'Pizza de chocolate com morango', 1, '1699651801_56327ea3fd0fd94d5577.png', '2023-11-08 08:56:07', '2023-11-10 18:30:01', NULL),
+(1, 1, 'Pizza de chocolate com morango e MM', 'pizza-de-chocolate-com-morango-e-mm', 'Pizza de chocolate com morango', 1, '', '2023-11-08 08:56:07', '2023-11-11 21:58:33', '2023-11-11 21:58:33'),
 (4, 2, 'Porção Batata com Bacon', 'porcao-batata-com-bacon', 'Batata e bacon', 1, '', '2023-11-08 11:41:58', '2023-11-08 11:41:58', NULL);
 
 -- --------------------------------------------------------
@@ -254,6 +277,13 @@ ALTER TABLE `extras`
   ADD UNIQUE KEY `nome` (`nome`);
 
 --
+-- Indexes for table `formas_pagamento`
+--
+ALTER TABLE `formas_pagamento`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nome` (`nome`);
+
+--
 -- Indexes for table `medidas`
 --
 ALTER TABLE `medidas`
@@ -317,6 +347,12 @@ ALTER TABLE `extras`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `formas_pagamento`
+--
+ALTER TABLE `formas_pagamento`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `medidas`
 --
 ALTER TABLE `medidas`
@@ -326,7 +362,7 @@ ALTER TABLE `medidas`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `produtos`
