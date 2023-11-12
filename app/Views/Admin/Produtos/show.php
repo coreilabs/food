@@ -31,7 +31,7 @@
     <div class="card-body">
 
     <div class="text-center">
-      <?php if($produto->imagem):?>
+      <?php if($produto->imagem && $produto->deletado_em == null ):?>
       <img class="card-img-top" src="<?= site_url("admin/produtos/imagem/$produto->imagem")?>" alt="<?= esc($produto->nome)?>">
       <?php else: ?>
       <img class="card-img-top w-50" src="<?= site_url('admin/images/produto-sem-imagem.webp')?>" alt="Produto sem imagem por enquanto">
@@ -39,8 +39,12 @@
       <?php endif;?>
     </div>
 
-      <a href="<?= site_url("admin/produtos/editarimagem/$produto->id")?>" class="btn btn-outline-success btn-sm mt-3 mb-3"><i class="mdi mdi-image btn-icon-prepend"></i> Editar Imagem</a>
+<?php if($produto->deletado_em == null) : ?>
+
+  <a href="<?= site_url("admin/produtos/editarimagem/$produto->id")?>" class="btn btn-outline-success btn-sm mt-3 mb-3"><i class="mdi mdi-image btn-icon-prepend"></i> Editar Imagem</a>
 <hr>
+
+  <?php endif; ?>
 
       <p class="card-text"> <span class="font-weight-bold">Nome: </span> <?= esc($produto->nome)?></p>
       <p class="card-text"> <span class="font-weight-bold">Categoria: </span> <?= esc($produto->categoria)?></p>

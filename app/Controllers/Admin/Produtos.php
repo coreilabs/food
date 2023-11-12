@@ -154,6 +154,13 @@ class Produtos extends BaseController
     public function editarimagem($id = null){
         $produto = $this->buscaProdutoOu404($id);
 
+        
+        if($produto->deletado_em != null ){
+    
+            return redirect()->back()->with('info', 'Não é possível editar imagem de um produto excluído.');
+    
+        }
+
         $data = [
             'titulo' => "Editando imagem do produto $produto->nome",
             'produto' => $produto,
@@ -432,6 +439,62 @@ class Produtos extends BaseController
         return view('Admin/Produtos/excluir_especificacao', $data);
 
     }
+
+    public function excluir($id = null){
+        $produto = $this->buscaProdutoOu404($id);
+
+        if($this->request->getMethod() === 'post'){
+
+
+            $this->produtoModel->delete($id);
+
+            if($produto->imagem){
+
+                $caminhoImagem = WRITEPATH . 'Uploads/produtos/' . $produto->imagem;
+
+                if(is_file($caminhoImagem)){
+
+                    unlink($caminhoImagem);
+
+                }
+
+            }
+
+            $produto->imagem = null;
+            $this->produtoModel->save($produto);
+
+            return redirect()->to(site_url("admin/produtos"))->with('sucesso', "Produto excluído com sucesso.");
+
+        }
+
+
+        $data = [
+            'titulo' => "Excluindo o produto $produto->nome",
+            'produto' => $produto,
+        ];
+
+        return view('Admin/Produtos/excluir', $data);
+    }
+
+    public function desfazerExclusao($id = null){
+
+        $produto = $this->buscaProdutoOu404($id);
+    
+        if($produto->deletado_em == null ){
+    
+            return redirect()->back()->with('info', 'Apenas Produtos excluídos podem ser recuperados.');
+    
+        }
+    
+        if($this->produtoModel->desfazerExclusao($id)){
+            return redirect()->back()->with('sucesso', 'Exclusão desfeita com sucesso.');
+        } else {
+            return redirect()->back()->with('errors_model', $this->produtoModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+        }
+    
+    
+    }
+    
 
 
         /**

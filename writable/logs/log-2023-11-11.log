@@ -628,3 +628,219 @@ INFO - 2023-11-11 21:12:04 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-11-11 21:12:24 --> CSRF token verified.
 INFO - 2023-11-11 21:12:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-11 21:12:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:27:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:27:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:33:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:33:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:39:34 --> syntax error, unexpected '}'
+in APPPATH\Controllers\Admin\Produtos.php on line 452.
+ 1 SYSTEMPATH\Router\Router.php(514): CodeIgniter\Router\AutoRouter->getRoute('admin/produtos/excluir/1', 'get')
+ 2 SYSTEMPATH\Router\Router.php(210): CodeIgniter\Router\Router->autoRoute('admin/produtos/excluir/1')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('admin/produtos/excluir/1')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-11-11 21:39:52 --> syntax error, unexpected '}', expecting ';'
+in APPPATH\Controllers\Admin\Produtos.php on line 458.
+ 1 SYSTEMPATH\Router\Router.php(514): CodeIgniter\Router\AutoRouter->getRoute('admin/produtos/excluir/1', 'get')
+ 2 SYSTEMPATH\Router\Router.php(210): CodeIgniter\Router\Router->autoRoute('admin/produtos/excluir/1')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('admin/produtos/excluir/1')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:40:09 --> CSRF token verified.
+INFO - 2023-11-11 21:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:40:31 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 253, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(253): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:41:39 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 253, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(253): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:46:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:46:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:46:12 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 253, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(253): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:46:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:46:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:46:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:46:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:46:37 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 253, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(253): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:49:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:49:06 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 253, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(253): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:49:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:49:14 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 253, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(253): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:49:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:49:18 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 253, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(253): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:49:22 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 253, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(253): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:25 --> CSRF token verified.
+INFO - 2023-11-11 21:49:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:49:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:49:40 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 253, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(253): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:51:51 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 253, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(253): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:51:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:51:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:51:58 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 253, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(253): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:52:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:52:02 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 253, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(253): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:52:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:52:03 --> CSRF token verified.
+INFO - 2023-11-11 21:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:52:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:52:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:52:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:52:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:54:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:54:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:54:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:54:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:54:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:58:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:58:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:58:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:58:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:58:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-11 21:58:27 --> finfo::file(C:\xampp\htdocs\food\writable\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\Produtos.php on line 260.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo::file(C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png): failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Admin\\Produtos.php', 260, [...])
+ 2 APPPATH\Controllers\Admin\Produtos.php(260): finfo->file('C:\\xampp\\htdocs\\food\\writable\\uploads/produtos/1699651801_56327ea3fd0fd94d5577.png')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Produtos->imagem('1699651801_56327ea3fd0fd94d5577.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Produtos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-11 21:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:58:33 --> CSRF token verified.
+INFO - 2023-11-11 21:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-11 21:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

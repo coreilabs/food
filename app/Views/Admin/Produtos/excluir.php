@@ -46,10 +46,10 @@
 
         
                    
-        <?= form_open("admin/usuarios/excluir/$usuario->id")?>
+        <?= form_open("admin/produtos/excluir/$produto->id")?>
 
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Atenção: </strong> Tem certeza da exclusão do usuário <?= esc($usuario->nome) ?>?
+  <strong>Atenção: </strong> Tem certeza da exclusão do produto <?= esc($produto->nome) ?>?
 
 </div>
 
@@ -69,7 +69,7 @@
 
 
 
-  <a href="<?= site_url("admin/usuarios/show/$usuario->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
+  <a href="<?= site_url("admin/produtos/show/$produto->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
  
