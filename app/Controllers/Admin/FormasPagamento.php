@@ -131,6 +131,50 @@ class FormasPagamento extends BaseController
         }
     }
 
+    public function excluir($id = null){
+
+        $formaPagamento = $this->buscaFormaPagamentoOu404($id);
+    
+        if($formaPagamento->deletado_em != null ){
+            return redirect()->back()->with('info',"A forma de pagamento $formaPagamento->nome já encontra-se excluída.");
+        }
+    
+     
+        if($this->request->getMethod() === 'post'){
+            $this->formaPagamentoModel->delete($id);
+            return redirect()->to(site_url('admin/formas'))->with('sucesso', "Forma de pagamento $formaPagamento->nome excluída com sucesso.");
+    
+        }
+    
+        $data = [
+            'titulo' => "Excluindo a forma de pagamento $formaPagamento->nome",
+            'forma' => $formaPagamento,
+        ]; 
+        
+        return view('Admin/FormasPagamento/excluir', $data);
+    
+    }
+    
+    
+    public function desfazerExclusao($id = null){
+    
+        $formaPagamento = $this->buscaFormaPagamentoOu404($id);
+    
+        if($formaPagamento->deletado_em == null ){
+    
+            return redirect()->back()->with('info', 'Apenas formas de pagamento excluídas podem ser recuperadas.');
+    
+        }
+    
+        if($this->formaPagamentoModel->desfazerExclusao($id)){
+            return redirect()->back()->with('sucesso', 'Exclusão desfeita com sucesso.');
+        } else {
+            return redirect()->back()->with('errors_model', $this->formaPagamentoModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+        }
+    
+    
+    }
+
     /**
  * @param int $id
  * @return objeto formaPagamento
