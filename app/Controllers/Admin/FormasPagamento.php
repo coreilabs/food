@@ -25,4 +25,46 @@ class FormasPagamento extends BaseController
         return view('Admin/FormasPagamento/index', $data);
 
     }
+
+    public function procurar(){
+
+        if(!$this->request->isAJAX()){
+            exit('Página não encontrada');
+    
+        }
+    
+        $formas = $this->formaPagamentoModel->procurar($this->request->getGet('term'));
+    
+        $retorno = [];
+    
+        foreach($formas as $forma){
+            $data['id'] = $forma->id;
+            $data['value'] = $forma->nome;
+    
+            $retorno[] = $data;
+        }
+    
+        return $this->response->setJSON($retorno);
+    
+    }
+
+    public function show($id = null){
+
+        $formaPagamento = $this->buscaFormaPagamentoOu404($id);
+
+        dd($formaPagamento);
+
+    }
+
+    /**
+ * @param int $id
+ * @return objeto formaPagamento
+ */
+private function buscaFormaPagamentoOu404(int $id = null){
+    if(!$id || !$formaPagamento = $this->formaPagamentoModel->withDeleted(true)->where('id', $id)->first()){
+        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Não Encontramos a forma de pagamento $id");
+    }
+    return $formaPagamento;
+}
+
 }

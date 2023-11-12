@@ -28,4 +28,30 @@ class FormaPagamentoModel extends Model
 
         ],
     ];
+
+        /**
+ * @uso Controller FormaPagamento no metodo procurar com o autocomplete
+ * @param string $term
+ * @return array objetos
+ */
+
+
+ public function procurar($term){
+    if($term === null){
+        return [];
+    }
+
+    return $this->select(['id', 'nome'])
+    ->like('nome', $term)
+    ->withDeleted(true)
+    ->get()
+    ->getResult();
+}
+
+public function desfazerExclusao(int $id){
+    return $this->protect(false)
+    ->where('id', $id)
+    ->set('deletado_em', null)
+    ->update();
+}
 }

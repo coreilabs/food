@@ -10,4 +10,6 @@ $routes->get('login', 'Login::novo', ['filter'=>'visitante']);
 
 $routes->group('admin', static function ($routes) {
     $routes->get('formas', 'Admin\FormasPagamento::index');
+    $routes->get('formas/show/(:num)', 'Admin\FormasPagamento::show/$1');
+
 });

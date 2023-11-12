@@ -106,7 +106,7 @@
         $( "#query" ).autocomplete({
             source: function (request, response){
                 $.ajax({
-                    url: "<?php echo site_url('admin/formas/procurar'); ?> ",
+                    url: "<?php echo site_url('admin/formaspagamento/procurar'); ?> ",
                     dataType: "json",
                     data:{
                         term: request.term
