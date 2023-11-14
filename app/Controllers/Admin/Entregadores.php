@@ -238,6 +238,62 @@ class Entregadores extends BaseController
 
     }
 
+
+    public function excluir($id = null){
+        $entregador = $this->buscaEntregadorOu404($id);
+
+        if($this->request->getMethod() === 'post'){
+
+
+            $this->entregadorModel->delete($id);
+
+            if($entregador->imagem){
+
+                $caminhoImagem = WRITEPATH . 'Uploads/entregadores/' . $entregador->imagem;
+
+                if(is_file($caminhoImagem)){
+
+                    unlink($caminhoImagem);
+
+                }
+
+            }
+
+            $entregador->imagem = null;
+            $this->entregadorModel->save($entregador);
+
+            return redirect()->to(site_url("admin/entregadores"))->with('sucesso', "Entregador excluído com sucesso.");
+
+        }
+
+
+        $data = [
+            'titulo' => "Excluindo o entregador $entregador->nome",
+            'entregador' => $entregador,
+        ];
+
+        return view('Admin/Entregadores/excluir', $data);
+    }
+
+    public function desfazerExclusao($id = null){
+
+        $entregador = $this->buscaEntregadorOu404($id);
+    
+        if($entregador->deletado_em == null ){
+    
+            return redirect()->back()->with('info', 'Apenas Entregadores excluídos podem ser recuperados.');
+    
+        }
+    
+        if($this->entregadorModel->desfazerExclusao($id)){
+            return redirect()->back()->with('sucesso', 'Exclusão desfeita com sucesso.');
+        } else {
+            return redirect()->back()->with('errors_model', $this->entregadorModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+        }
+    
+    
+    }
+
     public function show($id = null){
         $entregador = $this->buscaEntregadorOu404($id);
 
