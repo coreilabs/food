@@ -119,6 +119,125 @@ class Entregadores extends BaseController
         }
     }
 
+    
+    public function editarimagem($id = null){
+        $entregador = $this->buscaEntregadorOu404($id);
+
+        
+        if($entregador->deletado_em != null ){
+    
+            return redirect()->back()->with('info', 'Não é possível editar imagem de um entregador excluído.');
+    
+        }
+
+        $data = [
+            'titulo' => "Editando imagem do entregador $entregador->nome",
+            'entregador' => $entregador,
+        ]; 
+        
+        return view('Admin/Entregadores/editar_imagem', $data);
+
+
+    }
+
+
+    public function upload($id = null){
+        $entregador = $this->buscaEntregadorOu404($id);
+        $imagem = $this->request->getFile('foto_entregador');
+
+        if(!$imagem->isValid()){
+
+            $codigoErro = $imagem->getError();
+            if($codigoErro == UPLOAD_ERR_NO_FILE){
+
+                return redirect()->back()->with('atencao', 'Nenhuma imagem foi selecionada.');
+
+            }
+
+        }
+
+        $tamanhoImagem = $imagem->getSizeByUnit('mb');
+
+        if($tamanhoImagem > 3){
+            return redirect()->back()->with('atencao', 'A imagem selecionada é muito grande. Tamanho máximo permitido 3mb.');
+
+        }
+
+        $tipoImagem = $imagem->getMimeType();
+
+        $tipoImagemLimpo = explode('/', $tipoImagem);
+        $tiposPermitidos = ['jpeg', 'png', 'webp', 'jpg'];
+
+        if(!in_array($tipoImagemLimpo[1], $tiposPermitidos)){
+
+            return redirect()->back()->with('atencao', 'O arquivo não tem o formato permitido. Apenas: ' . implode(', ', $tiposPermitidos));
+
+
+        }
+
+        list($largura, $altura) = getimagesize($imagem->getPathName());
+
+        if($largura < "400" || $altura < "400"){
+
+            return redirect()->back()->with('atencao', 'A imagem não pode ser menor do que 400x400 pixels.');
+
+        }
+
+        // a partir desse ponto fazemos o store da imagem
+        
+        //fazendo o store da imagem e recuperando o caminho da mesma
+        $imagemCaminho = $imagem->store('entregadores');
+
+        $imagemCaminho = WRITEPATH . 'uploads/' . $imagemCaminho;
+
+
+        //fazendo o resize da mesma imagem
+        service('image')
+        ->withFile($imagemCaminho)
+        ->fit(400, 400, 'center')
+        ->save($imagemCaminho);
+
+        //recuperando a imagem antiga para exclui-la
+        $imagemAntiga = $entregador->imagem;
+
+        //atribuindo a nova imagem
+        $entregador->imagem = $imagem->getName();
+
+        // atualizando a imagem do entregador
+        $this->entregadorModel->save($entregador);
+
+        //definindo o caminho da imagem antiga
+        $caminhoImagem = WRITEPATH . 'uploads/entregadores/' . $imagemAntiga;
+
+        if(is_file($caminhoImagem)){
+
+            unlink($caminhoImagem);
+
+        }
+
+        return redirect()->to(site_url("admin/entregadores/show/$entregador->id"))->with('sucesso', 'Imagem alterada com sucesso');
+        
+
+    }
+
+    public function imagem(string $imagem = null){
+
+        if($imagem){
+            $caminhoImagem = WRITEPATH . 'uploads/entregadores/' . $imagem;
+            $infoImagem = new \finfo(FILEINFO_MIME);
+
+            $tipoImagem = $infoImagem->file($caminhoImagem);
+
+            header("Content-Type: $tipoImagem");
+
+            header("Content-Length: " . filesize($caminhoImagem));
+
+            readfile($caminhoImagem);
+            exit;
+        }
+
+    }
+
     public function show($id = null){
         $entregador = $this->buscaEntregadorOu404($id);
 
