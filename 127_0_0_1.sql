@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2023 at 12:48 PM
+-- Generation Time: Nov 14, 2023 at 02:01 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `food`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bairros`
+--
+
+CREATE TABLE `bairros` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `nome` varchar(128) NOT NULL,
+  `slug` varchar(128) NOT NULL,
+  `cidade` varchar(30) NOT NULL DEFAULT 'Goianésia',
+  `valor_entrega` decimal(10,2) NOT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT 1,
+  `criado_em` datetime DEFAULT NULL,
+  `atualizado_em` datetime DEFAULT NULL,
+  `deletado_em` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `bairros`
+--
+
+INSERT INTO `bairros` (`id`, `nome`, `slug`, `cidade`, `valor_entrega`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
+(1, 'Carrilho', 'carrilho', 'Goianésia', '5.00', 1, '2023-11-14 09:59:47', '2023-11-14 09:59:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -75,8 +100,8 @@ CREATE TABLE `entregadores` (
 --
 
 INSERT INTO `entregadores` (`id`, `nome`, `cpf`, `cnh`, `email`, `telefone`, `endereco`, `imagem`, `veiculo`, `placa`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(1, 'Pedro Luiz Souza', '987.508.650-99', '65985320', 'pedroluiz@email.com', '(62) 99999-9999', 'Rua do trabalho N 45, Centro Cívico - Curitiba - PR', NULL, 'Titan 160 - Preta - 2018', 'KBQ-5821', 1, '2023-11-12 10:10:59', '2023-11-14 08:38:05', NULL),
-(2, 'Malu Simone Mendes', '971.617.595-79', '69683203211', 'email@email.com', '(62) 93353-7317', 'Rua 25 n 434 - Goianesia-GO', NULL, 'CG 2018 Vermelha', 'MWM-6352', 1, '2023-11-14 08:48:05', '2023-11-14 08:48:32', NULL);
+(1, 'Pedro Luiz Souza', '987.508.650-99', '65985320', 'pedroluiz@email.com', '(62) 99999-9999', 'Rua do trabalho N 45, Centro Cívico - Curitiba - PR', '1699963687_6cde2cce6f7c7b629d45.png', 'Titan 160 - Preta - 2018', 'KBQ-5821', 1, '2023-11-12 10:10:59', '2023-11-14 09:08:07', NULL),
+(2, 'Malu Simone Mendes', '971.617.595-79', '69683203211', 'email@email.com', '(62) 93353-7317', 'Rua 25 n 434 - Goianesia-GO', '1699964675_07e4ccfa86bdb0751ba6.png', 'CG 2018 Vermelha', 'NNU-9N94', 1, '2023-11-14 08:48:05', '2023-11-14 09:24:36', NULL);
 
 -- --------------------------------------------------------
 
@@ -184,7 +209,8 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 (9, '2023-11-11-122055', 'App\\Database\\Migrations\\CriaTabelaProdutosExtras', 'default', 'App', 1699705535, 6),
 (10, '2023-11-11-183949', 'App\\Database\\Migrations\\CriaTabelaProdutosEspecificacoes', 'default', 'App', 1699728219, 7),
 (11, '2023-11-12-093533', 'App\\Database\\Migrations\\CriaTabelaFormasPagamento', 'default', 'App', 1699782057, 8),
-(13, '2023-11-12-130055', 'App\\Database\\Migrations\\CriaTabelaEntregadores', 'default', 'App', 1699794650, 9);
+(13, '2023-11-12-130055', 'App\\Database\\Migrations\\CriaTabelaEntregadores', 'default', 'App', 1699794650, 9),
+(14, '2023-11-14-125608', 'App\\Database\\Migrations\\CriaTabelaBairros', 'default', 'App', 1699966773, 10);
 
 -- --------------------------------------------------------
 
@@ -297,6 +323,13 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `cpf`, `telefone`, `is_admin`, `a
 --
 
 --
+-- Indexes for table `bairros`
+--
+ALTER TABLE `bairros`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nome` (`nome`);
+
+--
 -- Indexes for table `categorias`
 --
 ALTER TABLE `categorias`
@@ -379,6 +412,12 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT for table `bairros`
+--
+ALTER TABLE `bairros`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
@@ -412,7 +451,7 @@ ALTER TABLE `medidas`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `produtos`
