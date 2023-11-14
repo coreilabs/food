@@ -46,12 +46,12 @@
 
         
                    
-        <?= form_open("admin/usuarios/atualizar/$usuario->id")?>
+        <?= form_open("admin/entregadores/atualizar/$entregador->id")?>
 
-            <?= $this->include('Admin/Usuarios/form')?>
+            <?= $this->include('Admin/Entregadores/form')?>
 
           
-            <a href="<?= site_url("admin/usuarios/show/$usuario->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
+            <a href="<?= site_url("admin/entregadores/show/$entregador->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
 

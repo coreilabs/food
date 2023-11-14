@@ -2,69 +2,51 @@
 
     <div class="form-group col-md-4 ">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?= old('nome', esc($usuario->nome)) ?>">
+        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?= old('nome', esc($entregador->nome)) ?>">
     </div>
 
     <div class="form-group col-md-2">
         <label for="cpf">CPF</label>
-        <input type="text" class="form-control cpf" name="cpf" id="cpf" placeholder="CPF" value="<?= old('cpf',esc($usuario->cpf) )?>">
+        <input type="text" class="form-control cpf" name="cpf" id="cpf" placeholder="CPF" value="<?= old('cpf',esc($entregador->cpf) )?>">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label for="cnh">CNH</label>
+        <input type="text" class="form-control cnh" name="cnh" id="cnh" placeholder="CNH" value="<?= old('cnh',esc($entregador->cnh) )?>">
     </div>
 
     <div class="form-group col-md-3">
         <label for="telefone">Telefone</label>
-        <input type="text" class="form-control sp_celphones" name="telefone" id="telefone" placeholder="Telefone"  value="<?= old('telefone', esc($usuario->telefone) )?>">
+        <input type="text" class="form-control sp_celphones" name="telefone" id="telefone" placeholder="Telefone"  value="<?= old('telefone', esc($entregador->telefone) )?>">
     </div>
 
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-2">
         <label for="email">Email</label>
-        <input type="text" class="form-control" name="email" id="email" placeholder="Email"  value="<?= old('email', esc($usuario->email) )?>">
+        <input type="text" class="form-control" name="email" id="email" placeholder="Email"  value="<?= old('email', esc($entregador->email) )?>">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label for="veiculo">Veículo</label>
+        <input type="text" class="form-control " name="veiculo" id="veiculo" placeholder="Veículo"  value="<?= old('veiculo', esc($entregador->veiculo) )?>">
+    </div>
+
+    <div class="form-group col-md-2">
+        <label for="placa">Placa</label>
+        <input type="text" class="form-control placa " name="placa" id="placa" placeholder="Placa"  value="<?= old('placa', esc($entregador->placa) )?>">
+    </div>
+
+    <div class="form-group col-md-5">
+        <label for="endereco">Endereço</label>
+        <input type="text" class="form-control " name="endereco" id="endereco" placeholder="Endereço"  value="<?= old('endereco', esc($entregador->endereco) )?>">
     </div>
 
 </div>
 
-
-<div class="form-row">
-    <div class="form-group col-md-3">
-        <label for="password">Senha</label>
-        <input type="password" class="form-control" name="password" id="password" placeholder="Senha" name="password">
-    </div>
-    <div class="form-group col-md-3">
-        <label for="password_confirmation">Confirmação de Senha</label>
-        <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Confirmação de Senha">
-    </div>
-
-
-
-
-
-    <div class="form-group col-md-3">
-
-</div>
-
-
-
-</div>
 
 
 <div class="form-row">
 
-<div class="form-group col-md-3">
 
-
-
-<div class="form-check form-check-flat form-check-primary">
-             
-<label for="is_admin" class="form-check-label">
-
-<input type="hidden" value="0" name="is_admin">
-
-<input type="checkbox" class="form-check-input" id="is_admin" name="is_admin" value="1" <?php if(old('is_admin', $usuario->is_admin)) : ?> checked="" <?php endif; ?> >
-Administrador
-</label>
-
-                </div>
-
-</div>
 
 
 
@@ -79,7 +61,7 @@ Administrador
 
             <input type="hidden" value="0" name="ativo">
 
-            <input type="checkbox" class="form-check-input" id="ativo" name="ativo" value="1" <?php if(old('ativo', $usuario->ativo)) : ?> checked="" <?php endif; ?> >
+            <input type="checkbox" class="form-check-input" id="ativo" name="ativo" value="1" <?php if(old('ativo', $entregador->ativo)) : ?> checked="" <?php endif; ?> >
             Ativo
         </label>
 

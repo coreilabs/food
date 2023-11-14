@@ -47,14 +47,29 @@ class Entregadores extends BaseController
     
     }
 
+    public function editar($id = null){
+        $entregador = $this->buscaEntregadorOu404($id);
+
+
+        
+        $data = [
+            'titulo' => "Editando o entregador $entregador->nome",
+            'entregador' => $entregador,
+        ];
+
+        return view('Admin/Entregadores/editar', $data);
+    }
+
     public function show($id = null){
         $entregador = $this->buscaEntregadorOu404($id);
 
+
+        
         $data = [
             'titulo' => "Detalhando o entregador $entregador->nome",
             'entregador' => $entregador,
         ];
-        
+
         return view('Admin/Entregadores/show', $data);
     }
 
