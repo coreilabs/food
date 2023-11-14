@@ -60,6 +60,32 @@ class Entregadores extends BaseController
         return view('Admin/Entregadores/editar', $data);
     }
 
+    public function atualizar($id = null){
+        if($this->request->getMethod() === 'post'){
+            $entregador = $this->buscaEntregadorOu404($id);
+            // dd($this->request->getPost());
+
+            $entregador->fill($this->request->getPost());
+
+            if(!$entregador->hasChanged()){
+
+                return redirect()->back()->with('info', 'Não há dados para atualizar');
+
+            }
+
+            if($this->entregadorModel->save($entregador)){
+                return redirect()->to(site_url("admin/entregadores/show/$entregador->id"))
+                ->with('sucesso', "Entregador $entregador->nome atualizado com sucesso.");
+            }else{
+                return redirect()->back()->with('errors_model', $this->entregadorModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+            }
+    
+
+        }else{
+            return redirect()->back();
+        }
+    }
+
     public function show($id = null){
         $entregador = $this->buscaEntregadorOu404($id);
 

@@ -59,6 +59,22 @@ class EntregadorModel extends Model
             'required' => 'O campo EMAIL é obrigatório.',
 
         ],
+        'cnh' => [
+            'required' => 'O campo CNH é obrigatório.',
+
+        ],
+        'endereco' => [
+            'required' => 'O campo ENDEREÇO é obrigatório.',
+
+        ],
+        'veiculo' => [
+            'required' => 'O campo VEÍCULO é obrigatório.',
+
+        ],
+        'placa' => [
+            'required' => 'O campo PLACA é obrigatório.',
+
+        ],
         'password' => [
             'required' => 'O campo SENHA é obrigatório.',
 
