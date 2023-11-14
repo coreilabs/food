@@ -239,39 +239,48 @@ class Entregadores extends BaseController
     }
 
 
-    public function excluir($id = null){
+    public function excluir($id = null) {
+ 
         $entregador = $this->buscaEntregadorOu404($id);
-
-        if($this->request->getMethod() === 'post'){
-
-
+ 
+ 
+        if ($this->request->getMethod() === 'post') {
+ 
             $this->entregadorModel->delete($id);
-
-            if($entregador->imagem){
-
-                $caminhoImagem = WRITEPATH . 'Uploads/entregadores/' . $entregador->imagem;
-
-                if(is_file($caminhoImagem)){
-
+ 
+ 
+            if ($entregador->imagem) {
+ 
+                $caminhoImagem = WRITEPATH . 'uploads/entregadores/' . $entregador->imagem;
+ 
+                if (is_file($caminhoImagem)) {
+ 
+ 
                     unlink($caminhoImagem);
-
                 }
-
             }
-
+ 
+ 
             $entregador->imagem = null;
-            $this->entregadorModel->save($entregador);
-
-            return redirect()->to(site_url("admin/entregadores"))->with('sucesso', "Entregador excluído com sucesso.");
-
+ 
+            if($entregador->hasChanged()){
+ 
+                $this->entregadorModel->save($entregador);
+ 
+            }
+ 
+            return redirect()->to(site_url("admin/entregadores"))->with('sucesso', 'Entregador excluído com sucesso');
         }
-
-
+ 
+ 
+ 
+ 
         $data = [
             'titulo' => "Excluindo o entregador $entregador->nome",
             'entregador' => $entregador,
         ];
-
+ 
+ 
         return view('Admin/Entregadores/excluir', $data);
     }
 
