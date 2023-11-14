@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2023 at 02:15 PM
+-- Generation Time: Nov 14, 2023 at 12:48 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -75,7 +75,8 @@ CREATE TABLE `entregadores` (
 --
 
 INSERT INTO `entregadores` (`id`, `nome`, `cpf`, `cnh`, `email`, `telefone`, `endereco`, `imagem`, `veiculo`, `placa`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(1, 'Pedro Luiz', '987.508.650-99', '65985320', 'pedroluiz@email.com', '(62) 99999-9999', 'Rua do trabalho N 45, Centro Cívico - Curitiba - PR', NULL, 'Titan 160 - Preta - 2018', 'KBQ-5821', 1, '2023-11-12 10:10:59', '2023-11-12 10:10:59', NULL);
+(1, 'Pedro Luiz Souza', '987.508.650-99', '65985320', 'pedroluiz@email.com', '(62) 99999-9999', 'Rua do trabalho N 45, Centro Cívico - Curitiba - PR', NULL, 'Titan 160 - Preta - 2018', 'KBQ-5821', 1, '2023-11-12 10:10:59', '2023-11-14 08:38:05', NULL),
+(2, 'Malu Simone Mendes', '971.617.595-79', '69683203211', 'email@email.com', '(62) 93353-7317', 'Rua 25 n 434 - Goianesia-GO', NULL, 'CG 2018 Vermelha', 'MWM-6352', 1, '2023-11-14 08:48:05', '2023-11-14 08:48:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -387,7 +388,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT for table `entregadores`
 --
 ALTER TABLE `entregadores`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `extras`

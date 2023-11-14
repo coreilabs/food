@@ -47,6 +47,39 @@ class Entregadores extends BaseController
     
     }
 
+    public function criar(){
+        $entregador = new Entregador();
+
+
+        
+        $data = [
+            'titulo' => "Cadastrando entregador",
+            'entregador' => $entregador,
+        ];
+
+        return view('Admin/Entregadores/criar', $data);
+    }
+
+    public function cadastrar(){
+        if($this->request->getMethod() === 'post'){
+            $entregador = new Entregador($this->request->getPost());
+
+            // dd($this->request->getPost());
+
+
+            if($this->entregadorModel->save($entregador)){
+                return redirect()->to(site_url("admin/entregadores/show/".$this->entregadorModel->getInsertID()))
+                ->with('sucesso', "Entregador $entregador->nome cadastrado com sucesso.");
+            }else{
+                return redirect()->back()->with('errors_model', $this->entregadorModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+            }
+    
+
+        }else{
+            return redirect()->back();
+        }
+    }
+
     public function editar($id = null){
         $entregador = $this->buscaEntregadorOu404($id);
 
