@@ -1,18 +1,36 @@
 <div class="form-row">
 
+
+
+<?php if(!$bairro->id):?>
     <div class="form-group col-md-12 ">
-        <label for="nome">Nome</label>
-        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?= old('nome', esc($extra->nome)) ?>">
+        <label for="cep">CEP</label>
+        <input type="text" class="form-control cep" name="cep" placeholder="CEP" value="<?= old('cep', esc($bairro->cep)) ?>">
+        <div id="cep"></div>
     </div>
+    <?php endif;?>
 
     <div class="form-group col-md-12 ">
-        <label for="nome">Descrição</label>
-        <textarea name="descricao" class="form-control" id="" cols="30" rows="3" id="descricao"><?= old('descricao', esc($extra->descricao)) ?></textarea>
-       
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?= old('nome', esc($bairro->nome)) ?> " readonly="">
     </div>
+
+
+    <div class="form-group col-md-12 ">
+        <label for="cidade">Cidade</label>
+        <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade" value="<?= old('cidade', esc($bairro->cidade)) ?> " readonly="">
+    </div>
+    <?php if(!$bairro->id):?>
+        <div class="form-group col-md-12 ">
+        <label for="estado">Estado</label>
+        <input type="text" class="form-control uf" name="estado" id="estado" placeholder="Estado" readonly="">
+    </div>
+    <?php endif;?>
+
+
     <div class="form-group col-md-6 ">
-        <label for="nome">Preço de Venda (R$)</label>
-        <input type="text" class="form-control money" name="preco" id="preco" placeholder="Preço" value="<?= old('preco', esc($extra->preco)) ?>">
+        <label for="valor_entrega">Valor de Entrega (R$)</label>
+        <input type="text" class="form-control money" name="valor_entrega" id="valor_entrega" placeholder="Preço" value="<?= old('valor_entrega', esc(number_format($bairro->valor_entrega,2))) ?>">
     </div>
 
   
@@ -25,7 +43,7 @@
 
             <input type="hidden" value="0" name="ativo">
 
-            <input type="checkbox" class="form-check-input" id="ativo" name="ativo" value="1" <?php if(old('ativo', $extra->ativo)) : ?> checked="" <?php endif; ?> >
+            <input type="checkbox" class="form-check-input" id="ativo" name="ativo" value="1" <?php if(old('ativo', $bairro->ativo)) : ?> checked="" <?php endif; ?> >
             Ativo
         </label>
 

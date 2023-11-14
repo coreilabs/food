@@ -46,12 +46,12 @@
 
         
                    
-        <?= form_open("admin/extras/atualizar/$extra->id")?>
+        <?= form_open("admin/bairros/atualizar/$bairro->id")?>
 
-            <?= $this->include('Admin/Extras/form')?>
+            <?= $this->include('Admin/Bairros/form')?>
 
           
-            <a href="<?= site_url("admin/extras/show/$extra->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
+            <a href="<?= site_url("admin/bairros/show/$bairro->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
 

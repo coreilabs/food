@@ -56,6 +56,16 @@ class Bairros extends BaseController
        return view('Admin/Bairros/show', $data);
     }
 
+    public function editar($id = null){
+        $bairro = $this->buscaBairroOu404($id);
+
+       $data = [
+        'titulo' => "Editando Bairro $bairro->nome",
+        'bairro' => $bairro
+       ];
+       return view('Admin/Bairros/editar', $data);
+    }
+
         /**
  * @param int $id
  * @return objeto bairro
