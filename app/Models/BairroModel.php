@@ -7,34 +7,68 @@ use CodeIgniter\Model;
 class BairroModel extends Model
 {
     protected $table            = 'bairros';
-    protected $primaryKey       = 'id';
-    protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $returnType       = 'App\Entities\Bairro';
+    protected $useSoftDeletes   = true;
+    protected $allowedFields    = ['nome', 'slug', 'valor_entrega', 'ativo'];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    protected $createdField  = 'criado_em';
+    protected $updatedField  = 'atualizado_em';
+    protected $deletedField  = 'deletado_em';
 
-    // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
+        //Validações
+        protected $validationRules = [
+            'nome'     => 'required|min_length[2]|max_length[120]|is_unique[bairros.nome]',
+            'cep'     => 'required|exact_length[9]',
+            'valor_entrega' => 'required|',
 
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+        ];
+        protected $validationMessages = [
+            'nome' => [
+                'required' => 'O campo NOME é obrigatório.',
+                'is_unique' => 'Este BAIRRO já está cadastrada.'
+    
+            ],
+            'valor_entrega' => [
+                'required' => 'O campo VALOR ENTREGA é obrigatório.',
+                    
+            ],
+        ];
+    
+        protected $beforeInsert = ['criaSlug'];
+        protected $beforeUpdate = ['criaSlug'];
+    
+        protected function criaSlug(array $data){
+            if (isset($data['data']['nome'])){
+                $data['data']['slug'] = mb_url_title($data['data']['nome'], '-', true);
+    
+    
+            }
+    
+         
+            return $data;
+        }
+
+
+        public function procurar($term){
+            if($term === null){
+                return [];
+            }
+    
+            return $this->select(['id', 'nome'])
+            ->like('nome', $term)
+            ->withDeleted(true)
+            ->get()
+            ->getResult();
+        }
+    
+        public function desfazerExclusao(int $id){
+            return $this->protect(false)
+            ->where('id', $id)
+            ->set('deletado_em', null)
+            ->update();
+        }
+    
 }

@@ -18,7 +18,7 @@ class CategoriaModel extends Model
     protected $updatedField  = 'atualizado_em';
     protected $deletedField  = 'deletado_em';
 
-    // Validation
+
 
     //Validações
     protected $validationRules = [
