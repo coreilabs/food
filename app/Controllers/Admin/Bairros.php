@@ -66,6 +66,31 @@ class Bairros extends BaseController
        return view('Admin/Bairros/editar', $data);
     }
 
+    public function atualizar($id = null){
+        if($this->request->getMethod() === 'post'){
+
+            $bairro = $this->buscaBairroOu404($id);
+
+            $bairro->fill($this->request->getPost());
+
+            if(!$bairro->hasChanged()){
+
+                return redirect()->back()->with('info', "Não há dados para atualizar.");
+
+            }
+
+            if($this->bairroModel->save($bairro)){
+                return redirect()->to(site_url("admin/bairros/show/$bairro->id"))
+                ->with('sucesso', "Bairro $bairro->nome atualizado com sucesso.");
+            }else{
+                return redirect()->back()->with('errors_model', $this->bairroModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+            }
+
+        }else{
+            return redirect()->back();
+        }
+    }
+
         /**
  * @param int $id
  * @return objeto bairro

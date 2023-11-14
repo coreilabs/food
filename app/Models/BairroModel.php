@@ -21,14 +21,13 @@ class BairroModel extends Model
         //Validações
         protected $validationRules = [
             'nome'     => 'required|min_length[2]|max_length[120]|is_unique[bairros.nome]',
-            'cep'     => 'required|exact_length[9]',
             'valor_entrega' => 'required|',
 
         ];
         protected $validationMessages = [
             'nome' => [
                 'required' => 'O campo NOME é obrigatório.',
-                'is_unique' => 'Este BAIRRO já está cadastrada.'
+                'is_unique' => 'Este BAIRRO já está cadastrado.'
     
             ],
             'valor_entrega' => [
