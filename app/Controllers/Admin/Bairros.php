@@ -23,4 +23,50 @@ class Bairros extends BaseController
 
         return view('Admin/Bairros/index', $data);
     }
+
+    public function procurar(){
+
+        if(!$this->request->isAJAX()){
+            exit('Página não encontrada');
+    
+        }
+    
+        $bairros = $this->bairroModel->procurar($this->request->getGet('term'));
+    
+        $retorno = [];
+    
+        foreach($bairros as $bairro){
+            $data['id'] = $bairro->id;
+            $data['value'] = $bairro->nome;
+    
+            $retorno[] = $data;
+        }
+    
+        return $this->response->setJSON($retorno);
+    
+    }
+
+    public function show($id = null){
+        $bairro = $this->buscaBairroOu404($id);
+
+       $data = [
+        'titulo' => "Detalhando Bairro $bairro->nome",
+        'bairro' => $bairro
+       ];
+       return view('Admin/Bairros/show', $data);
+    }
+
+        /**
+ * @param int $id
+ * @return objeto bairro
+ */
+private function buscaBairroOu404(int $id = null){
+    if(!$id || !$bairro = $this->bairroModel->withDeleted(true)->where('id', $id)->first()){
+        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Não Encontramos a Bairro $id");
+    }
+    return $bairro;
+}
+
+
+    
 }

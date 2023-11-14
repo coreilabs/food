@@ -140,16 +140,7 @@ class Extras extends BaseController
         }
     }
 
-    /**
- * @param int $id
- * @return objeto extra
- */
-private function buscaExtraOu404(int $id = null){
-    if(!$id || !$extra = $this->extraModel->withDeleted(true)->where('id', $id)->first()){
-        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Não Encontramos a Extra $id");
-    }
-    return $extra;
-}
+
 
 public function excluir($id = null){
 
@@ -193,6 +184,17 @@ public function desfazerExclusao($id = null){
     }
 
 
+}
+
+    /**
+ * @param int $id
+ * @return objeto extra
+ */
+private function buscaExtraOu404(int $id = null){
+    if(!$id || !$extra = $this->extraModel->withDeleted(true)->where('id', $id)->first()){
+        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Não Encontramos a Extra $id");
+    }
+    return $extra;
 }
 
 
