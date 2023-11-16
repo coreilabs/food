@@ -71,7 +71,12 @@ class Bairros extends BaseController
 
             $bairro = $this->buscaBairroOu404($id);
 
+           
+
+
             $bairro->fill($this->request->getPost());
+
+            $bairro->valor_entrega = str_replace(',', "", $bairro->valor_entrega);
 
             if(!$bairro->hasChanged()){
 

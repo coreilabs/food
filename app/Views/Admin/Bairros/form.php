@@ -12,13 +12,13 @@
 
     <div class="form-group col-md-12 ">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?= old('nome', esc($bairro->nome)) ?> " readonly="">
+        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?= old('nome', esc($bairro->nome)) ?>" readonly="">
     </div>
 
 
     <div class="form-group col-md-12 ">
         <label for="cidade">Cidade</label>
-        <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade" value="<?= old('cidade', esc($bairro->cidade)) ?> " readonly="">
+        <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade" value="<?= old('cidade', esc($bairro->cidade)) ?>" readonly="">
     </div>
     <?php if(!$bairro->id):?>
         <div class="form-group col-md-12 ">

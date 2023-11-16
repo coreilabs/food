@@ -20,14 +20,8 @@ class BairroModel extends Model
 
         //Validações
         protected $validationRules = [
-            'nome'     => 'required|min_length[2]|max_length[120]|is_unique[bairros.nome,id,{id}]',
-            'cidade' => 'required|equals[Goianésia]',
+            'nome'     => 'required|min_length[2]|max_length[120]|is_unique[bairros.nome]',
             'valor_entrega' => 'required|',
-            'id' => [
-                'label'  => 'Id',
-                'rules'  => 'permit_empty|is_natural_no_zero',
-            ],
-            
 
         ];
         protected $validationMessages = [
