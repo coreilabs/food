@@ -58,7 +58,7 @@
 
   
 
-<button type="submit"  class="btn btn-dark btn-icon-text btn-sm  m-1">
+<button type="submit"  id="btn-salvar" class="btn btn-dark btn-icon-text btn-sm  m-1">
     <i class="mdi mdi-content-save btn-icon-prepend"></i>
     Salvar
 </button>

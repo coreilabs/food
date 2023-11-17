@@ -46,6 +46,19 @@ class Bairros extends BaseController
     
     }
 
+    
+    public function criar($id = null){
+        $bairro = new Bairro();
+      
+
+       $data = [
+        'titulo' => "Cadastrando novo Bairro",
+        'bairro' => $bairro
+       ];
+       return view('Admin/Bairros/criar', $data);
+    }
+
+
     public function show($id = null){
         $bairro = $this->buscaBairroOu404($id);
 
