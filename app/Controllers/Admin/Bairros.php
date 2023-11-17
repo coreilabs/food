@@ -17,7 +17,7 @@ class Bairros extends BaseController
     {
         $data = [
             'titulo' => "Listando os bairros atendidos",
-            'bairros' => $this->bairroModel->withDeleted(true)->paginate(10),
+            'bairros' => $this->bairroModel->withDeleted(true)->orderBy('nome', 'ASC')->paginate(10),
             'pager' => $this->bairroModel->pager
         ];
 
@@ -58,6 +58,25 @@ class Bairros extends BaseController
        return view('Admin/Bairros/criar', $data);
     }
 
+    public function cadastrar($id = null){
+        if($this->request->getMethod() === 'post'){
+
+
+           $bairro = new Bairro($this->request->getPost());
+
+            $bairro->valor_entrega = str_replace(',', "", $bairro->valor_entrega);
+
+            if($this->bairroModel->save($bairro)){
+                return redirect()->to(site_url("admin/bairros/show/".$this->bairroModel->getInsertID()))
+                ->with('sucesso', "Bairro $bairro->nome atualizado com sucesso.");
+            }else{
+                return redirect()->back()->with('errors_model', $this->bairroModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+            }
+
+        }else{
+            return redirect()->back();
+        }
+    }
 
     public function show($id = null){
         $bairro = $this->buscaBairroOu404($id);

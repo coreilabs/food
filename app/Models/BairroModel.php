@@ -21,6 +21,7 @@ class BairroModel extends Model
         //Validações
         protected $validationRules = [
             'nome'     => 'required|min_length[2]|max_length[120]|is_unique[bairros.nome]',
+            'cidade'     => 'required|equals[Goianésia]',
             'valor_entrega' => 'required|',
 
         ];
@@ -34,6 +35,9 @@ class BairroModel extends Model
                 'required' => 'O campo VALOR ENTREGA é obrigatório.',
                     
             ],
+            'cidade' => [
+                'equals' => 'Por favor cadastre apenas Bairros de Goianésia-GO.'
+            ]
         ];
     
         protected $beforeInsert = ['criaSlug'];
