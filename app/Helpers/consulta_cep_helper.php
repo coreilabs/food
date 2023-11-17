@@ -8,7 +8,7 @@ if(!function_exists('consultaCep')){
         $ch = curl_init();
 
         //definindo a URL
-        curl_setopt($ch, CURLOPT, $urlViaCep);
+        curl_setopt($ch, CURLOPT_URL, $urlViaCep);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         //executamos o POST

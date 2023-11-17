@@ -111,6 +111,8 @@ class Bairros extends BaseController
 
     public function consultaCep(){
 
+      
+
         if(!$this->request->isAJAX()){
 
             return redirect()->to(site_url());
@@ -130,9 +132,30 @@ class Bairros extends BaseController
 
         }
 
-        echo '<pre>';
-        print_r($this->request->getGet());
-        die;
+        //cep formatado sem barra
+        $cep = str_replace('-', '', $this->request->getGet('cep'));
+
+      
+
+        /**
+         * Carregando o Helper 
+         *
+         */
+        helper('consulta_cep');
+
+        $consulta = consultaCep($cep);
+
+        if(isset($consulta->erro) &&  !isset($consulta->cep)){
+
+            $retorno['erro'] = '<span class="text-danger small"> CEP inválido</span>';
+
+            return $this->response->setJSON($retorno);
+
+        }
+
+        $retorno['endereco'] = $consulta;
+        return $this->response->setJSON($retorno);
+
 
     // dd($this->request->getGet());
     }

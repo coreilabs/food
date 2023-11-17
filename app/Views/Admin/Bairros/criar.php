@@ -112,6 +112,8 @@
         $('[name=cidade]').val(response.endereco.localidade);
         $('[name=estado]').val(response.endereco.uf);
         $("#btn-salvar").prop('disabled', false);
+        $("#cep").html('');
+
 
         
         }else{
