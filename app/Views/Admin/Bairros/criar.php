@@ -80,7 +80,7 @@
 
   $("#btn-salvar").prop('disabled', true);
 
-  $('[name=cep]').focusout(function{
+  $('[name=cep]').focusout(function(){
     var cep = $(this).val();
 
     $.ajax({
@@ -118,13 +118,13 @@
           /**
            * tem erros de validacap, cep nao encontrado etc
            */
-          $("#cep").html(reponse.erro);
+          $("#cep").html(response.erro);
         }
 
       }, //fim sucsess
 
       error: function(){
-        alert('Não foi possível consultar o CEP. Contacte o suporte técnico');
+       
         $("#btn-salvar").prop('disabled', true);
 
 

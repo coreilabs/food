@@ -109,9 +109,37 @@ class Bairros extends BaseController
         }
     }
 
+    public function consultaCep(){
+
+        if(!$this->request->isAJAX()){
+
+            return redirect()->to(site_url());
+
+        }
+
+        $validacao = service('validation');
+        $validacao->setRule('cep', 'CEP', 'required|exact_length[9]');
+        
+        $retorno = [];
+
+        if(!$validacao->withRequest($this->request)->run()){
+
+            $retorno['erro'] = '<span class="text-danger small">'.$validacao->getError().'</span>';
+
+            return $this->response->setJSON($retorno);
+
+        }
+
+        echo '<pre>';
+        print_r($this->request->getGet());
+        die;
+
+    // dd($this->request->getGet());
+    }
+
         /**
  * @param int $id
- * @return objeto bairro
+ * @return objeto bBo
  */
 private function buscaBairroOu404(int $id = null){
     if(!$id || !$bairro = $this->bairroModel->withDeleted(true)->where('id', $id)->first()){
