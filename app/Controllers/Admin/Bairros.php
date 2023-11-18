@@ -91,6 +91,10 @@ class Bairros extends BaseController
     public function editar($id = null){
         $bairro = $this->buscaBairroOu404($id);
 
+        if($bairro->deletado_em != null ){
+            return redirect()->back()->with('info',"O Bairro $bairro->nome encontra-se excluído. Não é possível editá-lo.");
+        }   
+
        $data = [
         'titulo' => "Editando Bairro $bairro->nome",
         'bairro' => $bairro
@@ -103,7 +107,9 @@ class Bairros extends BaseController
 
             $bairro = $this->buscaBairroOu404($id);
 
-           
+            if($bairro->deletado_em != null ){
+                return redirect()->back()->with('info',"O Bairro $bairro->nome encontra-se excluído. Não é possível editá-lo.");
+            }   
 
 
             $bairro->fill($this->request->getPost());
@@ -177,6 +183,50 @@ class Bairros extends BaseController
 
 
     // dd($this->request->getGet());
+    }
+
+    public function excluir($id = null){
+
+        $bairro = $this->buscaBairroOu404($id);
+    
+        if($bairro->deletado_em != null ){
+            return redirect()->back()->with('info',"O Bairro $bairro->nome já encontra-se excluído.");
+        }
+    
+     
+        if($this->request->getMethod() === 'post'){
+            $this->bairroModel->delete($id);
+            return redirect()->to(site_url('admin/bairros'))->with('sucesso', "Bairro $bairro->nome excluído com sucesso.");
+    
+        }
+    
+        $data = [
+            'titulo' => "Excluindo o Bairro $bairro->nome",
+            'bairro' => $bairro,
+        ]; 
+        
+        return view('Admin/Bairros/excluir', $data);
+    
+    }
+    
+    
+    public function desfazerExclusao($id = null){
+    
+        $bairro = $this->buscaBairroOu404($id);
+    
+        if($bairro->deletado_em == null ){
+    
+            return redirect()->back()->with('info', 'Apenas Bairros excluídos podem ser recuperados.');
+    
+        }
+    
+        if($this->bairroModel->desfazerExclusao($id)){
+            return redirect()->back()->with('sucesso', 'Exclusão desfeita com sucesso.');
+        } else {
+            return redirect()->back()->with('errors_model', $this->bairroModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+        }
+    
+    
     }
 
         /**

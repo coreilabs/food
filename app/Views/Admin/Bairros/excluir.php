@@ -46,10 +46,10 @@
 
         
                    
-        <?= form_open("admin/extras/excluir/$extra->id")?>
+        <?= form_open("admin/bairros/excluir/$bairro->id")?>
 
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Atenção: </strong> Tem certeza da exclusão do extra <?= esc($extra->nome) ?>?
+  <strong>Atenção: </strong> Tem certeza da exclusão do Bairro <?= esc($bairro->nome) ?>?
 
 </div>
 
@@ -69,7 +69,7 @@
 
 
 
-  <a href="<?= site_url("admin/extras/show/$extra->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
+  <a href="<?= site_url("admin/bairros/show/$bairro->id")?>" class="btn btn-primary btn-sm  btn-icon-text  m-1">
   <i class="btn-icon-prepend mdi mdi-keyboard-backspace"></i> Voltar</a>
 
  
