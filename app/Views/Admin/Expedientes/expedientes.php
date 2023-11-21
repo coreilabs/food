@@ -78,8 +78,8 @@
 
                               <select name="situacao[]" class="form-control" id="" required="">
 
-                                <option value="1">Aberto</option>
-                                <option value="0">Fechado</option>
+                                <option value="1" <?= ($dia->situacao) ? 'selected' : '' ?> >Aberto</option>
+                                <option value="0" <?= (!$dia->situacao) ? 'selected' : '' ?>>Fechado</option>
 
                               </select>
                                 
