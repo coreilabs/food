@@ -65,7 +65,7 @@
                         <div class="content">
                             <div class="filter_item_img">
                                 <i class="fa fa-search-plus"></i>
-                                <img src="<?= site_url('web/')?>src/assets/img/photos/food-1.jpg" alt="sample" />
+                                <img src="<?= site_url("produto/imagem/$produto->imagem")?>" alt="<?= esc($produto->nome)?>" />
                             </div>
                             <div class="info">
                                 <div class="name"><?= esc($produto->nome)?></div>
