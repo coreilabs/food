@@ -61,7 +61,7 @@
                 <?php foreach($produtos as $produto):?>
 
                 <div class="col-sm-6 filtr-item image filter active <?= $produto->categoria_slug?>">
-                    <a href="<?= site_url('web/')?>src/assets/img/photos/food-1.jpg" class="block fancybox" data-fancybox-group="fancybox">
+                    <a href="<?= site_url("produto/detalhes/$produto->slug")?>" class="block fancybox" data-fancybox-group="fancybox">
                         <div class="content">
                             <div class="filter_item_img">
                                 <i class="fa fa-search-plus"></i>
