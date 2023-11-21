@@ -70,10 +70,7 @@
 
                                         <p><?= esc($especificacao->nome)?> : R$ <?= esc($especificacao->preco)?></p>
 
-                                        <?php else:?>
-
-                                          <p class="text-danger">Sem especificação definida</p>
-                                          <?php break;?>
+             
 
                                           <?php endif;?>
 
