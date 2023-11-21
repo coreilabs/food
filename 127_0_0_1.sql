@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2023 at 02:01 PM
+-- Generation Time: Nov 21, 2023 at 07:42 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -44,7 +44,10 @@ CREATE TABLE `bairros` (
 --
 
 INSERT INTO `bairros` (`id`, `nome`, `slug`, `cidade`, `valor_entrega`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(1, 'Carrilho', 'carrilho', 'Goianésia', '5.00', 1, '2023-11-14 09:59:47', '2023-11-14 09:59:47', NULL);
+(1, 'Carrilho', 'carrilho', 'Goianésia', '5.00', 1, '2023-11-14 09:59:47', '2023-11-17 19:00:46', NULL),
+(2, 'Setor Sul', 'setor-sul', 'Goianésia', '5.00', 1, '2023-11-17 17:59:00', '2023-11-21 14:29:27', NULL),
+(4, 'Centro', 'centro', 'Goianésia', '5.00', 1, '2023-11-17 18:03:42', '2023-11-18 11:47:39', NULL),
+(5, 'Residencial Morada Nova', 'residencial-morada-nova', 'Goianésia', '5.00', 1, '2023-11-21 14:27:24', '2023-11-21 14:27:24', NULL);
 
 -- --------------------------------------------------------
 
@@ -67,10 +70,11 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `nome`, `slug`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(1, 'Pizza Doce', 'pizza-doce', 1, '2023-11-06 10:16:53', '2023-11-06 11:45:59', NULL),
+(1, 'Pizza Doce', 'pizza-doce', 1, '2023-11-06 10:16:53', '2023-11-21 14:31:21', NULL),
 (2, 'Porções', 'porcoes', 1, '2023-11-06 11:58:04', '2023-11-06 12:34:02', NULL),
 (3, 'Fritas', 'fritas', 1, '2023-11-06 11:58:50', '2023-11-06 12:35:02', NULL),
-(4, 'Batata', 'batata', 1, '2023-11-06 12:00:17', '2023-11-06 12:00:17', NULL);
+(4, 'Batata', 'batata', 1, '2023-11-06 12:00:17', '2023-11-06 12:00:17', NULL),
+(5, 'Burgers', 'burgers', 1, '2023-11-21 15:33:47', '2023-11-21 15:33:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -106,6 +110,34 @@ INSERT INTO `entregadores` (`id`, `nome`, `cpf`, `cnh`, `email`, `telefone`, `en
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `expediente`
+--
+
+CREATE TABLE `expediente` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `dia` int(5) NOT NULL,
+  `dia_descricao` varchar(50) NOT NULL,
+  `abertura` time DEFAULT NULL,
+  `fechamento` time DEFAULT NULL,
+  `situacao` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `expediente`
+--
+
+INSERT INTO `expediente` (`id`, `dia`, `dia_descricao`, `abertura`, `fechamento`, `situacao`) VALUES
+(22, 0, 'Domingo', '23:00:00', '23:00:00', 0),
+(23, 1, 'Segunda', '21:04:00', '23:00:00', 1),
+(24, 2, 'Terça', '18:00:00', '23:00:00', 1),
+(25, 3, 'Quarta', '18:00:00', '23:00:00', 1),
+(26, 4, 'Quinta', '18:00:00', '23:00:00', 1),
+(27, 5, 'Sexta', '18:00:00', '23:00:00', 1),
+(28, 5, 'Sábado', '18:00:00', '23:00:00', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `extras`
 --
 
@@ -126,7 +158,7 @@ CREATE TABLE `extras` (
 --
 
 INSERT INTO `extras` (`id`, `nome`, `slug`, `preco`, `descricao`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(2, 'Borda de Cheddar', 'borda-de-cheddar', '5.00', 'borda de cheddar como opcional', 1, '2023-11-06 14:02:41', '2023-11-11 11:33:31', NULL),
+(2, 'Bórda de Cheddar', 'borda-de-cheddar', '5.00', 'borda de cheddar como opcional', 1, '2023-11-06 14:02:41', '2023-11-21 14:30:58', NULL),
 (3, 'Fritas', 'fritas', '7.00', 'batata frita', 1, '2023-11-06 14:09:39', '2023-11-06 14:09:52', NULL);
 
 -- --------------------------------------------------------
@@ -174,11 +206,12 @@ CREATE TABLE `medidas` (
 --
 
 INSERT INTO `medidas` (`id`, `nome`, `descricao`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(1, 'Pizza Grande 20 pedaços', 'Pizza Grande 12 pedaços', 1, '2023-11-06 14:26:07', '2023-11-06 15:05:52', NULL),
+(1, 'Pizza Grande 20 pedaços', 'Pizza Grande 12 pedaços', 1, '2023-11-06 14:26:07', '2023-11-21 14:30:16', NULL),
 (2, 'Pequeno', 'pequeno', 0, '2023-11-06 15:12:42', '2023-11-06 15:45:18', NULL),
 (3, 'Brotinho', 'pizza brotinho', 0, '2023-11-06 15:13:38', '2023-11-06 15:13:38', NULL),
 (4, 'Gigante', 'pizza gigante', 1, '2023-11-06 15:15:46', '2023-11-06 15:15:46', NULL),
-(5, 'Mini', 'mini pizza', 1, '2023-11-06 15:26:19', '2023-11-06 15:27:28', NULL);
+(5, 'Mini', 'mini pizza', 1, '2023-11-06 15:26:19', '2023-11-06 15:27:28', NULL),
+(6, 'Hamburger', '', 1, '2023-11-21 15:36:41', '2023-11-21 15:36:41', NULL);
 
 -- --------------------------------------------------------
 
@@ -210,7 +243,8 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 (10, '2023-11-11-183949', 'App\\Database\\Migrations\\CriaTabelaProdutosEspecificacoes', 'default', 'App', 1699728219, 7),
 (11, '2023-11-12-093533', 'App\\Database\\Migrations\\CriaTabelaFormasPagamento', 'default', 'App', 1699782057, 8),
 (13, '2023-11-12-130055', 'App\\Database\\Migrations\\CriaTabelaEntregadores', 'default', 'App', 1699794650, 9),
-(14, '2023-11-14-125608', 'App\\Database\\Migrations\\CriaTabelaBairros', 'default', 'App', 1699966773, 10);
+(14, '2023-11-14-125608', 'App\\Database\\Migrations\\CriaTabelaBairros', 'default', 'App', 1699966773, 10),
+(15, '2023-11-21-121109', 'App\\Database\\Migrations\\CriaTabelaExpediente', 'default', 'App', 1700569908, 11);
 
 -- --------------------------------------------------------
 
@@ -236,8 +270,9 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `categoria_id`, `nome`, `slug`, `ingredientes`, `ativo`, `imagem`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(1, 1, 'Pizza de chocolate com morango e MM', 'pizza-de-chocolate-com-morango-e-mm', 'Pizza de chocolate com morango', 1, '', '2023-11-08 08:56:07', '2023-11-11 21:58:33', '2023-11-11 21:58:33'),
-(4, 2, 'Porção Batata com Bacon', 'porcao-batata-com-bacon', 'Batata e bacon', 1, '', '2023-11-08 11:41:58', '2023-11-08 11:41:58', NULL);
+(1, 1, 'Pizza de chocolate com morango e MM', 'pizza-de-chocolate-com-morango-e-mm', 'Pizza de chocolate com morango', 1, '', '2023-11-08 08:56:07', '2023-11-21 14:32:00', NULL),
+(4, 2, 'Porção Batata com Bacon', 'porcao-batata-com-bacon', 'Batata e bacon', 1, '', '2023-11-08 11:41:58', '2023-11-08 11:41:58', NULL),
+(5, 5, 'Mustang', 'mustang', 'Pão brioche, burger 130g, Queijo Cheddar, Bacon, Ovo, Picles, Molho Defumado, Alface, Tomate e Cebola', 1, '1700591753_d2ffd08f40efa2c86739.webp', '2023-11-21 15:35:41', '2023-11-21 15:35:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -259,7 +294,10 @@ CREATE TABLE `produtos_especificacoes` (
 
 INSERT INTO `produtos_especificacoes` (`id`, `produto_id`, `medida_id`, `preco`, `customizavel`) VALUES
 (3, 1, 4, '50.00', 1),
-(5, 1, 5, '35.00', 0);
+(5, 1, 5, '35.00', 0),
+(6, 4, 4, '50.00', 1),
+(7, 1, 6, '25.00', 0),
+(8, 5, 6, '25.00', 0);
 
 -- --------------------------------------------------------
 
@@ -347,6 +385,12 @@ ALTER TABLE `entregadores`
   ADD UNIQUE KEY `telefone` (`telefone`);
 
 --
+-- Indexes for table `expediente`
+--
+ALTER TABLE `expediente`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `extras`
 --
 ALTER TABLE `extras`
@@ -415,19 +459,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `bairros`
 --
 ALTER TABLE `bairros`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `entregadores`
 --
 ALTER TABLE `entregadores`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `expediente`
+--
+ALTER TABLE `expediente`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `extras`
@@ -445,25 +495,25 @@ ALTER TABLE `formas_pagamento`
 -- AUTO_INCREMENT for table `medidas`
 --
 ALTER TABLE `medidas`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `produtos_especificacoes`
 --
 ALTER TABLE `produtos_especificacoes`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `produtos_extras`

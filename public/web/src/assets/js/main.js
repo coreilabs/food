@@ -70,6 +70,20 @@ $(document).ready(function() {
 
     //======= START Menu filter ========
 
+
+    $(document).on('click', '#todas', function(){
+
+        //exibe todos os produtos
+
+        $('.filter').show('1000');
+
+        //removemos a clase active das outras opcoes de categoria
+
+        $(".filter-button").closest('li').removeClass("active");
+    });
+
+
+
     $(document).on('click', '.filter-button', function(){
 
         $(".filter-button").closest('li').removeClass("active")
