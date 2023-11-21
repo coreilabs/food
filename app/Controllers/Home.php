@@ -17,6 +17,7 @@ class Home extends BaseController
         $data = [
             'titulo' => 'Seja muito bem vindo!',
             'categorias' => $this->categoriaModel->BuscaCategoriasWebHome(),
+            'produtos' => $this->produtoModel->buscaProdutosWebHome(),
 
         ];
         return view('Home/index', $data);
