@@ -1,0 +1,20 @@
+ERROR - 2023-11-21 09:31:27 --> mysqli_sql_exception: Table 'food.expediente' doesn't exist in C:\xampp\htdocs\food\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\food\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ex...', 0)
+#1 C:\xampp\htdocs\food\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ex...')
+#2 C:\xampp\htdocs\food\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ex...')
+#3 C:\xampp\htdocs\food\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ex...', Array, false)
+#4 C:\xampp\htdocs\food\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\food\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\food\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\food\app\Database\Seeds\ExpedienteSeeder.php(69): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\food\system\Database\Seeder.php(146): App\Database\Seeds\ExpedienteSeeder->run()
+#9 C:\xampp\htdocs\food\system\Commands\Database\Seed.php(77): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#10 C:\xampp\htdocs\food\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Seed->run(Array)
+#11 C:\xampp\htdocs\food\system\CLI\Console.php(46): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#12 C:\xampp\htdocs\food\spark(102): CodeIgniter\CLI\Console->run()
+#13 {main}
+INFO - 2023-11-21 09:32:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-21 09:33:05 --> CSRF token verified.
+INFO - 2023-11-21 09:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-21 09:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
