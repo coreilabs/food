@@ -36,7 +36,7 @@
 
 
       
-<?php echo form_open("admin/expediente", ['class'=> 'form-row'] ); ?>
+<?php echo form_open("admin/expedientes/expedientes", ['class'=> 'form-row'] ); ?>
 
 
 
@@ -58,7 +58,7 @@
 
                               <td class="form-group col-md-3">
                                 
-                              <input type="text" name="dia_descricao[]" class="form-control" value="<?= esc($dia->dia_descricao)?>" readonly="">
+                              <input type="text" name="dia_descricao[]" class="border-0" value="<?= esc($dia->dia_descricao)?>" readonly="">
 
                               </td>
 

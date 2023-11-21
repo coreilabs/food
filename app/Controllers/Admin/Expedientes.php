@@ -15,6 +15,13 @@ class Expedientes extends BaseController
 
     public function expedientes(){
 
+
+        if($this->request->getMethod() === 'post'){
+
+            dd($this->request->getPost());
+
+        }
+
         $data = [
             'titulo' => 'Gerenciar o Horário de Funcionamento',
             'expedientes' => $this->expedienteModel->findAll(),

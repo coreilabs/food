@@ -50,6 +50,7 @@
                           <th>Nome</th>
                           <th>Categoria</th>
                           <th>Data de Criação</th>
+                          <th>Especificações</th>
                           <th>Ativo</th>
                           <th>Situação</th>
 
@@ -62,6 +63,24 @@
                                 <td><a href="<?= site_url("admin/produtos/show/$produto->id")?>">  <?= $produto->nome;?></a></td>
                                 <td><?= $produto->categoria;?></td>    
                                 <td><?= $produto->criado_em->humanize();?></td>                            
+                                <td>
+                                    <?php foreach($especificacoes as $especificacao):?>
+
+                                      <?php if ($produto->id == $especificacao->produto_id):?>
+
+                                        <p><?= esc($especificacao->nome)?> : R$ <?= esc($especificacao->preco)?></p>
+
+                                        <?php else:?>
+
+                                          <p class="text-danger">Sem especificação definida</p>
+                                          <?php break;?>
+
+                                          <?php endif;?>
+
+                                      <?php endforeach;?>
+
+                                </td>                            
+
                  
                                 
                                 <td><?php echo ($produto->ativo && $produto->deletado_em == null ? '<label class="badge badge-primary">Sim</label>' : '<label class="badge badge-danger">Não</label>')?></td>
