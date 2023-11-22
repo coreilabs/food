@@ -30,6 +30,19 @@
                     </div>
                 </div>
 
+                
+      <?php if(session()->has('errors_model')) : ?>
+
+<ul>
+  <?php foreach (session('errors_model') as $error):?>
+
+      <li class="text-danger"><?= $error ;?></li>
+
+    <?php endforeach; ?>
+</ul>
+
+<?php endif;?>
+
                 <?= form_open("carrinho/adicionar");?>
 
                 <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
