@@ -92,6 +92,13 @@
                         
                     </h3>
 
+                    <div class="row" style="margin-top:4rem;">
+                        <div class="col-md-4">
+                            <label for="">Quantidade</label>
+                            <input type="number" class="form-control" placeholder="Quantidade" name="produto[quantidade]" value="1" min="1" max="10" step="1" required=""> 
+                        </div>
+                    </div>
+
                     <hr />
                     <div class="description description-tabs">
                         <ul id="myTab" class="nav nav-pills">
@@ -125,12 +132,22 @@
                     <div class="row">
 
 
-                        <div class="col-md-6 ">
-                            <input id="btn-adiciona" type="submit" class="btn btn-success btn-lg " value="Adicionar ao Carrinho">                          
+                        <div class="col-md-4 ">
+                            <input id="btn-adiciona" type="submit" class="btn btn-success btn-block" value="Adicionar ao Carrinho">                          
                         </div>
 
-                        <div class="col-md-6 ">                            
-                            <a href="<?= site_url("/")?>" class="btn btn-info btn-lg ">Mais produtos</a>
+                        <?php foreach($especificacoes as $especificacao):?>
+
+                            <?php if($especificacao->customizavel):?>
+                                <div class="col-md-4 ">                            
+                                    <a href="<?= site_url("produto/customizar/$produto->slug")?>" class="btn btn-primary  btn-block">Customizar</a>
+                                </div>
+                                <?php break;?>
+                            <?php endif;?>
+                        <?php endforeach;?>
+
+                        <div class="col-md-4 ">                            
+                            <a href="<?= site_url("/")?>" class="btn btn-info btn-block ">Mais produtos</a>
                         </div>
 
 
