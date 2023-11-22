@@ -45,8 +45,8 @@
                     <?php foreach($especificacoes as $especificacao):?>
                        <div class="radio">
 
-                            <label for="">
-                                <input type="radio" class="especificacao" data-especificacao="<?= $especificacao->especificacao_id?>" name="produto[preco]" value="<?= $especificacao->preco?>">
+                            <label style="font-size:16px;" for="<?= $especificacao->especificacao_id?>">
+                                <input type="radio" id="<?= $especificacao->especificacao_id?>" class="especificacao" data-especificacao="<?= $especificacao->especificacao_id?>" name="produto[preco]" value="<?= $especificacao->preco?>">
                                 <?= esc($especificacao->nome)?>
                                 R$ <?= esc(number_format($especificacao->preco, 2))?>
 
@@ -65,8 +65,8 @@
 
                         <div class="radio">
 
-                                <label for="">
-                                    <input type="radio" class="extra" checked="" name="extra">Sem Extra
+                                <label style="font-size:16px;" for="semextra">
+                                    <input type="radio" class="extra" id="semextra" checked="" name="extra">Sem Extra
 
                                 </label>
 
@@ -75,8 +75,8 @@
                         <?php foreach($extras as $extra):?>
                         <div class="radio">
 
-                                <label for="">
-                                    <input type="radio" class="extra" data-extra="<?= $extra->id_principal?>" name="extra" value="<?= $extra->preco?>">
+                                <label style="font-size:16px;" for="extra<?= $extra->id_principal?>">
+                                    <input type="radio" id="extra<?= $extra->id_principal?>" class="extra" data-extra="<?= $extra->id_principal?>" name="extra" value="<?= $extra->preco?>">
                                     <?= esc($extra->nome)?>
                                     R$ <?= esc(number_format($extra->preco, 2))?>
 
@@ -126,7 +126,7 @@
 
 
                         <div class="col-md-6 ">
-                            <input type="submit" class="btn btn-success btn-lg " value="Adicionar ao Carrinho">                          
+                            <input id="btn-adiciona" type="submit" class="btn btn-success btn-lg " value="Adicionar ao Carrinho">                          
                         </div>
 
                         <div class="col-md-6 ">                            
@@ -154,6 +154,30 @@
 
 
 <?= $this->section('scripts'); ?>
+
+<script>
+    $(document).ready(function(){
+
+
+        var especificacao_id;
+
+        if(!especificacao_id){
+            $('#btn-adiciona').prop("disabled", true);
+            $('#btn-adiciona').prop("value", "Selecione um valor");
+
+        }
+
+        $(".especificacao").on('click', function(){
+            especificacao_id = $(this).attr('data-especificacao');
+            $("#especificacao_id").val(especificacao_id);
+
+            $('#btn-adiciona').prop("disabled", false);
+            $('#btn-adiciona').prop("value", "Adicionar ao Carrinho");
+
+        });
+      
+    });
+</script>
 <?= $this->endSection(); ?>
 
      
