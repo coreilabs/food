@@ -8,10 +8,14 @@ class Produto extends BaseController
 {
 
     private $produtoModel;
+    private $produtoEspecificacaoModel;
+
 
     public function __construct(){
 
         $this->produtoModel = new \App\Models\ProdutoModel();
+        $this->produtoEspecificacaoModel = new \App\Models\ProdutoEspecificacaoModel();
+
 
     }
 
@@ -25,7 +29,8 @@ class Produto extends BaseController
 
         $data = [
             'titulo' => "Detalhando o produto $produto->nome",
-            'produto' => $produto
+            'produto' => $produto,
+            'especificacoes' => $this->produtoEspecificacaoModel->buscaEspecificacoesDoProdutoDetalhes($produto->id),
         ];
         return view('Produto/detalhes', $data);
 

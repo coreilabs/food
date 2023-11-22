@@ -39,7 +39,19 @@
                     </h2>
                     <hr />
                     <h3 class="price-container">
-                        R$ 25,00
+
+                    <?php foreach($especificacoes as $especificacao):?>
+                       <div class="radio">
+
+                            <label for="">
+                                <input type="radio" class="especificacao" data-especificacao="<?= $especificacao->especificacao_id?>" name="produto[preco]" value="<?= $especificacao->preco?>">
+                                <?= esc($especificacao->nome)?>
+                                <?= esc(number_format($especificacao->preco, 2))?>
+
+                            </label>
+
+                       </div>
+                    <?php endforeach;?>
                         
                     </h3>
 
