@@ -189,7 +189,7 @@
             $("#especificacao_id").val(especificacao_id);
 
             $('#btn-adiciona').prop("disabled", false);
-            $('#btn-adiciona').prop("value", "Adicionar ao Carrinho");
+            $('#btn-adiciona').prop("value", "Adicionar");
 
         });
 

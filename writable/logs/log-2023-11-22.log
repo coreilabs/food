@@ -128,3 +128,15 @@ in APPPATH\Views\Produto\detalhes.php on line 141.
  8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-22 18:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 18:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 18:01:48 --> CSRF token verified.
+CRITICAL - 2023-11-22 18:01:48 --> Call to undefined method CodeIgniter\HTTP\IncomingRequest::getMethd()
+in APPPATH\Controllers\Carrinho.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Carrinho->adicionar()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrinho))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-22 18:02:04 --> CSRF token verified.
+INFO - 2023-11-22 18:02:54 --> CSRF token verified.
