@@ -24,13 +24,15 @@
         <!-- product -->
         <div class="product-content product-wrap clearfix product-deatil">
             <div class="row">
-                <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="col-md-5 col-sm-12 col-xs-12">
                     <div class="product-image">
                     <img src="<?= site_url("produto/imagem/$produto->imagem")?>" alt="<?= esc($produto->nome)?>" />
                     </div>
                 </div>
 
-                <div class="col-md-7 col-md-offset-1 col-sm-12 col-xs-12">
+                <?= form_open("carrinho/adicionar");?>
+
+                <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
                     <h2 class="name">
                         <?= esc($produto->nome)?>
               
@@ -50,8 +52,8 @@
                         <div id="myTabContent" class="tab-content">
                             <div class="tab-pane fade active in" id="more-information">
                                 <br />
-                                <strong>Ingredientes do Produto</strong>
-                                <p>
+                                <strong style="font-size:2em;">Informações</strong>
+                                <p style="font-size:1.4em;">
                                   <?= esc($produto->ingredientes)?>
                                 </p>
                             </div>
@@ -60,13 +62,29 @@
                         </div>
                     </div>
                     <hr />
+
+
+                    <div>
+                       <input type="text" placeholder="produto[slug]" name="produto[slug]" value="<?= $produto->slug?>">
+                       <input type="text" placeholder="especificacao_id"  id="especificacao_id" name="produto[especificacao_id]" >
+                       <input type="text" placeholder="extra_id" id="extra_id" name="produto[extra_id]" >
+
+
+
+                    </div>
+
                     <div class="row">
                         <div class="col-sm-12 col-md-6 col-lg-6">
-                            <a href="javascript:void(0);" class="btn btn-success btn-lg">Adicionar ao Carrinho</a>
+
+                        <input type="submit" class="btn btn-success btn-lg" value="Adicionar ao Carrinho">
+                            <a href="<?= site_url("/")?>" class="btn btn-info btn-lg">Mais produtos</a>
                         </div>
                        
                     </div>
                 </div>
+
+                <?= form_close();?>
+
             </div>
         </div>
         <!-- end product -->
