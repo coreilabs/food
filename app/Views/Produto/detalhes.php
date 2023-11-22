@@ -40,18 +40,55 @@
                     <hr />
                     <h3 class="price-container">
 
+                    <p class="small">Escolha o valor</p>
+
                     <?php foreach($especificacoes as $especificacao):?>
                        <div class="radio">
 
                             <label for="">
                                 <input type="radio" class="especificacao" data-especificacao="<?= $especificacao->especificacao_id?>" name="produto[preco]" value="<?= $especificacao->preco?>">
                                 <?= esc($especificacao->nome)?>
-                                <?= esc(number_format($especificacao->preco, 2))?>
+                                R$ <?= esc(number_format($especificacao->preco, 2))?>
 
                             </label>
 
                        </div>
                     <?php endforeach;?>
+
+
+
+                    <?php if(isset($extras)):?>
+
+                        <hr>
+
+                        <p class="small">Extras do Produto</p>
+
+                        <div class="radio">
+
+                                <label for="">
+                                    <input type="radio" class="extra" checked="" name="extra">Sem Extra
+
+                                </label>
+
+                                </div>
+                        
+                        <?php foreach($extras as $extra):?>
+                        <div class="radio">
+
+                                <label for="">
+                                    <input type="radio" class="extra" data-extra="<?= $extra->id_principal?>" name="extra" value="<?= $extra->preco?>">
+                                    <?= esc($extra->nome)?>
+                                    R$ <?= esc(number_format($extra->preco, 2))?>
+
+                                </label>
+
+                        </div>
+                        <?php endforeach;?>
+
+
+                    <?php endif;?>
+
+
                         
                     </h3>
 
@@ -86,11 +123,17 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-12 col-md-6 col-lg-6">
 
-                        <input type="submit" class="btn btn-success btn-lg" value="Adicionar ao Carrinho">
-                            <a href="<?= site_url("/")?>" class="btn btn-info btn-lg">Mais produtos</a>
+
+                        <div class="col-md-6 ">
+                            <input type="submit" class="btn btn-success btn-lg " value="Adicionar ao Carrinho">                          
                         </div>
+
+                        <div class="col-md-6 ">                            
+                            <a href="<?= site_url("/")?>" class="btn btn-info btn-lg ">Mais produtos</a>
+                        </div>
+
+
                        
                     </div>
                 </div>
