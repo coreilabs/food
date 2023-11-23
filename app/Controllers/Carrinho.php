@@ -7,9 +7,12 @@ use App\Controllers\BaseController;
 class Carrinho extends BaseController{
 
     private $validacao;
+    private $produtoEspecificacaoModel;
+    
     public function __construct(){
         
         $this->validacao = service('validation');
+        $this->produtoEspecificacaoModel = new \App\Models\ProdutoEspecificacaoModel();
     }
     public function index()
     {
@@ -36,7 +39,10 @@ class Carrinho extends BaseController{
                 return redirect()->back()->with('errors_model', $this->validacao->getErrors())->with('atencao', 'Por favor verifique os erros abaixo e tente novamente.')->withInput();
             }
 
-            dd($produtoPost);
+            //validamos a existencia da especificacao_id
+            $especificacaoProduto = $this->produtoEspecificacaoModel->where('id', $produtoPost['especificacao_id'])->first();
+
+            dd($especificacaoProduto);
 
         }else{
             return redirect()->back();
