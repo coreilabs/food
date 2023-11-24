@@ -281,6 +281,12 @@
 
 <?php endif; ?>
 
+<?php if(session()->has('fraude') ): ?>
+
+<div class="alert alert-warning" role="alert"><?= session('fraude')?></div>
+
+<?php endif; ?>
+
 <!-- captura os erros de csrf - acao nao permitida-->
 
 <?php if(session()->has('error') ): ?>

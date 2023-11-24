@@ -75,3 +75,78 @@ in APPPATH\Controllers\Carrinho.php on line 43.
  4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-23 10:29:25 --> CSRF token verified.
+INFO - 2023-11-23 10:32:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 10:32:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 10:32:45 --> CSRF token verified.
+CRITICAL - 2023-11-23 10:32:45 --> Undefined index: especificacao_id
+in APPPATH\Controllers\Carrinho.php on line 43.
+ 1 APPPATH\Controllers\Carrinho.php(43): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: especificacao_id', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Carrinho.php', 43, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Carrinho->adicionar()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrinho))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-23 10:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 17:48:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 17:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 17:48:33 --> CSRF token verified.
+CRITICAL - 2023-11-23 17:48:33 --> Undefined index: especificacao_id
+in APPPATH\Controllers\Carrinho.php on line 43.
+ 1 APPPATH\Controllers\Carrinho.php(43): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: especificacao_id', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Carrinho.php', 43, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Carrinho->adicionar()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrinho))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-23 17:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 17:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 17:49:06 --> CSRF token verified.
+INFO - 2023-11-23 17:49:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 17:49:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 17:49:42 --> CSRF token verified.
+CRITICAL - 2023-11-23 17:49:42 --> Undefined index: especificacao_id
+in APPPATH\Controllers\Carrinho.php on line 42.
+ 1 APPPATH\Controllers\Carrinho.php(42): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: especificacao_id', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Carrinho.php', 42, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Carrinho->adicionar()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrinho))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-23 17:50:08 --> CSRF token verified.
+INFO - 2023-11-23 17:50:44 --> CSRF token verified.
+CRITICAL - 2023-11-23 17:50:44 --> Use of undefined constant produto - assumed 'produto' (this will throw an Error in a future version of PHP)
+in APPPATH\Controllers\Carrinho.php on line 42.
+ 1 APPPATH\Controllers\Carrinho.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant produto - assumed \'produto\' (this will throw an Error in a future version of PHP)', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Carrinho.php', 42, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Carrinho->adicionar()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrinho))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-23 17:51:14 --> CSRF token verified.
+INFO - 2023-11-23 17:52:06 --> CSRF token verified.
+CRITICAL - 2023-11-23 17:52:06 --> Use of undefined constant especificacao_id - assumed 'especificacao_id' (this will throw an Error in a future version of PHP)
+in APPPATH\Controllers\Carrinho.php on line 42.
+ 1 APPPATH\Controllers\Carrinho.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant especificacao_id - assumed \'especificacao_id\' (this will throw an Error in a future version of PHP)', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Carrinho.php', 42, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Carrinho->adicionar()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrinho))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-23 17:52:21 --> CSRF token verified.
+INFO - 2023-11-23 17:53:13 --> CSRF token verified.
+INFO - 2023-11-23 17:55:51 --> CSRF token verified.
+CRITICAL - 2023-11-23 17:55:51 --> Undefined index: especificacao_id
+in APPPATH\Controllers\Carrinho.php on line 43.
+ 1 APPPATH\Controllers\Carrinho.php(43): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: especificacao_id', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Carrinho.php', 43, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Carrinho->adicionar()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrinho))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-23 17:56:17 --> CSRF token verified.
+INFO - 2023-11-23 21:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 21:06:58 --> CSRF token verified.
+INFO - 2023-11-23 21:10:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 21:15:01 --> CSRF token verified.
+INFO - 2023-11-23 21:15:41 --> CSRF token verified.

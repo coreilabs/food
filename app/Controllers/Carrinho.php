@@ -40,9 +40,13 @@ class Carrinho extends BaseController{
             }
 
             //validamos a existencia da especificacao_id
-            $especificacaoProduto = $this->produtoEspecificacaoModel->where('id', $produtoPost['especificacao_id'])->first();
+            $especificacaoProduto = $this->produtoEspecificacaoModel->where('id', $produtoPost['produto']['especificacao_id'])->first();
 
-            dd($especificacaoProduto);
+            //fraude no form
+            if($especificacaoProduto == null){
+                return redirect()->back()->with('fraude', 'Não conseguimos processar a sua solicitação. Por favor entre em contato com a nossa equipe e informe o código de erro <strong>ERRO-ADD-PROD-1001</strong> ');
+            }
+
 
         }else{
             return redirect()->back();
