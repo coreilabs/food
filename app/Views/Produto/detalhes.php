@@ -92,7 +92,7 @@
                         <div class="radio">
 
                                 <label style="font-size:16px;" for="extra<?= $extra->id_principal?>">
-                                    <input type="radio" id="extra<?= $extra->id_principal?>" class="extra" data-extra="<?= $extra->id_principal?>" name="extra" value="<?= $extra->preco?>">
+                                    <input type="radio" id="extra<?= $extra->id_principal?>" class="extra" data-extra="<?= $extra->id?>" name="extra" value="<?= $extra->preco?>">
                                     <?= esc($extra->nome)?>
                                     R$ <?= esc(number_format($extra->preco, 2))?>
 

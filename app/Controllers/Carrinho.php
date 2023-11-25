@@ -49,7 +49,8 @@ class Carrinho extends BaseController{
             }
 
             //validamos a existencia da especificacao_id
-            $especificacaoProduto = $this->produtoEspecificacaoModel->where('id', $produtoPost['especificacao_id'])->first();
+            $especificacaoProduto = $this->produtoEspecificacaoModel->join('medidas', 'medidas.id = produtos_especificacoes.medida_id')
+            ->where('produtos_especificacoes.id', $produtoPost['especificacao_id'])->first();
 
          
 
@@ -74,18 +75,36 @@ class Carrinho extends BaseController{
             }
 
 
+            //utilizando o toArray() para que possa inserir esse objeto no carrinho no formato adequado
+            $produto = $this->produtoModel->select(['id', 'nome', 'slug', 'ativo'])->where('slug', $produtoPost['slug'])->first()->toArray();
 
-             $produto = $this->produtoModel->where('slug', $produtoPost['slug'])->first();
+           
 
             /**
              * validamos a existencia do produto e se o mesmo está ativo
              * fraude no form $produtoPost['slug']
              */
-            if($produto == null || $produto->ativo == false){
+            if($produto == null || $produto['ativo'] == false){
                 return redirect()->back()->with('fraude', 'Não conseguimos processar a sua solicitação. Por favor entre em contato com a nossa equipe e informe o código de erro <strong>ERRO-ADD-PROD-3003</strong> ');
             }
 
-            dd($produtoPost);
+            //Criamos o slug composto para identificarmos a existencia ou nao do item no item no carrinho na hora de adicionar
+            $produto['slug'] = mb_url_title($produto['slug'] . '-' . $especificacaoProduto->nome . '-' . (isset($extra) ? 'com extra-' . $extra->nome : ''), '-', true);
+
+            //criamos o nome do produto a partir da especificacao e (ou) do extra
+            $produto['nome'] = $produto['nome']. ' ' . $especificacaoProduto->nome . ' ' . (isset($extra) ? 'Com extra ' . $extra->nome : '');
+
+            //definimos o preco qtd e tamanho
+
+            $preco = $especificacaoProduto->preco + (isset($extra) ? $extra->preco : 0);
+
+            $produto['preco'] = number_format($preco, 2);
+
+            $produto['quantidade'] = (int) $produtoPost['quantidade'];
+
+            $produto['tamanho'] = $especificacaoProduto->nome;
+
+             dd($produto);
 
         }else{
             return redirect()->back();
