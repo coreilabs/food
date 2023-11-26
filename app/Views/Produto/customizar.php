@@ -194,6 +194,8 @@
 
              });
 
+
+
             }else{
                 /**
                  * cliente nao escolheu a primeira metade
@@ -204,6 +206,42 @@
 
         });
 
+
+        $("#segunda_metade").on('change', function(){
+
+            var primeiro_produto_id = $("#primeira_metade").val();
+            var segundo_produto_id = $(this).val();
+
+            if(primeiro_produto_id && segundo_produto_id){
+
+                $.ajax({
+
+                    type: 'get',
+                    url: '<?= site_url('produto/exibetamanhos')?>',
+                    dataType: 'json',
+                    data: {
+                        primeiro_produto_id: primeiro_produto_id,
+                        segundo_produto_id: segundo_produto_id,
+
+                    },
+                    beforeSend: function(data){
+
+        
+
+                    },
+                    success: function(data){
+
+                        
+                        
+                    },
+
+
+                });
+
+            }
+        
+
+        });
             
 
         });

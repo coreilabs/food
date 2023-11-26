@@ -113,6 +113,22 @@ class Produto extends BaseController
 
     }
 
+    public function exibeTamanhos(){
+
+        if(!$this->request->isAJAX()){
+
+            return redirect()->back();
+
+        }
+
+        $get = $this->request->getGet();
+
+        echo "<pre>";
+        print_r($get);
+        exit;
+        
+    }
+
     public function imagem(string $imagem = null){
 
         if($imagem){
