@@ -58,5 +58,20 @@ public function desfazerExclusao(int $id){
     ->update();
 }
 
+/**
+ * @uso controller Produto/exibeValor
+ * @param int $medida_id
+ * @return objeto contendo maior valor
+ */
+public function exibeValor(int $medida_id){
+
+    return $this->select('medidas.*')->selectMax('produtos_especificacoes.preco')->join('produtos_especificacoes', 'produtos_especificacoes.medida_id = medidas.id')
+    ->where('medidas.id', $medida_id)
+    ->where('medidas.ativo', true)
+    ->first();
+
+
+}
+
    
 }

@@ -212,9 +212,16 @@ class Produto extends BaseController
         }
 
         $get = $this->request->getGet();
-        echo '<pre>';
-        print_r($get);
-        exit;
+
+        $medida = $this->medidaModel->exibeValor($get['medida_id']);
+
+        if($medida === null){
+
+            return $this->response->setJSON([]);
+
+        }
+
+        return $this->response->setJSON($medida);
 
     }
 
