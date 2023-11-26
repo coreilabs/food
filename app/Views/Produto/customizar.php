@@ -106,7 +106,7 @@
                     <div class="row">
 
                             <div class="col-md-6">
-                                <div id="valor_produto_customizado">
+                                <div id="valor_produto_customizado" style="  margin-top:1.5em;  font-size: 28px; color: #990100;font-family: 'Montserrat-Bold';">
                                     <!-- aqui será renderizado via js o valor do produto  -->
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
 
                     </div>
 
-                    <input type="text" name="extra_id" id="extra_id" placeholder="extra_id_hidden">
+                    <input type="hidden" name="extra_id" id="extra_id" placeholder="extra_id_hidden">
 
                       <div class="row">
                         <div class="col-sm-3">
@@ -363,14 +363,13 @@
                         
 
                     },
-                    beforeSend: function(data){
-
-        
-
-                    },
                     success: function(data){
 
-        
+                        if(data){
+
+                            $('#valor_produto_customizado').html('R$ ' + data.preco);
+
+                        }
 
                     },
 
