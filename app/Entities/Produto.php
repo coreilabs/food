@@ -39,4 +39,35 @@ class Produto extends Entity
 
     }
 
+    public function recuperaMedidasEmComum(array $especificacoesPrimeiroProduto, array $especificacoesSegundoProduto){
+
+        $primeiroArrayMedidas = [];
+
+        foreach($especificacoesPrimeiroProduto as $especificacao){
+
+            if($especificacao->customizavel){
+
+                array_push($primeiroArrayMedidas, $especificacao->medida_id);
+
+            }
+
+        }
+
+        
+        $segundoArrayMedidas = [];
+
+        foreach($especificacoesSegundoProduto as $especificacao){
+
+            if($especificacao->customizavel){
+
+                array_push($segundoArrayMedidas, $especificacao->medida_id);
+
+            }
+
+        }
+
+        return array_intersect($primeiroArrayMedidas, $segundoArrayMedidas);
+
+    }
+
 }

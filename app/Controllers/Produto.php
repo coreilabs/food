@@ -10,6 +10,8 @@ class Produto extends BaseController
     private $produtoModel;
     private $produtoEspecificacaoModel;
     private $produtoExtraModel;
+    private $medidaModel;
+
 
 
     public function __construct(){
@@ -17,6 +19,8 @@ class Produto extends BaseController
         $this->produtoModel = new \App\Models\ProdutoModel();
         $this->produtoEspecificacaoModel = new \App\Models\ProdutoEspecificacaoModel();
         $this->produtoExtraModel = new \App\Models\ProdutoExtraModel();
+        $this->medidaModel = new \App\Models\MedidaModel();
+
 
 
 
@@ -116,58 +120,86 @@ class Produto extends BaseController
     public function exibeTamanhos(){
 
         if(!$this->request->isAJAX()){
-
+            
             return redirect()->back();
 
         }
 
         $get = $this->request->getGet();
 
+        //pegando primeiro produto
         $primeiroProduto = $this->produtoModel->where('id', $get['primeiro_produto_id'])->first();
 
+        //validando existencia
         if($primeiroProduto == null){
 
             return $this->response->setJSON([]);
 
         }
 
+        //pegando especificacao 1 produto
         $especificacoesPrimeiroProduto = $this->produtoEspecificacaoModel->where('produto_id', $primeiroProduto->id)->findAll();
 
+        //validando existencia
         if($especificacoesPrimeiroProduto == null){
 
             return $this->response->setJSON([]);
+
         }
 
+        //pegando extra o primeiro produto
         $extrasPrimeiroProduto = $this->produtoExtraModel->buscaExtrasDoProdutoDetalhes($primeiroProduto->id);
 
-        //verificacoes do segundo produto
+        //Verificações do segunpro produto 
 
-        $segundoProduto = $this->produtoModel->where('id', $get['segundo_produto_id'])->first();
+         //pegando segundo produto
+         $segundoProduto = $this->produtoModel->where('id', $get['segundo_produto_id'])->first();
 
-        if($segundoProduto == null){
+         //validando existencia
+         if($segundoProduto == null){
+ 
+             return $this->response->setJSON([]);
+ 
+         }
 
-            return $this->response->setJSON([]);
-
-        }
-
+         //pegando especificacao 2 produto
         $especificacoesSegundoProduto = $this->produtoEspecificacaoModel->where('produto_id', $segundoProduto->id)->findAll();
 
+        //validando existencia
         if($especificacoesSegundoProduto == null){
 
             return $this->response->setJSON([]);
+
         }
 
+          //pegando extra o 2 produto
+          $extrasSegundoProduto = $this->produtoExtraModel->buscaExtrasDoProdutoDetalhes($segundoProduto->id);
+   
 
-        $extrasSegundoProduto = $this->produtoExtraModel->buscaExtrasDoProdutoDetalhes($segundoProduto->id);
+          $extrasCombinados = $segundoProduto->combinaExtrasDosProdutos($extrasPrimeiroProduto, $extrasSegundoProduto);
 
-        $extrasCombinados = $segundoProduto->combinaExtrasDosProdutos($extrasPrimeiroProduto, $extrasSegundoProduto);
+          //só envia caso o extra exista de fato
+          if($extrasCombinados != null){
 
-        
+            $data['extras'] = $extrasCombinados;
+          }
 
+          //recuperando as medidas em comum do produto
 
+          $medidasEmComum = $segundoProduto->recuperaMedidasEmComum($especificacoesPrimeiroProduto, $especificacoesSegundoProduto);
 
+         
 
-        
+          $medidas = $this->medidaModel->select('id, nome')->whereIn('id', $medidasEmComum)->where('ativo', true)->findAll();
+
+          $data['medidas'] = $medidas;
+          
+          //enviando imagem dio 2 produto
+
+          $data['imagemSegundoProduto'] = $segundoProduto->imagem;
+          
+          return $this->response->setJSON($data);
+
     }
 
     public function imagem(string $imagem = null){

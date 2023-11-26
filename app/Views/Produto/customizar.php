@@ -212,6 +212,8 @@
             var primeiro_produto_id = $("#primeira_metade").val();
             var segundo_produto_id = $(this).val();
 
+            $("#imagemSegundoProduto").html(' <img class="img-responsive center-block d-block mx-auto"  src="<?= site_url('admin/images/sem-imagem.webp')?>" width="200" alt="Escolha o produto"/>');
+
             if(primeiro_produto_id && segundo_produto_id){
 
                 $.ajax({
@@ -230,6 +232,12 @@
 
                     },
                     success: function(data){
+
+                        if(data.imagemSegundoProduto){
+
+                            $("#imagemSegundoProduto").html(' <img class="img-responsive center-block d-block mx-auto"  src="<?= site_url('produto/imagem/')?>'+ data.imagemSegundoProduto +'" width="200" alt="Escolha o produto"/>');
+
+                        }
 
                         
                         
