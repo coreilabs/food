@@ -33,7 +33,7 @@
                   <?php echo form_open("carrinho/especial"); ?>
                  
 
-                  <div class="row" style="min-height:500px;">
+                  <div class="row" >
 
                     <div class="col-md-12 " style="margin-bottom:2em;">
 
@@ -96,9 +96,43 @@
                     </select>
 
                     </div>
+
+
+
                         
 
-                      </div>
+                    </div>
+
+                    <div class="row" style="margin-top:3em; margin-bottom: 3em">
+
+                        <div class="col-md-6" >
+
+                            <label for="">Tamanho do Produto</label>
+                            <select name="tamanho" id="tamanho" class="form-control">
+
+                            <!-- aqui serao renderizadas as opcoes de tamanho, via javascript -->
+                                
+                            </select>
+
+                        </div>
+
+
+                    <div class="col-md-6" >
+
+                            <div id="boxInfoExtras" style="display:none" >
+
+                                <label>Extras</label>
+                                <div class="radio"><label ><input type="radio" class="extra" name="extra" id="semextra" checked="">Sem Extra</label></div>  
+
+                                <div id="extras">
+                                    
+                                </div>
+
+                            </div>
+
+                    </div>
+
+                    </div>
 
                       <div class="row">
                         <div class="col-sm-3">
@@ -239,6 +273,37 @@
 
                         }
 
+                        
+                    if(data.medidas){
+
+                        $("#tamanho").html('<option>Escolha o tamanho</option>');
+
+                        $(data.medidas).each(function(){
+
+                            var option = $('<option />');
+                            option.attr('value', this.id).text(this.nome);
+                            $("#tamanho").append(option);
+
+                        });
+
+                    }else{
+
+                        $("#tamanho").html('<option>Escolha a segunda metade do produto</option>');
+
+                        }
+
+                        if(data.extras){
+
+                            $("#boxInfoExtras").show();
+
+                            $(data.extras).each(function(){
+
+                            var input = "    <div class='radio'><label for='extra" + this.id +"'><input type='radio' class='extra' id='extra" + this.id +"' name='extra' data-extra='" + this.id +"' value='" + this.preco + "'>"+this.nome+"</label></div>";  
+                            $("#extras").append(input);
+
+                            });
+
+                        }
                         
                         
                     },
