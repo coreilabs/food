@@ -134,6 +134,8 @@
 
                     </div>
 
+                    <input type="text" name="extra_id" id="extra_id" placeholder="extra_id_hidden">
+
                       <div class="row">
                         <div class="col-sm-3">
 
@@ -248,6 +250,10 @@
 
             $("#imagemSegundoProduto").html(' <img class="img-responsive center-block d-block mx-auto"  src="<?= site_url('admin/images/sem-imagem.webp')?>" width="200" alt="Escolha o produto"/>');
 
+            $("#boxInfoExtras").hide();
+            $("#extras").html('');
+
+
             if(primeiro_produto_id && segundo_produto_id){
 
                 $.ajax({
@@ -298,10 +304,19 @@
 
                             $(data.extras).each(function(){
 
-                            var input = "    <div class='radio'><label for='extra" + this.id +"'><input type='radio' class='extra' id='extra" + this.id +"' name='extra' data-extra='" + this.id +"' value='" + this.preco + "'>"+this.nome+"</label></div>";  
-                            $("#extras").append(input);
+                                var input = "    <div class='radio'><label ><input type='radio' class='extra' id='extra" + this.id +"' name='extra' data-extra='" + this.id +"' value='" + this.preco + "'>"+this.nome+"</label></div>";  
+                                $("#extras").append(input);
 
                             });
+
+                            $(".extra").on('click', function(){
+                                var extra_id = $(this).attr('data-extra');
+                                $("#extra_id").val(extra_id);
+
+                        
+
+                            });
+
 
                         }
                         
