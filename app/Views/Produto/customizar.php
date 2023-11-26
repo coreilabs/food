@@ -133,7 +133,7 @@
                             <div id="boxInfoExtras" style="display:none" >
 
                                 <label>Extras</label>
-                                <div class="radio"><label ><input type="radio" class="extra" name="extra" id="semextra" checked="">Sem Extra</label></div>  
+                                <div class="radio"><label ><input type="radio" class="extra" name="extra" value="sem extra" checked="">Sem Extra</label></div>  
 
                                 <div id="extras">
                                     
@@ -323,7 +323,7 @@
 
                             $(data.extras).each(function(){
 
-                                var input = "    <div class='radio'><label ><input type='radio' class='extra' id='extra" + this.id +"' name='extra' data-extra='" + this.id +"' value='" + this.preco + "'>"+this.nome+"</label></div>";  
+                                var input = "    <div class='radio'><label ><input type='radio' class='extra' name='extra' data-extra='" + this.id +"' value='" + this.preco + "'>"+this.nome+ " R$ "+this.preco+"</label></div>";  
                                 $("#extras").append(input);
 
                             });
@@ -331,6 +331,39 @@
                             $(".extra").on('click', function(){
                                 var extra_id = $(this).attr('data-extra');
                                 $("#extra_id").val(extra_id);
+                                // capturamos o tamanho escolhido
+                                var medida_id = $("#tamanho").val();
+
+                                if($.isNumeric(medida_id)){
+
+                                    $.ajax({
+
+                                        type: 'get',
+                                            url: '<?= site_url('produto/exibevalor')?>',
+                                            dataType: 'json',
+                                            data: {
+                                                medida_id: medida_id,
+                                                extra_id:  $("#extra_id").val(),
+
+
+                                                
+
+                                            },
+                                            success: function(data){
+
+                                                if(data){
+
+                                                    $('#valor_produto_customizado').html('R$ ' + data.preco);
+                                                    $('#btn-adiciona').prop("disabled", false);
+                                        $('#btn-adiciona').prop("value", "Adicionar ao carrinho");
+
+                                                }
+
+                                            },
+
+                                    });
+
+                                }
 
                         
 
@@ -367,7 +400,10 @@
                     url: '<?= site_url('produto/exibevalor')?>',
                     dataType: 'json',
                     data: {
-                        medida_id: medida_id
+                        medida_id: medida_id,
+                        extra_id:  $("#extra_id").val(),
+
+
                         
 
                     },
