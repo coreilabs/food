@@ -184,7 +184,8 @@
         $('#btn-adiciona').prop("disabled", true);
         $('#btn-adiciona').prop("value", "Selecione um tamanho");
 
-
+        $("#segunda_metade").html('<option>Escolha a primeira metade</option>');
+        $("#tamanho").html('<option>Escolha a segunda metade</option>');
         $("#primeira_metade").on('change', function(){
 
             var primeira_metade = $(this).val();
@@ -192,6 +193,14 @@
 
             $("#imagemPrimeiroProduto").html(' <img class="img-responsive center-block d-block mx-auto"  src="<?= site_url('admin/images/sem-imagem.webp')?>" width="200" alt="Escolha o produto"/>');
             
+            $("#valor_produto_customizado").html('');
+            $("#tamanho").html('<option>Escolha a segunda metade</option>');
+            $("#boxInfoExtras").hide();
+            $("#extras").html('');
+            $('#btn-adiciona').prop("disabled", true);
+            $('#btn-adiciona').prop("value", "Selecione um tamanho");
+
+
             if(primeira_metade){
 
              $.ajax({
@@ -261,8 +270,12 @@
 
             $("#imagemSegundoProduto").html(' <img class="img-responsive center-block d-block mx-auto"  src="<?= site_url('admin/images/sem-imagem.webp')?>" width="200" alt="Escolha o produto"/>');
 
+            $("#valor_produto_customizado").html('');
+            $("#tamanho").html('<option>Escolha a segunda metade</option>');
             $("#boxInfoExtras").hide();
             $("#extras").html('');
+            $('#btn-adiciona').prop("disabled", true);
+            $('#btn-adiciona').prop("value", "Selecione um tamanho");
 
 
             if(primeiro_produto_id && segundo_produto_id){
@@ -275,11 +288,6 @@
                     data: {
                         primeiro_produto_id: primeiro_produto_id,
                         segundo_produto_id: segundo_produto_id,
-
-                    },
-                    beforeSend: function(data){
-
-        
 
                     },
                     success: function(data){
@@ -368,6 +376,8 @@
                         if(data){
 
                             $('#valor_produto_customizado').html('R$ ' + data.preco);
+                            $('#btn-adiciona').prop("disabled", false);
+        $('#btn-adiciona').prop("value", "Adicionar ao carrinho");
 
                         }
 
