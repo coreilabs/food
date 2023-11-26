@@ -60,7 +60,7 @@
 
                     <div class="col-md-6" >
                     
-                    <label for="">Escolha seu produto</label>
+                    <label for="">Escolha a primeira metade</label>
                     <select name="primeira_metade" id="primeira_metade" class="form-control">
                         <option value="">Escolha seu produto</option>
                         <?php foreach($opcoes as $opcao):?>
@@ -75,7 +75,7 @@
 
                     <div class="col-md-6" >
                     
-                    <label for="">Segunda Metade</label>
+                    <label for="">Escolha a segunda metade</label>
                     <select name="segunda_metade" id="segunda_metade" class="form-control">
                        
                     <!-- aqui serao renderizadas as opcoes para compor a segunda metade, via javascript -->
@@ -142,7 +142,30 @@
                     categoria_id: categoria_id,
 
                 },
+                beforeSend: function(data){
+
+                    $("#segunda_metade").html('');
+
+                },
                 success: function(data){
+
+                    if(data.produtos){
+
+                        $("#segunda_metade").html('<option>Escolha a segunda metade</option>');
+
+                        $(data.produtos).each(function(){
+
+                            var option = $('<option />');
+                            option.attr('value', this.id).text(this.nome);
+                            $("#segunda_metade").append(option);
+
+                        });
+
+                    }else{
+
+                        $("#segunda_metade").html('<option>Não encontramos opções de customização</option>');
+
+                    }
                     
                 },
 
@@ -153,6 +176,7 @@
                 /**
                  * cliente nao escolheu a primeira metade
                  */
+                $("#segunda_metade").html('<option>Escolha a primeira metade</option>');
 
             }
 

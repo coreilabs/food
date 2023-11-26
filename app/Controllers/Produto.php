@@ -77,6 +77,42 @@ class Produto extends BaseController
 
     }
 
+    public function procurar(){
+
+        if(!$this->request->isAJAX()){
+
+            return redirect()->back();
+
+        }
+
+        $get = $this->request->getGet();
+
+        $produto = $this->produtoModel->where('id', $get['primeira_metade'])->first();
+        if($produto == null){
+
+            return $this->response->setJSON([]);
+
+        }
+
+        $produtos = $this->produtoModel->exibeProdutosParaCustomizarSegundaMetade($get['primeira_metade'], $get['categoria_id']);
+
+        if($produtos == null){
+
+            return $this->response->setJSON([]);
+
+        }
+
+
+        $data['produtos'] = $produtos;
+        $data['imagemPrimeiroProduto'] = $produto->imagem;
+
+        return $this->response->setJSON($data);
+
+
+
+
+    }
+
     public function imagem(string $imagem = null){
 
         if($imagem){
