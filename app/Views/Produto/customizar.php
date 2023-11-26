@@ -33,7 +33,7 @@
                   <?php echo form_open("carrinho/especial"); ?>
                  
 
-                  <div class="row">
+                  <div class="row" style="min-height:300px;">
 
                     <div class="col-md-12 " style="margin-bottom:2em;">
 
@@ -88,34 +88,22 @@
                       </div>
 
                       <div class="row">
-                      <div class="col-sm-4">
+                        <div class="col-sm-2">
 
-<input id="btn-adiciona" type="submit" class="btn btn-success btn-block "
-    value="Adicionar ao carrinho">
+                            <input id="btn-adiciona" type="submit" class="btn btn-success btn-block "
+                                value="Adicionar ao carrinho">
 
-</div>
+                            </div>
 
 
-<!-- Colocando o botão customizavel para aparecer somento se o item for customizavel -->
-<?php foreach($especificacoes as $especificacao): ?>
+                            <!-- Colocando o botão customizavel para aparecer somento se o item for customizavel -->
+                            
 
-<?php if($especificacao->customizavel): ?>
+                            <div class="col-sm-2">
 
-<div class="col-sm-4">
-
-<a href="<?php echo site_url("produto/customizar/$produto->slug"); ?>"
-    class="btn btn-primary btn-block ">Customizar</a>
-</div>
-
-<?php break; ?>
-<?php endif; ?>
-<?php endforeach; ?>
-
-<div class="col-sm-4">
-
-<a href="<?php echo site_url("/"); ?>" class="btn btn-info btn-block ">Mais produtos</a>
-</div>
-                      </div>
+                            <a href="<?php echo site_url("produto/detalhes/$produto->slug"); ?>" class="btn btn-info btn-block ">Voltar</a>
+                        </div>
+                    </div>
 
                   <?php echo form_close(); ?>
               </div>
@@ -133,33 +121,47 @@
 <script>
     $(document).ready(function(){
 
+        $('#btn-adiciona').prop("disabled", true);
+        $('#btn-adiciona').prop("value", "Selecione um tamanho");
 
-        var especificacao_id;
 
-        if(!especificacao_id){
-            $('#btn-adiciona').prop("disabled", true);
-            $('#btn-adiciona').prop("value", "Selecione um valor");
+        $("#primeira_metade").on('change', function(){
 
-        }
+            var primeira_metade = $(this).val();
+            var categoria_id =  '<?= $produto->categoria_id ?>';
+            
+            if(primeira_metade){
 
-        $(".especificacao").on('click', function(){
-            especificacao_id = $(this).attr('data-especificacao');
-            $("#especificacao_id").val(especificacao_id);
+             $.ajax({
 
-            $('#btn-adiciona').prop("disabled", false);
-            $('#btn-adiciona').prop("value", "Adicionar");
+                type: 'get',
+                url: '<?= site_url('produto/procurar')?>',
+                dataType: 'json',
+                data: {
+                    primeira_metade: primeira_metade,
+                    categoria_id: categoria_id,
+
+                },
+                success: function(data){
+                    
+                },
+
+
+             });
+
+            }else{
+                /**
+                 * cliente nao escolheu a primeira metade
+                 */
+
+            }
 
         });
 
-        $(".extra").on('click', function(){
-            var extra_id = $(this).attr('data-extra');
-            $("#extra_id").val(extra_id);
-
-       
+            
 
         });
-      
-    });
+
 </script>
 <?= $this->endSection(); ?>
 
