@@ -123,9 +123,50 @@ class Produto extends BaseController
 
         $get = $this->request->getGet();
 
-        echo "<pre>";
-        print_r($get);
-        exit;
+        $primeiroProduto = $this->produtoModel->where('id', $get['primeiro_produto_id'])->first();
+
+        if($primeiroProduto == null){
+
+            return $this->response->setJSON([]);
+
+        }
+
+        $especificacoesPrimeiroProduto = $this->produtoEspecificacaoModel->where('produto_id', $primeiroProduto->id)->findAll();
+
+        if($especificacoesPrimeiroProduto == null){
+
+            return $this->response->setJSON([]);
+        }
+
+        $extrasPrimeiroProduto = $this->produtoExtraModel->buscaExtrasDoProdutoDetalhes($primeiroProduto->id);
+
+        //verificacoes do segundo produto
+
+        $segundoProduto = $this->produtoModel->where('id', $get['segundo_produto_id'])->first();
+
+        if($segundoProduto == null){
+
+            return $this->response->setJSON([]);
+
+        }
+
+        $especificacoesSegundoProduto = $this->produtoEspecificacaoModel->where('produto_id', $segundoProduto->id)->findAll();
+
+        if($especificacoesSegundoProduto == null){
+
+            return $this->response->setJSON([]);
+        }
+
+
+        $extrasSegundoProduto = $this->produtoExtraModel->buscaExtrasDoProdutoDetalhes($segundoProduto->id);
+
+        $extrasCombinados = $segundoProduto->combinaExtrasDosProdutos($extrasPrimeiroProduto, $extrasSegundoProduto);
+
+        
+
+
+
+
         
     }
 

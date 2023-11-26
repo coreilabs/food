@@ -40,6 +40,12 @@ class ProdutoExtraModel extends Model
 
     }
 
+
+    /**
+     * @uso controller Produto/detalhes e Produto/exibetamanhos
+     * @param int $produto_id
+     * @return array objetos
+     */
     public function buscaExtrasDoProdutoDetalhes(int $produto_id = null){
 
         return $this->select('extras.id, extras.nome, extras.preco, produtos_extras.id AS id_principal')->join('extras', 'extras.id = produtos_extras.extra_id')
