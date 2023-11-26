@@ -107,4 +107,23 @@ class ProdutoModel extends Model
 
     }
 
+    /**
+     * @uso no controller  Produto/customizar
+     * @param int $categoria_id
+     * @return array de objetos
+     */
+    public function exibeOpcoesProdutosParaCustomizar(int $categoria_id){
+
+        return $this->select(['produtos.id', 'produtos.nome'])
+            ->join('produtos_especificacoes', 'produtos_especificacoes.produto_id = produtos.id')
+            ->where('produtos.categoria_id', $categoria_id)
+            ->where('produtos.ativo', true)
+            ->where('produtos_especificacoes.customizavel', true)
+            ->groupBy('produtos.nome')
+            ->findAll();
+
+
+
+    }
+
 }

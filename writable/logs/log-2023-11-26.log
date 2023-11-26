@@ -137,3 +137,57 @@ INFO - 2023-11-26 10:05:10 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-11-26 10:05:28 --> CSRF token verified.
 INFO - 2023-11-26 10:05:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-26 10:05:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 10:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 10:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 10:27:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 10:27:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 10:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 10:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 10:28:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 10:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 10:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 10:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 10:41:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-26 10:41:26 --> Call to undefined method App\Models\ProdutoModel::exibeOpcoesProdutosParaCustomizar
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\Produto.php(70): CodeIgniter\Model->__call('exibeOpcoesProdutosParaCustomizar', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Produto->customizar('chocolate-com-morango-e-mm')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produto))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+ERROR - 2023-11-26 10:41:39 --> mysqli_sql_exception: Unknown column 'produto.id' in 'on clause' in C:\xampp\htdocs\food\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\food\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `produto...', 0)
+#1 C:\xampp\htdocs\food\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `produto...')
+#2 C:\xampp\htdocs\food\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `produto...')
+#3 C:\xampp\htdocs\food\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `produto...', Array, false)
+#4 C:\xampp\htdocs\food\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\food\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\food\app\Models\ProdutoModel.php(123): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\food\app\Controllers\Produto.php(70): App\Models\ProdutoModel->exibeOpcoesProdutosParaCustomizar(1)
+#8 C:\xampp\htdocs\food\system\CodeIgniter.php(942): App\Controllers\Produto->customizar('chocolate-com-m...')
+#9 C:\xampp\htdocs\food\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produto))
+#10 C:\xampp\htdocs\food\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\food\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\food\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-11-26 10:41:39 --> Unknown column 'produto.id' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `produtos`.`id`, `produtos`.`nome`
+FROM `produtos`
+JOIN `produtos_especificacoes` ON `produtos_especificacoes`.`produto_id` = `produto`.`id`
+WHERE `produtos`.`categoria_id` = :produtos.categoria_id:
+AND `produtos`.`ativo` = :produtos.ativo:
+AND `produtos_especificacoes`.`customizavel` = :produtos_especificacoes.customizavel:
+AND `produtos`.`deletado_em` IS NULL
+GROUP BY `produtos`.`nome`', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProdutoModel.php(123): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Produto.php(70): App\Models\ProdutoModel->exibeOpcoesProdutosParaCustomizar(1)
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Produto->customizar('chocolate-com-morango-e-mm')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produto))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
