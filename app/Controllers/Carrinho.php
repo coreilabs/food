@@ -110,7 +110,26 @@ class Carrinho extends BaseController{
 
                 //existe um carrinho
 
-                dd(session()->get('carrinho'));
+                //recupero os produtos do carrinho
+                $produtos = session()->get('carrinho');
+
+                // recuperamos apenas os slugs
+                $produtosSlugs = array_column($produtos, 'slug');
+
+                if(in_array($produto['slug'], $produtosSlugs)){
+
+                    //já existe o produto no carrinho, incrementamos a qtd
+
+                }else{
+                    
+
+                    //não existe no carrinho pode adicionar
+
+                    //adicionamos no carrinho existente o $produto
+                    session()->push('carrinho', [$produto]);
+
+                }
+
 
 
             }else{
