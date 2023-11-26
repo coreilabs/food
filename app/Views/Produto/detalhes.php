@@ -17,170 +17,190 @@
 
 <?= $this->section('conteudo'); ?>
 
-<div class="container section" id="menu" data-aos="fade-up" style="margin-top:3em;">
+<div class="container section" id="menu" data-aos="fade-up" style="margin-top: 3em">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+          <!-- product -->
+          <div class="product-content product-wrap clearfix product-deatil">
+              <div class="row">
+                  <div class="col-md-5 col-sm-12 col-xs-12">
+                      <div class="product-image">
 
+                          <img src="<?php echo site_url("produto/imagem/$produto->imagem"); ?>"
+                              alt="<?php echo esc($produto->imagem); ?>" />
 
-    <div class="container">
-        <!-- product -->
-        <div class="product-content product-wrap clearfix product-deatil">
-            <div class="row">
-                <div class="col-md-5 col-sm-12 col-xs-12">
-                    <div class="product-image">
-                    <img src="<?= site_url("produto/imagem/$produto->imagem")?>" alt="<?= esc($produto->nome)?>" />
-                    </div>
-                </div>
-
-                
-
-
-                <?= form_open("carrinho/adicionar");?>
-
-                <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
-
-                    <?php if(session()->has('errors_model')) : ?>
-
-                    <ul style="margin-left:-1.6em !important; list-style:decimal">
-                    <?php foreach (session('errors_model') as $error):?>
-
-                    <li class="text-danger"><?= $error ;?></li>
-
-                    <?php endforeach; ?>
-                    </ul>
-
-                    <?php endif;?>
-
-                    <h2 class="name">
-                        <?= esc($produto->nome)?>
-              
-                    </h2>
-                    <hr />
-                    <h3 class="price-container">
-
-                    <p class="small">Escolha o valor</p>
-
-                    <?php foreach($especificacoes as $especificacao):?>
-                       <div class="radio">
-
-                            <label style="font-size:16px;" for="<?= $especificacao->especificacao_id?>">
-                                <input type="radio" id="<?= $especificacao->especificacao_id?>" class="especificacao" data-especificacao="<?= $especificacao->especificacao_id?>" name="produto[preco]" value="<?= $especificacao->preco?>">
-                                <?= esc($especificacao->nome)?>
-                                R$ <?= esc(number_format($especificacao->preco, 2))?>
-
-                            </label>
-
-                       </div>
-                    <?php endforeach;?>
+                      </div>
+                  </div>
 
 
 
-                    <?php if(isset($extras)):?>
-
-                        <hr>
-
-                        <p class="small">Extras do Produto</p>
-
-                        <div class="radio">
-
-                                <label style="font-size:16px;" for="semextra">
-                                    <input type="radio" class="extra" id="semextra" checked="" name="extra">Sem Extra
-
-                                </label>
-
-                                </div>
-                        
-                        <?php foreach($extras as $extra):?>
-                        <div class="radio">
-
-                                <label style="font-size:16px;" for="extra<?= $extra->id_principal?>">
-                                    <input type="radio" id="extra<?= $extra->id_principal?>" class="extra" data-extra="<?= $extra->id?>" name="extra" value="<?= $extra->preco?>">
-                                    <?= esc($extra->nome)?>
-                                    R$ <?= esc(number_format($extra->preco, 2))?>
-
-                                </label>
-
-                        </div>
-                        <?php endforeach;?>
+                  <?php echo form_open("carrinho/adicionar"); ?>
+                  <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
 
 
-                    <?php endif;?>
+                      <?php if(session()->has('errors_model')): ?>
+
+                      <ul style="margin-left: -1.6em !important; list-style:decimal">
+                          <?php foreach(session('errors_model') as $error) : ?>
+
+                          <li class="text-danger"><?php echo $error ?></li>
+
+                          <?php endforeach; ?>
+                      </ul>
 
 
-                        
-                    </h3>
+                      <?php endif; ?>
 
-                    <div class="row" style="margin-top:4rem;">
-                        <div class="col-md-4">
-                            <label for="">Quantidade</label>
-                            <input type="number" class="form-control" placeholder="Quantidade" name="produto[quantidade]" value="1" min="1" max="10" step="1" required=""> 
-                        </div>
-                    </div>
+                      <h2 class="name">
 
-                    <hr />
-                    <div class="description description-tabs">
-                        <ul id="myTab" class="nav nav-pills">
-                            <!-- <li class="active"><a href="#more-information" data-toggle="tab" class="no-margin">Detalhes </a></li> -->
+                          <?php echo esc($produto->nome); ?>
 
-                        </ul>
-                        <div id="myTabContent" class="tab-content">
-                            <div class="tab-pane fade active in" id="more-information">
-                                <br />
-                                <strong style="font-size:2em;">Informações</strong>
-                                <p style="font-size:1.4em;">
-                                  <?= esc($produto->ingredientes)?>
-                                </p>
-                            </div>
-                            
-                          
-                        </div>
-                    </div>
-                    <hr />
+                      </h2>
+                      <hr />
+                      <h3 class="price-container">
+
+                          <p class="small">Escolha o valor</p>
 
 
-                    <div>
-                       <input type="text" placeholder="produto[slug]" name="produto[slug]" value="<?= $produto->slug?>">
-                       <input type="text" placeholder="especificacao_id"  id="especificacao_id" name="produto[especificacao_id]" >
-                       <input type="text" placeholder="extra_id" id="extra_id" name="produto[extra_id]" >
+                          <?php foreach ($especificacoes as $especificacao) : ?>
+                          <div class="radio">
+
+                              <label style="font-size: 15px" ;>
+
+                                  <input type="radio" style="margin-top: 2px" class="especificacao"
+                                      data-especificacao="<?php echo $especificacao->especificacao_id ?>"
+                                      name="produto[preco]" value="<?php echo $especificacao->preco; ?>">
+
+                                  <?php echo esc($especificacao->nome); ?>
+                                  <?php echo esc(number_format($especificacao->preco, 2)); ?>
+
+                              </label>
+
+                          </div>
+
+                          <?php endforeach; ?>
+
+                          <?php if(isset($extras)): ?>
+
+                          <hr>
+
+                          <p class="small">Extras do produto</p>
+
+                          <div class="radio">
+
+                              <label style="font-size: 15px" ;>
+
+                                  <input type="radio" style="margin-top: 2px" class="extra" name="extra" checked="">Sem
+                                  extra
+
+                              </label>
+
+                          </div>
 
 
 
-                    </div>
 
-                    <div class="row">
+                          <?php foreach ($extras as $extra) : ?>
+                          <div class="radio">
 
+                              <label style="font-size: 15px" ;>
 
-                        <div class="col-md-4 ">
-                            <input id="btn-adiciona" type="submit" class="btn btn-success btn-block" value="Adicionar ao Carrinho">                          
-                        </div>
+                                  <input type="radio" class="extra" data-extra="<?php echo $extra->id ?>"
+                                      name="extra" value="<?php echo $extra->preco; ?>">
 
-                        <?php foreach($especificacoes as $especificacao):?>
+                                  <?php echo esc($extra->nome); ?>
+                                  <?php echo esc(number_format($extra->preco, 2)); ?>
 
-                            <?php if($especificacao->customizavel):?>
-                                <div class="col-md-4 ">                            
-                                    <a href="<?= site_url("produto/customizar/$produto->slug")?>" class="btn btn-primary  btn-block">Customizar</a>
-                                </div>
-                                <?php break;?>
-                            <?php endif;?>
-                        <?php endforeach;?>
+                              </label>
 
-                        <div class="col-md-4 ">                            
-                            <a href="<?= site_url("/")?>" class="btn btn-info btn-block ">Mais produtos</a>
-                        </div>
+                          </div>
 
+                          <?php endforeach; ?>
 
-                       
-                    </div>
-                </div>
+                          <?php endif; ?>
+                      </h3>
 
-                <?= form_close();?>
+                      <div class="row" style="margin-top: 4rem">
 
-            </div>
-        </div>
-        <!-- end product -->
-    </div>
+                          <div class="col-md-4">
+
+                              <label>Quantidade</label>
+
+                              <input type="number" class="form-control" placeholder="Quantidade"
+                                  name="produto[quantidade]" value="1" min="1" max="10" step="1" required="">
 
 
-<div>
+                          </div>
 
+
+
+                      </div>
+
+                      <div class="description description-tabs">
+
+                          <div id="myTabContent" class="tab-content">
+                              <div class="tab-pane fade active in" style="font-size:15px;" id="more-information">
+                                  <br />
+                                  <strong>Informações &#x1F60B;</strong>
+                                  <p>
+                                      <?php echo esc($produto->ingredientes); ?>
+                                  </p>
+                              </div>
+
+                          </div>
+                      </div>
+                      <hr />
+
+                      <div>
+
+                          <!-- Campos hidden que to usando no controller -->
+
+                          <input type="hidden" name="produto[slug]" placeholder="produto[slug]"
+                              value="<?php echo $produto->slug; ?>">
+
+                          <input type="hidden" id="especificacao_id" placeholder="produto[especificacao_id]"
+                              name="produto[especificacao_id]">
+
+                          <input type="hidden" id="extra_id" placeholder="produto[extra_id]" name="produto[extra_id]">
+
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-4">
+
+                              <input id="btn-adiciona" type="submit" class="btn btn-success btn-block "
+                                  value="Adicionar ao carrinho">
+
+                          </div>
+
+
+                          <!-- Colocando o botão customizavel para aparecer somento se o item for customizavel -->
+                          <?php foreach($especificacoes as $especificacao): ?>
+
+                          <?php if($especificacao->customizavel): ?>
+
+                          <div class="col-sm-4">
+
+                              <a href="<?php echo site_url("produto/customizar/$produto->slug"); ?>"
+                                  class="btn btn-primary btn-block ">Customizar</a>
+                          </div>
+
+                          <?php break; ?>
+                          <?php endif; ?>
+                          <?php endforeach; ?>
+
+                          <div class="col-sm-4">
+
+                              <a href="<?php echo site_url("/"); ?>" class="btn btn-info btn-block ">Mais produtos</a>
+                          </div>
+
+                      </div>
+                  </div>
+
+                  <?php echo form_close(); ?>
+              </div>
+          </div>
+      </div>
+      <!-- end product -->
+  </div>
 
 <?= $this->endSection(); ?>
 

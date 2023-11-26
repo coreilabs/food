@@ -95,16 +95,35 @@ class Carrinho extends BaseController{
             $produto['nome'] = $produto['nome']. ' ' . $especificacaoProduto->nome . ' ' . (isset($extra) ? 'Com extra ' . $extra->nome : '');
 
             //definimos o preco qtd e tamanho
-
             $preco = $especificacaoProduto->preco + (isset($extra) ? $extra->preco : 0);
 
             $produto['preco'] = number_format($preco, 2);
-
             $produto['quantidade'] = (int) $produtoPost['quantidade'];
-
             $produto['tamanho'] = $especificacaoProduto->nome;
+            
+            //removemos atributos sem utilidade
+            unset($produto['ativo']);
 
-             dd($produto);
+            //iniciamos a inserção do produto no carrinho
+
+            if(session()->has('carrinho')){
+
+                //existe um carrinho
+
+                dd(session()->get('carrinho'));
+
+
+            }else{
+
+                //não existe um carrinho
+                $produtos[] = $produto;
+
+                session()->set('carrinho', $produtos);
+
+            }
+
+            return redirect()->back()->with('sucesso', 'Produto adicionado com sucesso!');
+
 
         }else{
             return redirect()->back();
