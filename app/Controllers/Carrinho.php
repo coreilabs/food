@@ -161,6 +161,48 @@ class Carrinho extends BaseController{
         }
     }
 
+    public function especial(){
+        if($this->request->getMethod() === 'post'){
+
+            $produtoPost = $this->request->getPost();
+
+
+            $this->validacao->setRules([
+                'primeira_metade' => ['label' => 'Primeiro Produto', 'rules' => 'required|greater_than[0]'],
+                'segunda_metade' => ['label' => 'Segundo Produto', 'rules' => 'required|greater_than[0]'],
+               
+
+               
+            ]);
+
+            if(!$this->validacao->withRequest($this->request)->run()){
+                return redirect()->back()->with('errors_model', $this->validacao->getErrors())->with('atencao', 'Por favor verifique os erros abaixo e tente novamente.')->withInput();
+            }
+
+
+         
+            $primeiroProduto = $this->produtoModel->select(['id', 'nome', 'slug'])->where('id', $produtoPost['primeira_metade'])->first();
+
+            
+            if($primeiroProduto == null){
+                return redirect()->back()->with('fraude', 'Não conseguimos processar a sua solicitação. Por favor entre em contato com a nossa equipe e informe o código de erro <strong>ERRO-ADD-CUSTOM-1001</strong> ');
+            }
+
+            $segundoProduto = $this->produtoModel->select(['id', 'nome', 'slug'])->where('id', $produtoPost['segunda_metade'])->first();
+
+            
+            if($segundoProduto == null){
+                return redirect()->back()->with('fraude', 'Não conseguimos processar a sua solicitação. Por favor entre em contato com a nossa equipe e informe o código de erro <strong>ERRO-ADD-CUSTOM-2002</strong> ');
+            }
+
+
+            dd($primeiroProduto);
+
+        }else{
+            return redirect()->back();
+        }
+    }
+
     /**
      * @param string $acao
      * @param string $slug

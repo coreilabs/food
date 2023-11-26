@@ -35,7 +35,7 @@
 
                   <div class="row" >
 
-                    <div class="col-md-12 " style="margin-bottom:2em;">
+                    <div class="col-md-12 " style="margin-bottom:2em;margin-top:1em;">
 
 
                         <?php if(session()->has('errors_model')): ?>
