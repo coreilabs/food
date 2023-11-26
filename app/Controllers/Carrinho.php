@@ -10,6 +10,7 @@ class Carrinho extends BaseController{
     private $produtoEspecificacaoModel;
     private $extraModel;
     private $produtoModel;
+    private $acao;
 
     
     public function __construct(){
@@ -18,6 +19,8 @@ class Carrinho extends BaseController{
         $this->produtoEspecificacaoModel = new \App\Models\ProdutoEspecificacaoModel();
         $this->extraModel = new \App\Models\ExtraModel();
         $this->produtoModel = new \App\Models\ProdutoModel();
+
+        $this->acao = service('router')->methodName();
 
 
     }
@@ -28,6 +31,8 @@ class Carrinho extends BaseController{
 
     public function adicionar(){
         if($this->request->getMethod() === 'post'){
+
+       
 
             $produtoPost = $this->request->getPost('produto');
            
@@ -120,6 +125,13 @@ class Carrinho extends BaseController{
 
                     //já existe o produto no carrinho, incrementamos a qtd
 
+
+                    //chamamos a funcao que incrementa a qtd do produto caso o mesmo exista no carrinho
+                    $produtos = $this->atualizaProduto($this->acao, $produto['slug'], $produto['quantidade'], $produtos);
+                    
+                   //sobreescrevemos a sessao carrinho com o array produtos que foi incrementado
+                    session()->set('carrinho', $produtos);
+
                 }else{
                     
 
@@ -147,5 +159,38 @@ class Carrinho extends BaseController{
         }else{
             return redirect()->back();
         }
+    }
+
+    /**
+     * @param string $acao
+     * @param string $slug
+     * @param int $quantidade
+     * @param array $produtos
+     * @return array
+     */
+    private function atualizaProduto(string $acao, string $slug, int $quantidade, array $produtos){
+
+        $produtos = array_map(function($linha) use ($acao, $slug, $quantidade){
+
+            if($linha['slug'] == $slug){
+
+                if($acao === 'adicionar'){
+                    $linha['quantidade'] += $quantidade;
+                }
+
+                if($acao === 'atualizar'){
+                     $linha['quantidade'] = $quantidade;
+
+                }
+
+                
+
+            }
+
+            return $linha;
+    }, $produtos);
+
+    return $produtos;
+
     }
 }
