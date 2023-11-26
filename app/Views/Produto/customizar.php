@@ -409,11 +409,11 @@
                     },
                     success: function(data){
 
-                        if(data){
+                        if(data.preco){
 
                             $('#valor_produto_customizado').html('R$ ' + data.preco);
                             $('#btn-adiciona').prop("disabled", false);
-        $('#btn-adiciona').prop("value", "Adicionar ao carrinho");
+                            $('#btn-adiciona').prop("value", "Adicionar ao carrinho");
 
                         }
 

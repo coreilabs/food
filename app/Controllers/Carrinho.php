@@ -10,6 +10,8 @@ class Carrinho extends BaseController{
     private $produtoEspecificacaoModel;
     private $extraModel;
     private $produtoModel;
+    private $medidaModel;
+
     private $acao;
 
     
@@ -19,6 +21,8 @@ class Carrinho extends BaseController{
         $this->produtoEspecificacaoModel = new \App\Models\ProdutoEspecificacaoModel();
         $this->extraModel = new \App\Models\ExtraModel();
         $this->produtoModel = new \App\Models\ProdutoModel();
+        $this->medidaModel = new \App\Models\MedidaModel();
+
 
         $this->acao = service('router')->methodName();
 
@@ -170,6 +174,9 @@ class Carrinho extends BaseController{
             $this->validacao->setRules([
                 'primeira_metade' => ['label' => 'Primeiro Produto', 'rules' => 'required|greater_than[0]'],
                 'segunda_metade' => ['label' => 'Segundo Produto', 'rules' => 'required|greater_than[0]'],
+                'tamanho' => ['label' => 'Tamanho do Produto', 'rules' => 'required|greater_than[0]'],
+
+                
                
 
                
@@ -195,8 +202,32 @@ class Carrinho extends BaseController{
                 return redirect()->back()->with('fraude', 'Não conseguimos processar a sua solicitação. Por favor entre em contato com a nossa equipe e informe o código de erro <strong>ERRO-ADD-CUSTOM-2002</strong> ');
             }
 
+            // convertendo os objetos para array
+            $primeiroProduto = $primeiroProduto->toArray();
+            $segundoProduto = $segundoProduto->toArray();
 
-            dd($primeiroProduto);
+
+           
+            //caso o extra_id venha no post, validamos a existencia do mesmo
+            if($produtoPost['extra_id'] && $produtoPost['extra_id'] != ""){
+
+                $extra = $this->extraModel->where('id', $produtoPost['extra_id'])->first();
+
+                //fraude  $produtoPost['extra_id']
+                if($extra == null){
+                    return redirect()->back()->with('fraude', 'Não conseguimos processar a sua solicitação. Por favor entre em contato com a nossa equipe e informe o código de erro <strong>ERRO-ADD-CUSTOM-3003</strong> ');
+                }
+
+            }
+
+            //recuperamos o valor do produto de acordo com o tamanho escolhido
+            $valorProduto = $this->medidaModel->exibeValor($produtoPost['tamanho']);
+
+            if($valorProduto->preco == null){
+                return redirect()->back()->with('fraude', 'Não conseguimos processar a sua solicitação. Por favor entre em contato com a nossa equipe e informe o código de erro <strong>ERRO-ADD-CUSTOM-4004</strong> ');
+            }
+
+            dd($valorProduto->preco);
 
         }else{
             return redirect()->back();

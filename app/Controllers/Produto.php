@@ -219,7 +219,7 @@ class Produto extends BaseController
 
         $medida = $this->medidaModel->exibeValor($get['medida_id']);
 
-        if($medida === null){
+        if($medida->preco == null){
 
             return $this->response->setJSON([]);
 
