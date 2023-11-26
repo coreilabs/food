@@ -103,6 +103,17 @@
 
                     </div>
 
+                    <div class="row">
+
+                            <div class="col-md-6">
+                                <div id="valor_produto_customizado">
+                                    <!-- aqui será renderizado via js o valor do produto  -->
+                                </div>
+                            </div>
+
+
+                    </div>
+
                     <div class="row" style="margin-top:3em; margin-bottom: 3em">
 
                         <div class="col-md-6" >
@@ -329,6 +340,44 @@
             }
         
 
+        });
+
+        $("#tamanho").on('change', function(){
+            
+        $('#btn-adiciona').prop("disabled", true);
+        $('#btn-adiciona').prop("value", "Selecione um tamanho");
+
+        var medida_id = $(this).val();
+
+        $('#valor_produto_customizado').html('');
+
+        if(medida_id){
+
+            $.ajax({
+
+                type: 'get',
+                    url: '<?= site_url('produto/exibevalor')?>',
+                    dataType: 'json',
+                    data: {
+                        medida_id: medida_id
+                        
+
+                    },
+                    beforeSend: function(data){
+
+        
+
+                    },
+                    success: function(data){
+
+        
+
+                    },
+
+            });
+
+        }
+            
         });
             
 
