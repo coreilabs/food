@@ -35,6 +35,8 @@
                 <?php else:?>
 
                 <div class="table-responsive">
+
+                <h4 class="text-center" style="margin-bottom:2em">Resumo do Carrinho de Compras</h4>
                     <table class="table table-hover">
             
                         <thead>
@@ -67,7 +69,7 @@
                                 </div>
 
                                 <button type="submit" class="btn btn-primary float-right">
-                                    Atualizar
+                                    <i class="fa fa-refresh"></i>
                                 </button>
                                 <?= form_close();?>
                             </td>
@@ -82,6 +84,19 @@
                             </tr>
 
                             <?php endforeach;?>
+
+                            <tr>
+                                <td class="text-right" colspan="5" style="font-weight:bold">Total Produtos:</td>
+                                <td colspan="5">R$ <?= number_format($total, 2)?></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right border-top-0" colspan="5" style="font-weight:bold">Taxa de Entrega:</td>
+                                <td class="border-top-0" id="valor_entrega" colspan="5">R$ 30.00</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right border-top-0" colspan="5" style="font-weight:bold">Taxa do Pedido:</td>
+                                <td class="border-top-0" id="valor_entrega" colspan="5">R$ <?= number_format($total, 2)?></td>
+                            </tr>
                             
                         </tbody>
                         </table>
