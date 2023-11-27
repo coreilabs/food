@@ -221,13 +221,30 @@ class Carrinho extends BaseController{
             }
 
             //recuperamos o valor do produto de acordo com o tamanho escolhido
-            $valorProduto = $this->medidaModel->exibeValor($produtoPost['tamanho']);
+            $medida = $this->medidaModel->exibeValor($produtoPost['tamanho']);
 
-            if($valorProduto->preco == null){
+            if($medida->preco == null){
                 return redirect()->back()->with('fraude', 'Não conseguimos processar a sua solicitação. Por favor entre em contato com a nossa equipe e informe o código de erro <strong>ERRO-ADD-CUSTOM-4004</strong> ');
             }
 
-            dd($valorProduto->preco);
+            //Criamos o slug composto para identificarmos a existencia ou nao do item no item no carrinho na hora de adicionar
+            $produto['slug'] = mb_url_title($medida->nome .'-metade-'. $primeiroProduto['slug'] . '-metade-' .$segundoProduto['slug']. '-' . (isset($extra) ? 'com extra-' . $extra->nome : ''), '-', true);
+
+            //criamos o nome do produto a partir da especificacao e (ou) do extra
+
+            $produto['nome'] = $medida->nome .' metade '. $primeiroProduto['nome'] . ' metade ' .$segundoProduto['nome']. ' ' . (isset($extra) ? 'Com extra ' . $extra->nome : '');
+
+            
+
+            //definimos o preco qtd e tamanho
+            $preco = $medida->preco + (isset($extra) ? $extra->preco : 0);
+
+            $produto['preco'] = number_format($preco, 2);
+            $produto['quantidade'] = 1; //sempre sera 1
+            $produto['tamanho'] = $medida->nome;
+            
+            dd($produto);
+        
 
         }else{
             return redirect()->back();

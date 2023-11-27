@@ -524,3 +524,36 @@ INFO - 2023-11-26 20:55:00 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-11-26 20:55:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-26 20:55:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-26 20:55:35 --> CSRF token verified.
+INFO - 2023-11-26 21:18:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 21:18:20 --> CSRF token verified.
+CRITICAL - 2023-11-26 21:18:20 --> Undefined variable: especificacaoProduto
+in APPPATH\Controllers\Carrinho.php on line 231.
+ 1 APPPATH\Controllers\Carrinho.php(231): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: especificacaoProduto', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Carrinho.php', 231, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Carrinho->especial()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrinho))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-26 21:19:04 --> CSRF token verified.
+CRITICAL - 2023-11-26 21:19:04 --> Undefined index: nome
+in APPPATH\Controllers\Carrinho.php on line 234.
+ 1 APPPATH\Controllers\Carrinho.php(234): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: nome', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Carrinho.php', 234, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Carrinho->especial()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrinho))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-11-26 21:19:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 21:19:44 --> CSRF token verified.
+INFO - 2023-11-26 21:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 21:20:06 --> CSRF token verified.
+INFO - 2023-11-26 21:24:00 --> CSRF token verified.
+INFO - 2023-11-26 21:24:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 21:24:17 --> CSRF token verified.
+INFO - 2023-11-26 21:24:33 --> CSRF token verified.
+INFO - 2023-11-26 21:24:56 --> CSRF token verified.
+INFO - 2023-11-26 21:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 21:26:13 --> CSRF token verified.
+INFO - 2023-11-26 21:28:40 --> CSRF token verified.
+INFO - 2023-11-26 21:28:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-26 21:29:03 --> CSRF token verified.
