@@ -310,6 +310,10 @@ class Carrinho extends BaseController{
                     $linha['quantidade'] += $quantidade;
                 }
 
+                if($acao === 'especial'){
+                    $linha['quantidade'] += $quantidade;
+                }
+
                 if($acao === 'atualizar'){
                      $linha['quantidade'] = $quantidade;
 
