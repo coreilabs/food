@@ -242,8 +242,50 @@ class Carrinho extends BaseController{
             $produto['preco'] = number_format($preco, 2);
             $produto['quantidade'] = 1; //sempre sera 1
             $produto['tamanho'] = $medida->nome;
-            
-            dd($produto);
+
+                   if(session()->has('carrinho')){
+
+                //existe um carrinho
+
+                //recupero os produtos do carrinho
+                $produtos = session()->get('carrinho');
+
+                // recuperamos apenas os slugs
+                $produtosSlugs = array_column($produtos, 'slug');
+
+                if(in_array($produto['slug'], $produtosSlugs)){
+
+                    //já existe o produto no carrinho, incrementamos a qtd
+
+
+                    //chamamos a funcao que incrementa a qtd do produto caso o mesmo exista no carrinho
+                    $produtos = $this->atualizaProduto($this->acao, $produto['slug'], $produto['quantidade'], $produtos);
+                    
+                   //sobreescrevemos a sessao carrinho com o array produtos que foi incrementado
+                    session()->set('carrinho', $produtos);
+
+                }else{
+                    
+
+                    //não existe no carrinho pode adicionar
+
+                    //adicionamos no carrinho existente o $produto
+                    session()->push('carrinho', [$produto]);
+
+                }
+
+
+
+            }else{
+
+                //não existe um carrinho
+                $produtos[] = $produto;
+
+                session()->set('carrinho', $produtos);
+
+            }
+
+            return redirect()->back()->with('sucesso', 'Produto adicionado com sucesso!');
         
 
         }else{
