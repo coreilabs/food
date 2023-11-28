@@ -176,7 +176,7 @@
                     cep:cep
                 },
                 beforesend: function(){
-                    $("cep").html('Consultando CEP');
+                    $("#cep").html('Consultando CEP');
                     $("[name=cep]").val('');
                 },
                 success: function(response){
@@ -186,6 +186,7 @@
 
                    }else{
                     // erro de validacao
+                    $("#cep").html(response.erro);
                    }
                 },
                 error:function(){

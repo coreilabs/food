@@ -400,6 +400,33 @@ class Carrinho extends BaseController{
         return redirect()->to(site_url('carrinho'));
     }
 
+    public function consultaCep(){
+        if(!$this->request->isAJAX()){
+
+            return redirect()->back();
+        }
+
+        $this->validacao->setRule('cep', 'CEP', 'required|exact_length[9]');
+
+        if(!$this->validacao->withRequest($this->request)->run()){
+            $retorno['erro'] = '<span class="text-danger">'. $this->validacao->getError() .'</span>';
+
+            return $this->response->setJSON($retorno);
+        }
+
+        $cep = str_replace("-", '', $this->request->getGet('cep'));
+
+        // carregamos o helper
+        helper('consulta_cep');
+
+        $consulta = consultaCep($cep);
+
+        print_r($consulta);
+        exit;
+
+
+    }
+
 
 
     /**
