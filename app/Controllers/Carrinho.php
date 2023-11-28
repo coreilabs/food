@@ -440,15 +440,21 @@ class Carrinho extends BaseController{
 
         if($consulta->bairro == null || $bairro == null){
 
-            $retorno['erro'] = '<span class="text-danger small">Não atendemos o Bairro: '.esc($consulta->bairro).' - '.esc($consulta->localidade).' - '.esc($consulta->uf).'</span>';
+            $retorno['erro'] = '<span class="text-danger small">Não atendemos o Bairro: '.esc($consulta->bairro)
+            .' - '.esc($consulta->localidade)
+            .' - '.esc($consulta->uf).'</span>'
+            .' - CEP '.esc($consulta->cep);
 
             return $this->response->setJSON($retorno);
         }
 
         $retorno['valor_entrega'] = 'R$ '. esc(number_format($bairro->valor_entrega, 2));
 
-        $retorno['bairro'] = '<span class="text-danger">Valor de entrega para o Bairro: '.esc($consulta->bairro).' - '.esc($consulta->localidade)
-        .' - '.esc($consulta->uf) .' - '.esc(number_format($bairro->valor_entrega, 2))
+        $retorno['bairro'] = '<span class="text-danger">Valor de entrega para o Bairro: '.esc($consulta->bairro)
+        .' - '.esc($consulta->localidade)
+        .' - '.esc($consulta->uf)
+        .' - CEP '.esc($consulta->cep) 
+        .' - R$ '.esc(number_format($bairro->valor_entrega, 2))
         .'</span>';
 
         $carrinho = session()->get('carrinho');

@@ -116,11 +116,11 @@
                             </tr>
                             <tr>
                                 <td class="text-right border-0" colspan="5" style="font-weight:bold;border-top:0">Taxa de Entrega:</td>
-                                <td class="border-top-0" id="valor_entrega" style="border-top:0"colspan="5">R$ 30.00</td>
+                                <td class="border-top-0" id="valor_entrega" style="border-top:0"colspan="5">Não calculado</td>
                             </tr>
                             <tr>
-                                <td class="text-right border-0" colspan="5" style="font-weight:bold;border-top:0">Taxa do Pedido:</td>
-                                <td class="border-top-0" id="valor_entrega" style="border-top:0" colspan="5">R$ <?= number_format($total, 2)?></td>
+                                <td class="text-right border-0" colspan="5" style="font-weight:bold;border-top:0">Total do Pedido:</td>
+                                <td class="border-top-0" id="total" style="border-top:0" colspan="5">R$ <?= number_format($total, 2)?></td>
                             </tr>
                             
                         </tbody>
@@ -182,6 +182,15 @@
                 success: function(response){
                    if(!response.erro){
                         // cep valido
+
+                        $("#cep").html('');
+
+                        $("#valor_entrega").html(response.valor_entrega);
+                        $("#total").html(response.total);
+                        $("#cep").html(response.bairro);
+
+
+
 
 
                    }else{
