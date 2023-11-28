@@ -10,7 +10,10 @@ class Carrinho extends BaseController{
     private $produtoEspecificacaoModel;
     private $extraModel;
     private $produtoModel;
+    private $bairroModel;
+
     private $medidaModel;
+    
 
     private $acao;
 
@@ -22,6 +25,8 @@ class Carrinho extends BaseController{
         $this->extraModel = new \App\Models\ExtraModel();
         $this->produtoModel = new \App\Models\ProdutoModel();
         $this->medidaModel = new \App\Models\MedidaModel();
+        $this->bairroModel = new \App\Models\BairroModel();
+
 
 
         $this->acao = service('router')->methodName();
@@ -421,8 +426,44 @@ class Carrinho extends BaseController{
 
         $consulta = consultaCep($cep);
 
-        print_r($consulta);
-        exit;
+        
+        if(isset($consulta->erro) && !isset($consulta->cep)){
+
+            $retorno['erro'] = '<span class="text-danger">Informe um CEP válido</span>';
+
+            return $this->response->setJSON($retorno);
+
+        }
+
+        $bairroRetornoSlug = mb_url_title($consulta->bairro, '-', true);
+        $bairro = $this->bairroModel->select('nome, valor_entrega')->where('slug', $bairroRetornoSlug)->where('ativo', true)->first();
+
+        if($consulta->bairro == null || $bairro == null){
+
+            $retorno['erro'] = '<span class="text-danger small">Não atendemos o Bairro: '.esc($consulta->bairro).' - '.esc($consulta->localidade).' - '.esc($consulta->uf).'</span>';
+
+            return $this->response->setJSON($retorno);
+        }
+
+        $retorno['valor_entrega'] = 'R$ '. esc(number_format($bairro->valor_entrega, 2));
+
+        $retorno['bairro'] = '<span class="text-danger">Valor de entrega para o Bairro: '.esc($consulta->bairro).' - '.esc($consulta->localidade)
+        .' - '.esc($consulta->uf) .' - '.esc(number_format($bairro->valor_entrega, 2))
+        .'</span>';
+
+        $carrinho = session()->get('carrinho');
+        $total = 0;
+
+        foreach ($carrinho as $produto){
+
+            $total += $produto['preco'] * $produto['quantidade'];
+        }
+
+        $total += esc(number_format($bairro->valor_entrega,2));
+
+        $retorno['total'] = 'R$ ' . esc(number_format($total, 2));
+        return $this->response->setJSON($retorno);
+
 
 
     }

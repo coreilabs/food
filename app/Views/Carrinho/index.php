@@ -127,7 +127,7 @@
                         
                     </table>
 
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-4">
                         <label>Consulte a Taxa de Entrega</label>
                         <input type="text" name="cep" class="form-control cep" placeholder="Informe seu CEP" >
                         <div id="cep"></div>
