@@ -170,7 +170,7 @@ class Carrinho extends BaseController{
 
             }
 
-            return redirect()->back()->with('sucesso', 'Produto adicionado com sucesso!');
+            return redirect()->to(site_url('carrinho'))->with('sucesso', 'Produto adicionado com sucesso!');
 
 
         }else{
@@ -298,7 +298,7 @@ class Carrinho extends BaseController{
 
             }
 
-            return redirect()->back()->with('sucesso', 'Produto adicionado com sucesso!');
+            return redirect()->to(site_url('carrinho'))->with('sucesso', 'Produto adicionado com sucesso!');
         
 
         }else{
@@ -354,6 +354,49 @@ class Carrinho extends BaseController{
         }
     }
 
+    public function remover(){
+        if($this->request->getMethod() === 'post'){
+
+
+            $produtoPost = $this->request->getPost('produto');        
+
+
+            $this->validacao->setRules([
+                'produto.slug' => ['label' => 'Produto', 'rules' => 'required|string'],
+           ]);
+
+            if(!$this->validacao->withRequest($this->request)->run()){
+                return redirect()->back()->with('errors_model', $this->validacao->getErrors())->with('atencao', 'Por favor verifique os erros abaixo e tente novamente.')->withInput();
+            }
+
+                //recupero os produtos do carrinho
+                $produtos = session()->get('carrinho');
+
+                // recuperamos apenas os slugs
+                $produtosSlugs = array_column($produtos, 'slug');
+
+                if(!in_array($produtoPost['slug'], $produtosSlugs)){
+
+                    return redirect()->back()->with('fraude', 'Não conseguimos processar a sua solicitação. Por favor entre em contato com a nossa equipe e informe o código de erro <strong>ERRO-ATUA-PROD-7007</strong> ');
+
+                } else {
+
+                    $produtos = $this->removeProduto($produtos, $produtoPost['slug']);
+
+                    //atualizamos o carrinho na sessao com o array $produtos sem o item que foi removido
+                    session()->set('carrinho', $produtos);
+
+                    return redirect()->back()->with('sucesso', 'Produto removido do Carrinho');
+
+                }  
+
+        }else{
+            return redirect()->back();
+        }
+    }
+
+
+
     /**
      * @param string $acao
      * @param string $slug
@@ -388,6 +431,16 @@ class Carrinho extends BaseController{
     }, $produtos);
 
     return $produtos;
+
+    }
+
+    private function removeProduto(array $produtos, string $slug){
+
+        return array_filter($produtos, function($linha) use($slug){
+
+            return $linha['slug'] != $slug;
+
+        });
 
     }
 }

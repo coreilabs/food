@@ -70,7 +70,19 @@
 
                             <tr>
                             <th class="text-center" scope="row">
-                                <a class="btn btn-danger btn-sm" href="<?= site_url("carrinho/remover/$produto->slug")?>"> X </a>
+
+                            <?= form_open("carrinho/remover", ['class' => 'form-inline'])?>
+                                <div class="form-group">
+                                <input type="hidden" name="produto[slug]" value="<?= esc($produto->slug)?>">
+                                </div>
+
+                                <button type="submit" class="btn btn-danger float-right">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                                <?= form_close();?>
+
+
+                               
                             </th>
                             <td ><?= esc($produto->nome)?></td>
                             <td><?= esc($produto->tamanho)?></td>
