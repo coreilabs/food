@@ -30,7 +30,7 @@
     <link href="<?= site_url('web/')?>src/assets/css/jquery.fancybox.css" type="text/css" rel="stylesheet" />
     <link href="<?= site_url('web/')?>src/assets/css/main.css" type="text/css" rel="stylesheet" />
     <link href="<?= site_url('web/')?>src/assets/css/responsive.css" type="text/css" rel="stylesheet" />
-
+   
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?= site_url('web/')?>src/assets/img/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="256x256"  href="<?= site_url('web/')?>src/assets/img/favicon/android-chrome-256x256.png">
@@ -41,7 +41,13 @@
     <link rel="manifest" href="<?= site_url('web/')?>src/assets/img/site.html" />
     <link rel="mask-icon" href="<?= site_url('web/')?>src/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#990100" />
-    <meta name="theme-color" content="#ffffff" />    
+    <meta name="theme-color" content="#ffffff" />   
+    
+    <style>
+        .navbar-nav > li > a {
+            line-height:30px;
+        }
+    </style>
 
     <!-- Essa Section renderizará os estilos específicos da View que estender este layout -->
 
@@ -245,6 +251,21 @@
                                             <li><a class="page-scroll" href="#gallery">Gallery</a></li>
                                             <li><a class="page-scroll" href="#reservation">Reservation</a></li>
                                             <li><a class="page-scroll" href="#footer">Contact</a></li>
+
+                                           
+                                                <?php if(session()->has('carrinho') && count(session()->get('carrinho')) > 0) :?>
+                                            <li>
+                                                <a class="page-scroll" href="<?= site_url('carrinho')?>">
+                                                    <i class="fa fa-shopping-cart fa-2x"></i>
+                                                    <span style="font-size:25px !important;font-family: 'Montserrat-Bold'">
+
+                                                        <?= count(session()->get('carrinho'))?>
+
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <?php endif;?>
+
                                         </ul>
                                     </div>
                                 </div>

@@ -17,7 +17,7 @@
 
 <?= $this->section('conteudo'); ?>
 
-<div class="container-fluid section" id="menu" data-aos="fade-up" style="margin-top: 3em">
+<div class="container section" id="menu" data-aos="fade-up" style="margin-top: 3em">
       <div class="col-sm-12 col-md-12 col-lg-12">
           <!-- product -->
           <div class="product-content product-wrap clearfix product-deatil">
@@ -111,16 +111,16 @@
                             <?php endforeach;?>
 
                             <tr>
-                                <td class="text-right" colspan="5" style="font-weight:bold">Total Produtos:</td>
-                                <td colspan="5">R$ <?= number_format($total, 2)?></td>
+                                <td class="text-right " colspan="5" style="font-weight:bold;border-top:0">Total Produtos:</td>
+                                <td style="border-top:0" colspan="5">R$ <?= number_format($total, 2)?></td>
                             </tr>
                             <tr>
-                                <td class="text-right border-top-0" colspan="5" style="font-weight:bold">Taxa de Entrega:</td>
-                                <td class="border-top-0" id="valor_entrega" colspan="5">R$ 30.00</td>
+                                <td class="text-right border-0" colspan="5" style="font-weight:bold;border-top:0">Taxa de Entrega:</td>
+                                <td class="border-top-0" id="valor_entrega" style="border-top:0"colspan="5">R$ 30.00</td>
                             </tr>
                             <tr>
-                                <td class="text-right border-top-0" colspan="5" style="font-weight:bold">Taxa do Pedido:</td>
-                                <td class="border-top-0" id="valor_entrega" colspan="5">R$ <?= number_format($total, 2)?></td>
+                                <td class="text-right border-0" colspan="5" style="font-weight:bold;border-top:0">Taxa do Pedido:</td>
+                                <td class="border-top-0" id="valor_entrega" style="border-top:0" colspan="5">R$ <?= number_format($total, 2)?></td>
                             </tr>
                             
                         </tbody>
@@ -128,7 +128,20 @@
                     </table>
               </div>
 
+              <hr>
+
+              <div class="col-md-12">
+              <a href="<?php echo site_url("carrinho/limpar"); ?>" class="btn btn-default " style="font-family:'Montserrat-Bold';">Limpar Carrinho</a>
+              <a href="<?php echo site_url("/"); ?>" class="btn btn-primary" style="font-family:'Montserrat-Bold';">Ver Produtos</a>
+              <a href="<?php echo site_url("checkout"); ?>" class="btn pull-right" style="background-color:#990100;font-family:'Montserrat-Bold';color:white;">Finalizar Pedido</a>
+
+
+
+              </div>
+
               <?php endif;?>
+
+
 
           </div>
       </div>

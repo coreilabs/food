@@ -395,6 +395,11 @@ class Carrinho extends BaseController{
         }
     }
 
+    public function limpar(){
+        session()->remove('carrinho');
+        return redirect()->to(site_url('carrinho'));
+    }
+
 
 
     /**
