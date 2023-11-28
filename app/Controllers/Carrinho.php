@@ -94,8 +94,8 @@ class Carrinho extends BaseController{
             }
 
 
-            //utilizando o toArray() para que possa inserir esse objeto no carrinho no formato adequado
-            $produto = $this->produtoModel->select(['id', 'nome', 'slug', 'ativo'])->where('slug', $produtoPost['slug'])->first()->toArray();
+            //buscamos o produto como objeto
+            $produto = $this->produtoModel->select(['id', 'nome', 'slug', 'ativo'])->where('slug', $produtoPost['slug'])->first();
 
            
 
@@ -103,9 +103,12 @@ class Carrinho extends BaseController{
              * validamos a existencia do produto e se o mesmo está ativo
              * fraude no form $produtoPost['slug']
              */
-            if($produto == null || $produto['ativo'] == false){
+            if($produto == null || $produto->ativo == false){
                 return redirect()->back()->with('fraude', 'Não conseguimos processar a sua solicitação. Por favor entre em contato com a nossa equipe e informe o código de erro <strong>ERRO-ADD-PROD-3003</strong> ');
             }
+
+            //converto o objeto para array
+            $produto = $produto->toArray();
 
             //Criamos o slug composto para identificarmos a existencia ou nao do item no item no carrinho na hora de adicionar
             $produto['slug'] = mb_url_title($produto['slug'] . '-' . $especificacaoProduto->nome . '-' . (isset($extra) ? 'com extra-' . $extra->nome : ''), '-', true);
@@ -297,6 +300,54 @@ class Carrinho extends BaseController{
 
             return redirect()->back()->with('sucesso', 'Produto adicionado com sucesso!');
         
+
+        }else{
+            return redirect()->back();
+        }
+    }
+
+    public function atualizar(){
+        if($this->request->getMethod() === 'post'){
+
+
+            $produtoPost = $this->request->getPost('produto');        
+
+
+            $this->validacao->setRules([
+                'produto.slug' => ['label' => 'Produto', 'rules' => 'required|string'],
+                'produto.quantidade' => ['label' => 'Quantidade', 'rules' => 'required|greater_than[0]'],
+                
+
+               
+            ]);
+
+            if(!$this->validacao->withRequest($this->request)->run()){
+                return redirect()->back()->with('errors_model', $this->validacao->getErrors())->with('atencao', 'Por favor verifique os erros abaixo e tente novamente.')->withInput();
+            }
+
+                //recupero os produtos do carrinho
+                $produtos = session()->get('carrinho');
+
+                // recuperamos apenas os slugs
+                $produtosSlugs = array_column($produtos, 'slug');
+
+                if(!in_array($produtoPost['slug'], $produtosSlugs)){
+
+                    return redirect()->back()->with('fraude', 'Não conseguimos processar a sua solicitação. Por favor entre em contato com a nossa equipe e informe o código de erro <strong>ERRO-ATUA-PROD-7007</strong> ');
+
+                } else {
+
+                    //Produto validado... atualizamos a qtd do mesmo no carrinho
+                    
+                    //chamamos a funcao que incrementa a qtd do produto caso o mesmo exista no carrinho
+                    $produtos = $this->atualizaProduto($this->acao, $produtoPost['slug'], $produtoPost['quantidade'], $produtos);
+                    
+                   //sobreescrevemos a sessao carrinho com o array produtos que foi incrementado ou decrementado
+                    session()->set('carrinho', $produtos);
+
+                    return redirect()->back()->with('sucesso', 'Quantidade atualizada com sucesso');
+
+                }  
 
         }else{
             return redirect()->back();

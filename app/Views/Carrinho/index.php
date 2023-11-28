@@ -37,6 +37,19 @@
                 <div class="table-responsive">
 
                 <h4 class="text-center" style="margin-bottom:2em">Resumo do Carrinho de Compras</h4>
+
+                <?php if(session()->has('errors_model')) : ?>
+
+                    <ul style="list-style:decimal">
+                    <?php foreach (session('errors_model') as $error):?>
+
+                        <li class="text-danger"><?= $error ;?></li>
+
+                        <?php endforeach; ?>
+                </ul>
+
+                <?php endif;?>
+
                     <table class="table table-hover">
             
                         <thead>

@@ -189,7 +189,7 @@
 
                           <div class="col-sm-4">
 
-                              <a href="<?php echo site_url("/"); ?>" class="btn btn-info btn-lg ">Mais produtos</a>
+                              <a href="<?php echo site_url("/"); ?>" class="btn btn-info btn-block ">Mais produtos</a>
                           </div>
 
                       </div>
