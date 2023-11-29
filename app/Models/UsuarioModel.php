@@ -41,7 +41,7 @@ class UsuarioModel extends Model
 
         ],
         'email' => [
-            'is_unique' => 'Desculpe. Esse email já está cadastrado.',
+            'is_unique' => 'Desculpe. Esse EMAIL já está cadastrado.',
             'required' => 'O campo EMAIL é obrigatório.',
 
         ],
@@ -93,6 +93,11 @@ class UsuarioModel extends Model
     public function desabilitaValidacaoSenha(){
         unset($this->validationRules['password']);
         unset($this->validationRules['password_confirmation']);
+    }
+
+    public function desabilitaValidacaoTelefone(){
+        unset($this->validationRules['telefone']);
+
     }
 
     public function desfazerExclusao(int $id){

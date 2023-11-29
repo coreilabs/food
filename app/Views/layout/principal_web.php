@@ -47,6 +47,11 @@
         .navbar-nav > li > a {
             line-height:30px;
         }
+        .btn-food{
+            background-color: #990100;
+            color: white !important;
+            font-family: 'Montserrat-Bold';
+        }
     </style>
 
     <!-- Essa Section renderizará os estilos específicos da View que estender este layout -->

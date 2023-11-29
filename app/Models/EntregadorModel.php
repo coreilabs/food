@@ -55,7 +55,7 @@ class EntregadorModel extends Model
 
         ],
         'email' => [
-            'is_unique' => 'Desculpe. Esse email já está cadastrado.',
+            'is_unique' => 'Desculpe. Esse EMAIL já está cadastrado.',
             'required' => 'O campo EMAIL é obrigatório.',
 
         ],
