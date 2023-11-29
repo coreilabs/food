@@ -15,7 +15,6 @@ class Registrar extends BaseController
 
     public function novo()
     {
-        //
 
         $data = [
             'titulo' => 'Criar nova conta',
@@ -30,11 +29,14 @@ class Registrar extends BaseController
             $usuario = new \App\Entities\Usuario($this->request->getPost());
 
             $this->usuarioModel->desabilitaValidacaoTelefone();
+
+            $usuario->iniciaAtivacao();
+
+           
             
             if($this->usuarioModel->insert($usuario)){
 
-                echo 'Conta Criada';
-                exit;
+                return redirect()->to(site_url('registrar/ativacaoenviado'));
 
             }else {
                
@@ -52,6 +54,17 @@ class Registrar extends BaseController
         }else{
             return redirect()->back();
         }
+    }
+
+    public function ativacaoEnviado(){
+
+        
+        $data = [
+            'titulo' => 'Email de Ativação da conta enviado para seu email',
+        ];
+
+        return view('Registrar/ativacao_enviado', $data);
+        
     }
 
 }

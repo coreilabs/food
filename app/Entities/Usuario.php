@@ -47,4 +47,11 @@ public function completaPasswordReset(){
     $this->reset_expira_em = null;
 }
 
+public function iniciaAtivacao(){
+    $token = new Token();
+
+    $this->token = $token->getValue();
+    $this->ativacao_hash = $token->getHash();
+}
+
 }
