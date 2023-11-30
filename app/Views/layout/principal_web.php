@@ -271,6 +271,20 @@
                                             </li>
                                             <?php endif;?>
 
+                                            <?php if(usuario_logado()) :?>
+                                                <li><a class="page-scroll" href="<?= site_url('conta')?>">Minha Conta</a></li>
+                                                <li><a class="page-scroll" href="<?= site_url('login/logout')?>">Sair</a></li>
+
+                                            <?php else:?>
+
+                                                <li><a class="page-scroll" href="<?= site_url('login')?>">Entrar</a></li>
+                                                <li><a class="page-scroll" href="<?= site_url('registrar')?>">Criar Conta</a></li>
+
+                                            <?php endif;?>
+
+
+
+
                                         </ul>
                                     </div>
                                 </div>
