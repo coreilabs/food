@@ -36,6 +36,8 @@ class Registrar extends BaseController
             
             if($this->usuarioModel->insert($usuario)){
 
+                $this->enviaEmailParaAtivarConta($usuario);
+
                 return redirect()->to(site_url('registrar/ativacaoenviado'));
 
             }else {
@@ -65,6 +67,28 @@ class Registrar extends BaseController
 
         return view('Registrar/ativacao_enviado', $data);
         
+    }
+
+    private function enviaEmailParaAtivarConta(object $usuario){
+
+        
+        $email = service('email');
+
+        $email->setFrom('eldedodeouro@gmail.com', 'Delivery');
+        $email->setTo($usuario->email);
+
+        
+
+        
+        $email->setSubject('Ativação da Conta');
+
+
+        $mensagem = view('Registrar/ativacao_email', ['usuario' => $usuario]);
+
+
+        $email->setMessage($mensagem);
+        
+        $email->send();
     }
 
 }
