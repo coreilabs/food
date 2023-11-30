@@ -8,6 +8,14 @@
 
 
 <?= $this->section('estilos'); ?>
+
+<style>
+          .btn-food{
+            background-color: #990100;
+            color: white !important;
+           
+        }
+</style>
 <?= $this->endSection(); ?>
 
 
@@ -79,7 +87,7 @@
                   <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Digite sua senha">
                 </div>
                 <div class="mt-3">
-                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" ">ENTRAR</button>
+                  <button type="submit" class="btn btn-block btn-food btn-lg font-weight-medium auth-form-btn" ">ENTRAR</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center mt-3">
                   <a href="<?= site_url('password/esqueci')?>" class="auth-link text-black">Esqueceu sua senha?</a>

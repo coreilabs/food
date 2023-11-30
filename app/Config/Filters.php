@@ -78,6 +78,9 @@ class Filters extends BaseConfig
         'login' => [
             'before' =>[
                 'admin/*', // todos os controller que estao dentro do namespace admin so serao acessados apos o login
+                'Conta(/*)?',
+                'Checkout(/*)?',
+                
             ]
             ],
         'admin' => [

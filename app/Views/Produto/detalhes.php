@@ -26,7 +26,7 @@
                       <div class="product-image">
 
                           <img src="<?php echo site_url("produto/imagem/$produto->imagem"); ?>"
-                              alt="<?php echo esc($produto->imagem); ?>" />
+                              alt="<?php echo esc($produto->imagem); ?>" class="img-responsive" />
 
                       </div>
                   </div>

@@ -11,8 +11,9 @@
 <?= $this->endSection(); ?>
 
 
-
 <?= $this->section('conteudo'); ?>
+<?= $this->include("carrossel"); ?>
+
 
 
 
