@@ -17,7 +17,6 @@ class Conta extends BaseController
     {
         dd($this->usuario);
     }
-
     public function show(){
         $data = [
             'titulo' => 'Meus dados',
@@ -25,4 +24,13 @@ class Conta extends BaseController
         ];
         return view('Conta/show', $data);
     }
+
+    public function editar(){
+        $data = [
+            'titulo' => 'Editar meus dados',
+            'usuario' => $this->usuario
+        ];
+        return view('Conta/editar', $data);
+    }
 }
+
