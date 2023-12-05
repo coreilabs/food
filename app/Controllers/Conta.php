@@ -8,9 +8,11 @@ class Conta extends BaseController
 {
 
     private $usuario;
+    private $usuarioModel;
 
     public function __construct(){
         $this->usuario = service("autenticacao")->pegaUsuarioLogado();
+        $this->usuarioModel = new \App\Models\UsuarioModel();
     }
 
     public function index()
@@ -77,6 +79,29 @@ class Conta extends BaseController
             return redirect()->back();
         }
 
+    }
+
+    public function atualizar(){
+        if ($this->request->getMethod() === 'post') {
+            $this->usuario->fill($this->request->getPost());
+
+            if(!$this->usuario->hasChanged()){
+                return redirect()->back()->with('info', 'Não há dados para atualizar');
+
+            }
+
+            if($this->usuarioModel->save($this->usuario)){
+                return redirect()->to(site_url("conta/show/"))
+                ->with('sucesso', "Dados atualizados com sucesso.");
+            }else{
+                return redirect()->back()->with('errors_model', $this->usuarioModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+            }
+
+         
+
+        } else {
+        return redirect()->back();
+        }
     }
 
 }

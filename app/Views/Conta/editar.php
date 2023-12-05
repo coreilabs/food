@@ -22,8 +22,23 @@
 
     <?= $this->include("Conta/sidebar") ?>
     <div class="row">
-    <h2 class="section-title"><?= esc($titulo)?></h2>    
+    <h2 class="section-title"><?= esc($titulo)?></h2>  
+    
+      
         <div class="col-md-6 col-md-offset-3">
+
+            <?php if(session()->has('errors_model')) : ?>
+
+            <ul style="list-style:decimal">
+            <?php foreach (session('errors_model') as $error):?>
+
+            <li class="text-danger"><?= $error ;?></li>
+
+            <?php endforeach; ?>
+            </ul>
+
+            <?php endif;?>
+            
             <?php echo form_open('conta/atualizar');?>
 
             <div class="panel panel-info">
