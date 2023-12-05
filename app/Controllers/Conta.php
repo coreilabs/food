@@ -104,5 +104,13 @@ class Conta extends BaseController
         }
     }
 
+    public function editarsenha(){
+        $data = [
+            'titulo' => 'Alterar senha de acesso',
+            'usuario' => $this->usuario
+        ];
+        return view('Conta/editar_senha', $data);
+    }
+
 }
 

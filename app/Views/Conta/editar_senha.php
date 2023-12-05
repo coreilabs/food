@@ -22,47 +22,72 @@
 
     <?= $this->include("Conta/sidebar") ?>
     <div class="row">
-    <h2 class="section-title"><?= esc($titulo)?></h2>    
-        <div class="col-xs-12 col-md-12 col-lg-12">
-                
-        </div>
+    <h2 class="section-title"><?= esc($titulo)?></h2>  
+    
+      
         <div class="col-md-6 col-md-offset-3">
+
+            <?php if(session()->has('errors_model')) : ?>
+
+            <ul style="list-style:decimal">
+            <?php foreach (session('errors_model') as $error):?>
+
+            <li class="text-danger"><?= $error ;?></li>
+
+            <?php endforeach; ?>
+            </ul>
+
+            <?php endif;?>
+            
+            <?php echo form_open('conta/atualizarsenha');?>
+
             <div class="panel panel-info">
                 <div class="panel-body">
                 
-                    <dl>
 
-                        <dt>Nome Completo</dt>
-                        <dd><?= esc($usuario->nome)?></dd>
-                        <hr>
+                    <div>
+                        <label>Senha Atual</label>
+                        <input type="password" name="current_password" class="form-control">
+                    </div>
+                    <hr>
 
-                        <dt>Email de Acesso</dt>
-                        <dd><?= esc($usuario->email)?></dd>
-                        <hr>
+                    <div>
+                        <label>Nova Atual</label>
+                        <input type="password" name="password" class="form-control">
+                    </div>
+                    <hr>
 
-                        <dt>Telefone</dt>
-                        <dd><?= esc($usuario->telefone)?></dd>
-                        <hr>
+                    <div>
+                        <label>Confirme a Nova Senha</label>
+                        <input type="password" name="password_confirmation" class="form-control">
+                    </div>
+                    <hr>
 
-                        <dt>CPF</dt>
-                        <dd><?= esc($usuario->cpf)?></dd>
-                        <hr>
 
-                        <dt>Cliente Desde</dt>
-                        <dd><?= $usuario->criado_em->humanize()?></dd>
 
-                    </dl>
+
+
+
+
+
+
                 
 
                 </div>
                 <div class="panel-footer">
 
 
-                    <a href="<?= site_url('conta/editar')?>" class="btn btn-primary">Editar</a>
-                    <a href="<?= site_url('conta/editarsenha')?>" class="btn btn-danger">Alterar Senha</a>
+                    <button type="submit" class="btn btn-primary" >Atualizar</button>
+
+
+                  
+                    <a href="<?= site_url('conta/show')?>" class="btn btn-default">Cancelar</a>
 
                 </div>
             </div>
+
+            <?php echo form_close();?>
+            
         </div>
     </div>
 
@@ -73,6 +98,15 @@
 
 
 <?= $this->section('scripts'); ?>
+
+
+
+<script src="<?= site_url('admin/vendors/mask/jquery.mask.min.js')?>"></script>
+<script src="<?= site_url('admin/vendors/mask/app.js')?>"></script>
+
+
+
+
 
 <script>
 
