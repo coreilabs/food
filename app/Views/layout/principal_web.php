@@ -53,7 +53,7 @@
             font-family: 'Montserrat-Bold';
         }
         .containerprincipal {
-            margin-top:2em;            
+            margin-top:11em;            
         }
 
         .navigation{
@@ -62,7 +62,7 @@
 
         @media only screen and (min-width: 1200px) {
             .containerprincipal {
-                margin-bottom:13em;            
+                /* margin-bottom:13em;             */
             }
 
             #main-carousel {
