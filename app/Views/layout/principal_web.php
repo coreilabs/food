@@ -52,18 +52,22 @@
             color: white !important;
             font-family: 'Montserrat-Bold';
         }
-        .containerprincipal {
-            margin-top:11em;            
-        }
 
+        .containerprincipal {
+            margin-top:6em;            
+        }
         .navigation{
             background-color: #990100;
         }
 
         @media only screen and (min-width: 1200px) {
             .containerprincipal {
-                /* margin-bottom:13em;             */
-            }
+            margin-top:11em;            
+        }
+
+        .alert {
+            margin-top:2em;
+        }
 
             #main-carousel {
                 margin-top:-20px;
@@ -144,9 +148,9 @@
                                         <ul class="nav navbar-nav">
                                             <li><a class="page-scroll" href="#header">Home</a></li>
                                             <li><a class="page-scroll" href="#about_us">About</a></li>
-                                            <li><a class="page-scroll" href="#menu">Menus</a></li>
+                                        
                                             <li><a class="page-scroll" href="#gallery">Gallery</a></li>
-                                            <li><a class="page-scroll" href="#reservation">Reservation</a></li>
+                                           
                                             <li><a class="page-scroll" href="#footer">Contact</a></li>
 
                                            
