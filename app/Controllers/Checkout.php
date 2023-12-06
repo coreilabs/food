@@ -124,8 +124,36 @@ class Checkout extends BaseController
            ]);
 
             if(!$validacao->withRequest($this->request)->run()){
-                return redirect()->back()->with('errors_model', $validacao->getErrors())->with('atencao', 'Por favor verifique os erros abaixo e tente novamente.')->withInput();
+
+                session()->remove('endereco_entrega'); 
+                return redirect()->back()->with('errors_model', $validacao->getErrors())->with('atencao', 'Por favor verifique os erros abaixo e tente novamente.');
             }
+
+            $forma = $this->formaPagamentoModel->where('id', $checkoutPost['forma_id'])->where('ativo', true)->first();
+
+            if($forma == null){
+
+                session()->remove('endereco_entrega'); 
+                return redirect()->back()->with('errors_model', $validacao->getErrors())->with('atencao', 'Por favor escolha a <strong>Forma de Pagamento </strong> e tente novamente');
+            }
+
+            $bairro = $this->bairroModel->where('slug', $checkoutPost['bairro_slug'])->where('ativo', true)->first();
+
+  
+
+            if($bairro == null){
+
+                session()->remove('endereco_entrega'); 
+                return redirect()->back()->with('errors_model', $validacao->getErrors())->with('atencao', 'Por favor informe seu <strong>CEP</strong> e calcule a taxa de entrega novamente');
+            }
+
+            if(!session()->get('endereco_entrega')){
+
+                return redirect()->back()->with('errors_model', $validacao->getErrors())->with('atencao', 'Por favor informe seu <strong>CEP</strong> e calcule a taxa de entrega novamente');
+
+            }
+
+
 
             print_r($this->request->getPost());
 
