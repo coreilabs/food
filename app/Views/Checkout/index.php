@@ -28,7 +28,7 @@
                 
         </div>
 
-        <div class="col-md-7">
+        <div class="col-md-6">
 
             <ul class="list-group">
 
@@ -82,8 +82,21 @@
 
               </div> <!-- fim col-md-7  -->
 
-              <div class="col-md-5">
+              <div class="col-md-6">
+
                 <?php echo form_open('checkout/processar', ['id' => 'form-checkout']);?>
+
+                <?php if(session()->has('errors_model')) : ?>
+
+                <ul style="list-style:decimal;margin-left:-2em" >
+                <?php foreach (session('errors_model') as $error):?>
+
+                <li class="text-danger"><?= $error ;?></li>
+
+                <?php endforeach; ?>
+                </ul>
+
+                <?php endif;?>
 
                 <h4>Escolha a forma de Pagamento</h4>
 
@@ -230,7 +243,7 @@
                         // cep valido              
 
                         $("#valor_entrega").html(response.valor_entrega);
-                        $("#bairro_slug").html(response.bairro_slug);
+                        $("#bairro_slug").val(response.bairro_slug);
 
                         $("#btn-checkout").prop('disabled', false);
                         $("#btn-checkout").val('Processar Pedido');
