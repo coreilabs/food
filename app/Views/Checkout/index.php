@@ -87,20 +87,67 @@
 
                 <h4>Escolha a forma de Pagamento</h4>
 
-                <?php foreach ($formas as $forma) : ?>
-                          <div class="radio">
+                    <div class="form-row">
+                        <?php foreach ($formas as $forma) : ?>
+                            <div class="radio">
 
-                              <label style="font-size: 16px" ;>
+                                <label style="font-size: 16px" ;>
 
-                                  <input id="forma" type="radio" name="forma" style="margin-top: 2px" class="forma" data-forma="<?= $forma->id?>">
-                                  <?= esc($forma->nome)?>
+                                    <input id="forma" type="radio" name="forma" style="margin-top: 2px" class="forma" data-forma="<?= $forma->id?>">
+                                    <?= esc($forma->nome)?>
 
-                                 
-                              </label>
+                                    
+                                </label>
 
-                          </div>
+                            </div>
 
-                          <?php endforeach; ?>
+                        <?php endforeach; ?>
+
+                        <hr>
+
+                        <div id="troco" class="">
+
+                            <div class="form-group col-md-12">
+                                <label>Troco Para</label>
+                                <input type="text" id="troco_para" name="checkout['troco_para']" class="form-control money" placeholder="Troco Para">
+
+                                <label >
+                                    <input type="checkbox" id="sem_troco" name="checkout[sem_troco]">
+                                    Não Precisa de Troco
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label >Consulte a Taxa de Entrega</label>
+                            <input type="text" name="cep" class="form-control cep" placeholder="Informe Seu CEP" value="">
+                            <div id="cep"></div>
+                        </div>
+                        <div class="form-group col-md-9">
+                            <label >Rua</label>
+                            <input type="text" name="checkout[rua]" class="form-control" readonly="" required="">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label >Número *</label>
+                            <input type="text" name="checkout[numero]" class="form-control" required="">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label >Ponto de Referência *</label>
+                            <input type="text" name="checkout[referencia]" class="form-control"  required="">
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <input type="text" id="forma_id" name="checkout[forma_id]" placeholder="checkout[forma_id]">
+                            <input type="text" id="bairro_slug" name="checkout[bairro_slug]" placeholder="checkout[bairro_slug]">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                            <input type="submit" id="btn_checkout" class="btn btn-food btn-block" value="Antes consulte a Taxa de Entrega" placeholder="checkout[forma_id]">
+                            
+                        </div>
+
 
                 <?php form_close();?>
               </div>
