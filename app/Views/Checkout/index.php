@@ -103,36 +103,38 @@
 
                         <?php endforeach; ?>
 
+
+                        <div id="troco" class="hidden">
                         <hr>
 
-                        <div id="troco" class="">
 
-                            <div class="form-group col-md-12">
+                            <div class="form-group col-md-12" style="padding-left:0">
                                 <label>Troco Para</label>
                                 <input type="text" id="troco_para" name="checkout['troco_para']" class="form-control money" placeholder="Troco Para">
 
                                 <label >
                                     <input type="checkbox" id="sem_troco" name="checkout[sem_troco]">
-                                    Não Precisa de Troco
+                                    Não Preciso de Troco
                                 </label>
                             </div>
 
+           
                         </div>
 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12" style="padding-left:0">
                             <label >Consulte a Taxa de Entrega</label>
                             <input type="text" name="cep" class="form-control cep" placeholder="Informe Seu CEP" value="">
                             <div id="cep"></div>
                         </div>
-                        <div class="form-group col-md-9">
+                        <div class="form-group col-md-9" style="padding-left:0">
                             <label >Rua</label>
                             <input type="text" name="checkout[rua]" class="form-control" readonly="" required="">
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-3" style="padding-left:0">
                             <label >Número *</label>
                             <input type="text" name="checkout[numero]" class="form-control" required="">
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12" style="padding-left:0">
                             <label >Ponto de Referência *</label>
                             <input type="text" name="checkout[referencia]" class="form-control"  required="">
                         </div>
@@ -144,7 +146,7 @@
                     </div>
 
                     <div class="form-group col-md-12">
-                            <input type="submit" id="btn_checkout" class="btn btn-food btn-block" value="Antes consulte a Taxa de Entrega" placeholder="checkout[forma_id]">
+                            <input type="submit" id="btn-checkout" class="btn btn-food btn-block" value="Antes consulte a Taxa de Entrega" placeholder="checkout[forma_id]">
                             
                         </div>
 
@@ -169,6 +171,42 @@
 <script src="<?= site_url('admin/vendors/mask/jquery.mask.min.js')?>"></script>
 <script src="<?= site_url('admin/vendors/mask/app.js')?>"></script>
 <script>
+
+    $("#btn-checkout").prop('disabled', true);
+
+    $(".forma").on('click', function(){
+        var forma_id = $(this).attr('data-forma');
+        $("#forma_id").val(forma_id);
+
+        if(forma_id == 1){
+
+            $("#troco").removeClass('hidden');
+
+        }else{
+            $("#troco").addClass('hidden');
+
+        }
+
+    }); //fim troco
+
+
+
+    $("#sem_troco").on('click', function(){
+
+        if(this.checked){
+            $('#troco_para').prop('disabled', true);
+            $('#troco_para').attr('placeholder', 'Não Preciso de troco');
+
+        }else{
+
+            $('#troco_para').prop('disabled', false);
+            $('#troco_para').attr('placeholder', 'Enviar Troco Para');
+
+        }
+
+
+}); //fim sem troco
+
 
     $("[name=cep]").focusout(function(){
         var cep = $(this).val();
