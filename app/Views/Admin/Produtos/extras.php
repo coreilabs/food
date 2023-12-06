@@ -109,7 +109,7 @@
                       <?php foreach($produtoExtras as $extraProduto):?>
                         <tr>
                           <td><?= esc($extraProduto->extra)?></td>
-                          <td>R$ <?= esc(number_format($extraProduto->preco, 2));?></td>
+                          <td>R$ <?= esc(number_format($extraProduto->preco, 2,',', '.'));?></td>
                           <td class="text-center">
 
                             <?= form_open("admin/produtos/excluirextra/$extraProduto->id/$extraProduto->produto_id")?>

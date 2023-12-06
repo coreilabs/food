@@ -139,7 +139,7 @@
                       <?php foreach($produtoEspecificacoes as $especificacao):?>
                         <tr>
                           <td><?= esc($especificacao->medida)?></td>
-                          <td>R$ <?= esc(number_format($especificacao->preco, 2));?></td>
+                          <td>R$ <?= esc(number_format($especificacao->preco, 2,',', '.'));?></td>
                           <td > <?php echo ($especificacao->customizavel ? '<label class="badge badge-primary">Sim</label>' : '<label class="badge badge-warning">Não</label>' )?></td>
                           <td class="text-center">
 

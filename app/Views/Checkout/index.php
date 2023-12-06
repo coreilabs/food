@@ -53,6 +53,26 @@
 
                 <?php endforeach;?>
 
+                <li class="list-group-item">
+                    <span>Total de Produtos: </span>
+                    <strong><?= 'R$ ' . number_format($total, 2, ',', '.')?></strong>
+                </li>
+
+                <li class="list-group-item">
+                    <span>Taxa de Entrega: </span>
+                    <strong id="valor_entrega" class="text-danger">Obrigatório *</strong>
+                </li>
+
+                <li class="list-group-item">
+                    <span>Valor do Pedido: </span>
+                    <strong id="total" ><?= 'R$ ' . number_format($total, 2, ',', '.')?></strong>
+                </li>
+
+                <li class="list-group-item">
+                    <span>Endereço de Entrega: </span>
+                    <strong id="endereco" class="text-danger">Obrigatório *</strong>
+                </li>
+
             </ul>
 
 
