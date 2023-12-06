@@ -128,7 +128,7 @@
                         </div>
                         <div class="form-group col-md-9" style="padding-left:0">
                             <label >Rua</label>
-                            <input type="text" name="checkout[rua]" class="form-control" readonly="" required="">
+                            <input id="rua" type="text" name="checkout[rua]" class="form-control" readonly="" required="">
                         </div>
                         <div class="form-group col-md-3" style="padding-left:0">
                             <label >Número *</label>
@@ -214,7 +214,7 @@
 
             $.ajax({
                 type: 'get',
-                url:'<?= site_url('carrinho/consultacep')?>',
+                url:'<?= site_url('checkout/consultacep')?>',
                 dataType: 'json',
                 data:{
                     cep:cep
@@ -222,19 +222,30 @@
                 beforesend: function(){
                     $("#cep").html('Consultando CEP');
                     $("[name=cep]").val('');
+                    $("#btn-checkout").prop('disabled', true);
+                    $("#btn-checkout").val('Consultando Taxa de Entrega...');
                 },
                 success: function(response){
                    if(!response.erro){
-                        // cep valido
-
-                        $("#cep").html('');
+                        // cep valido              
 
                         $("#valor_entrega").html(response.valor_entrega);
+                        $("#bairro_slug").html(response.bairro_slug);
+
+                        $("#btn-checkout").prop('disabled', false);
+                        $("#btn-checkout").val('Processar Pedido');
+                        if(response.logradouro){
+                            $("#rua").val(response.logradouro);
+
+
+                        }else{
+                            $('#rua').prop('readonly', false);
+                        }
+
+                        $("#endereco").html(response.endereco);
+
                         $("#total").html(response.total);
                         $("#cep").html(response.bairro);
-
-
-
 
 
                    }else{
@@ -243,7 +254,10 @@
                    }
                 },
                 error:function(){
-                    alert('Não foi possível consultar a taxa de entrega. Por favor entre em contato com nossa equipe e informe o erro: CONSULTA-ERRO-TAXA-ENTREGA');
+                    alert('Não foi possível consultar a taxa de entrega. Por favor entre em contato com nossa equipe e informe o erro: CONSULTA-ERRO-TAXA-ENTREGA-CHECKOUT');
+
+                    $("#btn-checkout").prop('disabled', true);
+                    $("#btn-checkout").val('Consulte a Taxa de Entrega');
                 }
 
             })
