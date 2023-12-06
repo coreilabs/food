@@ -33,7 +33,7 @@
 
 
       <p class="card-text"> <span class="font-weight-bold">Nome: </span> <?= esc($bairro->nome)?></p>
-      <p class="card-text"> <span class="font-weight-bold">Valor de entrega: R$ </span> <?= esc(number_format($bairro->valor_entrega,2))?></p>
+      <p class="card-text"> <span class="font-weight-bold">Valor de entrega: R$ </span> <?= esc(number_format($bairro->valor_entrega,2,',', '.'))?></p>
       <p class="card-text"> <span class="font-weight-bold">Ativo: </span> <?= ($bairro->ativo ? "Sim" : "Não" )?></p>
 
       <p class="card-text"> <span class="font-weight-bold">Criado: </span> <?= $bairro->criado_em->humanize() ?></p>

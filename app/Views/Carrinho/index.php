@@ -98,21 +98,21 @@
                                 </button>
                                 <?= form_close();?>
                             </td>
-                            <td>R$ <?= esc($produto->preco)?></td>
+                            <td>R$ <?= esc(number_format($produto->preco, 2,',', '.')) ?></td>
 
                             <?php 
                                     $subTotal = $produto->preco * $produto->quantidade;
                                     $total += $subTotal
                                 ?>
 
-                            <td>R$ <?= number_format($subTotal, 2)?></td>
+                            <td>R$ <?= number_format($subTotal, 2,',', '.')?></td>
                             </tr>
 
                             <?php endforeach;?>
 
                             <tr>
                                 <td class="text-right " colspan="5" style="font-weight:bold;border-top:0">Total Produtos:</td>
-                                <td style="border-top:0" colspan="5">R$ <?= number_format($total, 2)?></td>
+                                <td style="border-top:0" colspan="5">R$ <?= number_format($total, 2,',', '.')?></td>
                             </tr>
                             <tr>
                                 <td class="text-right border-0" colspan="5" style="font-weight:bold;border-top:0">Taxa de Entrega:</td>
@@ -120,7 +120,7 @@
                             </tr>
                             <tr>
                                 <td class="text-right border-0" colspan="5" style="font-weight:bold;border-top:0">Total do Pedido:</td>
-                                <td class="border-top-0" id="total" style="border-top:0" colspan="5">R$ <?= number_format($total, 2)?></td>
+                                <td class="border-top-0" id="total" style="border-top:0" colspan="5">R$ <?= number_format($total, 2,',', '.')?></td>
                             </tr>
                             
                         </tbody>

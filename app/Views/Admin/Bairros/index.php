@@ -60,7 +60,7 @@
 
                             <tr>
                                 <td><a href="<?= site_url("admin/bairros/show/$bairro->id")?>">  <?= $bairro->nome;?></a></td>
-                                <td>R$ <?= esc(number_format($bairro->valor_entrega));?></td>
+                                <td>R$ <?= esc(number_format($bairro->valor_entrega,2,',', '.'));?></td>
                                 <td><?= $bairro->criado_em->humanize();?></td>
                              
                  

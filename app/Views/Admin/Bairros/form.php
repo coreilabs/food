@@ -30,7 +30,7 @@
 
     <div class="form-group col-md-6 ">
         <label for="valor_entrega">Valor de Entrega (R$)</label>
-        <input type="text" class="form-control money" name="valor_entrega" id="valor_entrega" placeholder="Preço" value="<?= old('valor_entrega', esc(number_format($bairro->valor_entrega,2))) ?>">
+        <input type="text" class="form-control money" name="valor_entrega" id="valor_entrega" placeholder="Preço" value="<?= old('valor_entrega', esc(number_format($bairro->valor_entrega,2,',', '.'))) ?>">
     </div>
 
   

@@ -60,7 +60,7 @@
 
                             <tr>
                                 <td><a href="<?= site_url("admin/extras/show/$extra->id")?>">  <?= $extra->nome;?></a></td>
-                                <td>R$ <?= esc(number_format($extra->preco,2));?></td>
+                                <td>R$ <?= esc(number_format($extra->preco,2,',', '.'));?></td>
                                 <td><?= $extra->criado_em->humanize();?></td>
                              
                  

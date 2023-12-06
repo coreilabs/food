@@ -71,7 +71,7 @@
                             <div class="info">
                                 <div class="name"><?= esc($produto->nome)?></div>
                                 <div class="short"><?= word_limiter($produto->ingredientes, 5)?></div>
-                                <span class="filter_item_price">A partir de <?= esc(number_format($produto->preco,2))?></span>
+                                <span class="filter_item_price">A partir de <?= esc(number_format($produto->preco,2,',', '.'))?></span>
                             </div>
                         </div>
                     </a>

@@ -71,7 +71,7 @@
                                       name="produto[preco]" value="<?php echo $especificacao->preco; ?>">
 
                                   <?php echo esc($especificacao->nome); ?>
-                                  <?php echo esc(number_format($especificacao->preco, 2)); ?>
+                                  <?php echo esc(number_format($especificacao->preco, 2,',', '.')); ?>
 
                               </label>
 
@@ -108,7 +108,7 @@
                                       name="extra" value="<?php echo $extra->preco; ?>">
 
                                   <?php echo esc($extra->nome); ?>
-                                  <?php echo esc(number_format($extra->preco, 2)); ?>
+                                  <?php echo esc(number_format($extra->preco, 2,',', '.')); ?>
 
                               </label>
 
