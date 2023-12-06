@@ -52,7 +52,7 @@
                     <hr>
 
                     <div>
-                        <label>Nova Atual</label>
+                        <label>Nova Senha</label>
                         <input type="password" name="password" class="form-control">
                     </div>
                     <hr>

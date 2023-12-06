@@ -112,5 +112,32 @@ class Conta extends BaseController
         return view('Conta/editar_senha', $data);
     }
 
+    public function atualizarSenha(){
+
+        if ($this->request->getMethod() === 'post') {
+
+            if(!$this->usuario->verificaPassword($this->request->getPost('current_password'))){
+
+                return redirect()->back()->with('atencao','Senha atual Inválida');
+
+            }
+
+            $this->usuario->fill($this->request->getPost());
+            
+            if($this->usuarioModel->save($this->usuario)){
+                return redirect()->to(site_url("conta/show/"))
+                ->with('sucesso', "Senha atualizada com sucesso.");
+            }else{
+                return redirect()->back()->with('errors_model', $this->usuarioModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.')->withInput();
+            }
+
+
+        } else {
+
+            return redirect()->back();
+        }
+
+    }
+
 }
 
