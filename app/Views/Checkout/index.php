@@ -75,9 +75,35 @@
 
             </ul>
 
+            <a href="<?php echo site_url("/"); ?>" class="btn btn-food " >Ver Mais Produtos</a>
+              <a href="<?php echo site_url("carrinho"); ?>" class="btn btn-primary" style="font-family:'Montserrat-Bold';">Ver Carrinho de Compras</a>
 
 
-        </div>
+
+              </div> <!-- fim col-md-7  -->
+
+              <div class="col-md-5">
+                <?php echo form_open('checkout/processar', ['id' => 'form-checkout']);?>
+
+                <h4>Escolha a forma de Pagamento</h4>
+
+                <?php foreach ($formas as $forma) : ?>
+                          <div class="radio">
+
+                              <label style="font-size: 16px" ;>
+
+                                  <input id="forma" type="radio" name="forma" style="margin-top: 2px" class="forma" data-forma="<?= $forma->id?>">
+                                  <?= esc($forma->nome)?>
+
+                                 
+                              </label>
+
+                          </div>
+
+                          <?php endforeach; ?>
+
+                <?php form_close();?>
+              </div>
 
 
 

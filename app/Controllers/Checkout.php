@@ -8,9 +8,11 @@ class Checkout extends BaseController
 {
 
     private $usuario;
+    private $formaPagamentoModel;
 
     public function __construct(){
         $this->usuario = service("autenticacao")->pegaUsuarioLogado();
+        $this->formaPagamentoModel = new \App\Models\FormaPagamentoModel();
     }
     public function index()
     {
@@ -22,7 +24,8 @@ class Checkout extends BaseController
 
         $data = [
             'titulo' => 'Finalizar Pedido',
-            'carrinho' => session()->get('carrinho')
+            'carrinho' => session()->get('carrinho'),
+            'formas' => $this->formaPagamentoModel->where('ativo', true)->findAll(),
 
         ];
 
