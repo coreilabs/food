@@ -9,7 +9,7 @@ class Pedido extends Entity
  
     protected $dates   = ['criado_em', 'atualizado_em', 'deletado_em'];
 
-    public function exibeSituacaoPedido(){
+    public function exibeSituacaoDoPedido(){
 
         switch ($this->situacao) {
             case 0:
