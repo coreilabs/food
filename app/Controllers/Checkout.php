@@ -210,6 +210,11 @@ class Checkout extends BaseController
 
             $this->enviaEmailPedidoRealizado($pedido);
 
+            // limpar dados da sessao
+            session()->remove('carrinho');
+            session()->remove('endereco_entrega');
+
+
            
 
 

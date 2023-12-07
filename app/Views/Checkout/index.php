@@ -281,6 +281,21 @@
 
         }
     });
+
+    $("form").submit(function() {
+        $(this).find(":submit").attr('disabled', 'disabled');
+        $("#btn-checkout").val('Processando o seu pedido');
+        $("#cep").val('');
+    });
+
+    $(window).keydown(function(event){
+
+        if(event.keyCode == 13){
+            event.preventDefault();
+            return false;
+        }
+
+    });
    
 </script>
 <?= $this->endSection(); ?>
