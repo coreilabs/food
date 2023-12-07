@@ -264,6 +264,8 @@
                    }else{
                     // erro de validacao
                     $("#cep").html(response.erro);
+                    $("#btn-checkout").prop('disabled', true);
+                    $("#btn-checkout").val('Consulte a Taxa de Entrega');
                    }
                 },
                 error:function(){

@@ -10,11 +10,13 @@ class Checkout extends BaseController
     private $usuario;
     private $formaPagamentoModel;
     private $bairroModel;
+    private $pedidoModel;
 
     public function __construct(){
         $this->usuario = service("autenticacao")->pegaUsuarioLogado();
         $this->formaPagamentoModel = new \App\Models\FormaPagamentoModel();
         $this->bairroModel = new \App\Models\BairroModel();
+        $this->pedidoModel = new \App\Models\PedidoModel();
     }
     public function index()
     {
@@ -152,6 +154,25 @@ class Checkout extends BaseController
                 return redirect()->back()->with('errors_model', $validacao->getErrors())->with('atencao', 'Por favor informe seu <strong>CEP</strong> e calcule a taxa de entrega novamente');
 
             }
+
+            //já podemos salvar o pedido
+
+         
+            $pedido = new \App\Entities\Pedido();
+
+
+            $pedido->usuario_id = $this->usuario->id;
+            $pedido->codigo = $this->pedidoModel->geraCodigoPedido();
+            $pedido->forma_pagamento = $forma->nome;
+            $pedido->produtos = serialize(session()->get('carrinho'));
+            $pedido->valor_produtos = number_format($this->somaValorProdutosCarrinho(), 2);
+            $pedido->valor_entrega = number_format($bairro->valor_entrega, 2);
+            $pedido->valor_pedido = number_format($pedido->valor_produtos + $pedido->valor_entrega, 2);
+            $pedido->endereco_entrega = session()->get('endereco_entrega').' - Número '. $checkoutPost['numero'];
+
+            echo "<pre>";
+            print_r($pedido);
+            exit;
 
 
 
