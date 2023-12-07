@@ -115,7 +115,14 @@
                             <div class="top_addr">
                                 <span><i class="fa fa-map-marker" aria-hidden="true"></i> Your country, your city, 12345</span>
                                 <span><i class="fa fa-phone" aria-hidden="true"></i> 123 456 789</span>
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i> 11:00 - 21:00</span>
+
+                                <?php $expedienteHoje = expedienteHoje(); ?>
+                                <?php if($expedienteHoje->situacao == false) :?>
+                                    <span><i class="fa fa-lock" aria-hidden="true"></i> Hoje Estamos Fechados</span>
+                                <?php else:?>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i> <?= $expedienteHoje->abertura . ' - ' .  $expedienteHoje->fechamento?></span>
+
+                                <?php endif;?>
                                 <div class="pull-right search-block">
                                     <i class="fa fa-search" id="search" aria-hidden="true"></i>
                                 </div>
@@ -247,11 +254,11 @@
                     <div class="container">
                         <div class="footer_content">
                             <div class="row">
-                                <div class="col-sm-6 col-md-3">
+                                <div class="col-sm-6 col-md-4">
                                     <h4 class="footer_ttl footer_ttl_padd">about us</h4>
                                     <p class="footer_txt">Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries but also the leap into electronic typesetting. </p>
                                 </div>
-                                <div class="col-sm-6 col-md-6">
+                                <div class="col-sm-6 col-md-5">
 
                                 <?php $expedientes = expedientes();?>
 
