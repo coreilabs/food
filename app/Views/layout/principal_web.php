@@ -254,7 +254,7 @@
 
             <!--    Google map, Social links    -->
             <div class="section" id="contact">
-                <div id="googleMap"></div> 
+                <div id="googleMap" style="max-height:200px"></div> 
                 <div class="footer_pos">
                     <div class="container">
                         <div class="footer_content">
