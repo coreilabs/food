@@ -31,35 +31,35 @@
                 </div>
             <?php endif;?>
 
-            <h3>No momento o seu pedido esta com o status de <?= $pedido->exibeSituacaoPedido()?></h3>
+            <div class="col-md-12 col-xs-12 text-center">
+            <h4>No momento o seu pedido esta com o status de <?= $pedido->exibeSituacaoPedido()?></h4>
+            </div>
 
             <?php if($pedido->situacao != 3) : ?>
                 <div class="col-xs-12 col-md-12 col-lg-12">
 
                     <h4 class="text-center">Quando ocorrer uma mudança no status do seu pedido, nós notificaremos você por email</h4> 
-                      
+
                         
                 </div>
             <?php endif;?>
 
-        <div class="col-md-6">
+        <div class="col-md-12">
 
             <ul class="list-group">
 
-                <?php $total = 0; ?>
+        
 
-                <?php foreach($carrinho as $produto):?>
+                <?php foreach($produtos as $produto):?>
 
-                    <?php $subTotal = $produto['preco'] * $produto['quantidade'];?>
 
-                    <?php $total += $subTotal;?>
 
                 <li class="list-group-item">
                     <div>
-                        <h4><?= ellipsize($produto['nome'], 60) ?></h4>
+                        <h4><?= ellipsize($produto['nome'], 100) ?></h4>
                         <p class="text-muted">Quantidade: <?= $produto['quantidade']?></p>
                         <p class="text-muted">Preço: R$ <?=  number_format($produto['preco'], 2, ',', '.')?></p>
-                        <p class="text-muted">Subtotal: R$ <?= number_format($subTotal, 2, ',', '.') ?></p>
+                       
 
 
                     </div>
@@ -68,118 +68,45 @@
                 <?php endforeach;?>
 
                 <li class="list-group-item">
+                    <span>Data do Pedido: </span>
+                    <strong><?= $pedido->criado_em->humanize() ?></strong>
+                </li>
+                <li class="list-group-item">
                     <span>Total de Produtos: </span>
-                    <strong><?= 'R$ ' . number_format($total, 2, ',', '.')?></strong>
+                    <strong><?= 'R$ ' . number_format($pedido->valor_produtos, 2, ',', '.')?></strong>
                 </li>
 
                 <li class="list-group-item">
                     <span>Taxa de Entrega: </span>
-                    <strong id="valor_entrega" class="text-danger">Obrigatório *</strong>
+                    <strong><?= 'R$ ' . number_format($pedido->valor_entrega, 2, ',', '.')?></strong>
                 </li>
-
                 <li class="list-group-item">
-                    <span>Valor do Pedido: </span>
-                    <strong id="total" ><?= 'R$ ' . number_format($total, 2, ',', '.')?></strong>
+                    <span>Valor final do Pedido: </span>
+                    <strong><?= 'R$ ' . number_format($pedido->valor_pedido, 2, ',', '.')?></strong>
                 </li>
 
                 <li class="list-group-item">
                     <span>Endereço de Entrega: </span>
-                    <strong id="endereco" class="text-danger">Obrigatório *</strong>
+                    <strong><?= esc($pedido->endereco_entrega)?></strong>
+                </li>
+                <li class="list-group-item">
+                    <span>Forma de Pagamento: </span>
+                    <strong><?= esc($pedido->forma_pagamento)?></strong>
+                </li>
+                <li class="list-group-item">
+                    <span>Observações do Pedido: </span>
+                    <strong><?= esc($pedido->observacoes)?></strong>
                 </li>
 
             </ul>
 
             <a href="<?php echo site_url("/"); ?>" class="btn btn-food " >Ver Mais Produtos</a>
-              <a href="<?php echo site_url("carrinho"); ?>" class="btn btn-primary" style="font-family:'Montserrat-Bold';">Ver Carrinho de Compras</a>
 
 
 
-              </div> <!-- fim col-md-7  -->
 
-              <div class="col-md-6">
+              </div> <!-- fim col-md-12  -->
 
-                <?php echo form_open('checkout/processar', ['id' => 'form-checkout']);?>
-
-                <?php if(session()->has('errors_model')) : ?>
-
-                <ul style="list-style:decimal;margin-left:-2em" >
-                <?php foreach (session('errors_model') as $error):?>
-
-                <li class="text-danger"><?= $error ;?></li>
-
-                <?php endforeach; ?>
-                </ul>
-
-                <?php endif;?>
-
-                <h4>Escolha a forma de Pagamento</h4>
-
-                    <div class="form-row">
-                        <?php foreach ($formas as $forma) : ?>
-                            <div class="radio">
-
-                                <label style="font-size: 16px" ;>
-
-                                    <input id="forma" type="radio" name="forma" style="margin-top: 2px" class="forma" data-forma="<?= $forma->id?>">
-                                    <?= esc($forma->nome)?>
-
-                                    
-                                </label>
-
-                            </div>
-
-                        <?php endforeach; ?>
-
-
-                        <div id="troco" class="hidden">
-                        <hr>
-
-
-                            <div class="form-group col-md-12" style="padding-left:0">
-                                <label>Troco Para</label>
-                                <input type="text" id="troco_para" name="checkout[troco_para]" class="form-control money" placeholder="Troco Para">
-
-                                <label >
-                                    <input type="checkbox" id="sem_troco" name="checkout[sem_troco]">
-                                    Não Preciso de Troco
-                                </label>
-                            </div>
-
-           
-                        </div>
-
-                        <div class="form-group col-md-12" style="padding-left:0">
-                            <label >Consulte a Taxa de Entrega</label>
-                            <input type="text" name="cep" id="cep" class="form-control cep" placeholder="Informe Seu CEP" value="">
-                            <div id="cep"></div>
-                        </div>
-                        <div class="form-group col-md-9" style="padding-left:0">
-                            <label >Rua</label>
-                            <input id="rua" type="text" name="checkout[rua]" class="form-control" readonly="" required="">
-                        </div>
-                        <div class="form-group col-md-3" style="padding-left:0">
-                            <label >Número *</label>
-                            <input type="text" name="checkout[numero]" class="form-control" required="">
-                        </div>
-                        <div class="form-group col-md-12" style="padding-left:0">
-                            <label >Ponto de Referência *</label>
-                            <input type="text" name="checkout[referencia]" class="form-control"  required="">
-                        </div>
-
-                        <div class="form-group col-md-12">
-                            <input type="text" id="forma_id" name="checkout[forma_id]" placeholder="checkout[forma_id]">
-                            <input type="text" id="bairro_slug" name="checkout[bairro_slug]" placeholder="checkout[bairro_slug]">
-                        </div>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                            <input type="submit" id="btn-checkout" class="btn btn-food btn-block" value="Antes consulte a Taxa de Entrega" placeholder="checkout[forma_id]">
-                            
-                        </div>
-
-
-                <?php form_close();?>
-              </div>
 
 
 

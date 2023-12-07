@@ -92,11 +92,11 @@ class Checkout extends BaseController
         .'</span>';
 
         $retorno['endereco'] = esc($consulta->bairro)
-        .' - '.esc($consulta->localidade)
-        .' - '.esc($consulta->logradouro)
-        .' - '.esc($consulta->uf)
-        .' - CEP '.esc($consulta->cep) 
-        .'</span>';
+            .' - '.esc($consulta->localidade)
+            .' - '.esc($consulta->logradouro)
+            .' - '.esc($consulta->uf)
+            .' - CEP '.esc($consulta->cep);
+       
 
 
         $retorno['logradouro'] = $consulta->logradouro;
