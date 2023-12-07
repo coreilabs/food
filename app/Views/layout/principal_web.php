@@ -281,7 +281,7 @@
                                             <?php else:?>
                                                 <div class="week_time">
                                                 <span class="week_time_start"><?= esc($dia->abertura)?></span>
-                                                <span class="week_time_node">-</span>
+                                                <span class="week_time_node">às</span>
                                                 <span class="week_time_end"><?= esc($dia->fechamento)?></span>
                                             </div>
                                             <?php endif;?>
