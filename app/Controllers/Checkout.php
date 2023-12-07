@@ -170,13 +170,35 @@ class Checkout extends BaseController
             $pedido->valor_pedido = number_format($pedido->valor_produtos + $pedido->valor_entrega, 2);
             $pedido->endereco_entrega = session()->get('endereco_entrega').' - Número '. $checkoutPost['numero'];
 
+
+            if($forma->id == 1){
+
+                if(isset($checkoutPost['sem_troco'])){
+
+                    $pedido->observacoes = 'Ponto de Referência: ' . $checkoutPost['referencia'] . ' - Número: ' . $checkoutPost['numero'] . '. Você informou que não precisa de troco.';
+                
+                }
+
+                if(isset($checkoutPost['troco_para'])){
+                    $trocoPara = str_replace(',', '', $checkoutPost['troco_para']);
+                    $pedido->observacoes = 'Ponto de Referência: ' . $checkoutPost['referencia'] . ' - Número: ' . $checkoutPost['numero'] . '. Você informou que precisa de troco para: R$ ' . number_format($trocoPara, 2, ',', '.');
+
+
+                }
+
+            }else{ 
+
+                //cliente escolheu forma de pagamento diferente de dinheiro
+                $pedido->observacoes = 'Ponto de Referência: ' . $checkoutPost['referencia'] . ' - Número: ' . $checkoutPost['numero'];
+
+            }
+
             echo "<pre>";
             print_r($pedido);
             exit;
 
 
 
-            print_r($this->request->getPost());
 
         }else{
             return redirect()->back();

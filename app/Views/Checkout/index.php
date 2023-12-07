@@ -123,7 +123,7 @@
 
                             <div class="form-group col-md-12" style="padding-left:0">
                                 <label>Troco Para</label>
-                                <input type="text" id="troco_para" name="checkout['troco_para']" class="form-control money" placeholder="Troco Para">
+                                <input type="text" id="troco_para" name="checkout[troco_para]" class="form-control money" placeholder="Troco Para">
 
                                 <label >
                                     <input type="checkbox" id="sem_troco" name="checkout[sem_troco]">
