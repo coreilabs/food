@@ -136,7 +136,7 @@
 
                         <div class="form-group col-md-12" style="padding-left:0">
                             <label >Consulte a Taxa de Entrega</label>
-                            <input type="text" name="cep" class="form-control cep" placeholder="Informe Seu CEP" value="">
+                            <input type="text" name="cep" id="cep" class="form-control cep" placeholder="Informe Seu CEP" value="">
                             <div id="cep"></div>
                         </div>
                         <div class="form-group col-md-9" style="padding-left:0">
@@ -186,6 +186,7 @@
 <script>
 
     $("#btn-checkout").prop('disabled', true);
+    
 
     $(".forma").on('click', function(){
         var forma_id = $(this).attr('data-forma');
@@ -208,13 +209,14 @@
 
         if(this.checked){
             $('#troco_para').prop('disabled', true);
+            $('#troco_para').val('Não preciso de Troco');
             $('#troco_para').attr('placeholder', 'Não Preciso de troco');
 
         }else{
 
             $('#troco_para').prop('disabled', false);
             $('#troco_para').attr('placeholder', 'Enviar Troco Para');
-
+            $('#troco_para').val('');
         }
 
 

@@ -180,7 +180,18 @@ class Checkout extends BaseController
                 }
 
                 if(isset($checkoutPost['troco_para'])){
+
+       
+
                     $trocoPara = str_replace(',', '', $checkoutPost['troco_para']);
+
+                    if($trocoPara < 1 || strlen($checkoutPost['troco_para']) <1){
+
+                        return redirect()->back()->with('atencao', 'Informe se precisa de Troco');
+
+                    }
+
+
                     $pedido->observacoes = 'Ponto de Referência: ' . $checkoutPost['referencia'] . ' - Número: ' . $checkoutPost['numero'] . '. Você informou que precisa de troco para: R$ ' . number_format($trocoPara, 2, ',', '.');
 
 
@@ -193,9 +204,13 @@ class Checkout extends BaseController
 
             }
 
-            echo "<pre>";
-            print_r($pedido);
-            exit;
+            $this->pedidoModel->save($pedido);
+
+            $pedido->usuario = $this->usuario;
+
+            $this->enviaEmailPedidoRealizado($pedido);
+
+           
 
 
 
@@ -214,6 +229,31 @@ class Checkout extends BaseController
         }, session()->get('carrinho'));
 
         return array_sum($produtosCarrinho);
+
+    }
+
+    private function enviaEmailPedidoRealizado(object $pedido){
+
+        $email = service('email');
+
+        $email->setFrom('eldedodeouro@gmail.com', 'Delivery');
+        $email->setTo($this->usuario->email);
+
+        
+
+        
+        $email->setSubject("Pedido $pedido->codigo realizado com sucesso!");
+
+        
+
+        $mensagem = view('Checkout/pedido_email', ['pedido' => $pedido]);
+
+
+        $email->setMessage($mensagem);
+        
+        $email->send();
+
+
 
     }
 }
