@@ -215,15 +215,46 @@ class Checkout extends BaseController
             session()->remove('endereco_entrega');
 
 
-           
 
 
+            return redirect()->to("checkout/sucesso/$pedido->codigo");
 
 
         }else{
             return redirect()->back();
         }
     }
+
+    public function sucesso($codigoPedido = null){
+
+        $pedido = $this->buscaPedidoOu404($codigoPedido);
+
+        $data = [
+            'titulo' => "Pedido $codigoPedido realizado com sucesso",
+            'pedido' => $pedido,
+            'produtos' => unserialize($pedido->produtos),
+        ];
+
+        return view('checkout/sucesso', $data);
+        
+    }
+
+        
+/**
+ * @param int $codigoPedido
+ * @return objeto $pedido
+ */
+private function buscaPedidoOu404(int $codigoPedido = null){
+    if(!$codigoPedido || !$pedido = $this->pedidoModel
+    ->where('codigo', $codigoPedido)
+    ->where('usuario_id', $this->usuario->id)
+    ->first()){
+        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Não Encontramos o Pedido $codigoPedido");
+    }
+    return $pedido;
+}
+
+
 
     //funções privadas
     private function somaValorProdutosCarrinho(){
