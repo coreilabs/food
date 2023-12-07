@@ -11,11 +11,10 @@ class Carrinho extends BaseController{
     private $extraModel;
     private $produtoModel;
     private $bairroModel;
-
     private $medidaModel;
-    
-
     private $acao;
+    private $horaAtual;
+    private $expedienteHoje;
 
     
     public function __construct(){
@@ -26,6 +25,8 @@ class Carrinho extends BaseController{
         $this->produtoModel = new \App\Models\ProdutoModel();
         $this->medidaModel = new \App\Models\MedidaModel();
         $this->bairroModel = new \App\Models\BairroModel();
+        $this->horaAtual = date('H:i');
+  
 
 
 
@@ -51,7 +52,15 @@ class Carrinho extends BaseController{
     public function adicionar(){
         if($this->request->getMethod() === 'post'){
 
-       
+            $this->expedienteHoje = expedienteHoje();
+
+            if($this->expedienteHoje->situacao == false){
+
+                return redirect()->back()->with('expediente', 'Estamos Fechados');
+
+            }
+
+            
 
             $produtoPost = $this->request->getPost('produto');
            
@@ -522,4 +531,6 @@ class Carrinho extends BaseController{
         });
 
     }
+
+
 }

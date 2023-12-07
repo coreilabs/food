@@ -211,3 +211,39 @@ INFO - 2023-12-07 15:09:16 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-12-07 15:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-12-07 15:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-12-07 15:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-07 15:16:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-07 15:17:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-07 15:17:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-07 15:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-07 15:19:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-07 15:19:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-07 15:19:51 --> CSRF token verified.
+CRITICAL - 2023-12-07 15:19:51 --> Call to undefined function App\Controllers\expedienteHoje()
+in APPPATH\Controllers\Carrinho.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Carrinho->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-07 15:22:50 --> CSRF token verified.
+CRITICAL - 2023-12-07 15:22:50 --> Call to undefined function App\Controllers\expedienteHoje()
+in APPPATH\Controllers\Carrinho.php on line 532.
+ 1 APPPATH\Controllers\Carrinho.php(29): App\Controllers\Carrinho->recuperaExpedienteDeHoje()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Carrinho->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-07 15:22:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-07 15:22:55 --> CSRF token verified.
+CRITICAL - 2023-12-07 15:22:55 --> Call to undefined function App\Controllers\expedienteHoje()
+in APPPATH\Controllers\Carrinho.php on line 532.
+ 1 APPPATH\Controllers\Carrinho.php(29): App\Controllers\Carrinho->recuperaExpedienteDeHoje()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Carrinho->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-07 15:25:05 --> CSRF token verified.
+INFO - 2023-12-07 15:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-07 15:25:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

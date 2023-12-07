@@ -141,7 +141,7 @@
                             <div id="navbar_content">
                                 <!-- Brand and toggle get grouped for better mobile display -->
                                 <div class="navbar-header">
-                                    <a class="navbar-brand" href="#">
+                                    <a class="navbar-brand" href="<?= site_url('/')?>">
                                         <img src="<?= site_url('web/')?>src/assets/img/logo.png" alt="logo" />
                                     </a>
                                     <a href="#cd-nav" class="cd-nav-trigger right_menu_icon">
@@ -153,12 +153,12 @@
                                 <div class="collapse navbar-collapse" id="navbar">
                                     <div class="navbar-right">
                                         <ul class="nav navbar-nav">
-                                            <li><a class="page-scroll" href="#header">Home</a></li>
-                                            <li><a class="page-scroll" href="#about_us">About</a></li>
+                                            <li><a class="page-scroll" href="<?= site_url('/')?>">Início</a></li>
+                                            <li><a class="page-scroll" href="#about_us">Sobre</a></li>
                                         
-                                            <li><a class="page-scroll" href="#gallery">Gallery</a></li>
+                                            <!-- <li><a class="page-scroll" href="#gallery">Galeria</a></li> -->
                                            
-                                            <li><a class="page-scroll" href="#footer">Contact</a></li>
+                                            <li><a class="page-scroll" href="#footer">Contato</a></li>
 
                                            
                                                 <?php if(session()->has('carrinho') && count(session()->get('carrinho')) > 0) :?>
@@ -227,6 +227,11 @@
 <?php if(session()->has('fraude') ): ?>
 
 <div class="alert alert-warning" role="alert"><?= session('fraude')?></div>
+
+<?php endif; ?>
+<?php if(session()->has('expediente') ): ?>
+
+<div class="alert alert-warning" role="alert"><?= session('expediente')?></div>
 
 <?php endif; ?>
 
