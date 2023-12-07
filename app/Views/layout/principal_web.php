@@ -53,6 +53,16 @@
             font-family: 'Montserrat-Bold';
         }
 
+        .fonte-food{
+            color: #990100 !important;
+            font-family: 'Montserrat-Bold';
+        }
+        .panel-food{
+            background-color: #990100 !important;
+            color:white !important;
+            font-family: 'Montserrat-Bold';
+        }
+
         .containerprincipal {
             margin-top:6em;            
         }
@@ -155,6 +165,7 @@
                                         <ul class="nav navbar-nav">
                                             <li><a class="page-scroll" href="<?= site_url('/')?>">Início</a></li>
                                             <li><a class="page-scroll" href="#about_us">Sobre</a></li>
+                                            <li><a class="page-scroll" href="<?= site_url('bairros')?>">Bairros Atendidos</a></li>
                                         
                                             <!-- <li><a class="page-scroll" href="#gallery">Galeria</a></li> -->
                                            
@@ -162,16 +173,7 @@
 
                                            
                                                 <?php if(session()->has('carrinho') && count(session()->get('carrinho')) > 0) :?>
-                                            <li>
-                                                <a class="page-scroll" href="<?= site_url('carrinho')?>">
-                                                    <i class="fa fa-shopping-cart fa-2x"></i>
-                                                    <span style="font-size:25px !important;font-family: 'Montserrat-Bold'">
-
-                                                        <?= count(session()->get('carrinho'))?>
-
-                                                    </span>
-                                                </a>
-                                            </li>
+                                  
                                             <?php endif;?>
 
                                             <?php if(usuario_logado()) :?>
@@ -185,7 +187,16 @@
 
                                             <?php endif;?>
 
+                                            <li>
+                                                <a class="page-scroll" href="<?= site_url('carrinho')?>">
+                                                    <i class="fa fa-shopping-cart fa-2x"></i>
+                                                    <span style="font-size:25px !important;font-family: 'Montserrat-Bold'">
 
+                                                        <?= count(session()->get('carrinho'))?>
+
+                                                    </span>
+                                                </a>
+                                            </li>
 
 
                                         </ul>
@@ -260,8 +271,8 @@
                         <div class="footer_content">
                             <div class="row">
                                 <div class="col-sm-6 col-md-4">
-                                    <h4 class="footer_ttl footer_ttl_padd">about us</h4>
-                                    <p class="footer_txt">Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries but also the leap into electronic typesetting. </p>
+                                    <h4 class="footer_ttl footer_ttl_padd">Sobre Nós</h4>
+                                    <p class="footer_txt">Programação de sistemas é o nosso lema. </p>
                                 </div>
                                 <div class="col-sm-6 col-md-5">
 
@@ -299,19 +310,19 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-3">
-                                    <h4 class="footer_ttl footer_ttl_padd">contact us</h4>
+                                    <h4 class="footer_ttl footer_ttl_padd">Fale Conosco</h4>
                                     <div class="footer_border">
                                         <div class="footer_cnt">
                                             <i class="fa fa-map-marker"></i>
-                                            <span>Your City, Your streert, 18765, 100 Tenth Avenue, New York City, NY 1001</span>
+                                            <span>Rua 27, Goianésia-GO</span>
                                         </div>
                                         <div class="footer_cnt">
                                             <i class="fa fa-phone"></i>
-                                            <span>(457) 570 5682; (385) 620 756</span>
+                                            <span>(62) 9 8206-9063</span>
                                         </div>
                                         <div class="footer_cnt">
                                             <i class="fa fa-envelope"></i>
-                                            <span>info@butazzopizza.net</span>
+                                            <span>contato@corei.com.br</span>
                                         </div>
                                     </div>
                                 </div>
@@ -323,7 +334,7 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="copy_text">
-                                        <a target="_blank" href="https://www.templateshub.net">Templates Hub</a>
+                                        <a target="_blank" style="color:white;" href="https://www.coreilabs.com.br">coreiLabs</a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -380,17 +391,17 @@
             </form>
         </div>
         <ul class="rmenu_list">
-            <li><a class="page-scroll" href="#header">Home</a></li>
-            <li><a class="page-scroll" href="#about_us">About</a></li>
-            <li><a class="page-scroll" href="#menu">Menus</a></li>
-            <li><a class="page-scroll" href="#gallery">Gallery</a></li>
-            <li><a class="page-scroll" href="#reservation">Reservation</a></li>
-            <li><a class="page-scroll" href="#footer">Contact</a></li>
+            <li><a class="page-scroll" href="#header">Início</a></li>
+            <li><a class="page-scroll" href="#about_us">Sobre</a></li>
+            <!-- <li><a class="page-scroll" href="#menu">Menus</a></li> -->
+            <!-- <li><a class="page-scroll" href="#gallery">Gallery</a></li>
+            <li><a class="page-scroll" href="#reservation">Reservation</a></li> -->
+            <li><a class="page-scroll" href="#footer">Contato</a></li>
         </ul>
         <div class="right_menu_addr top_addr">
-            <span><i class="fa fa-map-marker" aria-hidden="true"></i> Your country, your city, 12345</span>
-            <span><i class="fa fa-phone" aria-hidden="true"></i> 123 456 789</span>
-            <span><i class="fa fa-clock-o" aria-hidden="true"></i> 11:00 - 21:00</span>
+            <span><i class="fa fa-map-marker" aria-hidden="true"></i> Goianésia-GO</span>
+            <span><i class="fa fa-phone" aria-hidden="true"></i> 62 98206-9063</span>
+            <!-- <span><i class="fa fa-clock-o" aria-hidden="true"></i> 11:00 - 21:00</span> -->
         </div>
     </nav>
 
