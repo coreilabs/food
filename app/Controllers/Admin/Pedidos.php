@@ -7,9 +7,11 @@ use App\Controllers\BaseController;
 class Pedidos extends BaseController
 {
     private $pedidoModel;
+    private $entregadorModel;
 
     public function __construct(){
         $this->pedidoModel = new \App\Models\PedidoModel();
+        $this->entregadorModel = new \App\Models\EntregadorModel();
     }
     public function index()
     {
@@ -56,6 +58,7 @@ class Pedidos extends BaseController
         $data = [
             'titulo' => "Detalhando o Pedido $pedido->codigo",
             'pedido' => $pedido,
+            'entregadores' => $this->entregadorModel->select('id, nome')->where('ativo', true)->findAll()
 
         ];
 
