@@ -76,6 +76,8 @@ class Pedidos extends BaseController
             if($pedido->situacao == 2){
 
                 return redirect()->back()->with('info','Esse pedido já foi entregue, não pode ser editado');
+
+             
     
             }
             if($pedido->situacao == 3){
@@ -144,8 +146,15 @@ class Pedidos extends BaseController
                     $this->enviaEmailPedidoSaiuEntrega($pedido);
 
                 }
+                if($pedido->situacao == 2){
 
-                return redirect()->back()->with('sucesso', 'O pedido foi atualizado com sucesso');  
+                    $this->enviaEmailPedidoFoiEntregue($pedido);
+
+                    // chamar funcao que popula modelo pedido_produto
+
+                }
+
+                return redirect()->to(site_url("admin/pedidos/show/$codigoPedido"))->with('sucesso', 'O pedido foi atualizado com sucesso');  
 
             }else{
                 return redirect()->back()->with('errors_model', $this->pedidoModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.');
@@ -175,6 +184,27 @@ class Pedidos extends BaseController
 
 
         $mensagem = view('Admin/Pedidos/pedido_saiu_entrega_email', ['pedido' => $pedido]);
+
+
+        $email->setMessage($mensagem);
+        
+        $email->send();
+    }
+    private function enviaEmailPedidoFoiEntregue(object $pedido){
+
+        
+        $email = service('email');
+
+        $email->setFrom('eldedodeouro@gmail.com', 'Delivery');
+        $email->setTo($pedido->email);
+
+        
+
+        
+        $email->setSubject("Pedido $pedido->codigo foi entregue");
+
+
+        $mensagem = view('Admin/Pedidos/pedido_foi_entregue_email', ['pedido' => $pedido]);
 
 
         $email->setMessage($mensagem);
