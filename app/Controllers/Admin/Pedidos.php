@@ -24,6 +24,27 @@ class Pedidos extends BaseController
 
         return view('Admin/Pedidos/index', $data);
     }
+    public function procurar(){
+
+        if(!$this->request->isAJAX()){
+            exit('Página não encontrada');
+    
+        }
+    
+        $pedidos = $this->pedidoModel->procurar($this->request->getGet('term'));
+    
+        $retorno = [];
+    
+        foreach($pedidos as $pedido){
+            
+            $data['value'] = $pedido->codigo;
+    
+            $retorno[] = $data;
+        }
+    
+        return $this->response->setJSON($retorno);
+    
+    }
     public function show($codigoPedido = null)
     {
         $pedido = $this->pedidoModel->buscaPedidoOu404($codigoPedido);
@@ -154,6 +175,17 @@ class Pedidos extends BaseController
                     $this->insereProdutosDoPedido($pedido);
 
                 }
+                if($pedido->situacao == 3){
+
+                    $this->enviaEmailPedidoFoiCancelado($pedido);
+
+                    if($situacaoAnteriorPedido == 1){
+
+                        session()->setFlashdata('atencao', 'Administrador, este pedido já saiu para entrega. Entre em contato com o entregador.');
+
+                    }
+
+                }
 
                 return redirect()->to(site_url("admin/pedidos/show/$codigoPedido"))->with('sucesso', 'O pedido foi atualizado com sucesso');  
 
@@ -168,6 +200,35 @@ class Pedidos extends BaseController
             return redirect()->back();
         }
 
+    }
+
+    public function excluir($codigoPedido = null)
+    {
+        $pedido = $this->pedidoModel->buscaPedidoOu404($codigoPedido);
+
+        if($pedido->situacao < 2){
+
+            return redirect()->back()->with('info', 'Apenas Pedidos <strong>Entregues ou Cancelados</strong> podem ser excluídos');
+
+
+        }
+
+        if($this->request->getMethod() == 'post'){
+
+            $this->pedidoModel->delete($pedido->id);
+
+            return redirect()->to(site_url('admin/pedidos'))->with('sucesso', 'O pedido foi excluído com sucesso');
+
+        }
+
+      
+        $data = [
+            'titulo' => "Exxcluindo o Pedido $pedido->codigo",
+            'pedido' => $pedido,
+
+        ];
+
+        return view('Admin/Pedidos/excluir', $data);
     }
 
     private function enviaEmailPedidoSaiuEntrega(object $pedido){
@@ -206,6 +267,27 @@ class Pedidos extends BaseController
 
 
         $mensagem = view('Admin/Pedidos/pedido_foi_entregue_email', ['pedido' => $pedido]);
+
+
+        $email->setMessage($mensagem);
+        
+        $email->send();
+    }
+    private function enviaEmailPedidoFoiCancelado(object $pedido){
+
+        
+        $email = service('email');
+
+        $email->setFrom('eldedodeouro@gmail.com', 'Delivery');
+        $email->setTo($pedido->email);
+
+        
+
+        
+        $email->setSubject("Pedido $pedido->codigo foi cancelado");
+
+
+        $mensagem = view('Admin/Pedidos/pedido_foi_cancelado_email', ['pedido' => $pedido]);
 
 
         $email->setMessage($mensagem);

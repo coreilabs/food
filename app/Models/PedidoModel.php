@@ -8,7 +8,7 @@ class PedidoModel extends Model
 {
     protected $table            = 'pedidos';    
     protected $returnType       = 'App\Entities\Pedido';
-    protected $useSoftDeletes   = true;
+    protected $useSoftDeletes   = false;
     protected $allowedFields    = ['usuario_id', 'entregador_id', 'codigo', 'forma_pagamento', 'situacao', 'produtos', 'valor_produtos', 'valor_entrega', 'valor_pedido', 'endereco_entrega', 'observacoes'];
 
     // Dates
@@ -25,6 +25,17 @@ class PedidoModel extends Model
 
         return $codigoPedido;
 
+    }
+    public function procurar($term){
+        if($term === null){
+            return [];
+        }
+
+        return $this->select('codigo')
+        ->like('codigo', $term)
+        ->withDeleted(true)
+        ->get()
+        ->getResult();
     }
      /**
       * Summary of listaTodosOsPedidos
