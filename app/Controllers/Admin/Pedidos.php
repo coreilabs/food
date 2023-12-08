@@ -135,6 +135,7 @@ class Pedidos extends BaseController
                 return redirect()->back()->with('info', 'Nada alterado');  
             }
 
+
             if($this->pedidoModel->save($pedido)){
 
                 if($pedido->situacao == 1){
@@ -150,7 +151,7 @@ class Pedidos extends BaseController
 
                     $this->enviaEmailPedidoFoiEntregue($pedido);
 
-                    // chamar funcao que popula modelo pedido_produto
+                    $this->insereProdutosDoPedido($pedido);
 
                 }
 
@@ -210,5 +211,30 @@ class Pedidos extends BaseController
         $email->setMessage($mensagem);
         
         $email->send();
+    }
+
+    private function insereProdutosDoPedido(object $pedido){
+
+        $pedidoProdutoModel = new \App\Models\PedidoProdutoModel();
+
+        $produtos = unserialize($pedido->produtos);
+
+        //receberá o push
+        $produtosDoPedido = [];
+
+        foreach($produtos as $produto){
+
+            array_push($produtosDoPedido, [
+                'pedido_id' => $pedido->id,
+                'produto' => $produto['nome'],
+                'quantidade' => $produto['quantidade'],
+            ]);
+
+        }
+
+
+        $pedidoProdutoModel->insertBatch($produtosDoPedido);
+
+
     }
 }
