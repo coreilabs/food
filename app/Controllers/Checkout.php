@@ -192,7 +192,7 @@ class Checkout extends BaseController
                     }
 
 
-                    $pedido->observacoes = 'Ponto de Referência: ' . $checkoutPost['referencia'] . ' - Número: ' . $checkoutPost['numero'] . '. Você informou que precisa de troco para: R$ ' . number_format($trocoPara, 2, ',', '.');
+                    $pedido->observacoes = 'Ponto de Referência: ' . $checkoutPost['referencia'] . ' - Número: ' . $checkoutPost['numero'] . '. Troco para: R$ ' . number_format($trocoPara, 2, ',', '.');
 
 
                 }

@@ -40,6 +40,12 @@ class PedidoModel extends Model
 
     }
 
+         /**
+      * Summary of buscaPedidoOu404
+      * @return float|int
+      * @uso controller Admin\Pedidos
+      */
+
     public function buscaPedidoOu404(string $codigoPedido){
         if(!$codigoPedido){
 

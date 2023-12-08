@@ -36,7 +36,18 @@
       <p class="card-text"> <span class="font-weight-bold">Criado: </span> <?= $pedido->criado_em->humanize() ?></p>
       <p class="card-text"> <span class="font-weight-bold">Atualizado: </span> <?= $pedido->atualizado_em->humanize() ?></p>
       <p class="card-text"> <span class="font-weight-bold">Forma de Pagamento: </span> <?= $pedido->forma_pagamento ?></p>
+      <p class="card-text"> <span class="font-weight-bold">Valor dos produtos: R$ </span> <?= esc(number_format($pedido->valor_produtos,2,',', '.'))?></p>
       <p class="card-text"> <span class="font-weight-bold">Valor de entrega: R$ </span> <?= esc(number_format($pedido->valor_entrega,2,',', '.'))?></p>
+      <p class="card-text"> <span class="font-weight-bold">Endereço para Entrega: </span> <?= esc($pedido->endereco_entrega)?></p>
+      <p class="card-text"> <span class="font-weight-bold">Observações do Pedido: </span> <?= esc($pedido->observacoes)?></p>
+
+      <?php if($pedido->entregador_id != null): ?>
+        <p class="card-text"> <span class="font-weight-bold">Entregador: </span> <?= esc($pedido->entregador)?></p>
+      <?php endif;?>
+
+
+      <h4 class="card-text text-danger text-center"> <span class="font-weight-bold ">Valor Total: R$ </span> <?= esc(number_format($pedido->valor_pedido,2,',', '.'))?></h4>
+
   
 
 
@@ -60,6 +71,8 @@
           <p><strong>Preço: R$ </strong> <?= number_format($produto['preco'], 2 , ',', '.')?></p>
         </li>
       <?php endforeach;?>
+
+
 
       </ul>
 
