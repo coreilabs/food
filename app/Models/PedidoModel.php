@@ -26,4 +26,17 @@ class PedidoModel extends Model
         return $codigoPedido;
 
     }
+     /**
+      * Summary of listaTodosOsPedidos
+      * @return float|int
+      * @uso controller Admin\Pedidos
+      */
+
+    public function listaTodosOsPedidos(){
+
+        return $this->select(['pedidos.*', 'usuarios.nome AS cliente',]) - join('usuarios', 'usuarios.id = pedidos.usuario_id')
+            ->orderBy('pedidos.criado_em', 'DESC')
+            ->paginate(10);
+
+    }
 }

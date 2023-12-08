@@ -171,10 +171,7 @@
                                            
                                             <li><a class="page-scroll" href="#footer">Contato</a></li>
 
-                                           
-                                                <?php if(session()->has('carrinho') && count(session()->get('carrinho')) > 0) :?>
-                                  
-                                            <?php endif;?>
+                       
 
                                             <?php if(usuario_logado()) :?>
                                                 <li><a class="page-scroll" href="<?= site_url('conta')?>">Minha Conta</a></li>
@@ -187,7 +184,10 @@
 
                                             <?php endif;?>
 
-                                            <li>
+
+                                                                
+                                            <?php if(session()->has('carrinho') && count(session()->get('carrinho')) > 0) :?>
+                                                <li>
                                                 <a class="page-scroll" href="<?= site_url('carrinho')?>">
                                                     <i class="fa fa-shopping-cart fa-2x"></i>
                                                     <span style="font-size:25px !important;font-family: 'Montserrat-Bold'">
@@ -197,6 +197,9 @@
                                                     </span>
                                                 </a>
                                             </li>
+                                            <?php endif;?>
+
+                                           
 
 
                                         </ul>

@@ -1,0 +1,75 @@
+INFO - 2023-12-08 10:06:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-08 10:06:24 --> count(): Parameter must be an array or an object that implements Countable
+in APPPATH\Views\layout\principal_web.php on line 195.
+ 1 APPPATH\Views\layout\principal_web.php(195): CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parameter must be an array or an object that implements Countable', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 195, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Bairros/index', [], true)
+ 6 APPPATH\Controllers\Bairros.php(19): view('Bairros/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Bairros->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bairros))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-08 10:06:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-08 10:06:34 --> count(): Parameter must be an array or an object that implements Countable
+in APPPATH\Views\layout\principal_web.php on line 195.
+ 1 APPPATH\Views\layout\principal_web.php(195): CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parameter must be an array or an object that implements Countable', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 195, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Bairros/index', [], true)
+ 6 APPPATH\Controllers\Bairros.php(19): view('Bairros/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Bairros->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bairros))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-08 10:08:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-08 10:08:06 --> count(): Parameter must be an array or an object that implements Countable
+in APPPATH\Views\layout\principal_web.php on line 195.
+ 1 APPPATH\Views\layout\principal_web.php(195): CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parameter must be an array or an object that implements Countable', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 195, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(23): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-08 10:12:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-08 10:12:35 --> count(): Parameter must be an array or an object that implements Countable
+in APPPATH\Views\layout\principal_web.php on line 195.
+ 1 APPPATH\Views\layout\principal_web.php(195): CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parameter must be an array or an object that implements Countable', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 195, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(23): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-08 10:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-08 10:12:36 --> count(): Parameter must be an array or an object that implements Countable
+in APPPATH\Views\layout\principal_web.php on line 195.
+ 1 APPPATH\Views\layout\principal_web.php(195): CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parameter must be an array or an object that implements Countable', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 195, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(23): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-08 10:16:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-08 10:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-08 10:17:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-08 10:18:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-08 10:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
