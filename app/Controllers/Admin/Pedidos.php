@@ -26,7 +26,7 @@ class Pedidos extends BaseController
     {
         $pedido = $this->pedidoModel->buscaPedidoOu404($codigoPedido);
 
-        dd($pedido);
+      
         $data = [
             'titulo' => "Detalhando o Pedido $pedido->codigo",
             'pedido' => $pedido,
