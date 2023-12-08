@@ -22,4 +22,17 @@ class Pedidos extends BaseController
 
         return view('Admin/Pedidos/index', $data);
     }
+    public function show($codigoPedido)
+    {
+        $pedido = $this->pedidoModel->buscaPedidoOu404($codigoPedido);
+
+        dd($pedido);
+        $data = [
+            'titulo' => "Detalhando o Pedido $pedido->codigo",
+            'pedido' => $pedido,
+
+        ];
+
+        return view('Admin/Pedidos/show', $data);
+    }
 }

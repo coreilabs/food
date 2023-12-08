@@ -231,7 +231,7 @@ class Bairros extends BaseController
 
         /**
  * @param int $id
- * @return objeto bBo
+ * @return objeto bairro
  */
 private function buscaBairroOu404(int $id = null){
     if(!$id || !$bairro = $this->bairroModel->withDeleted(true)->where('id', $id)->first()){

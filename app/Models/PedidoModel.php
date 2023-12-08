@@ -39,4 +39,24 @@ class PedidoModel extends Model
             ->paginate(10);
 
     }
+
+    public function buscaPedidoOu404(string $codigoPedido){
+        if(!$codigoPedido){
+
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Não Encontramos o Pedido $codigoPedido");            
+
+        }
+        $pedido = $this->select(['pedidos.*', 'entregadores.nome AS entregador'])
+            ->join('entregadores', 'entregadores.id = pedidos.entregador_id', 'LEFT')
+            ->where('pedidos.codigo', $codigoPedido)
+            ->first();
+
+            if(!$pedido){
+
+                throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Não Encontramos o Pedido $codigoPedido");            
+    
+            }
+
+        return $pedido;
+    }
 }
