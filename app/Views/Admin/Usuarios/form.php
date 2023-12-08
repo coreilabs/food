@@ -50,7 +50,7 @@
 
 <div class="form-group col-md-3">
 
-
+<?php if($usuario->id != usuario_logado()->id):?>
 
 <div class="form-check form-check-flat form-check-primary">
              
@@ -86,6 +86,8 @@ Administrador
     </div>
 
 </div>
+
+<?php endif;?>
 
 
 
