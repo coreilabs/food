@@ -74,10 +74,12 @@
                 </li>
 
             </ul>
+                <div class="margembotao">
+                    <a href="<?php echo site_url("/"); ?>" class="btn btn-food " >Ver Mais Produtos</a>
+                    <a href="<?php echo site_url("carrinho"); ?>" class="btn btn-primary" style="font-family:'Montserrat-Bold';">Ver Carrinho de Compras</a>
 
-            <a href="<?php echo site_url("/"); ?>" class="btn btn-food " >Ver Mais Produtos</a>
-              <a href="<?php echo site_url("carrinho"); ?>" class="btn btn-primary" style="font-family:'Montserrat-Bold';">Ver Carrinho de Compras</a>
-
+                </div>
+          
 
 
               </div> <!-- fim col-md-7  -->
@@ -153,13 +155,13 @@
                         </div>
 
                         <div class="form-group col-md-12">
-                            <input type="text" id="forma_id" name="checkout[forma_id]" placeholder="checkout[forma_id]">
-                            <input type="text" id="bairro_slug" name="checkout[bairro_slug]" placeholder="checkout[bairro_slug]">
+                            <input type="hidden" id="forma_id" name="checkout[forma_id]" placeholder="checkout[forma_id]">
+                            <input type="hidden" id="bairro_slug" name="checkout[bairro_slug]" placeholder="checkout[bairro_slug]">
                         </div>
                     </div>
 
                     <div class="form-group col-md-12">
-                            <input type="submit" id="btn-checkout" class="btn btn-food btn-block" value="Antes consulte a Taxa de Entrega" placeholder="checkout[forma_id]">
+                            <input type="submit" id="btn-checkout" class="btn btn-food btn-block" value="Consulte a Taxa de Entrega" >
                             
                         </div>
 
@@ -186,6 +188,8 @@
 <script>
 
     $("#btn-checkout").prop('disabled', true);
+    
+    
     
 
     $(".forma").on('click', function(){
@@ -239,6 +243,8 @@
                     $("[name=cep]").val('');
                     $("#btn-checkout").prop('disabled', true);
                     $("#btn-checkout").val('Consultando Taxa de Entrega...');
+
+              
                 },
                 success: function(response){
                    if(!response.erro){

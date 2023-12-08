@@ -136,10 +136,10 @@
 
               <hr>
 
-              <div class="col-md-12">
+              <div class="col-md-12 botoescarrinho">
               <a href="<?php echo site_url("carrinho/limpar"); ?>" class="btn btn-default " style="font-family:'Montserrat-Bold';">Limpar Carrinho</a>
               <a href="<?php echo site_url("/"); ?>" class="btn btn-primary" style="font-family:'Montserrat-Bold';">Ver Produtos</a>
-              <a href="<?php echo site_url("checkout"); ?>" class="btn pull-right" style="background-color:#990100;font-family:'Montserrat-Bold';color:white;">Finalizar Pedido</a>
+              <a href="<?php echo site_url("checkout"); ?>" class="btn" style="background-color:#990100;font-family:'Montserrat-Bold';color:white;">Finalizar Pedido</a>
 
 
 

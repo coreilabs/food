@@ -67,7 +67,7 @@
 
 <?php endif; ?>
               <div class="brand-logo">
-                <img src="<?= site_url('admin/'); ?>images/logo.svg" alt="logo">
+                <!-- <img src="<?php //site_url('admin/'); ?>images/logo.svg" alt="logo"> -->
               </div>
               <h4 class="mb-3">Recuperação de Senha</h4>
               <h6 class="font-weight-light mb-3"><?= $titulo ?></h6>

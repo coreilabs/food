@@ -18,7 +18,8 @@
 <?= $this->section('conteudo'); ?>
 
 <div class="container section" id="menu" data-aos="fade-up" style="margin-top: 3em">
-        <div class="col-sm-12 col-md-12 col-lg-12">
+<div class="row">
+<div class="col-sm-12 col-md-12 col-lg-12">
           <!-- product -->
         <div class="product-content product-wrap clearfix product-deatil">
             <div class="row">
@@ -43,7 +44,7 @@
                         
                 </div>
             <?php endif;?>
-
+            </div>
         <div class="col-md-12">
 
             <ul class="list-group">
@@ -114,6 +115,7 @@
         </div>
       <!-- end product -->
   </div>
+</div>
 </div>
 
 <?= $this->endSection(); ?>
@@ -226,7 +228,7 @@
     $("form").submit(function() {
         $(this).find(":submit").attr('disabled', 'disabled');
         $("#btn-checkout").val('Processando o seu pedido');
-        $("#cep").val('');
+        // $("#cep").val('');
     });
 
     $(window).keydown(function(event){

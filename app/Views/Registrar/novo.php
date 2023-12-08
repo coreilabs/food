@@ -18,9 +18,10 @@
 <?= $this->section('conteudo'); ?>
 
 <div class="container section" id="menu" data-aos="fade-up" style="margin-top: 3em">
-      <div class="col-sm-12 col-md-12 col-lg-12">
+<div class="row">
+<div class="col-sm-12 col-md-6 col-lg-6 col-md-offset-4 ">
           <!-- product -->
-          <div class="product-content product-wrap clearfix product-deatil center-block" style="max-width:40%">
+          <div class="product-content product-wrap clearfix product-deatil center-block">
               <div class="row">
 
                 <div class="col-md-12">
@@ -78,6 +79,7 @@
       <!-- end product -->
   </div>
 
+</div>
 <?= $this->endSection(); ?>
 
 

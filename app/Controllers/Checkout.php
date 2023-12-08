@@ -217,7 +217,7 @@ class Checkout extends BaseController
 
 
 
-            return redirect()->to("checkout/sucesso/$pedido->codigo");
+            return redirect()->to(site_url("checkout/sucesso/$pedido->codigo"));
 
 
         }else{
