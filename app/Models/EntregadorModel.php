@@ -112,5 +112,10 @@ public function desfazerExclusao(int $id){
     ->update();
 }
 
+public function recuperaTotalEntregadoresAtivos(){
+    return $this->where('ativo', true)
+        ->countAllResults();
+}
+
 
 }
