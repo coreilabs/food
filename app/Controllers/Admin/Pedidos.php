@@ -133,12 +133,52 @@ class Pedidos extends BaseController
                 return redirect()->back()->with('info', 'Nada alterado');  
             }
 
+            if($this->pedidoModel->save($pedido)){
 
-            dd($pedidoPost);
+                if($pedido->situacao == 1){
+
+                    $entregador = $this->entregadorModel->find($pedido->entregador_id);
+
+                    $pedido->entregador = $entregador;
+
+                    $this->enviaEmailPedidoSaiuEntrega($pedido);
+
+                }
+
+                return redirect()->back()->with('sucesso', 'O pedido foi atualizado com sucesso');  
+
+            }else{
+                return redirect()->back()->with('errors_model', $this->pedidoModel->errors())->with('atencao', 'Por favor verifique os erros abaixo.');
+
+            }
+          
+            
 
         }else{
             return redirect()->back();
         }
 
+    }
+
+    private function enviaEmailPedidoSaiuEntrega(object $pedido){
+
+        
+        $email = service('email');
+
+        $email->setFrom('eldedodeouro@gmail.com', 'Delivery');
+        $email->setTo($pedido->email);
+
+        
+
+        
+        $email->setSubject("Pedido $pedido->codigo saiu para entrega");
+
+
+        $mensagem = view('Admin/Pedidos/pedido_saiu_entrega_email', ['pedido' => $pedido]);
+
+
+        $email->setMessage($mensagem);
+        
+        $email->send();
     }
 }
