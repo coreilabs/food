@@ -60,7 +60,7 @@ class ExpedienteSeeder extends Seeder
             'situacao' => true,
            ],
            [
-            'dia' => '5',
+            'dia' => '6',
             'dia_descricao' => 'Sábado',
             'abertura' => '18:00:00',
             'fechamento' => '23:00:00',

@@ -28,10 +28,12 @@ class Home extends BaseController
             'totalEntregadoresAtivos' => $this->entregadorModel->recuperaTotalEntregadoresAtivos(),
             'produtosMaisVendidos' => $this->pedidoProdutoModel->recuperaProdutosMaisVendidos(5),
             'clientesMaisAssiduos' => $this->pedidoModel->recuperaClientesMaisAssiduos(5),
+            'entregadoresMaisAssiduos' => $this->entregadorModel->recuperaEntregadoresMaisAssiduos(5),
      
         ];
 
         $novosPedidos = $this->pedidoModel->where('situacao', 0)->orderBy('criado_em', 'DESC')->findAll();
+
         if(!empty($novosPedidos)){
             $data['novosPedidos'] = $novosPedidos;
             

@@ -43,7 +43,14 @@
                   <!-- <p class="card-description">
                     Add class <code>.table-hover</code>
                   </p> -->
-                  <div class="table-responsive">
+
+                  <?php if(empty($entregadores)):?>
+
+                  <h3>Não há dados para exibir</h3>
+
+                  <?php else:?>
+
+                    <div class="table-responsive">
                     <table class="table table-hover">
                       <thead>
                         <tr>
@@ -100,6 +107,10 @@
                       <?= $pager->links()?>
                     </div>
                   </div>
+
+                  <?php endif;?>
+
+         
                 </div>
               </div>
             </div>

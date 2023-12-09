@@ -182,6 +182,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-md-4 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
@@ -201,6 +202,37 @@
                                             <?= esc($cliente->nome)?>
                                         </a> 
                                         <span class="badge badge-pill badge-success float-right"><?= esc($cliente->pedidos)?></span>
+                                    </li>
+                                <?php endforeach;?>
+
+                                <?php endif;?>
+
+                            </ul>
+               
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                <p class="card-title">Top Entregadores</p>
+                            <ul class="list-unstyled">
+
+                                <?php if(!isset($entregadoresMaisAssiduos)):?>
+
+                                    <p>Não há dados para exibir</p>
+
+                                <?php else:?>
+
+                                    
+                                <?php foreach($entregadoresMaisAssiduos as $entregador):?>
+                                    <li class="mb-2">
+                                       <a href="<?= site_url("admin/entregadores/show/$entregador->id")?>">
+                                            <img class="rounded-circle" width="50px" src="<?= site_url("admin/entregadores/imagem/$entregador->imagem")?>" alt="">
+                                            <?= esc($entregador->nome)?>
+                                        </a> 
+                                        <span class="badge badge-pill badge-warning float-right"><?= esc($entregador->entregas)?></span>
                                     </li>
                                 <?php endforeach;?>
 
