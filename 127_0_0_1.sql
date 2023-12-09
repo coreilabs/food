@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2023 at 08:57 PM
+-- Generation Time: Dec 09, 2023 at 02:58 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -104,7 +104,7 @@ CREATE TABLE `entregadores` (
 --
 
 INSERT INTO `entregadores` (`id`, `nome`, `cpf`, `cnh`, `email`, `telefone`, `endereco`, `imagem`, `veiculo`, `placa`, `ativo`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(1, 'Pedro Luiz Souza', '987.508.650-99', '65985320', 'pedroluiz@email.com', '(62) 99999-9999', 'Rua do trabalho N 45, Centro Cívico - Curitiba - PR', '1699963687_6cde2cce6f7c7b629d45.png', 'Titan 160 - Preta - 2018', 'KBQ-5821', 1, '2023-11-12 10:10:59', '2023-11-14 09:08:07', NULL),
+(1, 'Pedro Luiz Souza', '987.508.650-99', '65985320', 'pedroluiz@email.com', '(62) 99999-9999', 'Rua do trabalho N 45, Centro Cívico - Curitiba - PR', '1699963687_6cde2cce6f7c7b629d45.png', 'Titan 160 - Preta - 2018', 'KBQ-5821', 0, '2023-11-12 10:10:59', '2023-12-08 20:48:08', NULL),
 (2, 'Malu Simone Mendes', '971.617.595-79', '69683203211', 'email@email.com', '(62) 93353-7317', 'Rua 25 n 434 - Goianesia-GO', '1699964675_07e4ccfa86bdb0751ba6.png', 'CG 2018 Vermelha', 'NNU-9N94', 1, '2023-11-14 08:48:05', '2023-11-14 09:24:36', NULL);
 
 -- --------------------------------------------------------
@@ -133,7 +133,7 @@ INSERT INTO `expediente` (`id`, `dia`, `dia_descricao`, `abertura`, `fechamento`
 (25, 3, 'Quarta', '18:00:00', '23:00:00', 1),
 (26, 4, 'Quinta', '15:00:00', '23:00:00', 1),
 (27, 5, 'Sexta', '12:00:00', '23:00:00', 1),
-(28, 5, 'Sábado', '18:00:00', '23:00:00', 1);
+(28, 5, 'Sábado', '18:00:00', '14:03:00', 1);
 
 -- --------------------------------------------------------
 
@@ -277,10 +277,10 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`id`, `usuario_id`, `entregador_id`, `codigo`, `forma_pagamento`, `situacao`, `produtos`, `valor_produtos`, `valor_entrega`, `valor_pedido`, `endereco_entrega`, `observacoes`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(11, 8, NULL, '60948334', 'Dinheiro', 0, 'a:1:{i:0;a:5:{s:4:\"slug\";s:94:\"gigante-metade-chocolate-com-morango-e-mm-metade-pizza-de-calabresa-com-extra-borda-de-cheddar\";s:4:\"nome\";s:94:\"Gigante metade Chocolate com morango e MM metade Pizza de Calabresa Com extra Borda de Cheddar\";s:5:\"preco\";s:5:\"60.00\";s:10:\"quantidade\";i:1;s:7:\"tamanho\";s:7:\"Gigante\";}}', '60.00', '5.00', '65.00', 'Setor Sul - Goianésia - Rua 25 - GO - CEP 76382-175 - Número 434', 'Ponto de Referência: Post Impiranga - Número: 434. Troco para: R$ 100,00', '2023-12-08 12:42:39', '2023-12-08 16:04:45', NULL),
-(12, 8, 1, '33410593', 'Cartão de Crédito', 0, 'a:1:{i:0;a:6:{s:2:\"id\";s:1:\"5\";s:4:\"nome\";s:18:\"Mustang Hamburger \";s:4:\"slug\";s:17:\"mustang-hamburger\";s:5:\"preco\";s:5:\"25.00\";s:10:\"quantidade\";i:1;s:7:\"tamanho\";s:9:\"Hamburger\";}}', '25.00', '5.00', '30.00', 'Setor Sul - Goianésia - Rua 25 - GO - CEP 76382-175 - Número 434', 'Ponto de Referência: ipiranga - Número: 434', '2023-12-08 12:49:35', '2023-12-08 16:27:45', NULL),
-(13, 8, 1, '91348757', 'Cartão de Crédito', 0, 'a:1:{i:0;a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nome\";s:61:\"Chocolate com morango e MM Gigante Com extra Borda de Cheddar\";s:4:\"slug\";s:61:\"chocolate-com-morango-e-mm-gigante-com-extra-borda-de-cheddar\";s:5:\"preco\";s:5:\"55.00\";s:10:\"quantidade\";i:1;s:7:\"tamanho\";s:7:\"Gigante\";}}', '55.00', '5.00', '60.00', 'Setor Sul - Goianésia - Rua 25 - GO - CEP 76382-175 - Número 434', 'Ponto de Referência: ipiranga - Número: 434', '2023-12-08 16:28:26', '2023-12-08 16:28:43', NULL),
-(14, 8, 1, '57656825', 'Dinheiro', 2, 'a:1:{i:0;a:6:{s:2:\"id\";s:1:\"5\";s:4:\"nome\";s:18:\"Mustang Hamburger \";s:4:\"slug\";s:17:\"mustang-hamburger\";s:5:\"preco\";s:5:\"25.00\";s:10:\"quantidade\";i:1;s:7:\"tamanho\";s:9:\"Hamburger\";}}', '25.00', '5.00', '30.00', 'Setor Sul - Goianésia - GO - Rua 25 - CEP 76382-175 - Número 434', 'Ponto de Referência: ipiranga - Número: 434. Troco para: R$ 100,00', '2023-12-08 16:30:45', '2023-12-08 16:54:55', NULL);
+(17, 8, NULL, '09432162', 'Dinheiro', 2, 'a:1:{i:0;a:6:{s:2:\"id\";s:1:\"5\";s:4:\"nome\";s:18:\"Mustang Hamburger \";s:4:\"slug\";s:17:\"mustang-hamburger\";s:5:\"preco\";s:5:\"25.00\";s:10:\"quantidade\";i:1;s:7:\"tamanho\";s:9:\"Hamburger\";}}', '25.00', '5.00', '30.00', 'Setor Sul - Goianésia - GO - Rua 25 - CEP 76382-175 - Número 434', 'Ponto de Referência: ipiranga - Número: 434. Troco para: R$ 100,00', '2023-12-08 19:22:03', '2023-12-08 19:22:03', NULL),
+(18, 8, NULL, '95512464', 'Dinheiro', 0, 'a:1:{i:0;a:6:{s:2:\"id\";s:1:\"5\";s:4:\"nome\";s:18:\"Mustang Hamburger \";s:4:\"slug\";s:17:\"mustang-hamburger\";s:5:\"preco\";s:5:\"25.00\";s:10:\"quantidade\";i:1;s:7:\"tamanho\";s:9:\"Hamburger\";}}', '25.00', '5.00', '30.00', 'Setor Sul - Goianésia - GO - Rua 25 - CEP 76382-175 - Número 434', 'Ponto de Referência: ipiranga - Número: 434. Você informou que não precisa de troco.', '2023-12-08 19:49:13', '2023-12-08 19:49:13', NULL),
+(19, 8, NULL, '50058093', 'Dinheiro', 3, 'a:1:{i:0;a:6:{s:2:\"id\";s:1:\"5\";s:4:\"nome\";s:18:\"Mustang Hamburger \";s:4:\"slug\";s:17:\"mustang-hamburger\";s:5:\"preco\";s:5:\"25.00\";s:10:\"quantidade\";i:1;s:7:\"tamanho\";s:9:\"Hamburger\";}}', '25.00', '5.00', '30.00', 'Setor Sul - Goianésia - GO - Rua 25 - CEP 76382-175 - Número 434', 'Ponto de Referência: ipiranga - Número: 434. Troco para: R$ 100,00', '2023-12-08 19:57:38', '2023-12-08 19:57:38', NULL),
+(20, 14, 2, '31480299', 'Dinheiro', 2, 'a:1:{i:0;a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nome\";s:35:\"Chocolate com morango e MM Gigante \";s:4:\"slug\";s:34:\"chocolate-com-morango-e-mm-gigante\";s:5:\"preco\";s:5:\"50.00\";s:10:\"quantidade\";i:1;s:7:\"tamanho\";s:7:\"Gigante\";}}', '50.00', '5.00', '55.00', 'Setor Sul - Goianésia - GO - Rua 25 - CEP 76382-175 - Número 434', 'Ponto de Referência: ipiranga - Número: 434. Você informou que não precisa de troco.', '2023-12-08 22:23:37', '2023-12-08 22:47:02', NULL);
 
 -- --------------------------------------------------------
 
@@ -294,6 +294,13 @@ CREATE TABLE `pedidos_produtos` (
   `produto` varchar(128) NOT NULL,
   `quantidade` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `pedidos_produtos`
+--
+
+INSERT INTO `pedidos_produtos` (`id`, `pedido_id`, `produto`, `quantidade`) VALUES
+(4, 20, 'Chocolate com morango e MM Gigante ', '1');
 
 -- --------------------------------------------------------
 
@@ -401,7 +408,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `cpf`, `telefone`, `is_admin`, `ativo`, `password_hash`, `ativacao_hash`, `reset_hash`, `reset_expira_em`, `criado_em`, `atualizado_em`, `deletado_em`) VALUES
-(7, 'sdsdfdsf', 'eldesadasddodeouro@gmail.com', '734.345.730-62', '(22) 22222-2222', 0, 1, '$2y$10$/lpuYJSl5sIc3x3as36Qeule6WRa5Cb.xMhAthh/fDczKEmJCOfgi', NULL, NULL, NULL, '2023-11-02 20:44:46', '2023-11-03 09:29:36', '2023-11-03 09:29:36'),
+(7, 'sdsdfdsf', 'eldesadasddodeouro@gmail.com', '734.345.730-62', '(22) 22222-2222', 0, 1, '$2y$10$/lpuYJSl5sIc3x3as36Qeule6WRa5Cb.xMhAthh/fDczKEmJCOfgi', NULL, NULL, NULL, '2023-11-02 20:44:46', '2023-12-08 20:44:46', NULL),
 (8, 'MARCO AURELIO SILVA', 'eldedodeouro@gmail.com', '024.569.811-62', '(62) 3353-7317', 1, 1, '$2y$10$oaRooaEznbX9Jf2wssFou.owzICFhfSHrVpFsRHswlv5CZ3EkcTUe', NULL, NULL, NULL, '2023-11-02 20:55:01', '2023-12-06 13:54:07', NULL),
 (9, 'MARCO AURELIO SILVA', 'eldedodaeouro@gmail.com', '403.441.930-04', '(62) 3353-7317', 0, 0, '$2y$10$S4ocQ0xmbjVASppFPDU3nOP4GPut5DQVOySxQNump.psST1YKy.9.', NULL, NULL, NULL, '2023-11-02 20:59:26', '2023-11-03 16:40:08', '2023-11-03 16:40:08'),
 (10, 'Marta', 'adseldedodeouro@gmail.com', '620.678.130-56', '(55) 55555-5555', 0, 1, '$2y$10$BTbIrWDU99qSx9/xNRF.r.UqZWELQZK1wf9VFM5th6GjDCCHeRiCm', NULL, NULL, NULL, '2023-11-03 08:35:03', '2023-11-06 11:40:06', '2023-11-06 11:40:06'),
@@ -578,13 +585,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `pedidos_produtos`
 --
 ALTER TABLE `pedidos_produtos`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `produtos`

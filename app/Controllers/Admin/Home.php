@@ -10,11 +10,13 @@ class Home extends BaseController
     private $pedidoModel;
     private $usuarioModel;
     private $entregadorModel;
+    private $pedidoProdutoModel;
 
     public function __construct(){
         $this->pedidoModel = new \App\Models\PedidoModel();
         $this->usuarioModel = new \App\Models\UsuarioModel();
         $this->entregadorModel = new \App\Models\EntregadorModel();
+        $this->pedidoProdutoModel = new \App\Models\PedidoProdutoModel();
     }
     public function index()
     {
@@ -24,6 +26,7 @@ class Home extends BaseController
             'valorPedidosCancelados' => $this->pedidoModel->valorPedidosCancelados(),
             'totalClientesAtivos' => $this->usuarioModel->recuperaTotalClientesAtivos(),
             'totalEntregadoresAtivos' => $this->entregadorModel->recuperaTotalEntregadoresAtivos(),
+            'produtosMaisVendidos' => $this->pedidoProdutoModel->recuperaProdutosMaisVendidos(5),
      
         ];
 
@@ -31,7 +34,9 @@ class Home extends BaseController
         if(!empty($novosPedidos)){
             $data['novosPedidos'] = $novosPedidos;
             
-        }    
+        }
+
+  
         return view('Admin/Home/index', $data);
     }
 }

@@ -76,50 +76,70 @@
         <div class="card">
         <div class="card-body ">
 
-        <?php if(!isset($novosPedidos)):?>
+        <?php $expedienteHoje = expedienteHoje();?>
 
-            <h4 class="text-danger">Não há pedidos no momento.</h4>
+        <?php if($expedienteHoje->situacao == false):?>
 
-        <?php else: ?>
+            <h4 class="text-danger"> <i class="mdi mdi-calendar-alert"></i> Não estamos Funcionando.</h4>
 
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th>Código do Pedido</th>
-                    <th>Valor</th>
-                    <th>Data do Pedido</th>
+        <?php else:?>
 
-                </tr>
-                </thead>
-                <tbody>
+           <div id="atualiza">
+            <?php if(!isset($novosPedidos)):?>
 
-              
+                <h4 class="text-danger">Não há pedidos no momento.</h4>
 
-                    <?php foreach($novosPedidos as $pedido):?>
+                <?php else: ?>
 
-                        <tr>
-                            <td><a href="<?= site_url("admin/pedidos/show/$pedido->codigo")?>">  <?= $pedido->codigo;?></a></td>
-                            <td>R$ <?= esc(number_format($pedido->valor_pedido,2,',', '.'));?></td>
-                            <td><?= $pedido->criado_em->humanize();?></td>
+                    <h2 class="text-center"><i class="mdi mdi-shopping"></i> Novos Pedidos</h2>
+                    <hr>
+
+                <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Código do Pedido</th>
+                        <th>Valor</th>
+                        <th>Data do Pedido</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                
+
+                        <?php foreach($novosPedidos as $pedido):?>
+
+                            <tr>
+                                <td><a href="<?= site_url("admin/pedidos/show/$pedido->codigo")?>">  <?= $pedido->codigo;?></a></td>
+                                <td>R$ <?= esc(number_format($pedido->valor_pedido,2,',', '.'));?></td>
+                                <td><?= $pedido->criado_em->humanize();?></td>
 
 
-                        </tr>
+                            </tr>
 
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
 
+
+
+
+                    </tbody>
+                </table>
+                
+                </div>
+
+                    
+                </div>
+
+                <?php endif;?>
+           </div>    <!-- fim div atualiza -->
          
- 
-
-                </tbody>
-            </table>
-              
-        </div>
-
-                  
-        </div>
 
         <?php endif;?>
+
+
+
+
 
         </div>
     </div>
@@ -134,9 +154,41 @@
 
     </div>
 
+    <div class="row">
+        <div class="col-md-4 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                <p class="card-title">Produtos Mais Vendidos</p>
+                            <ul class="list-arrow">
+                                <?php foreach($produtosMaisVendidos as $produto):?>
+                                    <li class="mb-2">
+                                        <?= word_limiter($produto->produto, 10)?>
+                                        <span class="badge badge-pill badge-primary float-right"><?= esc($produto->quantidade)?></span>
+                                    </li>
+                                <?php endforeach;?>
+                            </ul>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+
 <?= $this->endSection(); ?>
 
 
 
 <?= $this->section('scripts'); ?>
+
+<script>
+
+    setInterval("atualiza()", 30000); //30 seg
+
+    function atualiza(){
+
+        // $("#atualiza").toggleClass('bg-success');
+        $("#atualiza").load('<?= site_url('admin/home')?>' + ' #atualiza');
+
+    }
+
+</script>
 <?= $this->endSection(); ?>

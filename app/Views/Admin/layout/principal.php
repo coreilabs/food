@@ -22,6 +22,12 @@
 
     <?= $this->renderSection('estilos'); ?>
 
+    <style>
+      .nav-item{
+        cursor: pointer !important;
+      }
+    </style>
+
 </head>
 <body>
   <div class="container-scroller">
