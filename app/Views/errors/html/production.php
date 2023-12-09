@@ -14,9 +14,9 @@
 
     <div class="container text-center">
 
-        <h1 class="headline"><?= lang('Errors.whoops') ?></h1>
+        <h1 class="headline">Ops</h1>
 
-        <p class="lead"><?= lang('Errors.weHitASnag') ?></p>
+        <p class="lead">Não conseguimos processar a página que você precisa.</p>
 
     </div>
 

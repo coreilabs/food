@@ -160,12 +160,23 @@
                 <div class="card-body">
                 <p class="card-title">Produtos Mais Vendidos</p>
                             <ul class="list-arrow">
+
+                                <?php if(!isset($produtosMaisVendidos)):?>
+
+                                    <p>Não há dados para exibir</p>
+
+                                <?php else:?>
+
+                                    
                                 <?php foreach($produtosMaisVendidos as $produto):?>
                                     <li class="mb-2">
                                         <?= word_limiter($produto->produto, 10)?>
                                         <span class="badge badge-pill badge-primary float-right"><?= esc($produto->quantidade)?></span>
                                     </li>
                                 <?php endforeach;?>
+
+                                <?php endif;?>
+
                             </ul>
                
                 </div>

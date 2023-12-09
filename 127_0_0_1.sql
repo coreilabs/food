@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2023 at 02:58 AM
+-- Generation Time: Dec 09, 2023 at 10:06 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -132,8 +132,8 @@ INSERT INTO `expediente` (`id`, `dia`, `dia_descricao`, `abertura`, `fechamento`
 (24, 2, 'Terça', '18:00:00', '23:00:00', 1),
 (25, 3, 'Quarta', '18:00:00', '23:00:00', 1),
 (26, 4, 'Quinta', '15:00:00', '23:00:00', 1),
-(27, 5, 'Sexta', '12:00:00', '23:00:00', 1),
-(28, 5, 'Sábado', '18:00:00', '14:03:00', 1);
+(27, 5, 'Sexta', '12:00:00', '23:00:00', 0),
+(28, 6, 'Sábado', '18:00:00', '14:03:00', 1);
 
 -- --------------------------------------------------------
 

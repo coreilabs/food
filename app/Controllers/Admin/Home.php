@@ -27,6 +27,7 @@ class Home extends BaseController
             'totalClientesAtivos' => $this->usuarioModel->recuperaTotalClientesAtivos(),
             'totalEntregadoresAtivos' => $this->entregadorModel->recuperaTotalEntregadoresAtivos(),
             'produtosMaisVendidos' => $this->pedidoProdutoModel->recuperaProdutosMaisVendidos(5),
+            'clientesMaisAssiduos' => $this->pedidoModel->recuperaClientesMaisAssiduos(5),
      
         ];
 
@@ -36,6 +37,7 @@ class Home extends BaseController
             
         }
 
+        dd($data['clientesMaisAssiduos']);
   
         return view('Admin/Home/index', $data);
     }

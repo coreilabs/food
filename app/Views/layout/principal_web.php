@@ -451,7 +451,7 @@
             <span><i class="fa fa-map-marker" aria-hidden="true"></i> Goianésia-GO</span>
             <span><i class="fa fa-phone" aria-hidden="true"></i> 62 98206-9063</span>
             <!-- <span><i class="fa fa-clock-o" aria-hidden="true"></i> 11:00 - 21:00</span> -->
-            <?php $expedienteHoje = expedienteHoje(); ?>
+    
                                 <?php if($expedienteHoje->situacao == false) :?>
                                     <span><i class="fa fa-lock" aria-hidden="true"></i> Hoje Estamos Fechados</span>
                                 <?php else:?>

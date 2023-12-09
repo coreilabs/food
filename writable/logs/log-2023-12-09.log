@@ -1,0 +1,1047 @@
+INFO - 2023-12-09 15:09:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 15:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 15:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 15:10:00 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(23): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-09 15:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 15:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 15:13:42 --> syntax error, unexpected ')'
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:15:37 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(25): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:18:36 --> Undefined variable: expedienteModel
+in APPPATH\Controllers\Home.php on line 24.
+ 1 APPPATH\Controllers\Home.php(24): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: expedienteModel', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php', 24, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:19:16 --> Undefined variable: expedienteModel
+in APPPATH\Controllers\Home.php on line 26.
+ 1 APPPATH\Controllers\Home.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: expedienteModel', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php', 26, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:19:17 --> Undefined variable: expedienteModel
+in APPPATH\Controllers\Home.php on line 26.
+ 1 APPPATH\Controllers\Home.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: expedienteModel', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php', 26, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:22:16 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:22:59 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:23:01 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:23:15 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:23:17 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:24:07 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ';' or ','
+in APPPATH\Views\layout\principal_web.php on line 461.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 4 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:24:22 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ';' or ','
+in APPPATH\Views\layout\principal_web.php on line 461.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 4 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:25:02 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ';' or ','
+in APPPATH\Views\layout\principal_web.php on line 461.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 4 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:25:03 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ';' or ','
+in APPPATH\Views\layout\principal_web.php on line 461.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 4 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:25:16 --> syntax error, unexpected 'else' (T_ELSE), expecting end of file
+in APPPATH\Views\layout\principal_web.php on line 462.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 4 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:25:37 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:25:52 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:25:54 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:26:29 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:26:31 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-09 15:26:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 15:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 15:29:17 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(32): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:30:03 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(32): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:30:05 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(32): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:30:29 --> Undefined variable: expedienteHoje
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: expedienteHoje', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(32): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:31:05 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:31:07 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:31:31 --> Call to undefined method App\Controllers\Home::expedienteHoje()
+in APPPATH\Controllers\Home.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:33:50 --> Call to undefined method App\Controllers\Home::expedienteHoje()
+in APPPATH\Controllers\Home.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:36:41 --> Call to undefined method App\Controllers\Home::expedienteHoje()
+in APPPATH\Controllers\Home.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:39:18 --> syntax error, unexpected 'helper' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST)
+in APPPATH\Controllers\Home.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:45:40 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(25): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:47:55 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 166.
+ 1 APPPATH\Views\layout\principal_web.php(166): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 166, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(25): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:48:18 --> Trying to get property 'abertura' of non-object
+in APPPATH\Views\layout\principal_web.php on line 169.
+ 1 APPPATH\Views\layout\principal_web.php(169): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'abertura\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 169, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(25): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:50:01 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 163.
+ 1 APPPATH\Views\layout\principal_web.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 163, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(25): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:52:01 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 249.
+ 1 APPPATH\Views\layout\principal_web.php(249): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 249, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(25): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:52:41 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(25): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:52:44 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(25): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:55:49 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(25): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:56:03 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(25): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:56:05 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(25): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:56:27 --> Undefined variable: expedienteHoje
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: expedienteHoje', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(25): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:57:55 --> Call to a member function where() on null
+in APPPATH\Controllers\Home.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:58:49 --> Call to a member function where() on null
+in APPPATH\Controllers\Home.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:59:24 --> Undefined variable: expedienteModel
+in APPPATH\Controllers\Home.php on line 14.
+ 1 APPPATH\Controllers\Home.php(14): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: expedienteModel', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php', 14, [])
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Home->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 15:59:51 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:01:10 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ')'
+in APPPATH\Controllers\Home.php on line 20.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:03:57 --> Undefined variable: expedienteHoje
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: expedienteHoje', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Bairros/index', [], true)
+ 6 APPPATH\Controllers\Bairros.php(19): view('Bairros/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Bairros->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bairros))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:11:54 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
+in APPPATH\Controllers\Home.php on line 20.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:13:09 --> Undefined variable: expedienteHoje
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: expedienteHoje', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Bairros/index', [], true)
+ 6 APPPATH\Controllers\Bairros.php(19): view('Bairros/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Bairros->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bairros))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:13:25 --> Undefined variable: expedienteHoje
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: expedienteHoje', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Bairros/index', [], true)
+ 6 APPPATH\Controllers\Bairros.php(19): view('Bairros/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Bairros->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bairros))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-09 16:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 16:14:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 16:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 16:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 16:17:06 --> Call to undefined method App\Controllers\Home::expedienteModel()
+in APPPATH\Controllers\Home.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:20:49 --> syntax error, unexpected ';'
+in APPPATH\Controllers\Home.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:23:24 --> Trying to get property 'dia' of non-object
+in APPPATH\Controllers\Home.php on line 30.
+ 1 APPPATH\Controllers\Home.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'dia\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php', 30, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-09 16:26:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 16:29:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 16:30:13 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-09 16:31:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 16:32:06 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:38:23 --> Call to undefined method App\Models\ExpedienteModel::where_in
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\Home.php(29): CodeIgniter\Model->__call('where_in', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:41:53 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::get() must be of the type int or null, string given, called in C:\xampp\htdocs\food\system\Model.php on line 871
+in SYSTEMPATH\Database\BaseBuilder.php on line 1607.
+ 1 SYSTEMPATH\Model.php(871): CodeIgniter\Database\BaseBuilder->get('expediente')
+ 2 APPPATH\Controllers\Home.php(29): CodeIgniter\Model->__call('get', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:43:00 --> syntax error, unexpected 'echo' (T_ECHO)
+in APPPATH\Controllers\Home.php on line 29.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:51:06 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:52:06 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:52:22 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-09 16:52:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 16:53:08 --> syntax error, unexpected ';', expecting ']'
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:53:14 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-09 16:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 16:55:08 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:55:29 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:57:41 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:57:56 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:58:04 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:58:05 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:58:15 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:58:16 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:59:32 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 16:59:33 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(33): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 17:00:12 --> Call to undefined method App\Controllers\Home::expedienteHoje()
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 17:01:07 --> Call to undefined method App\Controllers\Home::expedienteHoje()
+in APPPATH\Controllers\Home.php on line 25.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 17:01:08 --> Call to undefined method App\Controllers\Home::expedienteHoje()
+in APPPATH\Controllers\Home.php on line 25.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 17:01:28 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(34): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 17:02:35 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(23): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 17:03:00 --> Trying to get property 'situacao' of non-object
+in APPPATH\Views\layout\principal_web.php on line 160.
+ 1 APPPATH\Views\layout\principal_web.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'situacao\' of non-object', 'C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php', 160, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\layout\\principal_web.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/principal_web', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Home/index', [], true)
+ 6 APPPATH\Controllers\Home.php(23): view('Home/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 17:13:16 --> syntax error, unexpected end of file
+in APPPATH\Helpers\empresa_helper.php on line 24.
+ 1 SYSTEMPATH\Controller.php(90): helper([...])
+ 2 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Controller->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 3 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 4 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 17:13:38 --> syntax error, unexpected end of file
+in APPPATH\Helpers\empresa_helper.php on line 24.
+ 1 SYSTEMPATH\Controller.php(90): helper([...])
+ 2 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Controller->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 3 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 4 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+CRITICAL - 2023-12-09 17:14:31 --> syntax error, unexpected ';', expecting ']'
+in APPPATH\Controllers\Home.php on line 26.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\food\\app\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-09 17:14:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:17:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:17:52 --> CSRF token verified.
+INFO - 2023-12-09 17:17:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:17:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:18:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:19:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:19:27 --> CSRF token verified.
+INFO - 2023-12-09 17:19:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:19:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:19:51 --> CSRF token verified.
+INFO - 2023-12-09 17:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:19:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:20:12 --> CSRF token verified.
+INFO - 2023-12-09 17:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:20:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:21:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:22:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:48:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:48:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 17:48:27 --> Undefined variable: produtosMaisVendidos
+in APPPATH\Views\Admin\Home\index.php on line 163.
+ 1 APPPATH\Views\Admin\Home\index.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: produtosMaisVendidos', 'C:\\xampp\\htdocs\\food\\app\\Views\\Admin\\Home\\index.php', 163, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\food\\app\\Views\\Admin\\Home\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Admin/Home/index', [], true)
+ 5 APPPATH\Controllers\Admin\Home.php(40): view('Admin/Home/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\food\\public\\index.php')
+INFO - 2023-12-09 17:50:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:50:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:51:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:51:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:52:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:52:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:53:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:54:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:56:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:57:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:57:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:58:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:58:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:59:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 17:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:04:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:04:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 18:06:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
