@@ -22,16 +22,16 @@
 
     <?= $this->include("Conta/sidebar") ?>
     <div class="row">
-    <h2 class="section-title"><?= esc($titulo)?></h2>    
+  
 
         <div class="col-md-6 col-md-offset-3">
 
-            <?php if(!isset($pedidos)) :?>
+            <?php if(empty($pedidos)) :?>
 
-                <h3 class="text-center">Histórico de Pedidos Vazio</h3>
+                <h3 class="text-center section-title">Histórico de Pedidos Vazio</h3>
 
             <?php else: ?>
-
+                <h2 class="section-title"><?= esc($titulo)?></h2>    
                 <?php foreach($pedidos as $key => $pedido):?>
 
                     <div class="panel-group">
