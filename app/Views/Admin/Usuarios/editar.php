@@ -24,10 +24,10 @@
            
   <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
-    <div class="card-header bg-primary pn-0 pt-4">
-  <h2 class="card-title text-white"><?= esc($titulo) ?></h2>
+      <div class="card-header bg-primary pn-0 pt-4">
+        <h2 class="card-title text-white"><?= esc($titulo) ?></h2>
+      </div>
 
-</div>
       <div class="card-body">
 
 
@@ -64,10 +64,11 @@
 
 
     </div>
-  </div>"
+  </div>
             
 
           </div>
+</div>
 
 
 <?= $this->endSection(); ?>

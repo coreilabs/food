@@ -24,7 +24,14 @@ class Home extends BaseController
             'valorPedidosCancelados' => $this->pedidoModel->valorPedidosCancelados(),
             'totalClientesAtivos' => $this->usuarioModel->recuperaTotalClientesAtivos(),
             'totalEntregadoresAtivos' => $this->entregadorModel->recuperaTotalEntregadoresAtivos(),
+     
         ];
+
+        $novosPedidos = $this->pedidoModel->where('situacao', 0)->orderBy('criado_em', 'DESC')->findAll();
+        if(!empty($novosPedidos)){
+            $data['novosPedidos'] = $novosPedidos;
+            
+        }    
         return view('Admin/Home/index', $data);
     }
 }

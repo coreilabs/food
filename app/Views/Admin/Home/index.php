@@ -15,6 +15,8 @@
 <?= $this->section('conteudo'); ?>
 
 <div class="row">
+
+
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
         <div class="card-body dashboard-tabs p-0">
@@ -69,6 +71,67 @@
         </div>
         </div>
     </div>
+
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+        <div class="card-body ">
+
+        <?php if(!isset($novosPedidos)):?>
+
+            <h4 class="text-danger">Não há pedidos no momento.</h4>
+
+        <?php else: ?>
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Código do Pedido</th>
+                    <th>Valor</th>
+                    <th>Data do Pedido</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+              
+
+                    <?php foreach($novosPedidos as $pedido):?>
+
+                        <tr>
+                            <td><a href="<?= site_url("admin/pedidos/show/$pedido->codigo")?>">  <?= $pedido->codigo;?></a></td>
+                            <td>R$ <?= esc(number_format($pedido->valor_pedido,2,',', '.'));?></td>
+                            <td><?= $pedido->criado_em->humanize();?></td>
+
+
+                        </tr>
+
+                    <?php endforeach; ?>
+
+         
+ 
+
+                </tbody>
+            </table>
+              
+        </div>
+
+                  
+        </div>
+
+        <?php endif;?>
+
+        </div>
+    </div>
+
+
+
+
+    
+
+
+
+
     </div>
 
 <?= $this->endSection(); ?>
