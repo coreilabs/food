@@ -37,7 +37,7 @@ class Home extends BaseController
             
         }
 
-        dd($data['clientesMaisAssiduos']);
+        
   
         return view('Admin/Home/index', $data);
     }

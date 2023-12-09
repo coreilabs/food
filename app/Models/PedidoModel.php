@@ -95,7 +95,7 @@ class PedidoModel extends Model
 
     public function recuperaClientesMaisAssiduos(int $quantidade){
 
-        return $this->select('usuarios.nome, COUNT(*) AS pedidos')
+        return $this->select('usuarios.nome, usuarios.id, COUNT(*) AS pedidos')
             ->join('usuarios', 'usuarios.id = pedidos.usuario_id')
             ->where('situacao', 2) //apenas entregues
             ->limit($quantidade)

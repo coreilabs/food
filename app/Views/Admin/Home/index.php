@@ -182,6 +182,35 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                <p class="card-title">Top Clientes</p>
+                            <ul class="list-arrow">
+
+                                <?php if(!isset($clientesMaisAssiduos)):?>
+
+                                    <p>Não há dados para exibir</p>
+
+                                <?php else:?>
+
+                                    
+                                <?php foreach($clientesMaisAssiduos as $cliente):?>
+                                    <li class="mb-2">
+                                       <a href="<?= site_url("admin/usuarios/show/$cliente->id")?>">
+                                            <?= esc($cliente->nome)?>
+                                        </a> 
+                                        <span class="badge badge-pill badge-success float-right"><?= esc($cliente->pedidos)?></span>
+                                    </li>
+                                <?php endforeach;?>
+
+                                <?php endif;?>
+
+                            </ul>
+               
+                </div>
+            </div>
+        </div>
     </div>
 
 <?= $this->endSection(); ?>
